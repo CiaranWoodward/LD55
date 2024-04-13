@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://ecrxxvvrint6"]
+
+[ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="1_kfu6y"]
+
+[node name="BuildButton" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="AspectRatioContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_kfu6y")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="AspectRatioContainer/TextureButton"]
+layout_mode = 2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 153.0
+offset_bottom = 25.0
+text = "Recutement Centre"
