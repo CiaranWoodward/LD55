@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://8n12sq167j63"
+path="res://.godot/imported/shit hit the fan.wav-3f6736cabbb37b4d6e13dbc531a6ece7.sample"
+
+[deps]
+
+source_file="res://shit hit the fan.wav"
+dest_files=["res://.godot/imported/shit hit the fan.wav-3f6736cabbb37b4d6e13dbc531a6ece7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
