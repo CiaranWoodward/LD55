@@ -1,9 +1,8 @@
 extends Node
 
-var game_map: Node = null
-
 signal resource_updated
 
+var game_map: Node = null
 var cursor : Cursor
 
 enum BuildingType {

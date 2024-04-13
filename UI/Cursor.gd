@@ -8,6 +8,7 @@ enum ActionType {NONE, BUILD, DRAG}
 @export var valid_color : Color = Color.WHITE
 
 var _current_building: ProductionBuilding
+var _current_character: BaseCharacter
 var _current_action : ActionType = ActionType.NONE
 var _mouse_pressed = false
 
@@ -33,6 +34,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position = get_global_mouse_position()
+	if _current_action == ActionType.DRAG:
+		_current_character.drag_to(position)
 
 # Called every physics tick. 'delta' is the elapsed time since the previous tick.
 func _physics_process(delta):
@@ -46,6 +49,7 @@ func _physics_process(delta):
 	
 func _change_action(newAction: ActionType):
 	_remove_building()
+	_current_character = null
 	_current_action = newAction
 
 func _remove_building():
@@ -68,9 +72,14 @@ func _apply_released_action():
 		_current_building.buy()
 		_current_building = null
 		clear_action()
+	elif _current_action == ActionType.DRAG:
+		drop()
 
 func clear_action():
 	_change_action(ActionType.NONE)
+
+func is_free():
+	return _current_action == ActionType.NONE
 
 func set_building(newBuilding: ProductionBuilding):
 	_remove_building()
@@ -78,3 +87,13 @@ func set_building(newBuilding: ProductionBuilding):
 	_current_building = newBuilding
 	$Building.add_child(_current_building)
 	_current_building.as_ui_part = true
+
+func pick_up(character: BaseCharacter):
+	assert(is_free())
+	_change_action(ActionType.DRAG)
+	_current_character = character
+
+func drop():
+	assert(_current_action == ActionType.DRAG)
+	_current_character.put_down()
+	clear_action()
