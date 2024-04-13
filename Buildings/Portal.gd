@@ -9,10 +9,3 @@ func _ready():
 func _process(delta):
 	pass
 
-func do_you_want_me(character: BaseCharacter) -> bool:
-	return true
-
-func take_me(character: BaseCharacter) -> bool:
-	character.queue_free()
-	return true
-

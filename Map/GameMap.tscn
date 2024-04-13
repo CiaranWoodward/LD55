@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cseq0jcpd6rfc"]
+[gd_scene load_steps=9 format=3 uid="uid://cseq0jcpd6rfc"]
 
 [ext_resource type="Script" path="res://Map/GameMap.gd" id="1_667xj"]
 [ext_resource type="PackedScene" uid="uid://clufegtvym2pa" path="res://Buildings/RecutementCentre.tscn" id="1_p3gag"]
 [ext_resource type="PackedScene" uid="uid://bntc8r0gvpd8m" path="res://Buildings/Portal.tscn" id="2_4o8v8"]
 [ext_resource type="PackedScene" uid="uid://cx4vxmlqmobql" path="res://UI/HUD.tscn" id="3_o1tnc"]
 [ext_resource type="PackedScene" uid="uid://ckplrxq1lxetw" path="res://UI/Cursor.tscn" id="4_0ycld"]
+[ext_resource type="PackedScene" uid="uid://dr3k135c6aj68" path="res://Characters/Cat.tscn" id="4_1crc1"]
 [ext_resource type="Script" path="res://Map/PlayerCam.gd" id="6_5o6ap"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_imvrd"]
@@ -29,12 +30,13 @@ position = Vector2(815, 213)
 [node name="Portal" parent="NavigationRegion2D" instance=ExtResource("2_4o8v8")]
 position = Vector2(542, 120)
 
-[node name="Portal2" parent="NavigationRegion2D" instance=ExtResource("2_4o8v8")]
-position = Vector2(848, 542)
+[node name="Cat" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
+position = Vector2(163.83, 270.029)
 
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 
 [node name="Cursor" parent="." instance=ExtResource("4_0ycld")]
+idle_color = Color(1, 1, 1, 1)
 
 [node name="PlayerCam" type="Camera2D" parent="."]
 script = ExtResource("6_5o6ap")

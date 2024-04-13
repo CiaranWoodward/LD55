@@ -21,28 +21,31 @@ func _find_new_target():
 	var potential_buildings = get_tree().get_nodes_in_group("buildings").filter(
 		func(building: Building): return building.do_you_want_me(self)
 		)
+		
+	var target_position: Vector2
 	if potential_buildings.is_empty():
-		return
-	potential_buildings.sort_custom(func(a: Building, b: Building): return a.distance_squared_to_me(self) < b.distance_squared_to_me(self))
-	current_target = potential_buildings.front()
-	var target_position: Vector2 = current_target.global_position
+		target_position = global_position + Vector2(100,0).rotated(2*PI*randf())
+	else:
+		potential_buildings.sort_custom(func(a: Building, b: Building): return a.distance_squared_to_me(self) < b.distance_squared_to_me(self))
+		current_target = potential_buildings.front()
+		target_position = current_target.global_position
+		
 	nav.target_position = target_position
 	nav.target_desired_distance = 50
 
 func _physics_process(delta):
-	if is_instance_valid(current_target) && nav.is_target_reached():
-		if current_target.take_me(self):
+	if nav.is_target_reached():
+		if is_instance_valid(current_target) && current_target.take_me(self):
 			current_target = null
 		else:
 			_find_new_target()
 	
-	if is_instance_valid(current_target):
-		var direction = Vector3();
-		direction = nav.get_next_path_position() - global_position
-		direction = direction.normalized()
-		velocity = velocity.lerp(direction * movement_speed, acceleration * delta)
-		
-		move_and_slide()
+	
+	var direction = Vector3();
+	direction = nav.get_next_path_position() - global_position
+	direction = direction.normalized()
+	velocity = velocity.lerp(direction * movement_speed, acceleration * delta)
+	move_and_slide()
 
 func pick_up():
 	if Global.cursor.is_free():
