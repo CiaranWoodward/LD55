@@ -61,6 +61,7 @@ func _apply_pressed_action():
 func _apply_released_action():
 	if _current_action == ActionType.BUILD:
 		var gcoords = _current_building.global_position
+		$Building.remove_child(_current_building)
 		Global.game_map.add_child(_current_building)
 		_current_building.global_position = gcoords
 		_current_building.as_ui_part = false
