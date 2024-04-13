@@ -32,7 +32,6 @@ position = Vector2(588, 16)
 
 [node name="Cat" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
 position = Vector2(163.83, 270.029)
-
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 
 [node name="Cursor" parent="." instance=ExtResource("4_0ycld")]
