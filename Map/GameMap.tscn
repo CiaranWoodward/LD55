@@ -7,29 +7,30 @@
 [ext_resource type="PackedScene" uid="uid://ckplrxq1lxetw" path="res://UI/Cursor.tscn" id="4_0ycld"]
 [ext_resource type="Script" path="res://Map/PlayerCam.gd" id="6_5o6ap"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_ar052"]
-vertices = PackedVector2Array(1328, -40, 1261, 680, -49, 653, -7, -54)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-17, -65, 1339, -50, 1271, 691, -60, 663)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_imvrd"]
+outlines = Array[PackedVector2Array]([PackedVector2Array(-571, -416, 1749, -422, 1737, 1136, -599, 992)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="GameMap" type="Node2D"]
 script = ExtResource("1_667xj")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_ar052")
+navigation_polygon = SubResource("NavigationPolygon_imvrd")
 
-[node name="Recutement Centre" parent="." instance=ExtResource("1_p3gag")]
+[node name="Recutement Centre" parent="NavigationRegion2D" instance=ExtResource("1_p3gag")]
 position = Vector2(401, 299)
 
-[node name="Recutement Centre2" parent="." instance=ExtResource("1_p3gag")]
+[node name="Recutement Centre2" parent="NavigationRegion2D" instance=ExtResource("1_p3gag")]
 position = Vector2(298, 492)
 
-[node name="Recutement Centre3" parent="." instance=ExtResource("1_p3gag")]
+[node name="Recutement Centre3" parent="NavigationRegion2D" instance=ExtResource("1_p3gag")]
 position = Vector2(815, 213)
 
-[node name="Portal" parent="." instance=ExtResource("2_4o8v8")]
+[node name="Portal" parent="NavigationRegion2D" instance=ExtResource("2_4o8v8")]
 position = Vector2(542, 120)
+
+[node name="Portal2" parent="NavigationRegion2D" instance=ExtResource("2_4o8v8")]
+position = Vector2(848, 542)
 
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 

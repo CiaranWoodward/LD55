@@ -7,7 +7,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	pass	
 
 func do_you_want_me(character: BaseCharacter) -> bool:
 	return false
@@ -16,4 +16,4 @@ func take_me(character: BaseCharacter) -> bool:
 	return false
 
 func distance_squared_to_me(character: BaseCharacter):
-	character.global_position.distance_squared_to(global_position)
+	return character.global_position.distance_squared_to(global_position)
