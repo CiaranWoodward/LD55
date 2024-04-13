@@ -27,9 +27,10 @@ func _find_new_target():
 	current_target = potential_buildings.front()
 	var target_position: Vector2 = current_target.global_position
 	nav.target_position = target_position
+	nav.target_desired_distance = 50
 
 func _physics_process(delta):
-	if is_instance_valid(current_target) && nav.is_navigation_finished():
+	if is_instance_valid(current_target) && nav.is_target_reached():
 		if current_target.take_me(self):
 			current_target = null
 		else:

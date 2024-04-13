@@ -2,8 +2,8 @@ extends Node
 
 signal resource_updated
 
-var game_map: GameMap = null
 var cursor : Cursor
+var game_map: GameMap
 
 enum BuildingType {
 	PORTAL,

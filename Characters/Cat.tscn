@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="2_8vqqb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6fh43"]
-radius = 11.49
+radius = 20.0
 
 [node name="Cat" type="CharacterBody2D"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_52cgv")
 acceleration = 4.0
 
