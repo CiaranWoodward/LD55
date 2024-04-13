@@ -1,5 +1,7 @@
 extends Node
 
+var game_map: Node = null
+
 signal resource_updated
 
 enum BuildingType {
