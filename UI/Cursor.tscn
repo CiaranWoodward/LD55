@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckplrxq1lxetw"]
+
+[ext_resource type="Script" path="res://UI/Cursor.gd" id="1_y8trr"]
+
+[node name="Cursor" type="Node2D"]
+script = ExtResource("1_y8trr")
+invalid_color = Color(1, 0.117647, 0.121569, 0.392157)
+valid_color = Color(1, 1, 1, 0.509804)
+
+[node name="Building" type="Node2D" parent="."]

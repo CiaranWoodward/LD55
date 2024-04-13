@@ -8,6 +8,7 @@ extends Node2D
 
 @onready var build_timer = Timer.new()
 var cat_count: int = 0 : set = set_cat_count
+var as_ui_part: bool = false : set = set_as_ui_part
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,6 +23,25 @@ func set_cat_count(newCount):
 		build_timer.wait_time = base_build_time / (cat_time_multiplier * cat_count)
 		if build_timer.is_stopped():
 			build_timer.start()
+	cat_count = newCount
+
+func set_as_ui_part(newValue):
+	if newValue == as_ui_part:
+		return
+	as_ui_part = newValue
+	if (as_ui_part):
+		build_timer.stop()
+	else:
+		build_timer.start()
+
+func is_cost_affordable() -> bool:
+	return Global.get_resource_count(Global.ResourceType.GOLD) >= cost
+
+func buy():
+	Global.change_resource_count(Global.ResourceType.GOLD, -cost)
+
+func can_build_here() -> bool:
+	return !$BuildPrevention.get_overlapping_areas().is_empty()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

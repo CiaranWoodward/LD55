@@ -2,6 +2,8 @@ extends Node
 
 signal resource_updated
 
+var cursor : Cursor
+
 enum BuildingType {
 	PORTAL,
 	RECUTEMENT_CENTRE,
@@ -32,7 +34,7 @@ func get_building_name(type: BuildingType) -> String:
 		BuildingType.NURSING_HOME: return "Nursing Home"
 		BuildingType.FISH_POND: return "Fish Pond"
 	return ""
-func get_building_class(type: BuildingType) -> Resource:
+func get_building_class(type: BuildingType) -> PackedScene:
 	match(type):
 		BuildingType.PORTAL: return load("res://Buildings/Portal.tscn")
 		BuildingType.RECUTEMENT_CENTRE: return load("res://Buildings/RecutementCentre.tscn")
@@ -55,7 +57,7 @@ func change_resource_count(type: ResourceType, delta: int):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	set_resource_count(ResourceType.GOLD, 30)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

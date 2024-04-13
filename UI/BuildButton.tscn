@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ecrxxvvrint6"]
+[gd_scene load_steps=3 format=3 uid="uid://ecrxxvvrint6"]
 
 [ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="1_kfu6y"]
+[ext_resource type="Script" path="res://UI/BuildButton.gd" id="1_srvfg"]
 
 [node name="BuildButton" type="MarginContainer"]
 anchors_preset = 15
@@ -12,19 +13,25 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
+script = ExtResource("1_srvfg")
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+[node name="ARContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="AspectRatioContainer"]
+[node name="Button" type="TextureButton" parent="ARContainer"]
 layout_mode = 2
 texture_normal = ExtResource("1_kfu6y")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="AspectRatioContainer/TextureButton"]
+[node name="Label" type="Label" parent="ARContainer/Button"]
 layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 2.0
 offset_top = 2.0
-offset_right = 153.0
-offset_bottom = 25.0
-text = "Recutement Centre"
+offset_right = 1.0
+offset_bottom = -96.0
+text = "Placeholder"
+autowrap_mode = 3
+
+[connection signal="pressed" from="ARContainer/Button" to="." method="_on_button_pressed"]

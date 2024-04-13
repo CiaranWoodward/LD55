@@ -1,10 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://clufegtvym2pa"]
+[gd_scene load_steps=4 format=3 uid="uid://clufegtvym2pa"]
 
-[ext_resource type="Script" path="res://RecutementCentre.gd" id="1_tkvj8"]
+[ext_resource type="Script" path="res://Buildings/RecutementCentre.gd" id="1_b68fl"]
 [ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="2_w60tc"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5ibk"]
+size = Vector2(135, 136.5)
+
 [node name="Recutement Centre" type="Node2D"]
-script = ExtResource("1_tkvj8")
+script = ExtResource("1_b68fl")
 
 [node name="Graphic" type="Sprite2D" parent="."]
 texture = ExtResource("2_w60tc")
+
+[node name="BuildPrevention" type="Area2D" parent="."]
+
+[node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
+position = Vector2(0.5, -0.25)
+shape = SubResource("RectangleShape2D_o5ibk")

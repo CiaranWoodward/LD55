@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cseq0jcpd6rfc"]
+[gd_scene load_steps=5 format=3 uid="uid://cseq0jcpd6rfc"]
 
 [ext_resource type="PackedScene" uid="uid://clufegtvym2pa" path="res://Buildings/RecutementCentre.tscn" id="1_p3gag"]
 [ext_resource type="PackedScene" uid="uid://bntc8r0gvpd8m" path="res://Buildings/Portal.tscn" id="2_4o8v8"]
 [ext_resource type="PackedScene" uid="uid://cx4vxmlqmobql" path="res://UI/HUD.tscn" id="3_o1tnc"]
+[ext_resource type="PackedScene" uid="uid://ckplrxq1lxetw" path="res://UI/Cursor.tscn" id="4_0ycld"]
 
 [node name="GameMap" type="Node2D"]
 
@@ -19,3 +20,8 @@ position = Vector2(815, 213)
 position = Vector2(542, 120)
 
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
+
+[node name="Cursor" parent="." instance=ExtResource("4_0ycld")]
+idle_color = null
+invalid_color = null
+valid_color = null
