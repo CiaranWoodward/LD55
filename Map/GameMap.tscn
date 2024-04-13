@@ -35,6 +35,7 @@ position = Vector2(848, 542)
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 
 [node name="Cursor" parent="." instance=ExtResource("4_0ycld")]
+idle_color = Color(1, 1, 1, 1)
 
 [node name="PlayerCam" type="Camera2D" parent="."]
 script = ExtResource("6_5o6ap")

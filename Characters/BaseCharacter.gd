@@ -10,12 +10,16 @@ extends CharacterBody2D
 
 var current_target: Building
 var _picked_up: bool = false
+var _last_valid_location : Vector2
+var _pick_up_tween: Tween
+var _pickup_offset: Vector2 = Vector2.ZERO
 @onready var _stashed_collision_layer = collision_layer
 
 func _ready():
 	input_pickable = true
 	add_to_group("characters")
 	_find_new_target()
+	_last_valid_location = global_position
 	
 func _find_new_target():
 	var potential_buildings = get_tree().get_nodes_in_group("buildings").filter(
@@ -44,24 +48,42 @@ func _physics_process(delta):
 		
 		move_and_slide()
 
+func _new_pickup_tween():
+	if _pick_up_tween:
+		_pick_up_tween.kill()
+	_pick_up_tween = create_tween()
+
 func pick_up():
 	if Global.cursor.is_free():
 		Global.cursor.pick_up(self)
 		input_pickable = false
-		get_node("Graphic").position.y = -pickup_height
 		current_target = null
 		_stashed_collision_layer = collision_layer
 		collision_layer = 0
+		_new_pickup_tween()
+		_pick_up_tween.tween_property(get_node("Graphic"), "position", Vector2(0, -pickup_height), 0.2)
+		_pick_up_tween.parallel().tween_property(self, "_pickup_offset", Vector2(0, pickup_height + head_height), 0.2)
 
 func drag_to(gcoords: Vector2):
-	global_position = gcoords + Vector2(0, pickup_height + head_height)
+	global_position = gcoords + _pickup_offset
+	var building = Global.game_map.get_building_at_point(gcoords)
+	if !is_instance_valid(building):
+		_last_valid_location = gcoords
 
 func put_down():
 	input_pickable = true
-	get_node("Graphic").position.y = 0
+	_new_pickup_tween()
+	_pick_up_tween.tween_property(get_node("Graphic"), "position", Vector2.ZERO, 0.2)
+	_pick_up_tween.parallel().tween_property(self, "_pickup_offset", Vector2.ZERO, 0.2)
 	collision_layer = _stashed_collision_layer
 	velocity = Vector2.ZERO
-	_find_new_target()
+	var building = Global.game_map.get_building_at_point(global_position)
+	if is_instance_valid(building):
+		if building.take_me(self):
+			return
+		else:
+			_pick_up_tween.parallel().tween_property(self, "global_position", _last_valid_location, 0.2)
+	_pick_up_tween.tween_callback(self._find_new_target)
 
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton && (event.button_index == MOUSE_BUTTON_LEFT):

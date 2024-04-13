@@ -23,4 +23,17 @@ func add_building_child(building: Building, position: Vector2):
 	building.as_ui_part = false
 	building.buy()
 	_compute_nav_mesh()
-	
+
+func get_building_at_point(gcoords: Vector2):
+	var dss = get_world_2d().direct_space_state
+	var query = PhysicsPointQueryParameters2D.new()
+	query.collide_with_areas = true
+	query.collision_mask = Global.PhysicsLayer.Building
+	query.position = gcoords
+	var shapes = dss.intersect_point(query)
+	if shapes.size() > 0:
+		for shape in shapes:
+			var p = shape["collider"].get_parent()
+			if p is Building:
+				return p
+	return null

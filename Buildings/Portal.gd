@@ -12,7 +12,7 @@ func _process(delta):
 func do_you_want_me(character: BaseCharacter) -> bool:
 	return true
 
-func take_me(character: BaseCharacter) -> bool:
+func take_me(character: BaseCharacter, dropped=false) -> bool:
 	character.queue_free()
 	$Graphic/WibbleBase/WibbleBaseAction.play("Produce")
 	return true

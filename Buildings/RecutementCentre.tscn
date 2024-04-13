@@ -13,6 +13,7 @@ script = ExtResource("1_b68fl")
 texture = ExtResource("2_w60tc")
 
 [node name="BuildPrevention" type="Area2D" parent="."]
+collision_layer = 3
 
 [node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
 position = Vector2(0.5, -0.25)

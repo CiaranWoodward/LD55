@@ -20,6 +20,11 @@ enum ResourceType {
 	FISH,
 }
 
+enum PhysicsLayer {
+	Normal = 1,
+	Building = 2,
+}
+
 # inventory for resources
 var _resourceInventory: Dictionary = ResourceType.values().reduce(func(accum, type):
 	accum[type] = 0

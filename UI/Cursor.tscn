@@ -4,7 +4,6 @@
 
 [node name="Cursor" type="Node2D"]
 script = ExtResource("1_y8trr")
-idle_color = null
 invalid_color = Color(1, 0.117647, 0.121569, 0.392157)
 valid_color = Color(1, 1, 1, 0.509804)
 

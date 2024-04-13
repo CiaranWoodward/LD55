@@ -12,7 +12,7 @@ func _process(delta):
 func do_you_want_me(character: BaseCharacter) -> bool:
 	return false
 
-func take_me(character: BaseCharacter) -> bool:
+func take_me(character: BaseCharacter, dropped=false) -> bool:
 	return false
 
 func distance_squared_to_me(character: BaseCharacter):
