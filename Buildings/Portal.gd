@@ -10,7 +10,7 @@ func _process(delta):
 	pass
 
 func do_you_want_me(character: BaseCharacter) -> bool:
-	return true
+	return false
 
 func take_me(character: BaseCharacter, dropped=false) -> bool:
 	character.queue_free()

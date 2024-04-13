@@ -7,8 +7,8 @@ enum ActionType {NONE, BUILD, DRAG}
 @export var invalid_color : Color = Color.RED
 @export var valid_color : Color = Color.WHITE
 
-var _current_building: ProductionBuilding
 var _current_character: BaseCharacter
+var _current_building: ProductionBuilding
 var _current_action : ActionType = ActionType.NONE
 var _mouse_pressed = false
 
