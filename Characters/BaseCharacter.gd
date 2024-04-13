@@ -38,12 +38,13 @@ func _find_new_target():
 	nav.target_desired_distance = 50
 
 func _physics_process(delta):
+	if _picked_up:
+		return
 	if nav.is_target_reached():
 		if is_instance_valid(current_target) && current_target.take_me(self):
 			current_target = null
 		else:
 			_find_new_target()
-	
 	
 	var direction = Vector3();
 	direction = nav.get_next_path_position() - global_position
@@ -57,8 +58,10 @@ func _new_pickup_tween():
 	_pick_up_tween = create_tween()
 
 func pick_up():
+	assert(!_picked_up)
 	if Global.cursor.is_free():
 		Global.cursor.pick_up(self)
+		_picked_up = true
 		input_pickable = false
 		current_target = null
 		_stashed_collision_layer = collision_layer
@@ -74,7 +77,9 @@ func drag_to(gcoords: Vector2):
 		_last_valid_location = gcoords
 
 func put_down():
+	assert(_picked_up)
 	input_pickable = true
+	_picked_up = false
 	_new_pickup_tween()
 	_pick_up_tween.tween_property(get_node("Graphic"), "position", Vector2.ZERO, 0.2)
 	_pick_up_tween.parallel().tween_property(self, "_pickup_offset", Vector2.ZERO, 0.2)
