@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bntc8r0gvpd8m"]
+
+[ext_resource type="Script" path="res://Buildings/Portal.gd" id="1_qfxbj"]
+[ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="2_go4ud"]
+
+[node name="Portal" type="Node2D"]
+script = ExtResource("1_qfxbj")
+
+[node name="Graphic" type="Sprite2D" parent="."]
+modulate = Color(1, 0.223529, 0.239216, 1)
+texture = ExtResource("2_go4ud")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://clufegtvym2pa"]
+
+[ext_resource type="Script" path="res://RecutementCentre.gd" id="1_tkvj8"]
+[ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="2_w60tc"]
+
+[node name="Recutement Centre" type="Node2D"]
+script = ExtResource("1_tkvj8")
+
+[node name="Graphic" type="Sprite2D" parent="."]
+texture = ExtResource("2_w60tc")

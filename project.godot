@@ -14,6 +14,10 @@ config/name="LD55"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [rendering]
 
 renderer/rendering_method="mobile"

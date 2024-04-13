@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cseq0jcpd6rfc"]
+
+[ext_resource type="PackedScene" uid="uid://clufegtvym2pa" path="res://Buildings/RecutementCentre.tscn" id="1_p3gag"]
+[ext_resource type="PackedScene" uid="uid://bntc8r0gvpd8m" path="res://Buildings/Portal.tscn" id="2_4o8v8"]
+
+[node name="GameMap" type="Node2D"]
+
+[node name="Recutement Centre" parent="." instance=ExtResource("1_p3gag")]
+position = Vector2(401, 299)
+
+[node name="Recutement Centre2" parent="." instance=ExtResource("1_p3gag")]
+position = Vector2(298, 492)
+
+[node name="Recutement Centre3" parent="." instance=ExtResource("1_p3gag")]
+position = Vector2(815, 213)
+
+[node name="Portal" parent="." instance=ExtResource("2_4o8v8")]
+position = Vector2(542, 120)
