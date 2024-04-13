@@ -1,6 +1,6 @@
 extends Node
 
-var game_map: Node = null
+var game_map: GameMap = null
 
 signal resource_updated
 

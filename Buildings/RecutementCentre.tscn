@@ -17,3 +17,7 @@ texture = ExtResource("2_w60tc")
 [node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
 position = Vector2(0.5, -0.25)
 shape = SubResource("RectangleShape2D_o5ibk")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-66, -67, 67, -67, 67, -6.42422, 67, 65, -66, 66)
