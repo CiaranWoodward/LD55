@@ -356,6 +356,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_gb5d1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_k26wj"]
 resource_name = "WibbleScaleIdle"
 length = 1.8
@@ -373,25 +388,25 @@ tracks/0/keys = {
 "values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 1.05), Vector2(0.97, 0.96), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_gb5d1"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xnbgp"]
+_data = {
+"RESET": SubResource("Animation_gb5d1"),
+"WibbleScaleIdle": SubResource("Animation_k26wj")
+}
+
+[sub_resource type="Animation" id="Animation_4lxef"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
+tracks/0/path = NodePath(".:skew")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xnbgp"]
-_data = {
-"RESET": SubResource("Animation_gb5d1"),
-"WibbleScaleIdle": SubResource("Animation_k26wj")
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_n2db6"]
@@ -409,21 +424,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, -0.0349066, 0.0, 0.0349066, 0.0, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_4lxef"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:skew")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vnlbc"]
@@ -461,45 +461,6 @@ tracks/1/keys = {
 "values": [Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_j2i26"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../Poof:emitting")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="Animation" id="Animation_tn3yk"]
 resource_name = "Produce"
 length = 0.3
@@ -531,7 +492,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../../Poof:emitting")
+tracks/2/path = NodePath("../Poof:emitting")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -539,6 +500,45 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_j2i26"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Poof:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hgmg5"]
@@ -565,14 +565,18 @@ colors = PackedColorArray(0.579351, 0.0888221, 0.741283, 1, 0.74902, 0.172549, 0
 script = ExtResource("1_qfxbj")
 
 [node name="Graphic" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
 
 [node name="Base" type="Sprite2D" parent="Graphic"]
+position = Vector2(-5, -222)
 texture = ExtResource("2_qvr1g")
 
 [node name="Sides" type="Sprite2D" parent="Graphic"]
+position = Vector2(-5, -222)
 texture = ExtResource("3_jnllj")
 
 [node name="WibbleBase" type="Node2D" parent="Graphic"]
+position = Vector2(-5, -222)
 
 [node name="Wibble" type="Node2D" parent="Graphic/WibbleBase"]
 modulate = Color(1, 1, 1, 0.939946)
@@ -618,7 +622,8 @@ libraries = {
 "": SubResource("AnimationLibrary_hgmg5")
 }
 
-[node name="Poof" type="CPUParticles2D" parent="."]
+[node name="Poof" type="CPUParticles2D" parent="Graphic"]
+position = Vector2(-5, -222)
 emitting = false
 amount = 20
 one_shot = true

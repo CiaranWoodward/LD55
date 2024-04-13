@@ -14,5 +14,6 @@ func do_you_want_me(character: BaseCharacter) -> bool:
 
 func take_me(character: BaseCharacter) -> bool:
 	character.queue_free()
+	$Graphic/WibbleBase/WibbleBaseAction.play("Produce")
 	return true
 

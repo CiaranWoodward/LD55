@@ -27,7 +27,7 @@ position = Vector2(298, 492)
 position = Vector2(815, 213)
 
 [node name="Portal" parent="NavigationRegion2D" instance=ExtResource("2_4o8v8")]
-position = Vector2(542, 120)
+position = Vector2(588, 16)
 
 [node name="Portal2" parent="NavigationRegion2D" instance=ExtResource("2_4o8v8")]
 position = Vector2(848, 542)
