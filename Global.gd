@@ -22,6 +22,26 @@ var _resourceInventory: Dictionary = ResourceType.values().reduce(func(accum, ty
 	accum[type] = 0
 	return accum, {})
 
+# Meta-functions
+func get_building_name(type: BuildingType) -> String:
+	match(type):
+		BuildingType.PORTAL: return "Portal"
+		BuildingType.RECUTEMENT_CENTRE: return "Recutement Centre"
+		BuildingType.SHEEP_FARM: return "Sheep Farm"
+		BuildingType.GRANARY: return "Granary"
+		BuildingType.NURSING_HOME: return "Nursing Home"
+		BuildingType.FISH_POND: return "Fish Pond"
+	return ""
+func get_building_class(type: BuildingType) -> Resource:
+	match(type):
+		BuildingType.PORTAL: return load("res://Buildings/Portal.tscn")
+		BuildingType.RECUTEMENT_CENTRE: return load("res://Buildings/RecutementCentre.tscn")
+		BuildingType.SHEEP_FARM: return null
+		BuildingType.GRANARY: return null
+		BuildingType.NURSING_HOME: return null
+		BuildingType.FISH_POND: return null
+	return null
+
 # Functions for interacting with inventory
 func get_resource_count(type: ResourceType):
 	return _resourceInventory[type]
