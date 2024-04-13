@@ -9,6 +9,7 @@
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_imvrd"]
 outlines = Array[PackedVector2Array]([PackedVector2Array(-571, -416, 1749, -422, 1737, 1136, -599, 992)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="GameMap" type="Node2D"]
 script = ExtResource("1_667xj")
@@ -27,6 +28,9 @@ position = Vector2(815, 213)
 
 [node name="Portal" parent="NavigationRegion2D" instance=ExtResource("2_4o8v8")]
 position = Vector2(542, 120)
+
+[node name="Portal2" parent="NavigationRegion2D" instance=ExtResource("2_4o8v8")]
+position = Vector2(848, 542)
 
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 
