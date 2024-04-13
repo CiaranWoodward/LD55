@@ -3,8 +3,17 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	add_to_group("buildings")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func do_you_want_me(character: BaseCharacter) -> bool:
+	return false
+
+func take_me(character: BaseCharacter) -> bool:
+	return false
+
+func distance_squared_to_me(character: BaseCharacter):
+	character.global_position.distance_squared_to(global_position)
