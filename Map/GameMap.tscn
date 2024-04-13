@@ -22,6 +22,3 @@ position = Vector2(542, 120)
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 
 [node name="Cursor" parent="." instance=ExtResource("4_0ycld")]
-idle_color = null
-invalid_color = null
-valid_color = null
