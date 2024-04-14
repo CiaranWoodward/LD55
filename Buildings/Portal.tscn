@@ -56,7 +56,7 @@
 [ext_resource type="Texture2D" uid="uid://csc0euvfivpu0" path="res://Graphics/Buildings/Portal/PortalFrontLine0011.png" id="54_xwkbm"]
 [ext_resource type="Texture2D" uid="uid://d2xuk3vc20da8" path="res://Graphics/Buildings/Portal/PortalFrontLine0012.png" id="55_nh2iy"]
 [ext_resource type="Texture2D" uid="uid://coor52sv6n6af" path="res://Graphics/Buildings/Portal/Gem0000.png" id="56_62lk5"]
-[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/Portal/PortalParticle0000.png" id="56_yqt58"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="56_yqt58"]
 [ext_resource type="Texture2D" uid="uid://11b2jdc50m6j" path="res://Graphics/Buildings/Portal/Gem0001.png" id="57_sbmt0"]
 [ext_resource type="Texture2D" uid="uid://c4dhto4bbcsrd" path="res://Graphics/Buildings/Portal/Gem0002.png" id="58_r7pii"]
 [ext_resource type="Texture2D" uid="uid://dy8lnvaeqc0wr" path="res://Graphics/Buildings/Portal/Gem0003.png" id="59_3n6k8"]

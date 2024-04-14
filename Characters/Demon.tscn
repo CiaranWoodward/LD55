@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://qi3u7le3mhv" path="res://Graphics/Characters/Demon/Fur0000.png" id="3_mxhx4"]
 [ext_resource type="Texture2D" uid="uid://dmitm6rocdygj" path="res://Graphics/Characters/Demon/Skin0000.png" id="4_35joc"]
 [ext_resource type="Texture2D" uid="uid://cfuhrp0adg0v4" path="res://Graphics/Characters/Demon/Demon0000.png" id="5_03m5b"]
-[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/Portal/PortalParticle0000.png" id="6_82dp1"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="6_82dp1"]
 
 [sub_resource type="Animation" id="Animation_xx6nn"]
 resource_name = "EyeGlow"
@@ -134,6 +134,24 @@ tracks/1/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_nohse"]
+resource_name = "Rotate"
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(0.707107, 1.40402, 0.732043, 1.36477, 1),
+"update": 0,
+"values": [0.0, 0.0349066, 0.0, -0.0523599, 0.0]
+}
+
 [sub_resource type="Animation" id="Animation_fop5h"]
 resource_name = "Walk"
 length = 1.6
@@ -162,24 +180,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(0.707107, 1.40402, 0.732043, 1.36477, 1),
 "update": 0,
 "values": [0.0, 0.0523599, 0.0, -0.0349066, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_nohse"]
-resource_name = "Rotate"
-length = 0.8
-loop_mode = 1
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Character:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
-"transitions": PackedFloat32Array(0.707107, 1.40402, 0.732043, 1.36477, 1),
-"update": 0,
-"values": [0.0, 0.0349066, 0.0, -0.0523599, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jveit"]
