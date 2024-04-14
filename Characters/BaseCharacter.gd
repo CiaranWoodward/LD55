@@ -11,8 +11,11 @@ extends CharacterBody2D
 
 var current_target: Building
 var _picked_up: bool = false
+var _jumping: bool = false
+var _ghosted: bool = false
 var _last_valid_location : Vector2
 var _pick_up_tween: Tween
+var _jump_tween: Tween
 var _pickup_offset: Vector2 = Vector2.ZERO
 @onready var _stashed_collision_layer = collision_layer
 
@@ -42,6 +45,7 @@ func _find_new_target():
 	var target_position: Vector2
 	if potential_buildings.is_empty():
 		target_position = global_position + Vector2(100,0).rotated(2*PI*randf())
+		current_target = null
 	else:
 		potential_buildings.sort_custom(func(a: Building, b: Building): return a.distance_squared_to_me(self) < b.distance_squared_to_me(self))
 		current_target = potential_buildings.front()
@@ -51,7 +55,7 @@ func _find_new_target():
 	nav.target_desired_distance = 50
 
 func _physics_process(delta):
-	if _picked_up:
+	if _picked_up or _jumping or _ghosted:
 		return
 	if nav.is_target_reached():
 		if is_instance_valid(current_target) && current_target.take_me(self):
@@ -74,26 +78,63 @@ func _physics_process(delta):
 	
 	move_and_slide()
 
+func _process(delta):
+	if _ghosted:
+		_oblivion_process(delta)
+
 func _new_pickup_tween():
 	if _pick_up_tween:
 		_pick_up_tween.kill()
+	if _jump_tween:
+		_jump_tween.kill()
 	_pick_up_tween = create_tween()
 
-func pick_up() -> bool:
-	if _picked_up:
-		return false
-	_picked_up = true
-	current_target = null
-	_stashed_collision_layer = collision_layer
-	collision_layer = 0
-	z_index = 1
-	_new_pickup_tween()
-	_pick_up_tween.parallel().tween_property($Graphic, "position", Vector2(0, -pickup_height), 0.2)
+func _pickup_tween_up():
+	_pick_up_tween.tween_property($Graphic, "position", Vector2(0, -pickup_height), 0.2)
 	_pick_up_tween.parallel().tween_property($Graphic, "scale", Vector2(0.9,1.1), 0.2)
 	_pick_up_tween.parallel().tween_property($Graphic/Walk, "speed_scale", 2, 0.2)
 	_pick_up_tween.parallel().tween_property($Graphic/Character/Shocc, "visible", true, 0.2)
 	_pick_up_tween.parallel().tween_property(self, "_pickup_offset", Vector2(0, pickup_height + head_height), 0.2)
 	_pick_up_tween.parallel().tween_property($Shadow, "scale", Vector2(0.8,0.8), 0.2)
+
+func _pickup_tween_down():
+	_pick_up_tween.tween_property($Graphic, "position", Vector2.ZERO, 0.2)
+	_pick_up_tween.parallel().tween_property($Graphic, "scale", Vector2(1,1), 0.2)
+	_pick_up_tween.parallel().tween_property($Graphic/Walk, "speed_scale", 1, 0.2)
+	_pick_up_tween.parallel().tween_property($Graphic/Character/Shocc, "visible", false, 0.2)
+	_pick_up_tween.parallel().tween_property(self, "_pickup_offset", Vector2.ZERO, 0.2)
+	_pick_up_tween.parallel().tween_property($Shadow, "scale", Vector2(1,1), 0.2)
+
+func _new_jump_tween():
+	if _jump_tween:
+		_jump_tween.kill()
+	_jump_tween = create_tween()
+
+func _jump_tween_to(destination: Vector2, callback: Callable):
+	_new_pickup_tween()
+	_new_jump_tween()
+	_jumping = true
+	_pickup_tween_up()
+	_pickup_tween_down()
+	_jump_tween.tween_property(self, "global_position", destination, 0.4)
+	_jump_tween.tween_property(self, "_jumping", false, 0)
+	_jump_tween.tween_callback(callback)
+
+func jump_to(destination: Vector2, callback: Callable):
+	assert(!_jumping)
+	_jump_tween_to(destination, callback)
+
+func pick_up() -> bool:
+	if _picked_up:
+		return false
+	_picked_up = true
+	_jumping = false
+	current_target = null
+	_stashed_collision_layer = collision_layer
+	collision_layer = 0
+	z_index = 10
+	_new_pickup_tween()
+	_pickup_tween_up()
 	return true
 
 func drag_to(gcoords: Vector2):
@@ -105,17 +146,12 @@ func drag_to(gcoords: Vector2):
 func put_down():
 	assert(_picked_up)
 	_picked_up = false
-	_new_pickup_tween()
-	_pick_up_tween.tween_property(get_node("Graphic"), "position", Vector2.ZERO, 0.2)
-	_pick_up_tween.parallel().tween_property($Graphic, "scale", Vector2(1,1), 0.2)
-	_pick_up_tween.parallel().tween_property($Graphic/Walk, "speed_scale", 1, 0.2)
-	_pick_up_tween.parallel().tween_property($Graphic/Character/Shocc, "visible", false, 0.2)
-	_pick_up_tween.parallel().tween_property(self, "_pickup_offset", Vector2.ZERO, 0.2)
-	_pick_up_tween.parallel().tween_property($Shadow, "scale", Vector2(1,1), 0.2)
 	collision_layer = _stashed_collision_layer
-	z_index = 0
+	z_index = 10
 	velocity = Vector2.ZERO
 	var building = Global.game_map.get_building_at_point(global_position)
+	_new_pickup_tween()
+	_pickup_tween_down()
 	if is_instance_valid(building):
 		if building.take_me(self):
 			return
@@ -128,3 +164,28 @@ func _input_event(viewport, event, shape_idx):
 		var e = event as InputEventMouseButton
 		if e.is_pressed():
 			pick_up()
+
+var _oblivion_start: Vector2
+var _oblivion_point: Node2D
+var _oblivion_progress: float = 0.0
+var _oblivion_spin: float
+func ghostify_to_oblivion(oblivion: Node2D) -> Tween:
+	_ghosted = true
+	_oblivion_point = oblivion
+	collision_layer = 0
+	collision_mask = 0
+	area.monitorable = false
+	area.monitoring = false
+	_oblivion_start = global_position
+	_oblivion_spin = (PI * 4) * randf_range(0.8, 1.2)
+	z_index = 12
+	if randi_range(0, 1) == 0:
+		_oblivion_spin = -_oblivion_spin
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color.TRANSPARENT, 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	tween.parallel().tween_property(self, "_oblivion_progress", 1.0, 1.0).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	return tween
+
+func _oblivion_process(delta: float):
+	rotate(_oblivion_spin * delta)
+	self.global_position = _oblivion_start.lerp(_oblivion_point.global_position, _oblivion_progress)

@@ -4,6 +4,7 @@ signal resource_updated
 
 var cursor : Cursor
 var game_map: GameMap
+var camera: PlayerCam
 
 enum BuildingType {
 	PORTAL,

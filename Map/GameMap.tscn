@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cseq0jcpd6rfc"]
+[gd_scene load_steps=11 format=3 uid="uid://cseq0jcpd6rfc"]
 
 [ext_resource type="Script" path="res://Map/GameMap.gd" id="1_667xj"]
 [ext_resource type="PackedScene" uid="uid://clufegtvym2pa" path="res://Buildings/RecutementCentre.tscn" id="1_p3gag"]
@@ -7,10 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://ckplrxq1lxetw" path="res://UI/Cursor.tscn" id="4_0ycld"]
 [ext_resource type="PackedScene" uid="uid://dr3k135c6aj68" path="res://Characters/Cat.tscn" id="4_1crc1"]
 [ext_resource type="PackedScene" uid="uid://dol2yvdyffyc5" path="res://Characters/Witch.tscn" id="5_g2ini"]
+[ext_resource type="PackedScene" uid="uid://cqtw2u46g28co" path="res://Buildings/EndGame.tscn" id="6_5nybr"]
 [ext_resource type="Script" path="res://Map/PlayerCam.gd" id="6_5o6ap"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_imvrd"]
-outlines = Array[PackedVector2Array]([PackedVector2Array(-571, -416, 1749, -422, 1737, 1136, -599, 992)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-571, -416, 1749, -422, 1799, 1434, -652, 1424)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="GameMap" type="Node2D"]
@@ -42,7 +43,19 @@ position = Vector2(88, 266)
 position = Vector2(188, 342)
 
 [node name="Witch" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(136, 100)
+position = Vector2(250, 800)
+
+[node name="EndGame" parent="NavigationRegion2D" instance=ExtResource("6_5nybr")]
+position = Vector2(56, 1064)
+
+[node name="EndGame2" parent="NavigationRegion2D" instance=ExtResource("6_5nybr")]
+position = Vector2(406, 1064)
+
+[node name="EndGame3" parent="NavigationRegion2D" instance=ExtResource("6_5nybr")]
+position = Vector2(756, 1064)
+
+[node name="EndGame4" parent="NavigationRegion2D" instance=ExtResource("6_5nybr")]
+position = Vector2(1106, 1064)
 
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 
@@ -50,3 +63,6 @@ position = Vector2(136, 100)
 
 [node name="PlayerCam" type="Camera2D" parent="."]
 script = ExtResource("6_5o6ap")
+
+[node name="GameFollowPoint" type="Marker2D" parent="."]
+position = Vector2(733, 1063)

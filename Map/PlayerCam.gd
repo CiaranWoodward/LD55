@@ -1,3 +1,4 @@
+class_name PlayerCam
 extends Camera2D
 
 @export var MAX_SPEED = 1000.0
@@ -24,7 +25,11 @@ var rezoom = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	Global.camera = self
+
+func visible_rect() -> Rect2:
+	var size = get_viewport_rect().size  / scale.x
+	return Rect2(global_position.x - size.x/2, global_position.y - size.y/2, size.x, size.y)
 
 func _unhandled_input(event):
 	# Only allow unhandled input for start drag
@@ -64,7 +69,7 @@ func _bound_level():
 	if position.y > MaxPos.y:
 		position.y = MaxPos.y
 
-func _physics_process(delta):
+func _process(delta):
 	if rezoom:
 		if target_zoom.x > ZOOM_MAX:
 			target_zoom = Vector2(ZOOM_MAX, ZOOM_MAX)

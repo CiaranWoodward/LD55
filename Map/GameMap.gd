@@ -1,9 +1,15 @@
 class_name GameMap
 extends Node2D
 
+signal games_on_screen_changed(visible: bool)
+
 @onready var nav_region : NavigationRegion2D = $NavigationRegion2D
 @onready var cursor : Cursor = $Cursor
 
+var _games_on_screen = false
+
+func _enter_tree():
+	Global.game_map = self
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,7 +18,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Global.camera.visible_rect().has_point($GameFollowPoint.global_position):
+		if !_games_on_screen:
+			_games_on_screen = true
+			games_on_screen_changed.emit(_games_on_screen)
+	else:
+		if _games_on_screen:
+			_games_on_screen = false
+			games_on_screen_changed.emit(_games_on_screen)
 	
 func _compute_nav_mesh():
 	nav_region.bake_navigation_polygon()
