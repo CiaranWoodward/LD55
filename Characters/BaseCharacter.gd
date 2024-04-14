@@ -30,6 +30,7 @@ func _ready():
 	collision_layer = Global.PhysicsLayer.CHARACTER
 	collision_mask = Global.PhysicsLayer.BUILDING | Global.PhysicsLayer.NORMAL
 	_configure_area()
+	nav.debug_enabled = true
 	
 func _configure_area():
 	var colshape = CollisionShape2D.new()
@@ -57,7 +58,7 @@ func _find_new_target():
 	if potential_buildings.is_empty():
 		# random walk
 		current_target = null
-		target_position = global_position + Vector2(100,0).rotated(2*PI*randf())
+		target_position = global_position + Vector2(400,0).rotated(2*PI*randf())
 		current_target = null
 	else:
 		# target building and add self to queue
@@ -73,12 +74,14 @@ func _find_new_target():
 func _physics_process(delta):
 	if _picked_up or _jumping or _ghosted:
 		return
-	if nav.is_target_reached():
+	if nav.is_navigation_finished():
 		if is_instance_valid(current_target):
 			current_target.handle_character(self)
 			current_target = null
 		else:
 			_find_new_target()
+	if !nav.is_target_reachable() && !is_instance_valid(current_target):
+		_find_new_target()
 	
 	var direction = Vector3();
 	direction = nav.get_next_path_position() - global_position

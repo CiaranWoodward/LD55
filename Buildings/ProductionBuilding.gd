@@ -1,7 +1,7 @@
 class_name ProductionBuilding
 extends Building
 
-@export var cat_slots: int = 1
+@export var cat_slots: int = 2
 @export var cost: int = 10
 @export var base_build_time: float = 5.0
 @export var cat_time_multiplier: float = 1
@@ -49,7 +49,12 @@ func take_me(character: BaseCharacter):
 	if (character is Cat):
 		if (cat_count < cat_slots):
 			set_cat_count(cat_count + 1)
-			character.queue_free()
+			employ(character)
+			return true
+	return false
+
+func employ(character: Cat):
+	character.change_job(self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -57,8 +62,3 @@ func _process(delta):
 	
 func do_build():
 	pass
-
-	if as_ui_part:
-		return false
-	if as_ui_part:
-		return false

@@ -38,7 +38,10 @@ func add_building_child(building: Building, position: Vector2):
 	_compute_nav_mesh()
 
 func add_character(character: BaseCharacter):
-	nav_region.add_child(character)
+	if is_instance_valid(character.get_parent()):
+		character.reparent(nav_region)
+	else:
+		nav_region.add_child(character)
 
 func get_building_at_point(gcoords: Vector2):
 	var dss = get_world_2d().direct_space_state

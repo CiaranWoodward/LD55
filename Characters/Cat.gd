@@ -1,6 +1,8 @@
 class_name Cat
 extends BaseCharacter
 
+var _building: ProductionBuilding
+
 var _inventory: Dictionary = Global.ResourceType.values().reduce(func(accum, type):
 	accum[type] = 0
 	return accum, {})
@@ -22,3 +24,18 @@ func has_resource(type: Global.ResourceType) -> bool:
 	if (type == get_type()): return true
 	if (is_instance_valid(_inventory[type])): return _inventory[type]
 	return false
+
+func change_job(building = null):
+	if is_employed():
+		_building.cat_count -= 1
+	_building = building
+	$Graphic/Character/Hat.visible = is_employed()
+
+func is_employed() -> bool:
+	return is_instance_valid(_building)
+
+func pick_up() -> bool:
+	if !super.pick_up():
+		return false
+	change_job()
+	return true

@@ -14,3 +14,8 @@ func do_build():
 	var cat: Cat = load("res://Characters/Cat.tscn").instantiate()
 	cat.position = self.position
 	Global.game_map.add_character(cat)
+
+func employ(cat: Cat):
+	super.employ(cat)
+	cat.nav.set_navigation_map($WorkingNavigationRegion.get_navigation_map())
+	cat.reparent($WorkingNavigationRegion)
