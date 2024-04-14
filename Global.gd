@@ -15,6 +15,9 @@ enum BuildingType {
 }
 
 enum ResourceType {
+	CAT,
+	GRANNY,
+	WITCH,
 	GOLD,
 	WHEAT,
 	FISH,
