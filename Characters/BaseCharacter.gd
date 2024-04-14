@@ -86,6 +86,7 @@ func pick_up() -> bool:
 	current_target = null
 	_stashed_collision_layer = collision_layer
 	collision_layer = 0
+	z_index = 1
 	_new_pickup_tween()
 	_pick_up_tween.parallel().tween_property($Graphic, "position", Vector2(0, -pickup_height), 0.2)
 	_pick_up_tween.parallel().tween_property($Graphic, "scale", Vector2(0.9,1.1), 0.2)
@@ -112,6 +113,7 @@ func put_down():
 	_pick_up_tween.parallel().tween_property(self, "_pickup_offset", Vector2.ZERO, 0.2)
 	_pick_up_tween.parallel().tween_property($Shadow, "scale", Vector2(1,1), 0.2)
 	collision_layer = _stashed_collision_layer
+	z_index = 0
 	velocity = Vector2.ZERO
 	var building = Global.game_map.get_building_at_point(global_position)
 	if is_instance_valid(building):
