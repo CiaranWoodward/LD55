@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl1l3pofspv41"]
+[gd_scene load_steps=5 format=3 uid="uid://bl1l3pofspv41"]
 
 [ext_resource type="Script" path="res://Buildings/GrannyShack.gd" id="1_x74po"]
 [ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="2_ksd26"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2y8g"]
-size = Vector2(135, 136.5)
+size = Vector2(378, 136.5)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_rd5b6"]
+vertices = PackedVector2Array(-33, 57, -247, 57, -245, -54, -33, -54)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-24, -64, -255, -65, -258, 67, -23, 68)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="GrannyShack" type="Node2D"]
 script = ExtResource("1_x74po")
@@ -17,9 +23,14 @@ texture = ExtResource("2_ksd26")
 collision_layer = 3
 
 [node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
-position = Vector2(0.5, -0.25)
+position = Vector2(-121, -0.25)
 shape = SubResource("RectangleShape2D_p2y8g")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(-66, -67, 67, -67, 66, 67, 28, 68, 29, -16, -26, -16, -27, 68, -66, 66)
+polygon = PackedVector2Array(-312, -67, 67, -67, 66, 67, 28, 68, 29, -16, -26, -16, -27, 68, -311, 70)
+
+[node name="WorkingNavigationRegion" type="NavigationRegion2D" parent="."]
+position = Vector2(-52, -1)
+navigation_polygon = SubResource("NavigationPolygon_rd5b6")
+navigation_layers = 2

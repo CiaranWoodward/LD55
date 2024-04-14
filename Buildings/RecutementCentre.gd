@@ -24,5 +24,3 @@ func do_build():
 
 func employ(cat: Cat):
 	super.employ(cat)
-	cat.nav.set_navigation_map($WorkingNavigationRegion.get_navigation_map())
-	cat.reparent($WorkingNavigationRegion)

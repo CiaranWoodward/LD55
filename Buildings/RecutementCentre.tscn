@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="2_w60tc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5ibk"]
-size = Vector2(383, 136.5)
+size = Vector2(377, 131)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mpym4"]
-vertices = PackedVector2Array(-33, 57, -247, 57, -245, -54, -33, -54)
+vertices = PackedVector2Array(-31, -51, -31, 56, -244, 55, -242, -52)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-24, -64, -255, -65, -258, 67, -23, 68)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-22, -61, -252, -63, -255, 65, -21, 67)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Recutement Centre" type="Node2D"]
@@ -31,7 +31,7 @@ texture = ExtResource("2_w60tc")
 collision_layer = 3
 
 [node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
-position = Vector2(-123.5, -0.25)
+position = Vector2(-121.5, -0.5)
 shape = SubResource("RectangleShape2D_o5ibk")
 
 [node name="NavVoid" type="Polygon2D" parent="."]
@@ -41,3 +41,4 @@ polygon = PackedVector2Array(-317, -69, 67, -67, 66, 67, 28, 68, 29, -16, -26, -
 [node name="WorkingNavigationRegion" type="NavigationRegion2D" parent="."]
 position = Vector2(-52, -1)
 navigation_polygon = SubResource("NavigationPolygon_mpym4")
+navigation_layers = 2

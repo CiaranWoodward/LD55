@@ -45,6 +45,9 @@ func _configure_area():
 func get_resource_to_queue() -> Global.ResourceType:
 	return get_type()
 
+func _get_random_target_position() -> Vector2:
+	return global_position + Vector2(400,0).rotated(2*PI*randf())
+
 func _find_new_target():
 	# find resources of this charecter
 	var resourceToQueue = get_resource_to_queue()
@@ -58,7 +61,7 @@ func _find_new_target():
 	if potential_buildings.is_empty():
 		# random walk
 		current_target = null
-		target_position = global_position + Vector2(400,0).rotated(2*PI*randf())
+		target_position = _get_random_target_position()
 		current_target = null
 	else:
 		# target building and add self to queue
@@ -80,8 +83,6 @@ func _physics_process(delta):
 			current_target = null
 		else:
 			_find_new_target()
-	if !nav.is_target_reachable() && !is_instance_valid(current_target):
-		_find_new_target()
 	
 	var direction = Vector3();
 	direction = nav.get_next_path_position() - global_position
@@ -188,6 +189,9 @@ func _input_event(viewport, event, shape_idx):
 
 func get_type():
 	pass
+
+func is_employed() -> bool:
+	return false
 
 var _oblivion_start: Vector2
 var _oblivion_point: Node2D

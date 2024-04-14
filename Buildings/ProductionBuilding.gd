@@ -33,7 +33,9 @@ func set_as_ui_part(newValue):
 	as_ui_part = newValue
 	if (as_ui_part):
 		build_timer.stop()
+		$WorkingNavigationRegion.enabled = false
 	else:
+		$WorkingNavigationRegion.enabled = true
 		set_cat_count(cat_count)
 
 func is_cost_affordable() -> bool:
@@ -55,6 +57,13 @@ func take_me(character: BaseCharacter):
 
 func employ(character: Cat):
 	character.change_job(self)
+	character.nav.set_navigation_map($WorkingNavigationRegion.get_navigation_map())
+	character.reparent($Graphic)
+
+func get_random_point_in_building_ish() -> Vector2:
+	var rect: Rect2 = $BuildPrevention/BuildPreventionShape.shape.get_rect()
+	rect.position += $BuildPrevention/BuildPreventionShape.global_position
+	return Vector2(rect.position.x + randf_range(0, rect.size.x), rect.position.y + randf_range(0, rect.size.y))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

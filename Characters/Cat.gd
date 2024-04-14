@@ -38,6 +38,16 @@ func change_job(building = null):
 		_building.cat_count -= 1
 	_building = building
 	$Graphic/Character/Hat.visible = is_employed()
+	if is_employed():
+		nav.navigation_layers = 2
+	else:
+		nav.navigation_layers = 1
+
+func _get_random_target_position() -> Vector2:
+	if is_employed():
+		return _building.get_random_point_in_building_ish()
+	else:
+		return global_position + Vector2(400,0).rotated(2*PI*randf())
 
 func is_employed() -> bool:
 	return is_instance_valid(_building)
