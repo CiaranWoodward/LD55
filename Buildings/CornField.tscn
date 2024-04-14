@@ -87,8 +87,8 @@ position = Vector2(48, 56)
 scale = Vector2(0.5, 0.5)
 
 [node name="Silo" type="Sprite2D" parent="Graphic"]
-position = Vector2(-88, -88)
-scale = Vector2(0.650205, 0.650205)
+position = Vector2(-85, -88)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_bbyki")
 
 [node name="BarBack" type="Sprite2D" parent="Graphic/Silo"]
@@ -98,22 +98,27 @@ position = Vector2(23.8388, 30.7595)
 scale = Vector2(0.353739, 1.96737)
 texture = ExtResource("6_8is2w")
 
-[node name="BarTile" type="TextureRect" parent="Graphic/Silo"]
+[node name="Scaler" type="Node2D" parent="Graphic/Silo"]
+show_behind_parent = true
+position = Vector2(5.00001, 41.6667)
+scale = Vector2(0.7, 0.7)
+
+[node name="BarTile" type="TextureRect" parent="Graphic/Silo/Scaler"]
 show_behind_parent = true
 offset_left = 14.0
-offset_top = 37.0
+offset_top = 5.0
 offset_right = 44.0
 offset_bottom = 127.0
 texture = ExtResource("7_e3d3b")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="BarTop" type="Sprite2D" parent="Graphic/Silo/BarTile"]
+[node name="BarTop" type="Sprite2D" parent="Graphic/Silo/Scaler/BarTile"]
 position = Vector2(15, -15)
 texture = ExtResource("8_ls4s7")
 
 [node name="BarFront" type="Sprite2D" parent="Graphic/Silo"]
-self_modulate = Color(0, 0, 0, 0.431373)
+self_modulate = Color(0.227451, 0.466667, 0.517647, 0.368627)
 show_behind_parent = true
 position = Vector2(23.8388, 30.7595)
 scale = Vector2(0.353739, 1.96737)
