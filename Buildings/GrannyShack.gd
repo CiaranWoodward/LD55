@@ -19,11 +19,10 @@ func do_build():
 		granny.position = self.position
 		Global.game_map.add_character(granny)
 		change_inventory_count(Global.ResourceType.CORN, -corn_per_granny)
-		change_queue_count(Global.ResourceType.CORN, corn_per_granny)
+		change_queue_count(Global.ResourceType.CORN, -corn_per_granny)
 
 func handle_character(character: BaseCharacter):
 	if (character is Cat):
 		if (character.has_resource(Global.ResourceType.CORN)):
 			character.remove_resource()
 			change_inventory_count(Global.ResourceType.CORN, 1)
-

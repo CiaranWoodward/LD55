@@ -14,7 +14,8 @@
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_imvrd"]
 outlines = Array[PackedVector2Array]([PackedVector2Array(-571, -416, 1749, -422, 1799, 1434, -652, 1424)])
-source_geometry_group_name = &"navigation_polygon_source_group"
+source_geometry_mode = 2
+source_geometry_group_name = &"navigation_blocking_group"
 
 [node name="GameMap" type="Node2D"]
 script = ExtResource("1_667xj")

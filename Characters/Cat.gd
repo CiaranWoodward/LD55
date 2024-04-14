@@ -4,10 +4,8 @@ extends BaseCharacter
 var _building: ProductionBuilding
 var _inventory
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_inventory = Global.ResourceType.CORN
 	super._ready()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,6 +30,12 @@ func has_resource(type: Global.ResourceType) -> bool:
 func remove_resource():
 	_inventory = null
 	resource = null
+
+func give_resource(type: Global.ResourceType):
+	assert(!is_instance_valid(_inventory))
+	#assert(resource == type)
+	resource = type
+	_inventory = type
 
 func change_job(building = null):
 	if is_employed():

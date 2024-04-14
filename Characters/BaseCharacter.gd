@@ -54,8 +54,9 @@ func _find_new_target():
 	
 	# for each resource find the closest building which requires it	
 	var potential_buildings = []
-	for building: Building in get_tree().get_nodes_in_group("buildings"):
-		if (building.get_queue_count(resourceToQueue) < 0): potential_buildings.append(building)
+	if !is_employed():
+		for building: Building in get_tree().get_nodes_in_group("buildings"):
+			if (building.get_queue_count(resourceToQueue) < 0): potential_buildings.append(building)
 		
 	var target_position: Vector2
 	if potential_buildings.is_empty():
@@ -93,7 +94,10 @@ func _physics_process(delta):
 	for a in area.get_overlapping_areas():
 		slowdown += (global_position - a.global_position).normalized()
 	if slowdown != Vector2.ZERO:
-		velocity += slowdown * (movement_speed / 10.0)
+		var speed = velocity.length()
+		velocity += slowdown * (speed / 4)
+		if velocity.length() > speed:
+			velocity = velocity.normalized() * speed
 	
 	move_and_slide()
 

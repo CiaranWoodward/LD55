@@ -725,6 +725,6 @@ collision_layer = 3
 position = Vector2(-2, -74)
 shape = SubResource("RectangleShape2D_tgowq")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="Polygon2D" type="Polygon2D" parent="." groups=["navigation_blocking_group"]]
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-105, -5, 94, -3, 128, 84, -133, 87)
