@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://bntc8r0gvpd8m"]
+[gd_scene load_steps=93 format=3 uid="uid://bntc8r0gvpd8m"]
 
 [ext_resource type="Script" path="res://Buildings/Portal.gd" id="1_qfxbj"]
 [ext_resource type="Texture2D" uid="uid://c1r4qi0hk5nj1" path="res://Graphics/Buildings/Portal/PortalBase0000.png" id="2_qvr1g"]
@@ -66,6 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://d0xvlb5drsr1u" path="res://Graphics/Buildings/Portal/Gem0007.png" id="63_08hbd"]
 [ext_resource type="Texture2D" uid="uid://cgyrnkcb8pf0t" path="res://Graphics/Buildings/Portal/Gem0008.png" id="64_vypmy"]
 [ext_resource type="Texture2D" uid="uid://btdmeluigxgwk" path="res://Graphics/Buildings/Portal/Gem0009.png" id="65_us73e"]
+[ext_resource type="Texture2D" uid="uid://bvxx0b0qdskso" path="res://Graphics/Buildings/Sparkle0000.png" id="66_6f8kt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ptbaa"]
 animations = [{
@@ -524,8 +525,7 @@ _data = {
 }
 
 [sub_resource type="Curve" id="Curve_erdwe"]
-max_value = 20.0
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.129213, 20), 0.0, 0.0, 0, 0, Vector2(0.466292, 0), 0.0, 0.0, 0, 0, Vector2(0.983146, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.151685, 1), 0.0, 0.0, 0, 0, Vector2(0.466292, 0), 0.0, 0.0, 0, 0, Vector2(0.983146, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="Gradient" id="Gradient_6va3f"]
@@ -636,6 +636,7 @@ preprocess = 1.0
 explosiveness = 0.5
 lifetime_randomness = 0.3
 local_coords = true
+texture = ExtResource("66_6f8kt")
 emission_shape = 3
 emission_rect_extents = Vector2(100, 100)
 gravity = Vector2(0, 0)
@@ -652,6 +653,7 @@ preprocess = 1.0
 explosiveness = 0.5
 lifetime_randomness = 0.3
 local_coords = true
+texture = ExtResource("66_6f8kt")
 emission_shape = 3
 emission_rect_extents = Vector2(100, 100)
 gravity = Vector2(0, 0)
@@ -668,6 +670,7 @@ preprocess = 1.0
 explosiveness = 0.5
 lifetime_randomness = 0.3
 local_coords = true
+texture = ExtResource("66_6f8kt")
 emission_shape = 3
 emission_rect_extents = Vector2(100, 100)
 gravity = Vector2(0, 0)
@@ -694,16 +697,18 @@ color_ramp = SubResource("Gradient_0b25j")
 color_initial_ramp = SubResource("Gradient_q6o3s")
 
 [node name="SparkleMain" type="CPUParticles2D" parent="Graphic"]
-position = Vector2(0, -224)
+position = Vector2(0, -188)
 scale = Vector2(0.8, 0.7)
-lifetime = 1.8
+amount = 12
+lifetime = 2.5
 preprocess = 1.0
 speed_scale = 0.8
 explosiveness = 0.1
 lifetime_randomness = 0.4
 local_coords = true
+texture = ExtResource("66_6f8kt")
 emission_shape = 3
-emission_rect_extents = Vector2(250, 400)
+emission_rect_extents = Vector2(300, 350)
 gravity = Vector2(0, 0)
 angular_velocity_min = -200.0
 angular_velocity_max = 200.0
