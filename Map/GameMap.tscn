@@ -65,4 +65,4 @@ position = Vector2(1106, 1064)
 script = ExtResource("6_5o6ap")
 
 [node name="GameFollowPoint" type="Marker2D" parent="."]
-position = Vector2(733, 1063)
+position = Vector2(735, 1112)

@@ -19,8 +19,7 @@ func change_queue_count(type: Global.ResourceType, delta: int):
 	_queue[type] = _queue[type] + delta;
 	
 func handle_character(character: BaseCharacter):
-	var resource = Global.ResourceType.values().filter(func(type): return character.has_resource(type)).front()
-	if (resource == character.get_type()): character.queue_free()
+	pass
 	
 func take_me(character: BaseCharacter):
 	pass

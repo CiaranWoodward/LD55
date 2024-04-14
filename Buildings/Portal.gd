@@ -9,11 +9,11 @@ func _ready():
 func _process(delta):
 	pass
 
-#func do_you_want_me(character: BaseCharacter) -> bool:
-	#return false
-#
-#func take_me(character: BaseCharacter, dropped=false) -> bool:
-	#character.queue_free()
-	#$Graphic/WibbleBase/WibbleBaseAction.play("Produce")
-	#return true
+func take_me(character: BaseCharacter, dropped=false) -> bool:
+	var tween = character.ghostify_to_oblivion($Graphic/OblivionPoint)
+	tween.tween_callback(func():
+		character.queue_free()
+		)
+	$Graphic/WibbleBase/WibbleBaseAction.play("Produce")
+	return true
 

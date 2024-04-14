@@ -10,6 +10,7 @@ func _ready():
 	_start_gp = $Graphic.global_position
 	Global.game_map.games_on_screen_changed.connect(_updated_onscreen)
 	_stick_to_screen()
+	change_queue_count(Global.ResourceType.WITCH, -5)
 
 func _updated_onscreen(onscreen: bool):
 	if onscreen:
@@ -45,14 +46,12 @@ func _release_from_screen():
 	_lerp_tween.tween_property(self, "_sticky_lerpval", 0.0, 0.2)
 	z_index = -2
 
-func do_you_want_me(character: BaseCharacter) -> bool:
-	return (character is Witch)
-
 func take_me(character: BaseCharacter, dropped=false) -> bool:
-	if !do_you_want_me(character):
-		return false
 	character.jump_to($JumpTo.global_position, func(): _spin_to_oblivion(character))
 	return true
+
+func handle_character(character: BaseCharacter):
+	_spin_to_oblivion(character)
 
 func _spin_to_oblivion(character: BaseCharacter):
 	var tween: Tween = character.ghostify_to_oblivion($Graphic/OblivionPoint)

@@ -715,6 +715,9 @@ angular_velocity_max = 200.0
 scale_amount_curve = SubResource("Curve_erdwe")
 color_ramp = SubResource("Gradient_g7iwl")
 
+[node name="OblivionPoint" type="Marker2D" parent="Graphic"]
+position = Vector2(4, -178)
+
 [node name="BuildPrevention" type="Area2D" parent="."]
 collision_layer = 3
 

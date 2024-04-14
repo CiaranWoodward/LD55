@@ -203,8 +203,8 @@ func ghostify_to_oblivion(oblivion: Node2D) -> Tween:
 	if randi_range(0, 1) == 0:
 		_oblivion_spin = -_oblivion_spin
 	var tween = create_tween()
-	tween.tween_property(self, "modulate", Color.TRANSPARENT, 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-	tween.parallel().tween_property(self, "_oblivion_progress", 1.0, 1.0).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "modulate", Color.TRANSPARENT, 0.7).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	tween.parallel().tween_property(self, "_oblivion_progress", 1.0, 0.7).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	return tween
 
 func _oblivion_process(delta: float):
