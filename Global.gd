@@ -20,7 +20,7 @@ enum ResourceType {
 	GRANNY,
 	WITCH,
 	GOLD,
-	WHEAT,
+	CORN,
 	FISH,
 }
 

@@ -1,10 +1,10 @@
 class_name ProductionBuilding
 extends Building
 
-@export var cat_slots: int = 1
+@export var cat_slots: int = 2
 @export var cost: int = 10
 @export var base_build_time: float = 5.0
-@export var cat_time_multiplier: float = 1
+@export var cat_time_multiplier: float = 0.9
 
 @onready var build_timer = Timer.new()
 var cat_count: int = 0 : set = set_cat_count
@@ -33,7 +33,9 @@ func set_as_ui_part(newValue):
 	as_ui_part = newValue
 	if (as_ui_part):
 		build_timer.stop()
+		$WorkingNavigationRegion.enabled = false
 	else:
+		$WorkingNavigationRegion.enabled = true
 		set_cat_count(cat_count)
 
 func is_cost_affordable() -> bool:
@@ -49,7 +51,19 @@ func take_me(character: BaseCharacter):
 	if (character is Cat):
 		if (cat_count < cat_slots):
 			set_cat_count(cat_count + 1)
-			character.queue_free()
+			employ(character)
+			return true
+	return false
+
+func employ(character: Cat):
+	character.change_job(self)
+	character.nav.set_navigation_map($WorkingNavigationRegion.get_navigation_map())
+	character.reparent($Graphic)
+
+func get_random_point_in_building_ish() -> Vector2:
+	var rect: Rect2 = $BuildPrevention/BuildPreventionShape.shape.get_rect()
+	rect.position += $BuildPrevention/BuildPreventionShape.global_position
+	return Vector2(rect.position.x + randf_range(0, rect.size.x), rect.position.y + randf_range(0, rect.size.y))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -57,8 +71,3 @@ func _process(delta):
 	
 func do_build():
 	pass
-
-	if as_ui_part:
-		return false
-	if as_ui_part:
-		return false

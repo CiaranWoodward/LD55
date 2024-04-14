@@ -18,6 +18,9 @@ func get_queue_count(type: Global.ResourceType) -> int:
 func change_queue_count(type: Global.ResourceType, delta: int):
 	_queue[type] = _queue[type] + delta;
 	
+func change_inventory_count(type: Global.ResourceType, delta: int):
+	_inventory[type] = _inventory[type] + delta;
+	
 func handle_character(character: BaseCharacter):
 	pass
 	

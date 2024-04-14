@@ -30,6 +30,7 @@ func _ready():
 	collision_layer = Global.PhysicsLayer.CHARACTER
 	collision_mask = Global.PhysicsLayer.BUILDING | Global.PhysicsLayer.NORMAL
 	_configure_area()
+	nav.debug_enabled = true
 	
 func _configure_area():
 	var colshape = CollisionShape2D.new()
@@ -44,6 +45,9 @@ func _configure_area():
 func get_resource_to_queue() -> Global.ResourceType:
 	return get_type()
 
+func _get_random_target_position() -> Vector2:
+	return global_position + Vector2(400,0).rotated(2*PI*randf())
+
 func _find_new_target():
 	# find resources of this charecter
 	var resourceToQueue = get_resource_to_queue()
@@ -57,7 +61,7 @@ func _find_new_target():
 	if potential_buildings.is_empty():
 		# random walk
 		current_target = null
-		target_position = global_position + Vector2(100,0).rotated(2*PI*randf())
+		target_position = _get_random_target_position()
 		current_target = null
 	else:
 		# target building and add self to queue
@@ -73,7 +77,7 @@ func _find_new_target():
 func _physics_process(delta):
 	if _picked_up or _jumping or _ghosted:
 		return
-	if nav.is_target_reached():
+	if nav.is_navigation_finished():
 		if is_instance_valid(current_target):
 			current_target.handle_character(self)
 			current_target = null
@@ -185,6 +189,9 @@ func _input_event(viewport, event, shape_idx):
 
 func get_type():
 	pass
+
+func is_employed() -> bool:
+	return false
 
 var _oblivion_start: Vector2
 var _oblivion_point: Node2D
