@@ -44,7 +44,13 @@ func buy():
 
 func can_build_here() -> bool:
 	return !$BuildPrevention.get_overlapping_areas().is_empty()
-			
+	
+func take_me(character: BaseCharacter):
+	if (character is Cat):
+		if (cat_count < cat_slots):
+			set_cat_count(cat_count + 1)
+			character.queue_free()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	super._process(delta)
@@ -52,18 +58,7 @@ func _process(delta):
 func do_build():
 	pass
 
-func do_you_want_me(character: BaseCharacter) -> bool:
 	if as_ui_part:
 		return false
-	if ((character is Cat) && cat_count < cat_slots):
-		return true
-	return false
-
-func take_me(character: BaseCharacter, dropped = false) -> bool:
 	if as_ui_part:
 		return false
-	if ((character is Cat) && cat_count < cat_slots):
-		character.queue_free()
-		set_cat_count(cat_count+1)
-		return true
-	return false
