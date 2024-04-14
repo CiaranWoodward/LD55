@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cx4vxmlqmobql" path="res://UI/HUD.tscn" id="3_o1tnc"]
 [ext_resource type="PackedScene" uid="uid://ckplrxq1lxetw" path="res://UI/Cursor.tscn" id="4_0ycld"]
 [ext_resource type="PackedScene" uid="uid://dr3k135c6aj68" path="res://Characters/Cat.tscn" id="4_1crc1"]
-[ext_resource type="PackedScene" uid="uid://dol2yvdyffyc5" path="res://Characters/Witch.tscn" id="5_g2ini"]
+[ext_resource type="PackedScene" path="res://Characters/Witch.tscn" id="5_g2ini"]
 [ext_resource type="PackedScene" uid="uid://cqtw2u46g28co" path="res://Buildings/EndGame.tscn" id="6_5nybr"]
 [ext_resource type="Script" path="res://Map/PlayerCam.gd" id="6_5o6ap"]
 [ext_resource type="PackedScene" uid="uid://c52obgi0jrhc1" path="res://Buildings/CornField.tscn" id="10_3752r"]
+[ext_resource type="PackedScene" uid="uid://bl1l3pofspv41" path="res://Buildings/GrannyShack.tscn" id="7_vm5hl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_imvrd"]
 outlines = Array[PackedVector2Array]([PackedVector2Array(-571, -416, 1749, -422, 1799, 1434, -652, 1424)])
@@ -57,6 +58,9 @@ position = Vector2(756, 1064)
 
 [node name="EndGame4" parent="NavigationRegion2D" instance=ExtResource("6_5nybr")]
 position = Vector2(1106, 1064)
+
+[node name="GrannyShack" parent="NavigationRegion2D" instance=ExtResource("7_vm5hl")]
+position = Vector2(1064, 483)
 
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 

@@ -2,18 +2,22 @@ class_name Cat
 extends BaseCharacter
 
 var _building: ProductionBuilding
+var _inventory
 
-var _inventory: Dictionary = Global.ResourceType.values().reduce(func(accum, type):
-	accum[type] = 0
-	return accum, {})
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_inventory = Global.ResourceType.CORN
 	super._ready()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	super._physics_process(delta)
+
+func get_resource_to_queue() -> Global.ResourceType:
+	if _inventory != null: 
+		return _inventory 
+	return get_type()
 	
 func get_type():
 	return Global.ResourceType.CAT
@@ -22,8 +26,12 @@ func get_type():
 
 func has_resource(type: Global.ResourceType) -> bool:
 	if (type == get_type()): return true
-	if (is_instance_valid(_inventory[type])): return _inventory[type]
+	if (type == _inventory): return true
 	return false
+	
+func remove_resource():
+	_inventory = null
+	resource = null
 
 func change_job(building = null):
 	if is_employed():

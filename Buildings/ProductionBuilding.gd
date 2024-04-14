@@ -4,7 +4,7 @@ extends Building
 @export var cat_slots: int = 2
 @export var cost: int = 10
 @export var base_build_time: float = 5.0
-@export var cat_time_multiplier: float = 1
+@export var cat_time_multiplier: float = 0.9
 
 @onready var build_timer = Timer.new()
 var cat_count: int = 0 : set = set_cat_count

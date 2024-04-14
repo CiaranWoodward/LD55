@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl1l3pofspv41"]
+
+[ext_resource type="Script" path="res://Buildings/GrannyShack.gd" id="1_x74po"]
+[ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="2_ksd26"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2y8g"]
+size = Vector2(135, 136.5)
+
+[node name="GrannyShack" type="Node2D"]
+script = ExtResource("1_x74po")
+
+[node name="Graphic" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+texture = ExtResource("2_ksd26")
+
+[node name="BuildPrevention" type="Area2D" parent="."]
+collision_layer = 3
+
+[node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
+position = Vector2(0.5, -0.25)
+shape = SubResource("RectangleShape2D_p2y8g")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-66, -67, 67, -67, 66, 67, 28, 68, 29, -16, -26, -16, -27, 68, -66, 66)
