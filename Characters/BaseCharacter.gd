@@ -87,8 +87,12 @@ func pick_up() -> bool:
 	_stashed_collision_layer = collision_layer
 	collision_layer = 0
 	_new_pickup_tween()
-	_pick_up_tween.tween_property(get_node("Graphic"), "position", Vector2(0, -pickup_height), 0.2)
+	_pick_up_tween.parallel().tween_property($Graphic, "position", Vector2(0, -pickup_height), 0.2)
+	_pick_up_tween.parallel().tween_property($Graphic, "scale", Vector2(0.9,1.1), 0.2)
+	_pick_up_tween.parallel().tween_property($Graphic/Walk, "speed_scale", 2, 0.2)
+	_pick_up_tween.parallel().tween_property($Graphic/Character/Shocc, "visible", true, 0.2)
 	_pick_up_tween.parallel().tween_property(self, "_pickup_offset", Vector2(0, pickup_height + head_height), 0.2)
+	_pick_up_tween.parallel().tween_property($Shadow, "scale", Vector2(0.8,0.8), 0.2)
 	return true
 
 func drag_to(gcoords: Vector2):
@@ -102,7 +106,11 @@ func put_down():
 	_picked_up = false
 	_new_pickup_tween()
 	_pick_up_tween.tween_property(get_node("Graphic"), "position", Vector2.ZERO, 0.2)
+	_pick_up_tween.parallel().tween_property($Graphic, "scale", Vector2(1,1), 0.2)
+	_pick_up_tween.parallel().tween_property($Graphic/Walk, "speed_scale", 1, 0.2)
+	_pick_up_tween.parallel().tween_property($Graphic/Character/Shocc, "visible", false, 0.2)
 	_pick_up_tween.parallel().tween_property(self, "_pickup_offset", Vector2.ZERO, 0.2)
+	_pick_up_tween.parallel().tween_property($Shadow, "scale", Vector2(1,1), 0.2)
 	collision_layer = _stashed_collision_layer
 	velocity = Vector2.ZERO
 	var building = Global.game_map.get_building_at_point(global_position)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://bntc8r0gvpd8m"]
+[gd_scene load_steps=93 format=3 uid="uid://bntc8r0gvpd8m"]
 
 [ext_resource type="Script" path="res://Buildings/Portal.gd" id="1_qfxbj"]
 [ext_resource type="Texture2D" uid="uid://c1r4qi0hk5nj1" path="res://Graphics/Buildings/Portal/PortalBase0000.png" id="2_qvr1g"]
@@ -66,117 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://d0xvlb5drsr1u" path="res://Graphics/Buildings/Portal/Gem0007.png" id="63_08hbd"]
 [ext_resource type="Texture2D" uid="uid://cgyrnkcb8pf0t" path="res://Graphics/Buildings/Portal/Gem0008.png" id="64_vypmy"]
 [ext_resource type="Texture2D" uid="uid://btdmeluigxgwk" path="res://Graphics/Buildings/Portal/Gem0009.png" id="65_us73e"]
-
-[sub_resource type="Animation" id="Animation_e0cjq"]
-resource_name = "FrameCycle"
-length = 0.65
-loop_mode = 1
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Graphic/WibbleBase/Wibble/BackFill:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Graphic/WibbleBase/Wibble/BackLine:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Graphic/WibbleBase/Wibble/FrontFill:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Graphic/WibbleBase/Wibble/FrontLine:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-}
-
-[sub_resource type="Animation" id="Animation_w6ay6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Graphic/WibbleBase/Wibble/BackFill:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Graphic/WibbleBase/Wibble/BackLine:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Graphic/WibbleBase/Wibble/FrontFill:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Graphic/WibbleBase/Wibble/FrontLine:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_dnfmy"]
-_data = {
-"FrameCycle": SubResource("Animation_e0cjq"),
-"RESET": SubResource("Animation_w6ay6")
-}
+[ext_resource type="Texture2D" uid="uid://bvxx0b0qdskso" path="res://Graphics/Buildings/Sparkle0000.png" id="66_6f8kt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ptbaa"]
 animations = [{
@@ -222,7 +112,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2qq1k"]
@@ -269,7 +159,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hrfre"]
@@ -316,7 +206,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p332s"]
@@ -363,7 +253,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="Animation" id="Animation_gb5d1"]
@@ -383,7 +273,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_k26wj"]
 resource_name = "WibbleScaleIdle"
-length = 1.8
+length = 2.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -392,10 +282,10 @@ tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 1, 1.5, 1.8),
+"times": PackedFloat32Array(0, 1.1, 1.7, 2.3, 2.6),
 "transitions": PackedFloat32Array(1, 0.732043, 2, 1.7411, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 1.05), Vector2(0.97, 0.96), Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.08, 1.05), Vector2(0.97, 0.96), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xnbgp"]
@@ -421,7 +311,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_n2db6"]
 resource_name = "WibbleSkewIdle"
-length = 2.0
+length = 1.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -596,45 +486,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_12xjo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Gem:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_bpdc4"]
-resource_name = "Spin"
-length = 0.1
-loop_mode = 1
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Gem:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hb2sw"]
-_data = {
-"RESET": SubResource("Animation_12xjo"),
-"Spin": SubResource("Animation_bpdc4")
-}
-
 [sub_resource type="Animation" id="Animation_wodgm"]
 resource_name = "Bob"
 length = 2.0
@@ -674,8 +525,7 @@ _data = {
 }
 
 [sub_resource type="Curve" id="Curve_erdwe"]
-max_value = 20.0
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.129213, 20), 0.0, 0.0, 0, 0, Vector2(0.466292, 0), 0.0, 0.0, 0, 0, Vector2(0.983146, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.151685, 1), 0.0, 0.0, 0, 0, Vector2(0.466292, 0), 0.0, 0.0, 0, 0, Vector2(0.983146, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="Gradient" id="Gradient_6va3f"]
@@ -695,8 +545,12 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 [sub_resource type="Gradient" id="Gradient_q6o3s"]
 colors = PackedColorArray(0.579351, 0.0888221, 0.741283, 1, 0.74902, 0.172549, 0.945098, 1)
 
+[sub_resource type="Gradient" id="Gradient_g7iwl"]
+offsets = PackedFloat32Array(0, 0.26, 0.593333, 1)
+colors = PackedColorArray(0.648661, 0.219386, 0.834086, 1, 0.793499, 0.484789, 0.949205, 1, 0.830753, 0.582616, 0.961367, 1, 0.913725, 0.796078, 0.980392, 0)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgowq"]
-size = Vector2(268, 426)
+size = Vector2(268, 346)
 
 [node name="Portal" type="Node2D"]
 script = ExtResource("1_qfxbj")
@@ -712,7 +566,6 @@ position = Vector2(-5, -222)
 texture = ExtResource("2_qvr1g")
 
 [node name="Sides" type="Sprite2D" parent="Graphic/Frame"]
-position = Vector2(-5, -222)
 texture = ExtResource("3_jnllj")
 
 [node name="WibbleBase" type="Node2D" parent="Graphic"]
@@ -721,29 +574,25 @@ position = Vector2(-5, -222)
 [node name="Wibble" type="Node2D" parent="Graphic/WibbleBase"]
 modulate = Color(1, 1, 1, 0.939946)
 
-[node name="WibbleFrameCycle" type="AnimationPlayer" parent="Graphic/WibbleBase/Wibble"]
-root_node = NodePath("../../../..")
-libraries = {
-"": SubResource("AnimationLibrary_dnfmy")
-}
-autoplay = "FrameCycle"
-speed_scale = 0.5
-
 [node name="BackFill" type="AnimatedSprite2D" parent="Graphic/WibbleBase/Wibble"]
 self_modulate = Color(0.533333, 0.121569, 0.698039, 1)
 sprite_frames = SubResource("SpriteFrames_ptbaa")
+autoplay = "default"
 
 [node name="BackLine" type="AnimatedSprite2D" parent="Graphic/WibbleBase/Wibble"]
 self_modulate = Color(0.52549, 0.0156863, 0.686275, 1)
 sprite_frames = SubResource("SpriteFrames_2qq1k")
+autoplay = "default"
 
 [node name="FrontFill" type="AnimatedSprite2D" parent="Graphic/WibbleBase/Wibble"]
 self_modulate = Color(0.764706, 0.176471, 0.960784, 1)
 sprite_frames = SubResource("SpriteFrames_hrfre")
+autoplay = "default"
 
 [node name="FrontLine" type="AnimatedSprite2D" parent="Graphic/WibbleBase/Wibble"]
 self_modulate = Color(0.458824, 0.0470588, 0.592157, 1)
 sprite_frames = SubResource("SpriteFrames_p332s")
+autoplay = "default"
 
 [node name="WibbleScale" type="AnimationPlayer" parent="Graphic/WibbleBase/Wibble"]
 libraries = {
@@ -768,14 +617,9 @@ self_modulate = Color(0.631373, 0.203922, 0.811765, 1)
 position = Vector2(0, -279)
 scale = Vector2(0.8, 0.7)
 sprite_frames = SubResource("SpriteFrames_yxqk1")
-
-[node name="GemSpin" type="AnimationPlayer" parent="Graphic/Gem"]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_hb2sw")
-}
-autoplay = "Spin"
-speed_scale = 0.06
+autoplay = "default"
+frame_progress = 0.645869
+offset = Vector2(0, -323.88)
 
 [node name="GemBob" type="AnimationPlayer" parent="Graphic/Gem"]
 libraries = {
@@ -785,13 +629,14 @@ autoplay = "Bob"
 speed_scale = 0.5
 
 [node name="Sparkle18" type="CPUParticles2D" parent="Graphic/Gem"]
-position = Vector2(0, -42.7849)
+position = Vector2(0, -364.286)
 amount = 1
 lifetime = 1.8
 preprocess = 1.0
 explosiveness = 0.5
 lifetime_randomness = 0.3
 local_coords = true
+texture = ExtResource("66_6f8kt")
 emission_shape = 3
 emission_rect_extents = Vector2(100, 100)
 gravity = Vector2(0, 0)
@@ -801,13 +646,14 @@ scale_amount_curve = SubResource("Curve_erdwe")
 color_ramp = SubResource("Gradient_6va3f")
 
 [node name="Sparkle20" type="CPUParticles2D" parent="Graphic/Gem"]
-position = Vector2(0, -42.7849)
+position = Vector2(0, -364.286)
 amount = 1
 lifetime = 2.0
 preprocess = 1.0
 explosiveness = 0.5
 lifetime_randomness = 0.3
 local_coords = true
+texture = ExtResource("66_6f8kt")
 emission_shape = 3
 emission_rect_extents = Vector2(100, 100)
 gravity = Vector2(0, 0)
@@ -817,13 +663,14 @@ scale_amount_curve = SubResource("Curve_erdwe")
 color_ramp = SubResource("Gradient_6va3f")
 
 [node name="Sparkle22" type="CPUParticles2D" parent="Graphic/Gem"]
-position = Vector2(0, -42.7849)
+position = Vector2(0, -364.286)
 amount = 1
 lifetime = 2.2
 preprocess = 1.0
 explosiveness = 0.5
 lifetime_randomness = 0.3
 local_coords = true
+texture = ExtResource("66_6f8kt")
 emission_shape = 3
 emission_rect_extents = Vector2(100, 100)
 gravity = Vector2(0, 0)
@@ -849,11 +696,30 @@ scale_amount_curve = SubResource("Curve_eelrs")
 color_ramp = SubResource("Gradient_0b25j")
 color_initial_ramp = SubResource("Gradient_q6o3s")
 
+[node name="SparkleMain" type="CPUParticles2D" parent="Graphic"]
+position = Vector2(0, -188)
+scale = Vector2(0.8, 0.7)
+amount = 12
+lifetime = 2.5
+preprocess = 1.0
+speed_scale = 0.8
+explosiveness = 0.1
+lifetime_randomness = 0.4
+local_coords = true
+texture = ExtResource("66_6f8kt")
+emission_shape = 3
+emission_rect_extents = Vector2(300, 350)
+gravity = Vector2(0, 0)
+angular_velocity_min = -200.0
+angular_velocity_max = 200.0
+scale_amount_curve = SubResource("Curve_erdwe")
+color_ramp = SubResource("Gradient_g7iwl")
+
 [node name="BuildPrevention" type="Area2D" parent="."]
 collision_layer = 3
 
 [node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
-position = Vector2(-2, -114)
+position = Vector2(-2, -74)
 shape = SubResource("RectangleShape2D_tgowq")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
