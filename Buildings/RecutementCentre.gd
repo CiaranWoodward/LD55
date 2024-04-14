@@ -12,4 +12,4 @@ func do_build():
 	super.do_build()
 	var cat: Cat = load("res://Characters/Cat.tscn").instantiate()
 	cat.position = self.position
-	Global.game_map.add_child(cat)
+	Global.game_map.add_character(cat)

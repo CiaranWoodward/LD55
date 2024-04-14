@@ -60,7 +60,14 @@ func _remove_building():
 	return
 
 func _apply_pressed_action():
-	pass
+	if _current_action == ActionType.NONE:
+		var areas = $PickArea.get_overlapping_areas()
+		areas.sort_custom(func(a, b): return a.global_position.distance_squared_to(self.global_position) < b.global_position.distance_squared_to(self.global_position))
+		for area in areas:
+			var parent = area.get_parent()
+			if parent is BaseCharacter and parent.pick_up():
+				pick_up(parent)
+				break
 
 func _apply_released_action():
 	if _current_action == ActionType.BUILD:

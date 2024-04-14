@@ -16,6 +16,7 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 script = ExtResource("1_667xj")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+y_sort_enabled = true
 navigation_polygon = SubResource("NavigationPolygon_imvrd")
 
 [node name="Recutement Centre" parent="NavigationRegion2D" instance=ExtResource("1_p3gag")]
@@ -32,6 +33,12 @@ position = Vector2(588, 16)
 
 [node name="Cat" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
 position = Vector2(163.83, 270.029)
+
+[node name="Cat2" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
+position = Vector2(88, 266)
+
+[node name="Cat3" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
+position = Vector2(188, 342)
 
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 

@@ -34,7 +34,7 @@ func set_as_ui_part(newValue):
 	if (as_ui_part):
 		build_timer.stop()
 	else:
-		build_timer.start()
+		set_cat_count(cat_count)
 
 func is_cost_affordable() -> bool:
 	return Global.get_resource_count(Global.ResourceType.GOLD) >= cost

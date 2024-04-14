@@ -21,8 +21,10 @@ enum ResourceType {
 }
 
 enum PhysicsLayer {
-	Normal = 1,
-	Building = 2,
+	NORMAL = 1,
+	BUILDING = 2,
+	CHARACTER = 4,
+	CURSOR = 8,
 }
 
 # inventory for resources
