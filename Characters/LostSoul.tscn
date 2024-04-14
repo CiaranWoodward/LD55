@@ -1,0 +1,141 @@
+[gd_scene load_steps=13 format=3 uid="uid://cmn8nh71folta"]
+
+[ext_resource type="Script" path="res://Characters/LostSoul.gd" id="1_rs1pb"]
+[ext_resource type="Texture2D" uid="uid://c36tarn25rexo" path="res://Graphics/Characters/LostSoul/LostSoul0000.png" id="2_r0ibk"]
+[ext_resource type="Texture2D" uid="uid://c4j3ky333l0bm" path="res://Graphics/Characters/LostSoul/LostSoul0001.png" id="3_abosp"]
+[ext_resource type="Texture2D" uid="uid://bk45ktgjh1cas" path="res://Graphics/Characters/LostSoul/LostSoul0002.png" id="4_uyymy"]
+[ext_resource type="Texture2D" uid="uid://bka6ov5b3nydn" path="res://Graphics/Characters/LostSoul/LostSoul0003.png" id="5_0u6r4"]
+[ext_resource type="Texture2D" uid="uid://d33nnc5rhsn10" path="res://Graphics/Characters/LostSoul/LostSoul0004.png" id="6_tdq11"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="7_2nyw1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3lott"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r0ibk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_abosp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uyymy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0u6r4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tdq11")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="Animation" id="Animation_t84ql"]
+resource_name = "Walk"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.216, 0.216)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(0.840896, 1.46409, 0.659754, 1.51572, 1),
+"update": 0,
+"values": [0.0, -0.0698132, 0.0, 0.0698132, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_tssxt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.216, 0.216)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fgi5x"]
+_data = {
+"RESET": SubResource("Animation_tssxt"),
+"Walk": SubResource("Animation_t84ql")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6fh43"]
+radius = 20.0
+
+[node name="LostSoul" type="CharacterBody2D"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_rs1pb")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Graphic" type="Node2D" parent="."]
+
+[node name="Character" type="Node2D" parent="Graphic"]
+position = Vector2(0, 16)
+scale = Vector2(0.216, 0.216)
+
+[node name="Body" type="AnimatedSprite2D" parent="Graphic/Character"]
+self_modulate = Color(0.282353, 1, 0.627451, 1)
+position = Vector2(-9.25926, -106.481)
+sprite_frames = SubResource("SpriteFrames_3lott")
+autoplay = "default"
+frame_progress = 0.758135
+
+[node name="Shocc" type="Sprite2D" parent="Graphic/Character"]
+visible = false
+self_modulate = Color(0, 0.780392, 0.862745, 1)
+position = Vector2(-8.42592, -4.62963)
+scale = Vector2(1.09433, 1)
+
+[node name="Walk" type="AnimationPlayer" parent="Graphic"]
+libraries = {
+"": SubResource("AnimationLibrary_fgi5x")
+}
+
+[node name="Shadow" type="Node2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="Shadow"]
+modulate = Color(0, 0, 0, 0.607843)
+z_index = -1
+position = Vector2(0, 19)
+scale = Vector2(0.87822, -0.277214)
+texture = ExtResource("7_2nyw1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_6fh43")

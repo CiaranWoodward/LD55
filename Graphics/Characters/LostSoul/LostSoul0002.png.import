@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0el1k285e4s2"
-path="res://.godot/imported/PortalParticle0000.png-185abdbfdbd0b124a64d9c35939b7ace.ctex"
+uid="uid://bk45ktgjh1cas"
+path="res://.godot/imported/LostSoul0002.png-1d1b21336a8c267a5a3c1ffa0acef6f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Buildings/Portal/PortalParticle0000.png"
-dest_files=["res://.godot/imported/PortalParticle0000.png-185abdbfdbd0b124a64d9c35939b7ace.ctex"]
+source_file="res://Graphics/Characters/LostSoul/LostSoul0002.png"
+dest_files=["res://.godot/imported/LostSoul0002.png-1d1b21336a8c267a5a3c1ffa0acef6f6.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

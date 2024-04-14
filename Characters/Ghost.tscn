@@ -1,0 +1,128 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwurgngrormmc"]
+
+[ext_resource type="Script" path="res://Characters/Ghost.gd" id="1_iq3m1"]
+[ext_resource type="Texture2D" uid="uid://bo2gs1fvkgrae" path="res://Graphics/Characters/Ghost/Sheet0000.png" id="2_wn0vd"]
+[ext_resource type="Texture2D" uid="uid://bh6ie1fqkuhn0" path="res://Graphics/Characters/Ghost/Eyes0000.png" id="3_w87la"]
+[ext_resource type="Texture2D" uid="uid://dk13yrj522d17" path="res://Graphics/Characters/Ghost/Ghost0000.png" id="4_p42xp"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="5_ywc7c"]
+
+[sub_resource type="Animation" id="Animation_ugleh"]
+resource_name = "Walk"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(0.659754, 1.51572, 0.615572, 1.62451, 0.574349),
+"update": 0,
+"values": [Vector2(0, -2), Vector2(0, 2), Vector2(0, -2), Vector2(0, -6), Vector2(0, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Shadow/Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.12381, 0.453809), Vector2(1.2, 0.485), Vector2(1.12381, 0.453809), Vector2(1.1, 0.444), Vector2(1.12381, 0.453809)]
+}
+
+[sub_resource type="Animation" id="Animation_6d43r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Shadow/Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.12381, 0.453809)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mxeyy"]
+_data = {
+"RESET": SubResource("Animation_6d43r"),
+"Walk": SubResource("Animation_ugleh")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ik404"]
+
+[node name="Ghost" type="CharacterBody2D"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_iq3m1")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Graphic" type="Node2D" parent="."]
+
+[node name="Character" type="Node2D" parent="Graphic"]
+scale = Vector2(0.216, 0.216)
+
+[node name="Sheet" type="Sprite2D" parent="Graphic/Character"]
+position = Vector2(0, -69.2221)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_wn0vd")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Eyes" type="Sprite2D" parent="Graphic/Character"]
+self_modulate = Color(0, 0.976471, 1, 1)
+position = Vector2(0, -69.2221)
+scale = Vector2(-1, 1)
+texture = ExtResource("3_w87la")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Body" type="Sprite2D" parent="Graphic/Character"]
+position = Vector2(0, -69.2221)
+scale = Vector2(-1, 1)
+texture = ExtResource("4_p42xp")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Shocc" type="Sprite2D" parent="Graphic/Character"]
+visible = false
+self_modulate = Color(0, 0.780392, 0.862745, 1)
+position = Vector2(0, -41.444)
+scale = Vector2(-1, 1)
+offset = Vector2(-6.883, -1.519)
+
+[node name="Walk" type="AnimationPlayer" parent="Graphic"]
+libraries = {
+"": SubResource("AnimationLibrary_mxeyy")
+}
+
+[node name="Shadow" type="Node2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="Shadow"]
+modulate = Color(0, 0, 0, 0.607843)
+z_index = -1
+position = Vector2(0, 19)
+scale = Vector2(1.12381, 0.453809)
+texture = ExtResource("5_ywc7c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+scale = Vector2(1.4, 1.52)
+shape = SubResource("CapsuleShape2D_ik404")

@@ -1,0 +1,267 @@
+[gd_scene load_steps=18 format=3 uid="uid://ccuq4sb75hurn"]
+
+[ext_resource type="Script" path="res://Characters/Demon.gd" id="1_wq1lg"]
+[ext_resource type="Texture2D" uid="uid://dmkjp7qx65uwa" path="res://Graphics/Characters/Demon/Horns0000.png" id="2_ce2se"]
+[ext_resource type="Texture2D" uid="uid://qi3u7le3mhv" path="res://Graphics/Characters/Demon/Fur0000.png" id="3_mxhx4"]
+[ext_resource type="Texture2D" uid="uid://dmitm6rocdygj" path="res://Graphics/Characters/Demon/Skin0000.png" id="4_35joc"]
+[ext_resource type="Texture2D" uid="uid://cfuhrp0adg0v4" path="res://Graphics/Characters/Demon/Demon0000.png" id="5_03m5b"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="6_82dp1"]
+
+[sub_resource type="Animation" id="Animation_xx6nn"]
+resource_name = "EyeGlow"
+length = 3.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Character/Body:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 1, 1.4, 1.8, 2.3, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.678431, 0.678431, 0.678431, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.85098, 0.85098, 0.85098, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.678431, 0.678431, 0.678431, 1), Color(0.678431, 0.678431, 0.678431, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wj8xy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Character/Body:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.796078, 0.796078, 0.796078, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hjnju"]
+_data = {
+"EyeGlow": SubResource("Animation_xx6nn"),
+"RESET": SubResource("Animation_wj8xy")
+}
+
+[sub_resource type="Animation" id="Animation_gpgaq"]
+resource_name = "Float"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(0.615572, 1.68179, 0.594604, 1.46409, 1),
+"update": 0,
+"values": [Vector2(0, -20), Vector2(0, -25), Vector2(0, -20), Vector2(0, -15), Vector2(0, -20)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Shadow/Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(0.615572, 1.68179, 0.594604, 1.46409, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.4), Vector2(0.76, 0.38), Vector2(0.8, 0.4), Vector2(0.84, 0.42), Vector2(0.8, 0.4)]
+}
+
+[sub_resource type="Animation" id="Animation_klycq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -18.2558)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Shadow/Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5dc8i"]
+_data = {
+"Float": SubResource("Animation_gpgaq"),
+"RESET": SubResource("Animation_klycq")
+}
+
+[sub_resource type="Animation" id="Animation_521pv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.216, 0.216)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nohse"]
+resource_name = "Rotate"
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(0.707107, 1.40402, 0.732043, 1.36477, 1),
+"update": 0,
+"values": [0.0, 0.0349066, 0.0, -0.0523599, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fop5h"]
+resource_name = "Walk"
+length = 1.6
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.55),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.216, 0.216), Vector2(0.216, 0.216)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(0.707107, 1.40402, 0.732043, 1.36477, 1),
+"update": 0,
+"values": [0.0, 0.0523599, 0.0, -0.0349066, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jveit"]
+_data = {
+"RESET": SubResource("Animation_521pv"),
+"Rotate": SubResource("Animation_nohse"),
+"Walk": SubResource("Animation_fop5h")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k1n6n"]
+radius = 16.0
+height = 54.0
+
+[node name="Demon" type="CharacterBody2D"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_wq1lg")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Graphic" type="Node2D" parent="."]
+
+[node name="Character" type="Node2D" parent="Graphic"]
+position = Vector2(0, -18.2558)
+scale = Vector2(0.216, 0.216)
+
+[node name="Horns" type="Sprite2D" parent="Graphic/Character"]
+self_modulate = Color(0.364706, 0.290196, 0.243137, 1)
+texture = ExtResource("2_ce2se")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Fur" type="Sprite2D" parent="Graphic/Character"]
+self_modulate = Color(0.333333, 0.196078, 0.156863, 1)
+texture = ExtResource("3_mxhx4")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Skin" type="Sprite2D" parent="Graphic/Character"]
+self_modulate = Color(0.796078, 0.14902, 0.14902, 1)
+texture = ExtResource("4_35joc")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Body" type="Sprite2D" parent="Graphic/Character"]
+self_modulate = Color(0.796078, 0.796078, 0.796078, 1)
+texture = ExtResource("5_03m5b")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Shocc" type="Sprite2D" parent="Graphic/Character"]
+visible = false
+self_modulate = Color(0, 0.780392, 0.862745, 1)
+position = Vector2(-8.42592, -4.62963)
+scale = Vector2(1.09433, 1)
+
+[node name="EyeGlow" type="AnimationPlayer" parent="Graphic"]
+root_node = NodePath("../Walk")
+libraries = {
+"": SubResource("AnimationLibrary_hjnju")
+}
+autoplay = "EyeGlow"
+
+[node name="Float" type="AnimationPlayer" parent="Graphic"]
+root_node = NodePath("../Walk")
+libraries = {
+"": SubResource("AnimationLibrary_5dc8i")
+}
+autoplay = "Float"
+
+[node name="Walk" type="AnimationPlayer" parent="Graphic"]
+libraries = {
+"": SubResource("AnimationLibrary_jveit")
+}
+autoplay = "Walk"
+
+[node name="Shadow" type="Node2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="Shadow"]
+modulate = Color(0, 0, 0, 0.607843)
+z_index = -1
+position = Vector2(0, 19)
+scale = Vector2(1, 0.5)
+texture = ExtResource("6_82dp1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_k1n6n")

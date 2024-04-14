@@ -1,0 +1,182 @@
+[gd_scene load_steps=12 format=3 uid="uid://d3aj8xwu4yahc"]
+
+[ext_resource type="Script" path="res://Characters/Sheep.gd" id="1_dmlsn"]
+[ext_resource type="Texture2D" uid="uid://crqsyw2uasuoe" path="res://Graphics/Characters/Sheep/Horns0000.png" id="2_56kkm"]
+[ext_resource type="Texture2D" uid="uid://bcpxyvr5h3xum" path="res://Graphics/Characters/Sheep/Wool0000.png" id="3_yl0ue"]
+[ext_resource type="Texture2D" uid="uid://cu5pd26y0hcy0" path="res://Graphics/Characters/Sheep/Skin0000.png" id="4_4cs87"]
+[ext_resource type="Texture2D" uid="uid://bubtlkcp7lxg4" path="res://Graphics/Characters/Sheep/Eyes0000.png" id="5_hyjtx"]
+[ext_resource type="Texture2D" uid="uid://vau71x01pdlr" path="res://Graphics/Characters/Sheep/Sheep0000.png" id="6_oeg31"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="7_lyq1i"]
+
+[sub_resource type="Animation" id="Animation_521pv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.216, 0.216)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Character:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Shadow/Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.959182, 0.399182)]
+}
+
+[sub_resource type="Animation" id="Animation_fop5h"]
+resource_name = "Walk"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.216, 0.216), Vector2(0.216, 0.216)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5, 0.95, 1),
+"transitions": PackedFloat32Array(1, 0.992794, 0.732043, 1.10157, 1),
+"update": 0,
+"values": [0.0, -0.0349066, 0.0, 0.10472, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Character:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5, 0.95, 1),
+"transitions": PackedFloat32Array(0.706107, 0.706107, 1.50686, 1, 1),
+"update": 0,
+"values": [Vector2(0, -5), Vector2(0, -5), Vector2(0, -12), Vector2(0, -5), Vector2(0, -5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Shadow/Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5, 0.95, 1),
+"transitions": PackedFloat32Array(0.706107, 0.706107, 1.50686, 1, 1),
+"update": 0,
+"values": [Vector2(0.959182, 0.399182), Vector2(0.959182, 0.399182), Vector2(0.901, 0.375), Vector2(0.959182, 0.399182), Vector2(0.959182, 0.399182)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jveit"]
+_data = {
+"RESET": SubResource("Animation_521pv"),
+"Walk": SubResource("Animation_fop5h")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6fh43"]
+radius = 20.0
+
+[node name="Sheep" type="CharacterBody2D"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_dmlsn")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Graphic" type="Node2D" parent="."]
+
+[node name="Character" type="Node2D" parent="Graphic"]
+scale = Vector2(0.216, 0.216)
+
+[node name="Horns" type="Sprite2D" parent="Graphic/Character"]
+self_modulate = Color(0.363281, 0.29072, 0.242661, 1)
+texture = ExtResource("2_56kkm")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Wool" type="Sprite2D" parent="Graphic/Character"]
+texture = ExtResource("3_yl0ue")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Skin" type="Sprite2D" parent="Graphic/Character"]
+self_modulate = Color(0.788235, 0.678431, 0.490196, 1)
+texture = ExtResource("4_4cs87")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Eyes" type="Sprite2D" parent="Graphic/Character"]
+self_modulate = Color(0.466667, 1, 1, 1)
+scale = Vector2(1, 1)
+texture = ExtResource("5_hyjtx")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Body" type="Sprite2D" parent="Graphic/Character"]
+texture = ExtResource("6_oeg31")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Shocc" type="Sprite2D" parent="Graphic/Character"]
+visible = false
+self_modulate = Color(0, 0.780392, 0.862745, 1)
+position = Vector2(-8.42592, -4.62963)
+scale = Vector2(1.09433, 1)
+
+[node name="Walk" type="AnimationPlayer" parent="Graphic"]
+libraries = {
+"": SubResource("AnimationLibrary_jveit")
+}
+autoplay = "Walk"
+
+[node name="Shadow" type="Node2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="Shadow"]
+modulate = Color(0, 0, 0, 0.607843)
+z_index = -1
+position = Vector2(0, 19)
+scale = Vector2(0.959182, 0.399182)
+texture = ExtResource("7_lyq1i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6fh43")
