@@ -1,0 +1,180 @@
+[gd_scene load_steps=13 format=3 uid="uid://rana6ggydmfn"]
+
+[ext_resource type="Script" path="res://Characters/Granny.gd" id="1_aifq2"]
+[ext_resource type="Texture2D" uid="uid://cp2gbmwav2t3q" path="res://Graphics/Characters/Granny/Hair0000.png" id="2_g8wy2"]
+[ext_resource type="Texture2D" uid="uid://b512bqvc2tw4l" path="res://Graphics/Characters/Granny/Skirt0000.png" id="3_m3qyf"]
+[ext_resource type="Texture2D" uid="uid://bwss5h5vsvqc2" path="res://Graphics/Characters/Granny/Top0000.png" id="4_kvmsp"]
+[ext_resource type="Texture2D" uid="uid://d35v1bhao5s7k" path="res://Graphics/Characters/Granny/Cardi0000.png" id="5_e4r1q"]
+[ext_resource type="Texture2D" uid="uid://v17r6jx7g53v" path="res://Graphics/Characters/Granny/Skin0000.png" id="6_0pijv"]
+[ext_resource type="Texture2D" uid="uid://8ta1mjf3mt7v" path="res://Graphics/Characters/Granny/Granny0000.png" id="7_rgpvs"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="8_q530g"]
+
+[sub_resource type="Animation" id="Animation_521pv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.216, 0.216)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Character:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fop5h"]
+resource_name = "Walk"
+length = 1.2
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.216, 0.216), Vector2(0.216, 0.216)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 0.479488, 1.36477, 1),
+"update": 0,
+"values": [0.0, 0.0349066, -0.0174533, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Character:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2),
+"transitions": PackedFloat32Array(1.41221, 0.591129, 1),
+"update": 0,
+"values": [Vector2(0, -8), Vector2(0, -10), Vector2(0, -8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jveit"]
+_data = {
+"RESET": SubResource("Animation_521pv"),
+"Walk": SubResource("Animation_fop5h")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5xxfs"]
+radius = 11.0
+height = 48.0
+
+[node name="Granny" type="CharacterBody2D"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_aifq2")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Graphic" type="Node2D" parent="."]
+
+[node name="Character" type="Node2D" parent="Graphic"]
+scale = Vector2(0.216, 0.216)
+
+[node name="Hair" type="Sprite2D" parent="Graphic/Character"]
+self_modulate = Color(0.427451, 0.427451, 0.427451, 1)
+position = Vector2(10.933, -0.0869394)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_g8wy2")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Skirt" type="Sprite2D" parent="Graphic/Character"]
+self_modulate = Color(0.172549, 0.231373, 0.415686, 1)
+position = Vector2(10.933, -0.0869394)
+scale = Vector2(-1, 1)
+texture = ExtResource("3_m3qyf")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Top" type="Sprite2D" parent="Graphic/Character"]
+self_modulate = Color(0.815686, 0.498039, 0.698039, 1)
+position = Vector2(10.933, -0.0869394)
+scale = Vector2(-1, 1)
+texture = ExtResource("4_kvmsp")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Cardi" type="Sprite2D" parent="Graphic/Character"]
+self_modulate = Color(0.380392, 0.498039, 0.411765, 1)
+position = Vector2(10.933, -0.0869394)
+scale = Vector2(-1, 1)
+texture = ExtResource("5_e4r1q")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Skin" type="Sprite2D" parent="Graphic/Character"]
+self_modulate = Color(0.854902, 0.72549, 0.541176, 1)
+position = Vector2(10.933, -0.0869394)
+scale = Vector2(-1, 1)
+texture = ExtResource("6_0pijv")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Body" type="Sprite2D" parent="Graphic/Character"]
+position = Vector2(10.933, -0.0869394)
+scale = Vector2(-1, 1)
+texture = ExtResource("7_rgpvs")
+offset = Vector2(-6.88299, -1.51863)
+
+[node name="Shocc" type="Sprite2D" parent="Graphic/Character"]
+visible = false
+self_modulate = Color(0, 0.780392, 0.862745, 1)
+position = Vector2(-8.42592, -4.62963)
+scale = Vector2(-1, 1)
+
+[node name="Walk" type="AnimationPlayer" parent="Graphic"]
+libraries = {
+"": SubResource("AnimationLibrary_jveit")
+}
+autoplay = "Walk"
+
+[node name="Shadow" type="Node2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="Shadow"]
+modulate = Color(0, 0, 0, 0.607843)
+z_index = -1
+position = Vector2(0, 19)
+scale = Vector2(0.654258, 0.327626)
+texture = ExtResource("8_q530g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, -3)
+shape = SubResource("CapsuleShape2D_5xxfs")
