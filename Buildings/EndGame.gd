@@ -54,7 +54,9 @@ func handle_character(character: BaseCharacter):
 	_spin_to_oblivion(character)
 
 func _spin_to_oblivion(character: BaseCharacter):
-	var tween: Tween = character.ghostify_to_oblivion($Graphic/OblivionPoint)
-	tween.tween_callback(func():
-		character.queue_free()
+	character.jump_to($JumpTo.global_position, func():
+		var tween: Tween = character.ghostify_to_oblivion($Graphic/OblivionPoint)
+		tween.tween_callback(func():
+			character.queue_free()
+			)
 		)
