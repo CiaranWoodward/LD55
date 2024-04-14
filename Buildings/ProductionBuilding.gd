@@ -53,12 +53,12 @@ func do_build():
 	pass
 
 func do_you_want_me(character: BaseCharacter) -> bool:
-	if (character.is_class(type_string(typeof(Cat))) && cat_count < cat_slots):
+	if ((character is Cat) && cat_count < cat_slots):
 		return true
 	return false
 
 func take_me(character: BaseCharacter, dropped = false) -> bool:
-	if (character.is_class(type_string(typeof(Cat))) && cat_count < cat_slots):
+	if ((character is Cat) && cat_count < cat_slots):
 		character.queue_free()
 		set_cat_count(cat_count+1)
 		return true
