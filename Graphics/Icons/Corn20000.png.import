@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv1ja8dyp5iy"
-path="res://.godot/imported/Corn0000.png-c289d12e7cc5e2ac6f205dce450dc9ec.ctex"
+uid="uid://ba6oftly8fctb"
+path="res://.godot/imported/Corn20000.png-8c0fa964ce310917ea86b0414de9289e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Buildings/CornField/Corn0000.png"
-dest_files=["res://.godot/imported/Corn0000.png-c289d12e7cc5e2ac6f205dce450dc9ec.ctex"]
+source_file="res://Graphics/Icons/Corn20000.png"
+dest_files=["res://.godot/imported/Corn20000.png-8c0fa964ce310917ea86b0414de9289e.ctex"]
 
 [params]
 

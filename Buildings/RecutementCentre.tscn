@@ -34,7 +34,7 @@ collision_layer = 3
 position = Vector2(-123.5, -0.25)
 shape = SubResource("RectangleShape2D_o5ibk")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="NavVoid" type="Polygon2D" parent="."]
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-317, -69, 67, -67, 66, 67, 28, 68, 29, -16, -26, -16, -27, 68, -317, 71)
 

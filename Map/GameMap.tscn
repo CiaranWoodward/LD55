@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cseq0jcpd6rfc"]
+[gd_scene load_steps=12 format=3 uid="uid://cseq0jcpd6rfc"]
 
 [ext_resource type="Script" path="res://Map/GameMap.gd" id="1_667xj"]
 [ext_resource type="PackedScene" uid="uid://clufegtvym2pa" path="res://Buildings/RecutementCentre.tscn" id="1_p3gag"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dol2yvdyffyc5" path="res://Characters/Witch.tscn" id="5_g2ini"]
 [ext_resource type="PackedScene" uid="uid://cqtw2u46g28co" path="res://Buildings/EndGame.tscn" id="6_5nybr"]
 [ext_resource type="Script" path="res://Map/PlayerCam.gd" id="6_5o6ap"]
+[ext_resource type="PackedScene" uid="uid://c52obgi0jrhc1" path="res://Buildings/CornField.tscn" id="10_3752r"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_imvrd"]
 outlines = Array[PackedVector2Array]([PackedVector2Array(-571, -416, 1749, -422, 1799, 1434, -652, 1424)])
@@ -66,3 +67,5 @@ script = ExtResource("6_5o6ap")
 
 [node name="GameFollowPoint" type="Marker2D" parent="."]
 position = Vector2(735, 1112)
+
+[node name="CornField" parent="." instance=ExtResource("10_3752r")]

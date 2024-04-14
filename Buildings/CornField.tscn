@@ -1,0 +1,253 @@
+[gd_scene load_steps=10 format=3 uid="uid://c52obgi0jrhc1"]
+
+[ext_resource type="Script" path="res://Buildings/CornField.gd" id="1_2504k"]
+[ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_a2uwx"]
+[ext_resource type="Texture2D" uid="uid://dud533um7hrxk" path="res://Graphics/Buildings/CornField/Silo0000.png" id="2_bbyki"]
+[ext_resource type="PackedScene" uid="uid://dtejwydluj4u0" path="res://Buildings/CornStalk.tscn" id="2_clmvm"]
+[ext_resource type="Texture2D" uid="uid://ewhg68vdj3ix" path="res://Graphics/Buildings/GroundFlecks0000.png" id="3_ypu8m"]
+[ext_resource type="Texture2D" uid="uid://tyqbiq3emmtr" path="res://Graphics/Icons/WhiteSquare0000.png" id="6_8is2w"]
+[ext_resource type="Texture2D" uid="uid://co1lpbyvujc2b" path="res://Graphics/Buildings/CornField/CornBarTile0000.png" id="7_e3d3b"]
+[ext_resource type="Texture2D" uid="uid://b1433u6otf7xb" path="res://Graphics/Buildings/CornField/CornBarTop0000.png" id="8_ls4s7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5ibk"]
+size = Vector2(135, 136.5)
+
+[node name="CornField" type="Node2D"]
+script = ExtResource("1_2504k")
+
+[node name="Graphic" type="Node2D" parent="."]
+
+[node name="Ground" type="Node2D" parent="Graphic"]
+scale = Vector2(1.31401, 1.68064)
+
+[node name="Back" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.419608, 0.290196, 0.0392157, 1)
+texture = ExtResource("2_a2uwx")
+
+[node name="Flecks" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.498039, 0.286275, 0.0392157, 1)
+texture = ExtResource("3_ypu8m")
+
+[node name="Row6" type="Node2D" parent="Graphic"]
+position = Vector2(80, -120)
+
+[node name="CornStalk" parent="Graphic/Row6" instance=ExtResource("2_clmvm")]
+position = Vector2(-112, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk2" parent="Graphic/Row6" instance=ExtResource("2_clmvm")]
+position = Vector2(-80, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk3" parent="Graphic/Row6" instance=ExtResource("2_clmvm")]
+position = Vector2(-48, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk4" parent="Graphic/Row6" instance=ExtResource("2_clmvm")]
+position = Vector2(-16, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk5" parent="Graphic/Row6" instance=ExtResource("2_clmvm")]
+position = Vector2(16, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="Row5" type="Node2D" parent="Graphic"]
+position = Vector2(64, -96)
+
+[node name="CornStalk" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
+position = Vector2(-112, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk2" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
+position = Vector2(-80, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk3" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
+position = Vector2(-48, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk4" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
+position = Vector2(-16, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk5" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
+position = Vector2(16, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk6" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
+position = Vector2(48, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="Silo" type="Sprite2D" parent="Graphic"]
+position = Vector2(-88, -88)
+scale = Vector2(0.650205, 0.650205)
+texture = ExtResource("2_bbyki")
+
+[node name="BarBack" type="Sprite2D" parent="Graphic/Silo"]
+self_modulate = Color(0.121569, 0.121569, 0.121569, 1)
+show_behind_parent = true
+position = Vector2(23.8388, 30.7595)
+scale = Vector2(0.353739, 1.96737)
+texture = ExtResource("6_8is2w")
+
+[node name="BarTile" type="TextureRect" parent="Graphic/Silo"]
+show_behind_parent = true
+offset_left = 14.0
+offset_top = 37.0
+offset_right = 44.0
+offset_bottom = 127.0
+texture = ExtResource("7_e3d3b")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="BarTop" type="Sprite2D" parent="Graphic/Silo/BarTile"]
+position = Vector2(15, -15)
+texture = ExtResource("8_ls4s7")
+
+[node name="BarFront" type="Sprite2D" parent="Graphic/Silo"]
+self_modulate = Color(0, 0, 0, 0.431373)
+show_behind_parent = true
+position = Vector2(23.8388, 30.7595)
+scale = Vector2(0.353739, 1.96737)
+texture = ExtResource("6_8is2w")
+
+[node name="Row4" type="Node2D" parent="Graphic"]
+position = Vector2(80, -72)
+
+[node name="CornStalk" parent="Graphic/Row4" instance=ExtResource("2_clmvm")]
+position = Vector2(-112, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk2" parent="Graphic/Row4" instance=ExtResource("2_clmvm")]
+position = Vector2(-80, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk3" parent="Graphic/Row4" instance=ExtResource("2_clmvm")]
+position = Vector2(-48, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk4" parent="Graphic/Row4" instance=ExtResource("2_clmvm")]
+position = Vector2(-16, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk5" parent="Graphic/Row4" instance=ExtResource("2_clmvm")]
+position = Vector2(16, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="Row3" type="Node2D" parent="Graphic"]
+position = Vector2(0, -48)
+
+[node name="CornStalk" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
+position = Vector2(-112, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk2" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
+position = Vector2(-80, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk3" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
+position = Vector2(-48, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk4" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
+position = Vector2(-16, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk5" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
+position = Vector2(16, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk6" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
+position = Vector2(48, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk7" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
+position = Vector2(80, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk8" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
+position = Vector2(112, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="Row2" type="Node2D" parent="Graphic"]
+position = Vector2(16, -24)
+
+[node name="CornStalk" parent="Graphic/Row2" instance=ExtResource("2_clmvm")]
+position = Vector2(-112, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk2" parent="Graphic/Row2" instance=ExtResource("2_clmvm")]
+position = Vector2(-80, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk3" parent="Graphic/Row2" instance=ExtResource("2_clmvm")]
+position = Vector2(-48, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk4" parent="Graphic/Row2" instance=ExtResource("2_clmvm")]
+position = Vector2(-16, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk5" parent="Graphic/Row2" instance=ExtResource("2_clmvm")]
+position = Vector2(16, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk6" parent="Graphic/Row2" instance=ExtResource("2_clmvm")]
+position = Vector2(48, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk7" parent="Graphic/Row2" instance=ExtResource("2_clmvm")]
+position = Vector2(80, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="Row1" type="Node2D" parent="Graphic"]
+
+[node name="CornStalk" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
+position = Vector2(-112, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk2" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
+position = Vector2(-80, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk3" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
+position = Vector2(-48, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk4" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
+position = Vector2(-16, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk5" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
+position = Vector2(16, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk6" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
+position = Vector2(48, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk7" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
+position = Vector2(80, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk8" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
+position = Vector2(112, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="CollectionNode" type="Marker2D" parent="."]
+position = Vector2(-88, -88)
+scale = Vector2(0.650205, 0.650205)
+
+[node name="BuildPrevention" type="Area2D" parent="."]
+scale = Vector2(2.83117, 1.658)
+collision_layer = 3
+
+[node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
+visible = false
+position = Vector2(0.5, -0.25)
+scale = Vector2(0.680533, 0.680533)
+shape = SubResource("RectangleShape2D_o5ibk")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-66, -67, 67, -67, 66, 67, 28, 68, 29, -16, -26, -16, -27, 68, -66, 66)
