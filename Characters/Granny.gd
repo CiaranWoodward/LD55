@@ -1,5 +1,5 @@
 class_name Granny
-extends BaseCharacter
+extends HoldableCharacter
 
 @export var skin_colors: Array[Color] = [Color.BISQUE]
 @export var hair_colors: Array[Color] = [Color.CORAL]

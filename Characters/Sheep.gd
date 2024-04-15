@@ -1,5 +1,5 @@
 class_name Sheep
-extends BaseCharacter
+extends HoldableCharacter
 
 @export var skin_colors: Array[Color] = [Color.BISQUE]
 @export var wool_colors: Array[Color] = [Color.CORAL]
@@ -22,3 +22,6 @@ func _restyle():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	super._physics_process(delta)
+	
+func get_type():
+	return Global.ResourceType.SHEEP

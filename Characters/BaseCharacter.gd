@@ -54,7 +54,7 @@ func _find_new_target():
 	
 	# for each resource find the closest building which requires it	
 	var potential_buildings = []
-	if !is_employed():
+	if !is_employed() && !is_held():
 		for building: Building in get_tree().get_nodes_in_group("buildings"):
 			if (building.get_queue_count(resourceToQueue) < 0): potential_buildings.append(building)
 		
@@ -146,7 +146,7 @@ func _jump_tween_to(destination: Vector2, callback: Callable):
 	_jump_tween.tween_property(self, "_jumping", false, 0)
 	_jump_tween.tween_callback(callback)
 
-func jump_to(destination: Vector2, callback: Callable):
+func jump_to(destination: Vector2, callback: Callable = func():pass):
 	assert(!_jumping)
 	_jump_tween_to(destination, callback)
 
@@ -199,6 +199,8 @@ func get_type():
 	pass
 
 func is_employed() -> bool:
+	return false
+func is_held() -> bool:
 	return false
 func is_job_blocked() -> bool:
 	return false

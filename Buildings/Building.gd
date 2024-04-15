@@ -1,7 +1,10 @@
 class_name Building
 extends Node2D
 
+@export var cost: int = 10
+
 var transport_count = 0
+var as_ui_part: bool = false : set = set_as_ui_part
 
 var _inventory: Dictionary = Global.ResourceType.values().reduce(func(accum, type):
 	accum[type] = 0
@@ -29,6 +32,18 @@ func handle_character(character: BaseCharacter):
 func take_me(character: BaseCharacter):
 	pass
 
+func set_as_ui_part(newValue):
+	as_ui_part = newValue
+
+func is_cost_affordable() -> bool:
+	return Global.get_resource_count(Global.ResourceType.GOLD) >= cost
+
+func buy():
+	Global.change_resource_count(Global.ResourceType.GOLD, -cost)
+
+func can_build_here() -> bool:
+	return $BuildPrevention.get_overlapping_areas().is_empty()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("buildings")
@@ -40,7 +55,16 @@ func _process(delta):
 func pathing_desirability(character: BaseCharacter) -> float:
 	if character.resource == null: return 0
 	return 1/((1+transport_count)*character.global_position.distance_squared_to(global_position))
-	
+
+func get_spawn_global_position() -> Vector2:
+	return global_position
+
+func get_destination_global_position() -> Vector2:
+	return global_position
+
+func get_relay_global_position():
+	return null
+
 func on_nav_start(character: BaseCharacter):
 	transport_count += 1
 	

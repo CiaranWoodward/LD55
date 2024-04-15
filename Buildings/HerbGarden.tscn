@@ -23,6 +23,10 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="HerbGarden" type="Node2D"]
 script = ExtResource("1_51b6j")
+cat_slots = null
+cost = null
+base_build_time = null
+cat_time_multiplier = null
 
 [node name="Graphic" type="Node2D" parent="."]
 y_sort_enabled = true
