@@ -59,12 +59,20 @@ sprite_frames = SubResource("SpriteFrames_uyban")
 color = Color(0.156863, 0.156863, 0.156863, 0.733333)
 polygon = PackedVector2Array(0, 0, 300, 0, 300, 40, 0, 40)
 
-[node name="Label" type="Label" parent="Graphic/Shaker/Background/TopBar"]
+[node name="LDJAM" type="Label" parent="Graphic/Shaker/Background/TopBar"]
 offset_left = 6.0
 offset_top = 5.0
 offset_right = 124.0
 offset_bottom = 28.0
 text = "Ludum Dare 55"
+
+[node name="Counter" type="Label" parent="Graphic/Shaker/Background/TopBar"]
+offset_left = 158.0
+offset_right = 276.0
+offset_bottom = 23.0
+rotation = 0.360676
+text = "(0/5)
+"
 
 [node name="Compo" type="Polygon2D" parent="Graphic/Shaker/Background"]
 color = Color(0.894118, 0.490196, 0.262745, 1)

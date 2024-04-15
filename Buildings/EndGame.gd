@@ -32,10 +32,12 @@ func change_requirement(type: Global.ResourceType, count: int):
 func _ready():
 	super._ready()
 	_start_gp = $Graphic.global_position
+	$Graphic/Shaker/Background/Compo/CompoLabel.text = ["JAM", "COMPO", "EXTRA"].pick_random()
 	Global.game_map.games_on_screen_changed.connect(_updated_onscreen)
 	_stick_to_screen()
 	_prepare_gametype()
 	_prepare_timeout()
+	_update_label()
 
 func _prepare_gametype():
 	match game_type:
@@ -62,6 +64,12 @@ func _check_completion():
 		self.visible = false
 	elif _is_failed():
 		pass
+
+func _update_label():
+	var sum = func(accum, number): return accum + number
+	var req_count = _requirements.values().reduce(sum, 0)
+	var item_count = _inventory.values().reduce(sum, 0)
+	$Graphic/Shaker/Background/TopBar/Counter.text = "(%d/%d)" % [item_count, req_count]
 
 func _prepare_timeout():
 	_check_completion()
@@ -127,6 +135,7 @@ func _spin_to_oblivion(character: BaseCharacter):
 		var tween: Tween = character.ghostify_to_oblivion($Graphic/OblivionPoint)
 		$Graphic/Shaker.add_trauma(0.5)
 		change_inventory_count(character.get_type(), 1)
+		_update_label()
 		_current_timeout += summon_heal
 		_prepare_timeout()
 		tween.tween_callback(func():
