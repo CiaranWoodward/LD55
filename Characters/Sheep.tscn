@@ -125,6 +125,9 @@ radius = 20.0
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_dmlsn")
+skin_colors = Array[Color]([Color(0.788235, 0.678431, 0.490196, 1), Color(0.6, 0.537255, 0.490196, 1), Color(0.231373, 0.231373, 0.231373, 1)])
+wool_colors = Array[Color]([Color(0.913725, 0.913725, 0.913725, 1), Color(1, 0.901961, 0.811765, 1), Color(0.184314, 0.184314, 0.184314, 1), Color(1, 1, 1, 1), Color(0.937255, 0.937255, 0.937255, 1)])
+eye_colors = Array[Color]([Color(0.529412, 0.807843, 0.921569, 1), Color(0.223529, 0.870588, 0.717647, 1), Color(0.890196, 0.709804, 0.396078, 1)])
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
@@ -135,24 +138,29 @@ scale = Vector2(0.216, 0.216)
 
 [node name="Horns" type="Sprite2D" parent="Graphic/Character"]
 self_modulate = Color(0.363281, 0.29072, 0.242661, 1)
+position = Vector2(0, -110.889)
 texture = ExtResource("2_56kkm")
 offset = Vector2(-6.88299, -1.51863)
 
 [node name="Wool" type="Sprite2D" parent="Graphic/Character"]
+position = Vector2(0, -110.889)
 texture = ExtResource("3_yl0ue")
 offset = Vector2(-6.88299, -1.51863)
 
 [node name="Skin" type="Sprite2D" parent="Graphic/Character"]
 self_modulate = Color(0.788235, 0.678431, 0.490196, 1)
+position = Vector2(0, -110.889)
 texture = ExtResource("4_4cs87")
 offset = Vector2(-6.88299, -1.51863)
 
 [node name="Eyes" type="Sprite2D" parent="Graphic/Character"]
 self_modulate = Color(0.466667, 1, 1, 1)
+position = Vector2(0, -110.889)
 texture = ExtResource("5_hyjtx")
 offset = Vector2(-6.88299, -1.51863)
 
 [node name="Body" type="Sprite2D" parent="Graphic/Character"]
+position = Vector2(0, -110.889)
 texture = ExtResource("6_oeg31")
 offset = Vector2(-6.88299, -1.51863)
 
@@ -173,9 +181,10 @@ autoplay = "Walk"
 [node name="Shadow" type="Sprite2D" parent="Shadow"]
 modulate = Color(0, 0, 0, 0.607843)
 z_index = -1
-position = Vector2(0, 19)
+position = Vector2(0, 3.8147e-06)
 scale = Vector2(0.959182, 0.399182)
 texture = ExtResource("7_lyq1i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -19)
 shape = SubResource("CircleShape2D_6fh43")
