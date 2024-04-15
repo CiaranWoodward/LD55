@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cte03v1oflcfv"]
+[gd_scene load_steps=21 format=3 uid="uid://cte03v1oflcfv"]
 
 [ext_resource type="Script" path="res://Buildings/HoldingPen.gd" id="1_iqrxb"]
 [ext_resource type="Texture2D" uid="uid://dhmamo50mb3n" path="res://Graphics/Buildings/HoldingPen/FenceBack0000.png" id="2_4yhu1"]
@@ -9,6 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://ctpkifovx45fd" path="res://Graphics/Environment/GrassLight10000.png" id="7_r35vt"]
 [ext_resource type="Texture2D" uid="uid://bke8wxv4r8ouv" path="res://Graphics/Environment/GrassDark20000.png" id="8_s4c3x"]
 [ext_resource type="Texture2D" uid="uid://dv1hx6xlcw53p" path="res://Graphics/Environment/GrassDark10000.png" id="9_8h1ut"]
+[ext_resource type="Texture2D" uid="uid://cyycl4cj6q005" path="res://Graphics/Buildings/HoldingPen/Cross0000.png" id="10_b44ug"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="11_3btaf"]
+[ext_resource type="Texture2D" uid="uid://2te3ow0jx5ye" path="res://Graphics/Buildings/FieldHospital/Mound0000.png" id="12_8elud"]
+[ext_resource type="Texture2D" uid="uid://dkpni2usf1hlb" path="res://Graphics/Buildings/FieldHospital/MoundHighlight0000.png" id="13_teg3w"]
+[ext_resource type="Texture2D" uid="uid://cev15evgwkd7x" path="res://Graphics/Buildings/HoldingPen/Water0000.png" id="14_nufqd"]
+[ext_resource type="Texture2D" uid="uid://okdirbk3te4k" path="res://Graphics/Buildings/HoldingPen/TroughBack0000.png" id="15_7l21h"]
+[ext_resource type="Texture2D" uid="uid://cy7m7abpgrfkg" path="res://Graphics/Buildings/HoldingPen/TroughFront0000.png" id="16_yueaa"]
+[ext_resource type="Texture2D" uid="uid://dsqdtx7bm1ldn" path="res://Graphics/Buildings/Crate/BottomCorn0000.png" id="17_1q6j5"]
 [ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="68_8epbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgowq"]
@@ -84,7 +92,7 @@ scale = Vector2(3.62221, 1.4545)
 texture = ExtResource("2_jq21h")
 
 [node name="Grass" type="Sprite2D" parent="Graphic/Ground"]
-self_modulate = Color(0.603922, 1, 0.352941, 0.647059)
+self_modulate = Color(0.384314, 0.745098, 0.270588, 0.823529)
 position = Vector2(109.302, 1.12751)
 scale = Vector2(3.39344, 1.13879)
 texture = ExtResource("2_jq21h")
@@ -93,182 +101,182 @@ texture = ExtResource("2_jq21h")
 
 [node name="GrassLight20000" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(-148.869, -23.1842)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("6_n3jrs")
 
 [node name="GrassLight10000" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(-57.3604, 1.62121)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("7_r35vt")
 
 [node name="GrassDark20000" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(-29.3995, -20.9291)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("8_s4c3x")
 
 [node name="GrassDark10000" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(-98.0309, -35.5868)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("9_8h1ut")
 
 [node name="GrassLight20001" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(138.366, -4.01638)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("6_n3jrs")
 
 [node name="GrassLight10001" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(229.875, 20.789)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("7_r35vt")
 
 [node name="GrassDark20001" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(64.8185, 36.6443)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("8_s4c3x")
 
 [node name="GrassDark10001" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(189.204, -16.4191)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("9_8h1ut")
 
 [node name="GrassLight20002" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(-138.701, 1.62121)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("6_n3jrs")
 
 [node name="GrassLight10002" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(-47.1928, 26.4266)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("7_r35vt")
 
 [node name="GrassDark20002" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(-19.2319, 3.87624)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("8_s4c3x")
 
 [node name="GrassDark10002" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(-87.8633, -10.7815)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("9_8h1ut")
 
 [node name="GrassLight20003" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(290.88, -24.3117)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("6_n3jrs")
 
 [node name="GrassLight10003" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(382.389, 0.493696)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("7_r35vt")
 
 [node name="GrassDark20003" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(410.35, -22.0566)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("8_s4c3x")
 
 [node name="GrassDark10003" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(341.718, -36.7143)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("9_8h1ut")
 
 [node name="GrassLight20004" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(168.869, 20.789)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("6_n3jrs")
 
 [node name="GrassLight10004" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(352.054, 28.7517)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("7_r35vt")
 
 [node name="GrassDark20004" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(288.338, 23.044)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("8_s4c3x")
 
 [node name="GrassDark10004" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(219.707, 8.3863)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("9_8h1ut")
 
 [node name="GrassLight20005" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(21.4386, -18.6741)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("6_n3jrs")
 
 [node name="GrassLight10005" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(112.947, 6.13128)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("7_r35vt")
 
 [node name="GrassDark20005" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(140.908, -16.4191)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("8_s4c3x")
 
 [node name="GrassDark10005" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(72.2767, -31.0768)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("9_8h1ut")
 
 [node name="GrassLight20006" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(16.3548, 21.9165)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("6_n3jrs")
 
 [node name="GrassLight10006" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(107.863, 46.7219)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("7_r35vt")
 
 [node name="GrassDark20006" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(135.824, 24.1715)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("8_s4c3x")
 
 [node name="GrassDark10006" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(67.1928, 9.51382)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("9_8h1ut")
 
 [node name="GrassLight20007" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(1.27094, -42.2819)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("6_n3jrs")
 
 [node name="GrassLight10007" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(191.914, 40.0268)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("7_r35vt")
 
 [node name="GrassDark20007" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(-125.992, 24.1715)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("8_s4c3x")
 
 [node name="GrassDark10007" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(-194.623, 9.51382)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("9_8h1ut")
 
 [node name="GrassLight20008" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(166.327, -26.5667)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("6_n3jrs")
 
 [node name="GrassLight10008" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(257.836, -1.76134)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("7_r35vt")
 
 [node name="GrassDark20008" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(336.802, 10.7114)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("8_s4c3x")
 
 [node name="GrassDark10008" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
 position = Vector2(217.165, -38.9694)
-scale = Vector2(0.5, 0.222)
+scale = Vector2(0.7, 0.31)
 texture = ExtResource("9_8h1ut")
 
 [node name="OblivionPoint" type="Marker2D" parent="Graphic"]
@@ -280,10 +288,118 @@ position = Vector2(-2, -28)
 [node name="RelayPoint" type="Marker2D" parent="Graphic"]
 position = Vector2(2, 204)
 
+[node name="LostSoulIndicator" type="Node2D" parent="Graphic"]
+
+[node name="Cross" type="Sprite2D" parent="Graphic/LostSoulIndicator"]
+self_modulate = Color(0.556863, 0.556863, 0.556863, 1)
+position = Vector2(0, -34)
+texture = ExtResource("10_b44ug")
+
+[node name="Shadow2" type="Sprite2D" parent="Graphic/LostSoulIndicator/Cross"]
+modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(2, 12)
+scale = Vector2(0.28, 0.2)
+texture = ExtResource("11_3btaf")
+
+[node name="Mound" type="Node2D" parent="Graphic/LostSoulIndicator"]
+modulate = Color(0.337255, 0.2, 0.027451, 1)
+
+[node name="Mound" type="Sprite2D" parent="Graphic/LostSoulIndicator/Mound"]
+position = Vector2(0, -7)
+texture = ExtResource("12_8elud")
+
+[node name="MoundHighlight" type="Sprite2D" parent="Graphic/LostSoulIndicator/Mound"]
+self_modulate = Color(0.792157, 0.792157, 0.792157, 1)
+position = Vector2(0, -7)
+texture = ExtResource("13_teg3w")
+
+[node name="CrossShadow" type="Sprite2D" parent="Graphic/LostSoulIndicator"]
+self_modulate = Color(0, 0, 0, 0.117647)
+position = Vector2(-8, 8)
+rotation = -2.71475
+scale = Vector2(1.02214, 0.900219)
+texture = ExtResource("10_b44ug")
+
+[node name="Shadow" type="Sprite2D" parent="Graphic/LostSoulIndicator"]
+modulate = Color(0, 0, 0, 0.607843)
+z_index = -1
+position = Vector2(4, 1.98978)
+scale = Vector2(1.76, 0.319591)
+texture = ExtResource("11_3btaf")
+
+[node name="GrannyIndicator" type="Node2D" parent="Graphic"]
+
+[node name="SheepIndicator" type="Node2D" parent="Graphic"]
+
+[node name="WaterTrough" type="Node2D" parent="Graphic/SheepIndicator"]
+position = Vector2(-46, -84)
+
+[node name="Water" type="Sprite2D" parent="Graphic/SheepIndicator/WaterTrough"]
+self_modulate = Color(0.231373, 0.494118, 0.552941, 1)
+position = Vector2(0, -15)
+texture = ExtResource("14_nufqd")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Graphic/SheepIndicator/WaterTrough/Water"]
+self_modulate = Color(0.286275, 0.803922, 0.827451, 1)
+position = Vector2(-2, -9)
+amount = 3
+explosiveness = 0.4
+emission_shape = 3
+emission_rect_extents = Vector2(20, 3)
+gravity = Vector2(0, 0)
+
+[node name="Back" type="Sprite2D" parent="Graphic/SheepIndicator/WaterTrough"]
+self_modulate = Color(0.262745, 0.262745, 0.262745, 1)
+position = Vector2(0, -15)
+texture = ExtResource("15_7l21h")
+
+[node name="Front" type="Sprite2D" parent="Graphic/SheepIndicator/WaterTrough"]
+modulate = Color(0.478431, 0.478431, 0.478431, 1)
+position = Vector2(0, -15)
+texture = ExtResource("16_yueaa")
+
+[node name="Shadow" type="Sprite2D" parent="Graphic/SheepIndicator/WaterTrough"]
+modulate = Color(0, 0, 0, 0.607843)
+z_index = -1
+position = Vector2(-4.76837e-07, -3)
+scale = Vector2(1.84, 0.56)
+texture = ExtResource("11_3btaf")
+
+[node name="CornTrough" type="Node2D" parent="Graphic/SheepIndicator"]
+position = Vector2(48, -84)
+
+[node name="Inside" type="Sprite2D" parent="Graphic/SheepIndicator/CornTrough"]
+self_modulate = Color(0.137255, 0.137255, 0.137255, 1)
+position = Vector2(2, -16)
+texture = ExtResource("14_nufqd")
+
+[node name="Back" type="Sprite2D" parent="Graphic/SheepIndicator/CornTrough"]
+self_modulate = Color(0.262745, 0.262745, 0.262745, 1)
+position = Vector2(0, -15)
+texture = ExtResource("15_7l21h")
+
+[node name="Corn" type="Sprite2D" parent="Graphic/SheepIndicator/CornTrough"]
+position = Vector2(-2, -46.5)
+scale = Vector2(0.76, 1.01429)
+texture = ExtResource("17_1q6j5")
+
+[node name="Front" type="Sprite2D" parent="Graphic/SheepIndicator/CornTrough"]
+modulate = Color(0.478431, 0.478431, 0.478431, 1)
+position = Vector2(0, -15)
+texture = ExtResource("16_yueaa")
+
+[node name="Shadow" type="Sprite2D" parent="Graphic/SheepIndicator/CornTrough"]
+modulate = Color(0, 0, 0, 0.607843)
+z_index = -1
+position = Vector2(-4.76837e-07, -3)
+scale = Vector2(1.84, 0.56)
+texture = ExtResource("11_3btaf")
+
 [node name="BuildPrevention" type="Area2D" parent="."]
 collision_layer = 3
 
 [node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
+visible = false
 position = Vector2(-0.5, -7.5)
 shape = SubResource("RectangleShape2D_tgowq")
 
@@ -292,6 +408,7 @@ color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-141, -79, 140, -80, 139, 64, -141, 65)
 
 [node name="HoldingNavigationRegion" type="NavigationRegion2D" parent="."]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_5nm58")
 navigation_layers = 2
 

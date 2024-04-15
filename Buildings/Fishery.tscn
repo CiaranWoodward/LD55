@@ -33,7 +33,6 @@ scale = Vector2(0.8, 0.8)
 [node name="Side" type="Sprite2D" parent="Graphic/Pond"]
 self_modulate = Color(0.298039, 0.188235, 0.129412, 1)
 position = Vector2(0, -60)
-scale = Vector2(1, 1)
 texture = ExtResource("3_0q3qn")
 
 [node name="Shadow" type="Sprite2D" parent="Graphic/Pond"]
@@ -45,7 +44,19 @@ texture = ExtResource("3_ifoo6")
 [node name="Water" type="Sprite2D" parent="Graphic/Pond"]
 self_modulate = Color(0.588235, 0.705882, 0.843137, 1)
 position = Vector2(0, -60)
-scale = Vector2(1, 1)
+texture = ExtResource("2_frju3")
+
+[node name="Sparkle" type="CPUParticles2D" parent="Graphic/Pond/Water"]
+position = Vector2(-7.5, 1.25)
+scale = Vector2(1.25, 1.25)
+emission_shape = 3
+emission_rect_extents = Vector2(100, 70)
+gravity = Vector2(0, 0)
+
+[node name="Moist" type="Sprite2D" parent="Graphic/Pond"]
+self_modulate = Color(0.235294, 0.156863, 0.0392157, 0.160784)
+position = Vector2(-3.75, -63.75)
+scale = Vector2(1.15135, 1.19106)
 texture = ExtResource("2_frju3")
 
 [node name="Edge" type="Sprite2D" parent="Graphic/Pond"]
@@ -71,7 +82,7 @@ scale = Vector2(3.15196, 1.87168)
 texture = ExtResource("6_d6qfo")
 
 [node name="Grass" type="Sprite2D" parent="Graphic/Ground"]
-self_modulate = Color(0.603922, 1, 0.352941, 0.647059)
+self_modulate = Color(0.313726, 0.619608, 0.117647, 0.92549)
 position = Vector2(-0.635492, 1.40939)
 scale = Vector2(2.99309, 1.65181)
 texture = ExtResource("6_d6qfo")
@@ -119,7 +130,7 @@ texture = ExtResource("7_rcbgu")
 [node name="Flecks6" type="Sprite2D" parent="Graphic/Ground"]
 self_modulate = Color(0.396078, 0.729412, 0.0745098, 1)
 texture_repeat = 2
-position = Vector2(205.894, 3.38255)
+position = Vector2(194.456, 2.81879)
 rotation = 3.14159
 scale = Vector2(1.01111, 0.51027)
 texture = ExtResource("7_rcbgu")
@@ -144,6 +155,7 @@ texture = ExtResource("7_rcbgu")
 position = Vector2(164, 128)
 
 [node name="BuildPrevention" type="Area2D" parent="."]
+visible = false
 collision_layer = 3
 
 [node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
@@ -155,6 +167,7 @@ color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-224, -139, 229, -139, 230, 143, -227, 142)
 
 [node name="WorkingNavigationRegion" type="NavigationRegion2D" parent="."]
+visible = false
 position = Vector2(-52, -1)
 navigation_polygon = SubResource("NavigationPolygon_yt6mk")
 navigation_layers = 2

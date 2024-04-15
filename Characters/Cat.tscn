@@ -278,6 +278,7 @@ head_colors = Array[Color]([Color(1, 0.933333, 0.85098, 1), Color(0.921569, 0.73
 pattern_colors = Array[Color]([Color(0.713726, 0.494118, 0.411765, 1), Color(0.498039, 0.52549, 0.576471, 1), Color(0.243137, 0.239216, 0.239216, 1), Color(1, 0.439216, 0.0705882, 1)])
 eye_colors = Array[Color]([Color(0, 1, 0.788235, 1), Color(0, 1, 0.156863, 1), Color(0.921569, 1, 0, 1), Color(0, 0.905882, 1, 1)])
 acceleration = 4.0
+head_height = 25.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
