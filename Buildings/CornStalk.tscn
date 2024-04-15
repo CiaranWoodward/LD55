@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtejwydluj4u0"]
+[gd_scene load_steps=7 format=3 uid="uid://dtejwydluj4u0"]
 
+[ext_resource type="Script" path="res://Buildings/CornStalk.gd" id="1_f0r3l"]
 [ext_resource type="Texture2D" uid="uid://chb6e5j7ffuo2" path="res://Graphics/Buildings/CornField/CornShadow0000.png" id="1_lbyfu"]
 [ext_resource type="Texture2D" uid="uid://c48pv8ca7o3bm" path="res://Graphics/Buildings/CornField/Corn0000.png" id="2_ruwi4"]
 
@@ -43,6 +44,7 @@ _data = {
 
 [node name="CornStalk" type="Node2D"]
 position = Vector2(0, -27)
+script = ExtResource("1_f0r3l")
 
 [node name="CornStalk" type="Node2D" parent="."]
 position = Vector2(0, 27)
