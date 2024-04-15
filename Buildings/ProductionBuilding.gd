@@ -3,8 +3,7 @@ extends Building
 
 @export var cat_slots: int = 2
 @export var base_build_time: float = 5.0
-@export var cat_time_multiplier: float = 0.9
-@export var max_inventory: int = 10
+@export var cat_time_multiplier: float = 0.75
 
 @onready var build_timer = Timer.new()
 var cat_count: int = 0 : set = set_cat_count
@@ -21,7 +20,8 @@ func set_cat_count(newCount):
 		newCount = 0
 		build_timer.stop()
 	else:
-		build_timer.wait_time = base_build_time * pow(cat_time_multiplier, cat_count)
+		build_timer.wait_time = base_build_time * pow(cat_time_multiplier, newCount - 1)
+		print (build_timer.wait_time)
 		if build_timer.is_stopped():
 			build_timer.start()
 	cat_count = newCount

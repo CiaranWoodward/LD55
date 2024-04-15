@@ -30,7 +30,7 @@ func _ready():
 	collision_layer = Global.PhysicsLayer.CHARACTER
 	collision_mask = Global.PhysicsLayer.BUILDING | Global.PhysicsLayer.NORMAL
 	_configure_area()
-	nav.debug_enabled = true
+	#nav.debug_enabled = true
 	
 func _configure_area():
 	var colshape = CollisionShape2D.new()
