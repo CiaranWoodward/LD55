@@ -22,6 +22,10 @@ enum ResourceType {
 	GOLD,
 	CORN,
 	FISH,
+	GHOST,
+	SKELETON,
+	DEMON,
+	LOST_SOUL,
 }
 
 enum PhysicsLayer {

@@ -1,5 +1,21 @@
 extends Building
 
+enum GameType {
+	WITCHY,
+	SPOOKY,
+	HELLISH,
+	CRYPTIC,
+}
+
+@export var timeout: float = 20.0
+@export var summon_heal: float = 5.0
+@export var summon_count: int = 5
+@export var game_type: GameType = GameType.WITCHY
+@export var dead_modulate: Color = Color(0.2, 0.2, 0.2)
+
+@onready var _current_timeout = timeout
+var _timeout_tween: Tween 
+
 var _sticky_lerpval = 0.0
 var _start_gp: Vector2
 var _lerp_tween: Tween
@@ -10,8 +26,26 @@ func _ready():
 	_start_gp = $Graphic.global_position
 	Global.game_map.games_on_screen_changed.connect(_updated_onscreen)
 	_stick_to_screen()
-	change_queue_count(Global.ResourceType.WITCH, -5)
-	$Graphic/Shaker.childhood_trauma = 0.5
+	_prepare_timeout()
+
+func _prepare_gametype():
+	match game_type:
+		GameType.WITCHY:
+			change_queue_count(Global.ResourceType.WITCH, -summon_count)
+		GameType.SPOOKY:
+			change_queue_count(Global.ResourceType.GHOST, -summon_count)
+		GameType.HELLISH:
+			change_queue_count(Global.ResourceType.DEMON, -summon_count)
+		GameType.CRYPTIC:
+			change_queue_count(Global.ResourceType.SKELETON, -summon_count)
+
+func _prepare_timeout():
+	if _timeout_tween:
+		_timeout_tween.kill()
+	_timeout_tween = create_tween()
+	_timeout_tween.tween_property(self, "_current_timeout", 0.0, _current_timeout)
+	_timeout_tween.parallel().tween_property(self, "modulate", dead_modulate, _current_timeout)
+	_timeout_tween.parallel().tween_property($Graphic/Shaker, "childhood_trauma", 0.7, _current_timeout).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 
 func _updated_onscreen(onscreen: bool):
 	if onscreen:

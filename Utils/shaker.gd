@@ -29,7 +29,6 @@ func add_trauma(amount : float):
 func _shake(): 
 	var working_trauma = min(trauma + childhood_trauma, 1.0)
 	var amt = pow(working_trauma, trauma_power)
-	print(amt)
 	noise_y += 1
 	rotation = max_roll * amt * noise.get_noise_2d(0,noise_y)
 	offset.x = max_offset.x * amt * noise.get_noise_2d(1000,noise_y)
