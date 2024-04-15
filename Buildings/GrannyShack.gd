@@ -29,3 +29,6 @@ func handle_character(character: BaseCharacter):
 
 func is_job_blocked() -> bool:
 	return super.is_job_blocked() or get_inventory_count(Global.ResourceType.CORN) < corn_per_granny
+
+func employ(cat: Cat):
+	super.employ(cat)

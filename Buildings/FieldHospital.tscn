@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bfoh7k3fj37j5" path="res://Graphics/Buildings/FieldHospital/FieldHospital0000.png" id="6_ifdpd"]
 [ext_resource type="Texture2D" uid="uid://ypr10migvsrd" path="res://Graphics/Buildings/FieldHospital/Cross0000.png" id="7_c6pry"]
 [ext_resource type="PackedScene" uid="uid://c2b5nymg5ho3n" path="res://Buildings/StockPile.tscn" id="8_swsq8"]
+[ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="8_ev118"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2y8g"]
 size = Vector2(382.375, 202)
@@ -99,3 +100,10 @@ polygon = PackedVector2Array(-184, -92, 188, -92, 182, 92, 22, 89, 21, 30, -21, 
 position = Vector2(-52, -1)
 navigation_polygon = SubResource("NavigationPolygon_rd5b6")
 navigation_layers = 2
+
+[node name="DebugInventory" type="RichTextLabel" parent="."]
+offset_top = 94.0
+offset_right = 207.0
+offset_bottom = 241.0
+text = "poskpwiok"
+script = ExtResource("8_ev118")

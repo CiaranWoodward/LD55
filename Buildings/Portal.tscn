@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://bntc8r0gvpd8m"]
+[gd_scene load_steps=94 format=3 uid="uid://bntc8r0gvpd8m"]
 
 [ext_resource type="Script" path="res://Buildings/Portal.gd" id="1_qfxbj"]
 [ext_resource type="Texture2D" uid="uid://c1r4qi0hk5nj1" path="res://Graphics/Buildings/Portal/PortalBase0000.png" id="2_qvr1g"]
@@ -67,6 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://cgyrnkcb8pf0t" path="res://Graphics/Buildings/Portal/Gem0008.png" id="64_vypmy"]
 [ext_resource type="Texture2D" uid="uid://btdmeluigxgwk" path="res://Graphics/Buildings/Portal/Gem0009.png" id="65_us73e"]
 [ext_resource type="Texture2D" uid="uid://bvxx0b0qdskso" path="res://Graphics/Buildings/Sparkle0000.png" id="66_6f8kt"]
+[ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="68_kwkge"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ptbaa"]
 animations = [{
@@ -734,3 +735,10 @@ shape = SubResource("RectangleShape2D_tgowq")
 [node name="Polygon2D" type="Polygon2D" parent="." groups=["navigation_blocking_group"]]
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-105, -5, 94, -3, 128, 84, -133, 87)
+
+[node name="DebugInventory" type="RichTextLabel" parent="."]
+offset_top = 101.0
+offset_right = 207.0
+offset_bottom = 255.0
+text = "poskpwiok"
+script = ExtResource("68_kwkge")

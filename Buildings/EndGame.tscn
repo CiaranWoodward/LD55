@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Buildings/EndGame.gd" id="1_qkj20"]
 [ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="2_jgvgp"]
 [ext_resource type="PackedScene" uid="uid://d7bt5crkrnm3" path="res://Utils/shaker.tscn" id="2_v3fpe"]
+[ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="3_ojfyl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0j5u"]
 size = Vector2(302, 203)
@@ -72,3 +73,10 @@ shape = SubResource("RectangleShape2D_d0j5u")
 
 [node name="JumpTo" type="Marker2D" parent="."]
 position = Vector2(153, 100)
+
+[node name="DebugInventory" type="RichTextLabel" parent="."]
+offset_top = 204.0
+offset_right = 301.0
+offset_bottom = 346.0
+text = "poskpwiok"
+script = ExtResource("3_ojfyl")

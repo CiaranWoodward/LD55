@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cseq0jcpd6rfc"]
+[gd_scene load_steps=18 format=3 uid="uid://cseq0jcpd6rfc"]
 
 [ext_resource type="Script" path="res://Map/GameMap.gd" id="1_667xj"]
 [ext_resource type="PackedScene" uid="uid://clufegtvym2pa" path="res://Buildings/RecutementCentre.tscn" id="1_p3gag"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://xwnmbnqormf4" path="res://Buildings/HerbGarden.tscn" id="13_fryhv"]
 [ext_resource type="PackedScene" uid="uid://radowl65xsta" path="res://Buildings/FieldHospital.tscn" id="14_aa4xp"]
 [ext_resource type="PackedScene" uid="uid://iynercm4q834" path="res://Buildings/SheepBarn.tscn" id="15_bx6hf"]
+[ext_resource type="PackedScene" uid="uid://bhkrdyerxw3h8" path="res://Buildings/Fishery.tscn" id="16_cua2n"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_imvrd"]
 outlines = Array[PackedVector2Array]([PackedVector2Array(-571, -416, 1749, -422, 1799, 1434, -652, 1424)])
@@ -29,13 +30,10 @@ y_sort_enabled = true
 navigation_polygon = SubResource("NavigationPolygon_imvrd")
 
 [node name="Recutement Centre" parent="NavigationRegion2D" instance=ExtResource("1_p3gag")]
-position = Vector2(401, 299)
+position = Vector2(429, 264)
 
 [node name="Recutement Centre2" parent="NavigationRegion2D" instance=ExtResource("1_p3gag")]
-position = Vector2(298, 492)
-
-[node name="Recutement Centre3" parent="NavigationRegion2D" instance=ExtResource("1_p3gag")]
-position = Vector2(815, 213)
+position = Vector2(357, 602)
 
 [node name="Portal" parent="NavigationRegion2D" instance=ExtResource("2_4o8v8")]
 position = Vector2(588, 16)
@@ -109,3 +107,7 @@ script = ExtResource("6_5o6ap")
 
 [node name="GameFollowPoint" type="Marker2D" parent="."]
 position = Vector2(735, 1112)
+
+
+[node name="Fishery" parent="." instance=ExtResource("16_cua2n")]
+position = Vector2(-242, 724)

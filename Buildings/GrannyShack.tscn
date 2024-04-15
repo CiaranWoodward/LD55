@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Buildings/GrannyShack.gd" id="1_x74po"]
 [ext_resource type="Texture2D" uid="uid://bodq175q45hkc" path="res://Graphics/Buildings/NursingHome/FlowerRow0000.png" id="2_07sno"]
 [ext_resource type="Texture2D" uid="uid://be0uc85y5s6d0" path="res://Graphics/Buildings/NursingHome/Roof0000.png" id="2_fiu7s"]
+[ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="3_at2f1"]
 [ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="2_h446v"]
 [ext_resource type="Texture2D" uid="uid://c7qkubmppoksj" path="res://Graphics/Buildings/NursingHome/Walls0000.png" id="3_bqeo7"]
 [ext_resource type="Texture2D" uid="uid://de81xfoj2hs4b" path="res://Graphics/Buildings/NursingHome/Windows0000.png" id="4_ssw04"]
@@ -24,12 +25,6 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="GrannyShack" type="Node2D"]
 script = ExtResource("1_x74po")
-max_corn = null
-corn_per_granny = null
-cat_slots = null
-cost = null
-base_build_time = null
-cat_time_multiplier = null
 
 [node name="Graphic" type="Node2D" parent="."]
 
@@ -192,3 +187,11 @@ polygon = PackedVector2Array(-312, -67, 67, -67, 66, 67, 28, 68, 29, -16, -26, -
 position = Vector2(-52, -1)
 navigation_polygon = SubResource("NavigationPolygon_rd5b6")
 navigation_layers = 2
+
+[node name="DebugInventory" type="RichTextLabel" parent="."]
+offset_left = -109.0
+offset_top = 74.0
+offset_right = 128.0
+offset_bottom = 214.0
+text = "poskpwiok"
+script = ExtResource("3_at2f1")

@@ -1,6 +1,8 @@
 class_name Building
 extends Node2D
 
+var transport_count = 0
+
 var _inventory: Dictionary = Global.ResourceType.values().reduce(func(accum, type):
 	accum[type] = 0
 	return accum, {})
@@ -10,10 +12,10 @@ var _queue: Dictionary = Global.ResourceType.values().reduce(func(accum, type):
 	return accum, {})
 	
 func get_inventory_count(type: Global.ResourceType) -> int:
-	return _inventory[type];
+	return _inventory[type]
 	
 func get_queue_count(type: Global.ResourceType) -> int:
-	return _queue[type];
+	return _queue[type]
 	
 func change_queue_count(type: Global.ResourceType, delta: int):
 	_queue[type] = _queue[type] + delta;
@@ -35,5 +37,12 @@ func _ready():
 func _process(delta):
 	pass
 
-func distance_squared_to_me(character: BaseCharacter):
-	return character.global_position.distance_squared_to(global_position)
+func pathing_desirability(character: BaseCharacter) -> float:
+	if character.resource == null: return 0
+	return 1/((1+transport_count)*character.global_position.distance_squared_to(global_position))
+	
+func on_nav_start(character: BaseCharacter):
+	transport_count += 1
+	
+func on_nav_end(character: BaseCharacter):
+	transport_count -= 1

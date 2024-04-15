@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="6_aif8s"]
 [ext_resource type="Texture2D" uid="uid://co1lpbyvujc2b" path="res://Graphics/Buildings/CornField/CornBarTile0000.png" id="7_e3d3b"]
 [ext_resource type="Texture2D" uid="uid://b1433u6otf7xb" path="res://Graphics/Buildings/CornField/CornBarTop0000.png" id="8_ls4s7"]
+[ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="9_vivdl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5ibk"]
 size = Vector2(135, 136.5)
@@ -279,3 +280,10 @@ polygon = PackedVector2Array(-120, -72, 128, -72, 128, 72, -120, 72)
 [node name="WorkingNavigationRegion" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_l2857")
 navigation_layers = 2
+
+[node name="DebugInventory" type="RichTextLabel" parent="."]
+offset_top = 83.0
+offset_right = 207.0
+offset_bottom = 241.0
+text = "poskpwiok"
+script = ExtResource("9_vivdl")

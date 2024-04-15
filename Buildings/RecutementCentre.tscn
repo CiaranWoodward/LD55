@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Buildings/RecutementCentre.gd" id="1_b68fl"]
 [ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_h7ptg"]
 [ext_resource type="Texture2D" uid="uid://tyqbiq3emmtr" path="res://Graphics/Icons/WhiteSquare0000.png" id="3_hkxd5"]
+[ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="3_eqy48"]
 [ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="4_4hgfq"]
 [ext_resource type="Texture2D" uid="uid://dybhiwlqqrp6v" path="res://Graphics/Buildings/RecutementCentre/SignBack0000.png" id="5_u178e"]
 [ext_resource type="Texture2D" uid="uid://c5jfxoxbb1ew" path="res://Graphics/Buildings/RecutementCentre/Recruitment0000.png" id="6_78tdc"]
@@ -146,3 +147,11 @@ polygon = PackedVector2Array(-162, -34, 164, -36, 164, 85, -164, 85)
 position = Vector2(-52, -1)
 navigation_polygon = SubResource("NavigationPolygon_mpym4")
 navigation_layers = 2
+
+[node name="DebugInventory" type="RichTextLabel" parent="."]
+offset_left = -109.0
+offset_top = 72.0
+offset_right = 207.0
+offset_bottom = 241.0
+text = "poskpwiok"
+script = ExtResource("3_eqy48")

@@ -66,11 +66,12 @@ func _find_new_target():
 		current_target = null
 	else:
 		# target building and add self to queue
-		potential_buildings.sort_custom(func(a: Building, b: Building): return a.distance_squared_to_me(self) < b.distance_squared_to_me(self))
+		resource = resourceToQueue
+		potential_buildings.sort_custom(func(a: Building, b: Building): return a.pathing_desirability(self) > b.pathing_desirability(self))
 		current_target = potential_buildings.front()
 		target_position = current_target.global_position
-		current_target.change_queue_count(resourceToQueue, 1)
-		resource = resourceToQueue
+		current_target.change_queue_count(resource, 1)
+		current_target.on_nav_start(self)
 	
 	nav.target_position = target_position
 	nav.target_desired_distance = 50
@@ -81,6 +82,7 @@ func _physics_process(delta):
 	if nav.is_navigation_finished():
 		if is_instance_valid(current_target):
 			current_target.handle_character(self)
+			current_target.on_nav_end(self)
 			current_target = null
 		else:
 			_find_new_target()
@@ -155,6 +157,7 @@ func pick_up() -> bool:
 	_jumping = false
 	if (is_instance_valid(current_target) && resource != null):
 		current_target.change_queue_count(resource, -1)
+		current_target.on_nav_end(self)
 	resource = null
 	current_target = null
 	_stashed_collision_layer = collision_layer
