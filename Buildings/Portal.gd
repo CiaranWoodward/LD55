@@ -22,8 +22,10 @@ func _exchange(character: BaseCharacter):
 	var spawn
 	if character is Granny:
 		spawn = load("res://Characters/Witch.tscn").instantiate()
+		spawn.hair_colors = [character.get_node("Graphic/Character/Hair").self_modulate]
 	elif character is Sheep:
 		spawn = load("res://Characters/Demon.tscn").instantiate()
+		spawn.horn_colors = [character.get_node("Graphic/Character/Horns").self_modulate]
 	else:
 		return
 	Global.game_map.add_character(spawn)
