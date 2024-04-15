@@ -15,29 +15,22 @@
 size = Vector2(285, 145)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_5nm58"]
-vertices = PackedVector2Array(117, 19, -115, 19, -118, -37, 116, -37)
+vertices = PackedVector2Array(119, 39, -122, 39, -122, -42, 119, -42)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-129, -47, 126, -47, 128, 29, -125, 30)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-132, -52, 129, -52, 130, 50, -132, 49)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="HoldingPen" type="Node2D"]
 script = ExtResource("1_iqrxb")
 
 [node name="Graphic" type="Node2D" parent="."]
+y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
 
-[node name="Fence" type="Node2D" parent="Graphic"]
+[node name="SideFence" type="Node2D" parent="Graphic"]
 modulate = Color(0.933333, 0.698039, 0.396078, 1)
 
-[node name="BackFence" type="TextureRect" parent="Graphic/Fence"]
-offset_left = -270.0
-offset_top = -146.0
-offset_right = 266.0
-offset_bottom = -99.0
-texture = ExtResource("2_4yhu1")
-stretch_mode = 1
-
-[node name="LeftFence" type="TextureRect" parent="Graphic/Fence"]
+[node name="LeftFence" type="TextureRect" parent="Graphic/SideFence"]
 offset_left = -270.0
 offset_top = -132.0
 offset_right = -263.0
@@ -45,7 +38,7 @@ offset_bottom = 80.0
 texture = ExtResource("4_kpxlj")
 stretch_mode = 1
 
-[node name="RightFence" type="TextureRect" parent="Graphic/Fence"]
+[node name="RightFence" type="TextureRect" parent="Graphic/SideFence"]
 offset_left = 260.0
 offset_top = -132.0
 offset_right = 267.0
@@ -53,12 +46,29 @@ offset_bottom = 80.0
 texture = ExtResource("4_kpxlj")
 stretch_mode = 1
 
-[node name="FrontFence" type="TextureRect" parent="Graphic/Fence"]
+[node name="FrontFence" type="Node2D" parent="Graphic"]
+modulate = Color(0.933333, 0.698039, 0.396078, 1)
+position = Vector2(0, 104)
+
+[node name="FrontFence" type="TextureRect" parent="Graphic/FrontFence"]
 offset_left = -270.0
-offset_top = 68.0
+offset_top = -42.0
 offset_right = 266.0
-offset_bottom = 115.0
+offset_bottom = 5.0
+size_flags_vertical = 0
 texture = ExtResource("3_1h2y1")
+stretch_mode = 1
+
+[node name="BackFence" type="Node2D" parent="Graphic"]
+modulate = Color(0.933333, 0.698039, 0.396078, 1)
+position = Vector2(0, -108)
+
+[node name="BackFence" type="TextureRect" parent="Graphic/BackFence"]
+offset_left = -268.0
+offset_top = -36.0
+offset_right = 268.0
+offset_bottom = 11.0
+texture = ExtResource("2_4yhu1")
 stretch_mode = 1
 
 [node name="Ground" type="Node2D" parent="Graphic"]

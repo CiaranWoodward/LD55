@@ -88,6 +88,14 @@ scale = Vector2(-1, 1)
 texture = ExtResource("2_wn0vd")
 offset = Vector2(-6.88299, -1.51863)
 
+[node name="BlackEye" type="Sprite2D" parent="Graphic/Character"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -69.2221)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("3_w87la")
+offset = Vector2(-6.88299, -1.51863)
+
 [node name="Eyes" type="Sprite2D" parent="Graphic/Character"]
 self_modulate = Color(0, 0.976471, 1, 1)
 position = Vector2(0, -69.2221)
