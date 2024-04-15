@@ -9,8 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://ewhg68vdj3ix" path="res://Graphics/Buildings/GroundFlecks0000.png" id="3_puiem"]
 [ext_resource type="PackedScene" uid="uid://ckplrxq1lxetw" path="res://UI/Cursor.tscn" id="4_0ycld"]
 [ext_resource type="PackedScene" uid="uid://dr3k135c6aj68" path="res://Characters/Cat.tscn" id="4_1crc1"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="5_fjtgj"]
 [ext_resource type="PackedScene" uid="uid://dol2yvdyffyc5" path="res://Characters/Witch.tscn" id="5_g2ini"]
-[ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="5_xclf1"]
+[ext_resource type="Texture2D" uid="uid://jsck1cnllkau" path="res://Graphics/Environment/Steps0000.png" id="6_4bvxb"]
 [ext_resource type="PackedScene" uid="uid://cqtw2u46g28co" path="res://Buildings/EndGame.tscn" id="6_5nybr"]
 [ext_resource type="Script" path="res://Map/PlayerCam.gd" id="6_5o6ap"]
 [ext_resource type="Texture2D" uid="uid://tyqbiq3emmtr" path="res://Graphics/Icons/WhiteSquare0000.png" id="6_p556y"]
@@ -49,7 +50,7 @@ uv_clipping = true
 sources/1 = SubResource("TileSetAtlasSource_b72nx")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_imvrd"]
-outlines = Array[PackedVector2Array]([PackedVector2Array(-353, -375, 1811, -383, 1784, 1346, -364, 1339)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-354, -450, 1819, -454, 1772, 784, 1320, 782, 1320, 1079, 1166, 1090, 1167, 773, 969, 778, 971, 1096, 821, 1096, 822.495, 781.514, 626, 781, 626, 1093, 467, 1103, 470.379, 775.333, 275.617, 774.036, 270, 1135, 118, 1135, 120, 773, -370, 767)])
 source_geometry_mode = 2
 source_geometry_group_name = &"navigation_blocking_group"
 
@@ -107,25 +108,93 @@ layer_0/tile_data = PackedInt32Array(-65540, 1, 1, -4, 1, 1, -65539, 65537, 0, -
 
 [node name="Bridges" type="Node2D" parent="Environment"]
 
-[node name="Bridge" type="Sprite2D" parent="Environment/Bridges"]
-position = Vector2(-519, 735)
-scale = Vector2(1.23438, 1.26563)
-texture = ExtResource("5_xclf1")
+[node name="TopShadows" type="Node2D" parent="Environment/Bridges"]
 
-[node name="Bridge2" type="Sprite2D" parent="Environment/Bridges"]
-position = Vector2(-186, 735)
-scale = Vector2(1.23438, 1.26563)
-texture = ExtResource("5_xclf1")
+[node name="Shadow" type="Sprite2D" parent="Environment/Bridges/TopShadows"]
+self_modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(-527, 672)
+scale = Vector2(3.76, 0.720001)
+texture = ExtResource("5_fjtgj")
 
-[node name="Bridge3" type="Sprite2D" parent="Environment/Bridges"]
-position = Vector2(163, 735)
-scale = Vector2(1.23438, 1.26563)
-texture = ExtResource("5_xclf1")
+[node name="Shadow3" type="Sprite2D" parent="Environment/Bridges/TopShadows"]
+self_modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(-173, 672)
+scale = Vector2(3.76, 0.720001)
+texture = ExtResource("5_fjtgj")
 
-[node name="Bridge4" type="Sprite2D" parent="Environment/Bridges"]
-position = Vector2(530, 735)
-scale = Vector2(1.23438, 1.26563)
-texture = ExtResource("5_xclf1")
+[node name="Shadow5" type="Sprite2D" parent="Environment/Bridges/TopShadows"]
+self_modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(174, 672)
+scale = Vector2(3.76, 0.720001)
+texture = ExtResource("5_fjtgj")
+
+[node name="Shadow7" type="Sprite2D" parent="Environment/Bridges/TopShadows"]
+self_modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(515, 672)
+scale = Vector2(3.76, 0.720001)
+texture = ExtResource("5_fjtgj")
+
+[node name="BottomShadows" type="Node2D" parent="Environment/Bridges"]
+
+[node name="Shadow2" type="Sprite2D" parent="Environment/Bridges/BottomShadows"]
+self_modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(-527, 848)
+scale = Vector2(3.76, 0.720001)
+texture = ExtResource("5_fjtgj")
+
+[node name="Shadow4" type="Sprite2D" parent="Environment/Bridges/BottomShadows"]
+self_modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(-173, 848)
+scale = Vector2(3.76, 0.720001)
+texture = ExtResource("5_fjtgj")
+
+[node name="Shadow6" type="Sprite2D" parent="Environment/Bridges/BottomShadows"]
+self_modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(174, 848)
+scale = Vector2(3.76, 0.720001)
+texture = ExtResource("5_fjtgj")
+
+[node name="Shadow8" type="Sprite2D" parent="Environment/Bridges/BottomShadows"]
+self_modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(515, 848)
+scale = Vector2(3.76, 0.720001)
+texture = ExtResource("5_fjtgj")
+
+[node name="Bridge" type="TextureRect" parent="Environment/Bridges"]
+self_modulate = Color(0.443137, 0.521569, 0.6, 1)
+offset_left = -607.0
+offset_top = 661.0
+offset_right = -451.0
+offset_bottom = 850.0
+texture = ExtResource("6_4bvxb")
+stretch_mode = 1
+
+[node name="Bridge2" type="TextureRect" parent="Environment/Bridges"]
+self_modulate = Color(0.443137, 0.521569, 0.6, 1)
+offset_left = -254.0
+offset_top = 661.0
+offset_right = -98.0
+offset_bottom = 850.0
+texture = ExtResource("6_4bvxb")
+stretch_mode = 1
+
+[node name="Bridge3" type="TextureRect" parent="Environment/Bridges"]
+self_modulate = Color(0.443137, 0.521569, 0.6, 1)
+offset_left = 96.0
+offset_top = 661.0
+offset_right = 252.0
+offset_bottom = 850.0
+texture = ExtResource("6_4bvxb")
+stretch_mode = 1
+
+[node name="Bridge4" type="TextureRect" parent="Environment/Bridges"]
+self_modulate = Color(0.443137, 0.521569, 0.6, 1)
+offset_left = 441.0
+offset_top = 661.0
+offset_right = 597.0
+offset_bottom = 850.0
+texture = ExtResource("6_4bvxb")
+stretch_mode = 1
 
 [node name="ldjam" type="Node2D" parent="Environment"]
 
@@ -170,6 +239,7 @@ text = "EVENT"
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 y_sort_enabled = true
+position = Vector2(4, -8)
 navigation_polygon = SubResource("NavigationPolygon_imvrd")
 
 [node name="Recutement Centre" parent="NavigationRegion2D" instance=ExtResource("1_p3gag")]
@@ -206,7 +276,7 @@ position = Vector2(975, 1030)
 position = Vector2(975, 1030)
 
 [node name="Witch3" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(975, 1030)
+position = Vector2(477, 281)
 
 [node name="EndGame" parent="NavigationRegion2D" instance=ExtResource("6_5nybr")]
 position = Vector2(56, 1064)
