@@ -1,3 +1,4 @@
+class_name GrannyShack
 extends CharacterProducerBuilding
 
 func _get_input_type():

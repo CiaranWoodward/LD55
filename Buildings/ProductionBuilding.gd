@@ -21,7 +21,6 @@ func set_cat_count(newCount):
 		build_timer.stop()
 	else:
 		build_timer.wait_time = base_build_time * pow(cat_time_multiplier, newCount - 1)
-		print (build_timer.wait_time)
 		if build_timer.is_stopped():
 			build_timer.start()
 	cat_count = newCount
