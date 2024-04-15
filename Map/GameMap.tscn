@@ -85,6 +85,21 @@ position = Vector2(1064, 483)
 [node name="Granny" parent="NavigationRegion2D" instance=ExtResource("8_u3pgy")]
 position = Vector2(1159, 121)
 
+[node name="CornField" parent="NavigationRegion2D" instance=ExtResource("10_3752r")]
+position = Vector2(-447, 8)
+
+[node name="HerbGarden" parent="NavigationRegion2D" instance=ExtResource("13_fryhv")]
+position = Vector2(-548, 254)
+
+[node name="FieldHospital" parent="NavigationRegion2D" instance=ExtResource("14_aa4xp")]
+position = Vector2(-81, -115)
+
+[node name="SheepBarn" parent="NavigationRegion2D" instance=ExtResource("15_bx6hf")]
+position = Vector2(-193, 242)
+
+[node name="GrannyShack2" parent="NavigationRegion2D" instance=ExtResource("7_vm5hl")]
+position = Vector2(272, 124)
+
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 
 [node name="Cursor" parent="." instance=ExtResource("4_0ycld")]
@@ -94,15 +109,3 @@ script = ExtResource("6_5o6ap")
 
 [node name="GameFollowPoint" type="Marker2D" parent="."]
 position = Vector2(735, 1112)
-
-[node name="CornField" parent="." instance=ExtResource("10_3752r")]
-position = Vector2(-447, 8)
-
-[node name="HerbGarden" parent="." instance=ExtResource("13_fryhv")]
-position = Vector2(-548, 254)
-
-[node name="FieldHospital" parent="." instance=ExtResource("14_aa4xp")]
-position = Vector2(-81, -115)
-
-[node name="SheepBarn" parent="." instance=ExtResource("15_bx6hf")]
-position = Vector2(-193, 242)

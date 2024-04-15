@@ -1,21 +1,23 @@
-[gd_scene load_steps=11 format=3 uid="uid://xwnmbnqormf4"]
+[gd_scene load_steps=13 format=3 uid="uid://xwnmbnqormf4"]
 
 [ext_resource type="Script" path="res://Buildings/HerbGarden.gd" id="1_51b6j"]
 [ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_wawuv"]
 [ext_resource type="Texture2D" uid="uid://ewhg68vdj3ix" path="res://Graphics/Buildings/GroundFlecks0000.png" id="3_n3lwa"]
 [ext_resource type="Texture2D" uid="uid://mnptu41hifo4" path="res://Graphics/Buildings/HerbGarden/GreenhousePlants0000.png" id="4_i3scb"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="4_jrkrh"]
 [ext_resource type="Texture2D" uid="uid://dqe474q0oyq3c" path="res://Graphics/Buildings/HerbGarden/Glass0000.png" id="5_g3w31"]
 [ext_resource type="Texture2D" uid="uid://b2o4gitrugfvl" path="res://Graphics/Buildings/HerbGarden/WindowSheen0000.png" id="6_rgyd3"]
 [ext_resource type="Texture2D" uid="uid://b8u0ebemymirr" path="res://Graphics/Buildings/HerbGarden/Greenhouse0000.png" id="7_ym2m5"]
 [ext_resource type="PackedScene" uid="uid://dsho6vngb1lk8" path="res://Buildings/Herb.tscn" id="8_mmhl0"]
+[ext_resource type="PackedScene" uid="uid://c2b5nymg5ho3n" path="res://Buildings/StockPile.tscn" id="10_b3pvd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5ibk"]
 size = Vector2(83.6989, 160.415)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_l2857"]
-vertices = PackedVector2Array(67, 69, -67, 69, -67, -52, 68, -52)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(79, -62, -77, -63, -77, 79, 77, 80)])
+vertices = PackedVector2Array(-19, 24, -19, 69, -67, 69, -67, -52, 69, -52, 69, 23)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(79, -62, -77, -63, -77, 79, -9, 80, -9, 34, 79, 33)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="HerbGarden" type="Node2D"]
@@ -57,26 +59,32 @@ scale = Vector2(1.01111, 0.51027)
 texture = ExtResource("3_n3lwa")
 
 [node name="Greenhouse" type="Node2D" parent="Graphic"]
-position = Vector2(4, -57)
+position = Vector2(4, -60)
 scale = Vector2(0.7, 0.7)
+
+[node name="Shadow" type="Sprite2D" parent="Graphic/Greenhouse"]
+self_modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(-2.07681, 5.71429)
+scale = Vector2(4.71164, 0.937689)
+texture = ExtResource("4_jrkrh")
 
 [node name="Planter" type="Sprite2D" parent="Graphic/Greenhouse"]
 self_modulate = Color(0.8, 0.8, 0.8, 1)
-position = Vector2(0, -52)
+position = Vector2(0, -42.8572)
 texture = ExtResource("4_i3scb")
 
 [node name="Glass" type="Sprite2D" parent="Graphic/Greenhouse"]
 self_modulate = Color(0.25098, 0.427451, 0.447059, 0.823529)
-position = Vector2(0, -52)
+position = Vector2(0, -42.8572)
 texture = ExtResource("5_g3w31")
 
 [node name="Sheen" type="Sprite2D" parent="Graphic/Greenhouse"]
 self_modulate = Color(1, 1, 1, 0.490196)
-position = Vector2(0, -52)
+position = Vector2(0, -42.8572)
 texture = ExtResource("6_rgyd3")
 
 [node name="Greenhouse" type="Sprite2D" parent="Graphic/Greenhouse"]
-position = Vector2(0, -52)
+position = Vector2(0, -42.8572)
 texture = ExtResource("7_ym2m5")
 
 [node name="Herb" parent="Graphic" instance=ExtResource("8_mmhl0")]
@@ -86,7 +94,7 @@ position = Vector2(58, -11)
 position = Vector2(63, 15)
 
 [node name="Herb3" parent="Graphic" instance=ExtResource("8_mmhl0")]
-position = Vector2(7, 74)
+position = Vector2(7, 25)
 
 [node name="Herb4" parent="Graphic" instance=ExtResource("8_mmhl0")]
 position = Vector2(3, 45)
@@ -98,7 +106,7 @@ position = Vector2(7, -10)
 position = Vector2(8, -37)
 
 [node name="Herb7" parent="Graphic" instance=ExtResource("8_mmhl0")]
-position = Vector2(-10, -31)
+position = Vector2(-7, -17)
 
 [node name="Herb8" parent="Graphic" instance=ExtResource("8_mmhl0")]
 position = Vector2(44, -37)
@@ -110,13 +118,13 @@ position = Vector2(66, -30)
 position = Vector2(42, 22)
 
 [node name="Herb11" parent="Graphic" instance=ExtResource("8_mmhl0")]
-position = Vector2(23, -53)
+position = Vector2(27, -43)
 
 [node name="Herb12" parent="Graphic" instance=ExtResource("8_mmhl0")]
 position = Vector2(-8, 11)
 
 [node name="Herb13" parent="Graphic" instance=ExtResource("8_mmhl0")]
-position = Vector2(25, 62)
+position = Vector2(33, 11)
 
 [node name="Herb14" parent="Graphic" instance=ExtResource("8_mmhl0")]
 position = Vector2(56, -51)
@@ -128,16 +136,20 @@ position = Vector2(61, 38)
 position = Vector2(44, -5)
 
 [node name="Herb17" parent="Graphic" instance=ExtResource("8_mmhl0")]
-position = Vector2(56, 66)
+position = Vector2(15, -24)
 
 [node name="Herb18" parent="Graphic" instance=ExtResource("8_mmhl0")]
 position = Vector2(28, -17)
 
 [node name="Herb19" parent="Graphic" instance=ExtResource("8_mmhl0")]
-position = Vector2(37, 42)
+position = Vector2(30, 30)
 
 [node name="Herb20" parent="Graphic" instance=ExtResource("8_mmhl0")]
 position = Vector2(18, 16)
+
+[node name="StockPile" parent="Graphic" instance=ExtResource("10_b3pvd")]
+position = Vector2(32, 68)
+scale = Vector2(0.8, 0.8)
 
 [node name="CollectionNode" type="Marker2D" parent="."]
 position = Vector2(-88, -88)
@@ -158,6 +170,5 @@ color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-109, -70, 114, -68, 115, 68, -109, 63)
 
 [node name="WorkingNavigationRegion" type="NavigationRegion2D" parent="."]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_l2857")
 navigation_layers = 2

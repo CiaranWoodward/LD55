@@ -1,15 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl1l3pofspv41"]
+[gd_scene load_steps=15 format=3 uid="uid://bl1l3pofspv41"]
 
 [ext_resource type="Script" path="res://Buildings/GrannyShack.gd" id="1_x74po"]
-[ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="2_ksd26"]
+[ext_resource type="Texture2D" uid="uid://bodq175q45hkc" path="res://Graphics/Buildings/NursingHome/FlowerRow0000.png" id="2_07sno"]
+[ext_resource type="Texture2D" uid="uid://be0uc85y5s6d0" path="res://Graphics/Buildings/NursingHome/Roof0000.png" id="2_fiu7s"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="2_h446v"]
+[ext_resource type="Texture2D" uid="uid://c7qkubmppoksj" path="res://Graphics/Buildings/NursingHome/Walls0000.png" id="3_bqeo7"]
+[ext_resource type="Texture2D" uid="uid://de81xfoj2hs4b" path="res://Graphics/Buildings/NursingHome/Windows0000.png" id="4_ssw04"]
+[ext_resource type="Texture2D" uid="uid://sf1cfi2icgdv" path="res://Graphics/Buildings/NursingHome/HomeSign0000.png" id="5_q4k6i"]
+[ext_resource type="Texture2D" uid="uid://c5ynktycagf2o" path="res://Graphics/Buildings/NursingHome/FrontFlowers0000.png" id="6_kaleu"]
+[ext_resource type="Texture2D" uid="uid://deubc5d55blvj" path="res://Graphics/Buildings/NursingHome/NursingHome0000.png" id="7_nuapu"]
+[ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="8_bxiae"]
+[ext_resource type="Texture2D" uid="uid://ewhg68vdj3ix" path="res://Graphics/Buildings/GroundFlecks0000.png" id="9_ugwea"]
+[ext_resource type="PackedScene" uid="uid://c2b5nymg5ho3n" path="res://Buildings/StockPile.tscn" id="11_2i1fs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2y8g"]
-size = Vector2(378, 136.5)
+size = Vector2(274, 195)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rd5b6"]
-vertices = PackedVector2Array(-33, 57, -247, 57, -245, -54, -33, -54)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-24, -64, -255, -65, -258, 67, -23, 68)])
+vertices = PackedVector2Array(20, 26, -105, 26, -103, -78, 38, -77, 39, -8, 121, 23, 195, 25, 195, 76, 20, 76, 119, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 0), PackedInt32Array(5, 0, 4, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(48, -87, -113, -89, -116, 37, 10, 36, 11, 86, 205, 87, 206, 16, 130, 13, 128, -18, 49, -18)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="GrannyShack" type="Node2D"]
@@ -21,15 +31,157 @@ cost = null
 base_build_time = null
 cat_time_multiplier = null
 
-[node name="Graphic" type="Sprite2D" parent="."]
-modulate = Color(0, 1, 0, 1)
-texture = ExtResource("2_ksd26")
+[node name="Graphic" type="Node2D" parent="."]
+
+[node name="Flowers" type="Sprite2D" parent="Graphic"]
+position = Vector2(30, 36)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_07sno")
+
+[node name="Shadow" type="Sprite2D" parent="Graphic/Flowers"]
+self_modulate = Color(0, 0, 0, 0.607843)
+show_behind_parent = true
+position = Vector2(-3, 8)
+scale = Vector2(2.16, 0.22)
+texture = ExtResource("2_h446v")
+
+[node name="Flowers2" type="Sprite2D" parent="Graphic"]
+position = Vector2(-89, -67)
+texture = ExtResource("2_07sno")
+
+[node name="Shadow" type="Sprite2D" parent="Graphic/Flowers2"]
+self_modulate = Color(0, 0, 0, 0.607843)
+show_behind_parent = true
+position = Vector2(-3, 8)
+scale = Vector2(2.16, 0.22)
+texture = ExtResource("2_h446v")
+
+[node name="Flowers3" type="Sprite2D" parent="Graphic"]
+position = Vector2(-62, -44)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_07sno")
+
+[node name="Shadow" type="Sprite2D" parent="Graphic/Flowers3"]
+self_modulate = Color(0, 0, 0, 0.607843)
+show_behind_parent = true
+position = Vector2(-3, 8)
+scale = Vector2(2.16, 0.22)
+texture = ExtResource("2_h446v")
+
+[node name="Flowers4" type="Sprite2D" parent="Graphic"]
+position = Vector2(90, 59)
+texture = ExtResource("2_07sno")
+
+[node name="Shadow" type="Sprite2D" parent="Graphic/Flowers4"]
+self_modulate = Color(0, 0, 0, 0.607843)
+show_behind_parent = true
+position = Vector2(-3, 8)
+scale = Vector2(2.16, 0.22)
+texture = ExtResource("2_h446v")
+
+[node name="NursingHome" type="Node2D" parent="Graphic"]
+position = Vector2(71, -24)
+scale = Vector2(0.8, 0.8)
+
+[node name="Shadow" type="Sprite2D" parent="Graphic/NursingHome"]
+self_modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(0, -6.25)
+scale = Vector2(4.5, 1)
+texture = ExtResource("2_h446v")
+
+[node name="Roof" type="Sprite2D" parent="Graphic/NursingHome"]
+self_modulate = Color(0.541176, 0.243137, 0.0941176, 1)
+position = Vector2(0, -60)
+texture = ExtResource("2_fiu7s")
+
+[node name="Walls" type="Sprite2D" parent="Graphic/NursingHome"]
+self_modulate = Color(0.87451, 0.866667, 0.458824, 1)
+position = Vector2(0, -60)
+texture = ExtResource("3_bqeo7")
+
+[node name="Windows" type="Sprite2D" parent="Graphic/NursingHome"]
+self_modulate = Color(0.501961, 0.8, 0.870588, 1)
+position = Vector2(0, -60)
+texture = ExtResource("4_ssw04")
+
+[node name="HomeSign" type="Sprite2D" parent="Graphic/NursingHome"]
+self_modulate = Color(0.831373, 0.858824, 0.721569, 1)
+position = Vector2(0, -60)
+texture = ExtResource("5_q4k6i")
+
+[node name="Line" type="Sprite2D" parent="Graphic/NursingHome"]
+position = Vector2(0, -60)
+texture = ExtResource("7_nuapu")
+
+[node name="Flowers" type="Sprite2D" parent="Graphic/NursingHome"]
+position = Vector2(0, -60)
+texture = ExtResource("6_kaleu")
+
+[node name="Ground" type="Node2D" parent="Graphic"]
+modulate = Color(0.745098, 0.745098, 0.745098, 1)
+z_index = -2
+position = Vector2(-93, -5)
+scale = Vector2(0.786812, 1.77381)
+
+[node name="Back" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.419608, 0.290196, 0.0392157, 1)
+position = Vector2(115.021, 4.51006)
+scale = Vector2(2.16697, 1.07114)
+texture = ExtResource("8_bxiae")
+
+[node name="Grass" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.603922, 1, 0.352941, 0.647059)
+position = Vector2(117.722, 4.22819)
+scale = Vector2(2.01287, 0.952751)
+texture = ExtResource("8_bxiae")
+
+[node name="Flecks" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.396078, 0.729412, 0.0745098, 1)
+texture_repeat = 2
+position = Vector2(30.5028, -12.9664)
+rotation = 3.14159
+scale = Vector2(1.01111, 0.51027)
+texture = ExtResource("9_ugwea")
+
+[node name="Flecks2" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.396078, 0.729412, 0.0745098, 1)
+texture_repeat = 2
+position = Vector2(207.165, -11.8389)
+rotation = 3.14159
+scale = Vector2(1.01111, 0.51027)
+texture = ExtResource("9_ugwea")
+
+[node name="Flecks3" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.396078, 0.729412, 0.0745098, 1)
+texture_repeat = 2
+position = Vector2(212.249, 26.4966)
+rotation = 3.14159
+scale = Vector2(-1.011, -0.51)
+texture = ExtResource("9_ugwea")
+
+[node name="Flecks4" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.396078, 0.729412, 0.0745098, 1)
+texture_repeat = 2
+position = Vector2(35.5866, 27.6242)
+rotation = 3.14159
+scale = Vector2(1.01111, 0.51027)
+texture = ExtResource("9_ugwea")
+
+[node name="Path" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.560784, 0.560784, 0.560784, 0.792157)
+position = Vector2(269.799, 0.422819)
+scale = Vector2(0.453968, 0.160671)
+texture = ExtResource("8_bxiae")
+
+[node name="StockPile" parent="Graphic" instance=ExtResource("11_2i1fs")]
+position = Vector2(-96, 72)
 
 [node name="BuildPrevention" type="Area2D" parent="."]
+visible = false
 collision_layer = 3
 
 [node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
-position = Vector2(-121, -0.25)
+scale = Vector2(1.22606, 0.984855)
 shape = SubResource("RectangleShape2D_p2y8g")
 
 [node name="Polygon2D" type="Polygon2D" parent="." groups=["navigation_blocking_group"]]

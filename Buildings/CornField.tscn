@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c52obgi0jrhc1"]
+[gd_scene load_steps=12 format=3 uid="uid://c52obgi0jrhc1"]
 
 [ext_resource type="Script" path="res://Buildings/CornField.gd" id="1_2504k"]
 [ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_a2uwx"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dtejwydluj4u0" path="res://Buildings/CornStalk.tscn" id="2_clmvm"]
 [ext_resource type="Texture2D" uid="uid://ewhg68vdj3ix" path="res://Graphics/Buildings/GroundFlecks0000.png" id="3_ypu8m"]
 [ext_resource type="Texture2D" uid="uid://tyqbiq3emmtr" path="res://Graphics/Icons/WhiteSquare0000.png" id="6_8is2w"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="6_aif8s"]
 [ext_resource type="Texture2D" uid="uid://co1lpbyvujc2b" path="res://Graphics/Buildings/CornField/CornBarTile0000.png" id="7_e3d3b"]
 [ext_resource type="Texture2D" uid="uid://b1433u6otf7xb" path="res://Graphics/Buildings/CornField/CornBarTop0000.png" id="8_ls4s7"]
 
@@ -13,9 +14,9 @@
 size = Vector2(135, 136.5)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_l2857"]
-vertices = PackedVector2Array(-29, -54, 110, -56, 110, 61, -29, 12, -106, 58, -105, 18)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(120, -67, -40, -64, -39, 3, -115, 9, -117, 68, 121, 72)])
+vertices = PackedVector2Array(110, -62, 110, 62, -110, 62, -39, 1, -110, 8, -31, -62)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 3), PackedInt32Array(0, 3, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(120, -72, -40, -72, -48, -8, -120, 0, -120, 72, 120, 72)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="CornField" type="Node2D"]
@@ -91,6 +92,13 @@ position = Vector2(-80, -16)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_bbyki")
 offset = Vector2(-8.33333, -120)
+
+[node name="Shadow" type="Sprite2D" parent="Graphic/Silo"]
+self_modulate = Color(0, 0, 0, 0.607843)
+show_behind_parent = true
+position = Vector2(-5.00001, 1.66667)
+scale = Vector2(2.91297, 1.18442)
+texture = ExtResource("6_aif8s")
 
 [node name="BarBack" type="Sprite2D" parent="Graphic/Silo"]
 self_modulate = Color(0.121569, 0.121569, 0.121569, 1)
@@ -266,7 +274,7 @@ shape = SubResource("RectangleShape2D_o5ibk")
 
 [node name="Polygon2D" type="Polygon2D" parent="." groups=["navigation_blocking_group"]]
 color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(-109, -70, 114, -68, 115, 68, -109, 63)
+polygon = PackedVector2Array(-120, -72, 128, -72, 128, 72, -120, 72)
 
 [node name="WorkingNavigationRegion" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_l2857")

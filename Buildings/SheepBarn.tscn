@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://iynercm4q834"]
+[gd_scene load_steps=11 format=3 uid="uid://iynercm4q834"]
 
 [ext_resource type="Script" path="res://Buildings/SheepBarn.gd" id="1_nhbl4"]
 [ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_s8ugd"]
@@ -7,14 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://dayfqowek4tpm" path="res://Graphics/Buildings/SheepBarn/Colour0000.png" id="5_8qhux"]
 [ext_resource type="Texture2D" uid="uid://dalbrdtds7r7l" path="res://Graphics/Buildings/SheepBarn/Barn0000.png" id="6_t7vaq"]
 [ext_resource type="Texture2D" uid="uid://b8vnf37iqu7dc" path="res://Graphics/Buildings/SheepBarn/Frames0000.png" id="7_5wy3g"]
+[ext_resource type="PackedScene" uid="uid://c2b5nymg5ho3n" path="res://Buildings/StockPile.tscn" id="8_nyewt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2y8g"]
 size = Vector2(249.188, 202)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rd5b6"]
-vertices = PackedVector2Array(162, 84, -58, 84, -56, -83, 58, -2, 161, -2, 56, -83)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 0), PackedInt32Array(5, 3, 2)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(172, 94, 171, -12, 81, -11, 81, -95, -66, -94, -68, 94)])
+vertices = PackedVector2Array(162, 84, -58, 84, -58, -25, 162, -25)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(172, 94, 172, -36, -68, -35, -68, 94)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="SheepBarn" type="Node2D"]
@@ -41,7 +42,7 @@ texture = ExtResource("3_iijf8")
 
 [node name="Barn" type="Node2D" parent="Graphic"]
 position = Vector2(58, -42)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.6, 0.6)
 
 [node name="Shadow" type="Sprite2D" parent="Graphic/Barn"]
 self_modulate = Color(0, 0, 0, 0.607843)
@@ -56,13 +57,15 @@ texture = ExtResource("5_8qhux")
 
 [node name="Frames" type="Sprite2D" parent="Graphic/Barn"]
 position = Vector2(0, -92.5)
-scale = Vector2(1, 1)
 texture = ExtResource("7_5wy3g")
 
 [node name="Barn" type="Sprite2D" parent="Graphic/Barn"]
 self_modulate = Color(0.431373, 0.231373, 0.0352941, 1)
 position = Vector2(0, -92.5)
 texture = ExtResource("6_t7vaq")
+
+[node name="StockPile" parent="Graphic" instance=ExtResource("8_nyewt")]
+position = Vector2(-54, -46)
 
 [node name="BuildPrevention" type="Area2D" parent="."]
 visible = false
