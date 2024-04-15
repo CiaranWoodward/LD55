@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://xwnmbnqormf4"]
 
-[ext_resource type="Script" path="res://Buildings/CornField.gd" id="1_hj6p5"]
+[ext_resource type="Script" path="res://Buildings/HerbGarden.gd" id="1_51b6j"]
 [ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_wawuv"]
 [ext_resource type="Texture2D" uid="uid://ewhg68vdj3ix" path="res://Graphics/Buildings/GroundFlecks0000.png" id="3_n3lwa"]
 [ext_resource type="Texture2D" uid="uid://mnptu41hifo4" path="res://Graphics/Buildings/HerbGarden/GreenhousePlants0000.png" id="4_i3scb"]
@@ -19,7 +19,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(79, -62, -77, -63, -77,
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="HerbGarden" type="Node2D"]
-script = ExtResource("1_hj6p5")
+script = ExtResource("1_51b6j")
 
 [node name="Graphic" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -37,23 +37,23 @@ texture = ExtResource("2_wawuv")
 
 [node name="Path" type="Sprite2D" parent="Graphic/Ground"]
 self_modulate = Color(0.603922, 0.52549, 0.352941, 0.647059)
-position = Vector2(-45.7542, 55.2483)
-scale = Vector2(0.301851, 0.800537)
+position = Vector2(-45.7542, 54.9664)
+scale = Vector2(0.301851, 0.794899)
 texture = ExtResource("2_wawuv")
 
 [node name="Flecks" type="Sprite2D" parent="Graphic/Ground"]
 self_modulate = Color(0.498039, 0.286275, 0.0392157, 1)
 texture_repeat = 2
-position = Vector2(-0.405133, 72.5503)
-scale = Vector2(0.945704, 0.449719)
+position = Vector2(-0.405133, 68.6591)
+scale = Vector2(0.945704, 0.527544)
 texture = ExtResource("3_n3lwa")
 
 [node name="Flecks2" type="Sprite2D" parent="Graphic/Ground"]
 self_modulate = Color(0.498039, 0.286275, 0.0392157, 1)
 texture_repeat = 2
-position = Vector2(3.40772, 28.0134)
+position = Vector2(2.55853, 31.0269)
 rotation = 3.14159
-scale = Vector2(0.946, 0.45)
+scale = Vector2(1.01111, 0.51027)
 texture = ExtResource("3_n3lwa")
 
 [node name="Greenhouse" type="Node2D" parent="Graphic"]
@@ -98,7 +98,7 @@ position = Vector2(7, -10)
 position = Vector2(8, -37)
 
 [node name="Herb7" parent="Graphic" instance=ExtResource("8_mmhl0")]
-position = Vector2(60, 78)
+position = Vector2(-10, -31)
 
 [node name="Herb8" parent="Graphic" instance=ExtResource("8_mmhl0")]
 position = Vector2(44, -37)
@@ -128,13 +128,13 @@ position = Vector2(61, 38)
 position = Vector2(44, -5)
 
 [node name="Herb17" parent="Graphic" instance=ExtResource("8_mmhl0")]
-position = Vector2(47, 52)
+position = Vector2(56, 66)
 
 [node name="Herb18" parent="Graphic" instance=ExtResource("8_mmhl0")]
 position = Vector2(28, -17)
 
 [node name="Herb19" parent="Graphic" instance=ExtResource("8_mmhl0")]
-position = Vector2(32, 39)
+position = Vector2(37, 42)
 
 [node name="Herb20" parent="Graphic" instance=ExtResource("8_mmhl0")]
 position = Vector2(18, 16)

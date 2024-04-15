@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://radowl65xsta"]
+
+[ext_resource type="Script" path="res://Buildings/FieldHospital.gd" id="1_jjc0k"]
+[ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_k4ng1"]
+[ext_resource type="Texture2D" uid="uid://ewhg68vdj3ix" path="res://Graphics/Buildings/GroundFlecks0000.png" id="3_bvfl0"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="4_cywp8"]
+[ext_resource type="Texture2D" uid="uid://cnofoyfnapnlu" path="res://Graphics/Buildings/FieldHospital/Fill0000.png" id="5_eghah"]
+[ext_resource type="Texture2D" uid="uid://bfoh7k3fj37j5" path="res://Graphics/Buildings/FieldHospital/FieldHospital0000.png" id="6_ifdpd"]
+[ext_resource type="Texture2D" uid="uid://ypr10migvsrd" path="res://Graphics/Buildings/FieldHospital/Cross0000.png" id="7_c6pry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2y8g"]
+size = Vector2(382.375, 202)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_rd5b6"]
+vertices = PackedVector2Array(-38, 82, -127, 84, -126, -79, -38, 22, 230, -79, 223, 82, 140, 81, 138, 18, 51, -37)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 3, 2), PackedInt32Array(8, 2, 4), PackedInt32Array(4, 7, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-28, 92, -28, 27, 51, -25, 128, 24, 131, 91, 233, 93, 240, -89, -136, -89, -138, 95)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="FieldHospital" type="Node2D"]
+script = ExtResource("1_jjc0k")
+
+[node name="Graphic" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Ground" type="Node2D" parent="Graphic"]
+z_index = -1
+position = Vector2(87, 0)
+scale = Vector2(-1.314, -1.681)
+
+[node name="Back" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.419608, 0.290196, 0.0392157, 1)
+position = Vector2(-0.380506, -0.297506)
+scale = Vector2(0.810496, 1.23167)
+texture = ExtResource("2_k4ng1")
+
+[node name="Flecks" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.498039, 0.286275, 0.0392157, 1)
+position = Vector2(-0.380517, -0.297504)
+scale = Vector2(0.818106, 1.23167)
+texture = ExtResource("3_bvfl0")
+
+[node name="Ground2" type="Node2D" parent="Graphic"]
+z_index = -1
+position = Vector2(-88, 0)
+scale = Vector2(1.31401, 1.68064)
+
+[node name="Back" type="Sprite2D" parent="Graphic/Ground2"]
+self_modulate = Color(0.419608, 0.290196, 0.0392157, 1)
+position = Vector2(-0.380506, -0.297506)
+scale = Vector2(0.810496, 1.23167)
+texture = ExtResource("2_k4ng1")
+
+[node name="Flecks" type="Sprite2D" parent="Graphic/Ground2"]
+self_modulate = Color(0.498039, 0.286275, 0.0392157, 1)
+position = Vector2(-0.380517, -0.297504)
+scale = Vector2(0.818106, 1.23167)
+texture = ExtResource("3_bvfl0")
+
+[node name="Tent" type="Node2D" parent="Graphic"]
+position = Vector2(0, 73)
+scale = Vector2(0.8, 0.8)
+
+[node name="Shadow" type="Sprite2D" parent="Graphic/Tent"]
+self_modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(0, -5)
+scale = Vector2(4.45186, 0.937689)
+texture = ExtResource("4_cywp8")
+
+[node name="Fill" type="Sprite2D" parent="Graphic/Tent"]
+self_modulate = Color(0.956863, 0.956863, 0.956863, 1)
+position = Vector2(0, -56)
+texture = ExtResource("5_eghah")
+
+[node name="Tent" type="Sprite2D" parent="Graphic/Tent"]
+position = Vector2(0, -56)
+texture = ExtResource("6_ifdpd")
+
+[node name="Cross" type="Sprite2D" parent="Graphic/Tent"]
+position = Vector2(0, -56)
+texture = ExtResource("7_c6pry")
+
+[node name="BuildPrevention" type="Area2D" parent="."]
+visible = false
+collision_layer = 3
+
+[node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
+shape = SubResource("RectangleShape2D_p2y8g")
+
+[node name="Polygon2D" type="Polygon2D" parent="." groups=["navigation_blocking_group"]]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-184, -92, 188, -92, 182, 92, 22, 89, 21, 30, -21, 30, -25, 89, -186, 94)
+
+[node name="WorkingNavigationRegion" type="NavigationRegion2D" parent="."]
+visible = false
+position = Vector2(-52, -1)
+navigation_polygon = SubResource("NavigationPolygon_rd5b6")
+navigation_layers = 2
