@@ -37,53 +37,53 @@ self_modulate = Color(0.498039, 0.286275, 0.0392157, 1)
 texture = ExtResource("3_ypu8m")
 
 [node name="Row6" type="Node2D" parent="Graphic"]
-position = Vector2(80, -64)
+position = Vector2(80, -56)
 
 [node name="CornStalk" parent="Graphic/Row6" instance=ExtResource("2_clmvm")]
-position = Vector2(-112, 0)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk2" parent="Graphic/Row6" instance=ExtResource("2_clmvm")]
-position = Vector2(-80, 0)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk3" parent="Graphic/Row6" instance=ExtResource("2_clmvm")]
-position = Vector2(-48, 0)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk4" parent="Graphic/Row6" instance=ExtResource("2_clmvm")]
-position = Vector2(-16, 0)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk5" parent="Graphic/Row6" instance=ExtResource("2_clmvm")]
-position = Vector2(16, 0)
-scale = Vector2(0.5, 0.5)
-
-[node name="Row5" type="Node2D" parent="Graphic"]
-position = Vector2(64, -32)
-
-[node name="CornStalk" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
 position = Vector2(-112, -8)
 scale = Vector2(0.5, 0.5)
 
-[node name="CornStalk2" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
+[node name="CornStalk2" parent="Graphic/Row6" instance=ExtResource("2_clmvm")]
 position = Vector2(-80, -8)
 scale = Vector2(0.5, 0.5)
 
-[node name="CornStalk3" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
+[node name="CornStalk3" parent="Graphic/Row6" instance=ExtResource("2_clmvm")]
 position = Vector2(-48, -8)
 scale = Vector2(0.5, 0.5)
 
-[node name="CornStalk4" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
+[node name="CornStalk4" parent="Graphic/Row6" instance=ExtResource("2_clmvm")]
 position = Vector2(-16, -8)
 scale = Vector2(0.5, 0.5)
 
-[node name="CornStalk5" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
+[node name="CornStalk5" parent="Graphic/Row6" instance=ExtResource("2_clmvm")]
 position = Vector2(16, -8)
 scale = Vector2(0.5, 0.5)
 
+[node name="Row5" type="Node2D" parent="Graphic"]
+position = Vector2(64, -24)
+
+[node name="CornStalk" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
+position = Vector2(-112, -16)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk2" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
+position = Vector2(-80, -16)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk3" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
+position = Vector2(-48, -16)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk4" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
+position = Vector2(-16, -16)
+scale = Vector2(0.5, 0.5)
+
+[node name="CornStalk5" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
+position = Vector2(16, -16)
+scale = Vector2(0.5, 0.5)
+
 [node name="CornStalk6" parent="Graphic/Row5" instance=ExtResource("2_clmvm")]
-position = Vector2(48, -8)
+position = Vector2(48, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="Silo" type="Sprite2D" parent="Graphic"]
@@ -127,127 +127,127 @@ scale = Vector2(0.353739, 1.96737)
 texture = ExtResource("6_8is2w")
 
 [node name="Row4" type="Node2D" parent="Graphic"]
-position = Vector2(80, -8)
+position = Vector2(80, 0)
 
 [node name="CornStalk" parent="Graphic/Row4" instance=ExtResource("2_clmvm")]
-position = Vector2(-112, -8)
+position = Vector2(-112, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk2" parent="Graphic/Row4" instance=ExtResource("2_clmvm")]
-position = Vector2(-80, -8)
+position = Vector2(-80, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk3" parent="Graphic/Row4" instance=ExtResource("2_clmvm")]
-position = Vector2(-48, -8)
+position = Vector2(-48, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk4" parent="Graphic/Row4" instance=ExtResource("2_clmvm")]
-position = Vector2(-16, -8)
+position = Vector2(-16, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk5" parent="Graphic/Row4" instance=ExtResource("2_clmvm")]
-position = Vector2(16, -8)
+position = Vector2(16, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="Row3" type="Node2D" parent="Graphic"]
-position = Vector2(0, 16)
+position = Vector2(0, 24)
 
 [node name="CornStalk" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
-position = Vector2(-112, -8)
+position = Vector2(-112, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk2" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
-position = Vector2(-80, -8)
+position = Vector2(-80, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk3" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
-position = Vector2(-48, -8)
+position = Vector2(-48, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk4" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
-position = Vector2(-16, -8)
+position = Vector2(-16, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk5" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
-position = Vector2(16, -8)
+position = Vector2(16, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk6" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
-position = Vector2(48, -8)
+position = Vector2(48, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk7" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
-position = Vector2(80, -8)
+position = Vector2(80, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk8" parent="Graphic/Row3" instance=ExtResource("2_clmvm")]
-position = Vector2(112, -8)
+position = Vector2(112, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="Row2" type="Node2D" parent="Graphic"]
-position = Vector2(16, 40)
+position = Vector2(16, 48)
 
 [node name="CornStalk" parent="Graphic/Row2" instance=ExtResource("2_clmvm")]
-position = Vector2(-112, -8)
+position = Vector2(-112, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk2" parent="Graphic/Row2" instance=ExtResource("2_clmvm")]
-position = Vector2(-80, -8)
+position = Vector2(-80, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk3" parent="Graphic/Row2" instance=ExtResource("2_clmvm")]
-position = Vector2(-48, -8)
+position = Vector2(-48, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk4" parent="Graphic/Row2" instance=ExtResource("2_clmvm")]
-position = Vector2(-16, -8)
+position = Vector2(-16, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk5" parent="Graphic/Row2" instance=ExtResource("2_clmvm")]
-position = Vector2(16, -8)
+position = Vector2(16, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk6" parent="Graphic/Row2" instance=ExtResource("2_clmvm")]
-position = Vector2(48, -8)
+position = Vector2(48, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk7" parent="Graphic/Row2" instance=ExtResource("2_clmvm")]
-position = Vector2(80, -8)
+position = Vector2(80, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="Row1" type="Node2D" parent="Graphic"]
-position = Vector2(0, 64)
+position = Vector2(0, 72)
 
 [node name="CornStalk" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
-position = Vector2(-112, -8)
+position = Vector2(-112, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk2" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
-position = Vector2(-80, -8)
+position = Vector2(-80, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk3" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
-position = Vector2(-48, -8)
+position = Vector2(-48, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk4" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
-position = Vector2(-16, -8)
+position = Vector2(-16, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk5" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
-position = Vector2(16, -8)
+position = Vector2(16, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk6" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
-position = Vector2(48, -8)
+position = Vector2(48, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk7" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
-position = Vector2(80, -8)
+position = Vector2(80, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CornStalk8" parent="Graphic/Row1" instance=ExtResource("2_clmvm")]
-position = Vector2(112, -8)
+position = Vector2(112, -16)
 scale = Vector2(0.5, 0.5)
 
 [node name="CollectionNode" type="Marker2D" parent="."]

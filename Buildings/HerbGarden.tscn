@@ -3,19 +3,19 @@
 [ext_resource type="Script" path="res://Buildings/CornField.gd" id="1_hj6p5"]
 [ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_wawuv"]
 [ext_resource type="Texture2D" uid="uid://ewhg68vdj3ix" path="res://Graphics/Buildings/GroundFlecks0000.png" id="3_n3lwa"]
-[ext_resource type="PackedScene" uid="uid://dtejwydluj4u0" path="res://Buildings/CornStalk.tscn" id="4_slvse"]
-[ext_resource type="Texture2D" uid="uid://dud533um7hrxk" path="res://Graphics/Buildings/CornField/Silo0000.png" id="5_l3gvh"]
-[ext_resource type="Texture2D" uid="uid://tyqbiq3emmtr" path="res://Graphics/Icons/WhiteSquare0000.png" id="6_5j7fu"]
-[ext_resource type="Texture2D" uid="uid://co1lpbyvujc2b" path="res://Graphics/Buildings/CornField/CornBarTile0000.png" id="7_er0oj"]
-[ext_resource type="Texture2D" uid="uid://b1433u6otf7xb" path="res://Graphics/Buildings/CornField/CornBarTop0000.png" id="8_s43hx"]
+[ext_resource type="Texture2D" uid="uid://mnptu41hifo4" path="res://Graphics/Buildings/HerbGarden/GreenhousePlants0000.png" id="4_i3scb"]
+[ext_resource type="Texture2D" uid="uid://dqe474q0oyq3c" path="res://Graphics/Buildings/HerbGarden/Glass0000.png" id="5_g3w31"]
+[ext_resource type="Texture2D" uid="uid://b2o4gitrugfvl" path="res://Graphics/Buildings/HerbGarden/WindowSheen0000.png" id="6_rgyd3"]
+[ext_resource type="Texture2D" uid="uid://b8u0ebemymirr" path="res://Graphics/Buildings/HerbGarden/Greenhouse0000.png" id="7_ym2m5"]
+[ext_resource type="PackedScene" uid="uid://dsho6vngb1lk8" path="res://Buildings/Herb.tscn" id="8_mmhl0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5ibk"]
-size = Vector2(135, 136.5)
+size = Vector2(83.6989, 160.415)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_l2857"]
-vertices = PackedVector2Array(-29, -54, 110, -56, 110, 61, -29, 12, -106, 58, -105, 18)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(120, -67, -40, -64, -39, 3, -115, 9, -117, 68, 121, 72)])
+vertices = PackedVector2Array(67, 69, -67, 69, -67, -52, 68, -52)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(79, -62, -77, -63, -77, 79, 77, 80)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="HerbGarden" type="Node2D"]
@@ -25,249 +25,139 @@ script = ExtResource("1_hj6p5")
 y_sort_enabled = true
 
 [node name="Ground" type="Node2D" parent="Graphic"]
-z_index = -1
-scale = Vector2(1.31401, 1.68064)
+modulate = Color(0.745098, 0.745098, 0.745098, 1)
+z_index = -2
+position = Vector2(-1, -87)
+scale = Vector2(0.786812, 1.77381)
 
 [node name="Back" type="Sprite2D" parent="Graphic/Ground"]
 self_modulate = Color(0.419608, 0.290196, 0.0392157, 1)
+position = Vector2(0.865818, 49.4362)
+texture = ExtResource("2_wawuv")
+
+[node name="Path" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.603922, 0.52549, 0.352941, 0.647059)
+position = Vector2(-45.7542, 55.2483)
+scale = Vector2(0.301851, 0.800537)
 texture = ExtResource("2_wawuv")
 
 [node name="Flecks" type="Sprite2D" parent="Graphic/Ground"]
 self_modulate = Color(0.498039, 0.286275, 0.0392157, 1)
+texture_repeat = 2
+position = Vector2(-0.405133, 72.5503)
+scale = Vector2(0.945704, 0.449719)
 texture = ExtResource("3_n3lwa")
 
-[node name="Row6" type="Node2D" parent="Graphic"]
-position = Vector2(80, -64)
+[node name="Flecks2" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.498039, 0.286275, 0.0392157, 1)
+texture_repeat = 2
+position = Vector2(3.40772, 28.0134)
+rotation = 3.14159
+scale = Vector2(0.946, 0.45)
+texture = ExtResource("3_n3lwa")
 
-[node name="CornStalk" parent="Graphic/Row6" instance=ExtResource("4_slvse")]
-position = Vector2(-112, 0)
-scale = Vector2(0.5, 0.5)
+[node name="Greenhouse" type="Node2D" parent="Graphic"]
+position = Vector2(4, -57)
+scale = Vector2(0.7, 0.7)
 
-[node name="CornStalk2" parent="Graphic/Row6" instance=ExtResource("4_slvse")]
-position = Vector2(-80, 0)
-scale = Vector2(0.5, 0.5)
+[node name="Planter" type="Sprite2D" parent="Graphic/Greenhouse"]
+self_modulate = Color(0.8, 0.8, 0.8, 1)
+position = Vector2(0, -52)
+texture = ExtResource("4_i3scb")
 
-[node name="CornStalk3" parent="Graphic/Row6" instance=ExtResource("4_slvse")]
-position = Vector2(-48, 0)
-scale = Vector2(0.5, 0.5)
+[node name="Glass" type="Sprite2D" parent="Graphic/Greenhouse"]
+self_modulate = Color(0.25098, 0.427451, 0.447059, 0.823529)
+position = Vector2(0, -52)
+texture = ExtResource("5_g3w31")
 
-[node name="CornStalk4" parent="Graphic/Row6" instance=ExtResource("4_slvse")]
-position = Vector2(-16, 0)
-scale = Vector2(0.5, 0.5)
+[node name="Sheen" type="Sprite2D" parent="Graphic/Greenhouse"]
+self_modulate = Color(1, 1, 1, 0.490196)
+position = Vector2(0, -52)
+texture = ExtResource("6_rgyd3")
 
-[node name="CornStalk5" parent="Graphic/Row6" instance=ExtResource("4_slvse")]
-position = Vector2(16, 0)
-scale = Vector2(0.5, 0.5)
+[node name="Greenhouse" type="Sprite2D" parent="Graphic/Greenhouse"]
+position = Vector2(0, -52)
+texture = ExtResource("7_ym2m5")
 
-[node name="Row5" type="Node2D" parent="Graphic"]
-position = Vector2(64, -32)
+[node name="Herb" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(58, -11)
 
-[node name="CornStalk" parent="Graphic/Row5" instance=ExtResource("4_slvse")]
-position = Vector2(-112, -8)
-scale = Vector2(0.5, 0.5)
+[node name="Herb2" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(63, 15)
 
-[node name="CornStalk2" parent="Graphic/Row5" instance=ExtResource("4_slvse")]
-position = Vector2(-80, -8)
-scale = Vector2(0.5, 0.5)
+[node name="Herb3" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(7, 74)
 
-[node name="CornStalk3" parent="Graphic/Row5" instance=ExtResource("4_slvse")]
-position = Vector2(-48, -8)
-scale = Vector2(0.5, 0.5)
+[node name="Herb4" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(3, 45)
 
-[node name="CornStalk4" parent="Graphic/Row5" instance=ExtResource("4_slvse")]
-position = Vector2(-16, -8)
-scale = Vector2(0.5, 0.5)
+[node name="Herb5" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(7, -10)
 
-[node name="CornStalk5" parent="Graphic/Row5" instance=ExtResource("4_slvse")]
-position = Vector2(16, -8)
-scale = Vector2(0.5, 0.5)
+[node name="Herb6" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(8, -37)
 
-[node name="CornStalk6" parent="Graphic/Row5" instance=ExtResource("4_slvse")]
-position = Vector2(48, -8)
-scale = Vector2(0.5, 0.5)
+[node name="Herb7" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(60, 78)
 
-[node name="Silo" type="Sprite2D" parent="Graphic"]
-position = Vector2(-80, -16)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("5_l3gvh")
-offset = Vector2(-8.33333, -120)
+[node name="Herb8" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(44, -37)
 
-[node name="BarBack" type="Sprite2D" parent="Graphic/Silo"]
-self_modulate = Color(0.121569, 0.121569, 0.121569, 1)
-show_behind_parent = true
-position = Vector2(15.5055, -96.6315)
-scale = Vector2(0.353739, 1.96737)
-texture = ExtResource("6_5j7fu")
+[node name="Herb9" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(66, -30)
 
-[node name="Scaler" type="Node2D" parent="Graphic/Silo"]
-show_behind_parent = true
-position = Vector2(-3.33334, -85)
-scale = Vector2(0.75, 0.75)
+[node name="Herb10" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(42, 22)
 
-[node name="BarTile" type="TextureRect" parent="Graphic/Silo/Scaler"]
-show_behind_parent = true
-offset_left = 14.0
-offset_top = 5.0
-offset_right = 44.0
-offset_bottom = 127.0
-texture = ExtResource("7_er0oj")
-expand_mode = 1
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+[node name="Herb11" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(23, -53)
 
-[node name="BarTop" type="Sprite2D" parent="Graphic/Silo/Scaler/BarTile"]
-position = Vector2(15, -15)
-texture = ExtResource("8_s43hx")
+[node name="Herb12" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(-8, 11)
 
-[node name="BarFront" type="Sprite2D" parent="Graphic/Silo"]
-self_modulate = Color(0.227451, 0.466667, 0.517647, 0.368627)
-show_behind_parent = true
-position = Vector2(15.5055, -96.6315)
-scale = Vector2(0.353739, 1.96737)
-texture = ExtResource("6_5j7fu")
+[node name="Herb13" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(25, 62)
 
-[node name="Row4" type="Node2D" parent="Graphic"]
-position = Vector2(80, -8)
+[node name="Herb14" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(56, -51)
 
-[node name="CornStalk" parent="Graphic/Row4" instance=ExtResource("4_slvse")]
-position = Vector2(-112, -8)
-scale = Vector2(0.5, 0.5)
+[node name="Herb15" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(61, 38)
 
-[node name="CornStalk2" parent="Graphic/Row4" instance=ExtResource("4_slvse")]
-position = Vector2(-80, -8)
-scale = Vector2(0.5, 0.5)
+[node name="Herb16" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(44, -5)
 
-[node name="CornStalk3" parent="Graphic/Row4" instance=ExtResource("4_slvse")]
-position = Vector2(-48, -8)
-scale = Vector2(0.5, 0.5)
+[node name="Herb17" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(47, 52)
 
-[node name="CornStalk4" parent="Graphic/Row4" instance=ExtResource("4_slvse")]
-position = Vector2(-16, -8)
-scale = Vector2(0.5, 0.5)
+[node name="Herb18" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(28, -17)
 
-[node name="CornStalk5" parent="Graphic/Row4" instance=ExtResource("4_slvse")]
-position = Vector2(16, -8)
-scale = Vector2(0.5, 0.5)
+[node name="Herb19" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(32, 39)
 
-[node name="Row3" type="Node2D" parent="Graphic"]
-position = Vector2(0, 16)
-
-[node name="CornStalk" parent="Graphic/Row3" instance=ExtResource("4_slvse")]
-position = Vector2(-112, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk2" parent="Graphic/Row3" instance=ExtResource("4_slvse")]
-position = Vector2(-80, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk3" parent="Graphic/Row3" instance=ExtResource("4_slvse")]
-position = Vector2(-48, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk4" parent="Graphic/Row3" instance=ExtResource("4_slvse")]
-position = Vector2(-16, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk5" parent="Graphic/Row3" instance=ExtResource("4_slvse")]
-position = Vector2(16, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk6" parent="Graphic/Row3" instance=ExtResource("4_slvse")]
-position = Vector2(48, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk7" parent="Graphic/Row3" instance=ExtResource("4_slvse")]
-position = Vector2(80, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk8" parent="Graphic/Row3" instance=ExtResource("4_slvse")]
-position = Vector2(112, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="Row2" type="Node2D" parent="Graphic"]
-position = Vector2(16, 40)
-
-[node name="CornStalk" parent="Graphic/Row2" instance=ExtResource("4_slvse")]
-position = Vector2(-112, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk2" parent="Graphic/Row2" instance=ExtResource("4_slvse")]
-position = Vector2(-80, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk3" parent="Graphic/Row2" instance=ExtResource("4_slvse")]
-position = Vector2(-48, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk4" parent="Graphic/Row2" instance=ExtResource("4_slvse")]
-position = Vector2(-16, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk5" parent="Graphic/Row2" instance=ExtResource("4_slvse")]
-position = Vector2(16, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk6" parent="Graphic/Row2" instance=ExtResource("4_slvse")]
-position = Vector2(48, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk7" parent="Graphic/Row2" instance=ExtResource("4_slvse")]
-position = Vector2(80, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="Row1" type="Node2D" parent="Graphic"]
-position = Vector2(0, 64)
-
-[node name="CornStalk" parent="Graphic/Row1" instance=ExtResource("4_slvse")]
-position = Vector2(-112, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk2" parent="Graphic/Row1" instance=ExtResource("4_slvse")]
-position = Vector2(-80, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk3" parent="Graphic/Row1" instance=ExtResource("4_slvse")]
-position = Vector2(-48, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk4" parent="Graphic/Row1" instance=ExtResource("4_slvse")]
-position = Vector2(-16, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk5" parent="Graphic/Row1" instance=ExtResource("4_slvse")]
-position = Vector2(16, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk6" parent="Graphic/Row1" instance=ExtResource("4_slvse")]
-position = Vector2(48, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk7" parent="Graphic/Row1" instance=ExtResource("4_slvse")]
-position = Vector2(80, -8)
-scale = Vector2(0.5, 0.5)
-
-[node name="CornStalk8" parent="Graphic/Row1" instance=ExtResource("4_slvse")]
-position = Vector2(112, -8)
-scale = Vector2(0.5, 0.5)
+[node name="Herb20" parent="Graphic" instance=ExtResource("8_mmhl0")]
+position = Vector2(18, 16)
 
 [node name="CollectionNode" type="Marker2D" parent="."]
 position = Vector2(-88, -88)
 scale = Vector2(0.650205, 0.650205)
 
 [node name="BuildPrevention" type="Area2D" parent="."]
+visible = false
 scale = Vector2(2.83117, 1.658)
 collision_layer = 3
 
 [node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
-visible = false
-position = Vector2(0.5, -0.25)
 scale = Vector2(0.680533, 0.680533)
 shape = SubResource("RectangleShape2D_o5ibk")
 
 [node name="Polygon2D" type="Polygon2D" parent="." groups=["navigation_blocking_group"]]
+visible = false
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-109, -70, 114, -68, 115, 68, -109, 63)
 
 [node name="WorkingNavigationRegion" type="NavigationRegion2D" parent="."]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_l2857")
 navigation_layers = 2

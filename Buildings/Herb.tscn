@@ -1,14 +1,50 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsho6vngb1lk8"]
+[gd_scene load_steps=9 format=3 uid="uid://dsho6vngb1lk8"]
 
 [ext_resource type="Texture2D" uid="uid://chb6e5j7ffuo2" path="res://Graphics/Buildings/CornField/CornShadow0000.png" id="1_6vs11"]
-[ext_resource type="Texture2D" uid="uid://c48pv8ca7o3bm" path="res://Graphics/Buildings/CornField/Corn0000.png" id="2_2qa2d"]
+[ext_resource type="Texture2D" uid="uid://h6ncgxkiq002" path="res://Graphics/Buildings/HerbGarden/Herb10000.png" id="2_pxqim"]
+[ext_resource type="Texture2D" uid="uid://b26tj18oh1vg6" path="res://Graphics/Buildings/HerbGarden/Herb20000.png" id="3_0kvo0"]
+[ext_resource type="Texture2D" uid="uid://b2fiq0asv1s7o" path="res://Graphics/Buildings/HerbGarden/Herb30000.png" id="4_lwkha"]
 
-[sub_resource type="Animation" id="Animation_jy4ig"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0m7ht"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pxqim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0kvo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lwkha")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_bbma6"]
+resource_name = "Sway"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Herb:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(0.68302, 1.46409, 0.784584, 1.62451, 1),
+"update": 0,
+"values": [0.0, 0.0872665, 0.0, -0.0872665, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dxb3n"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Corn:skew")
+tracks/0/path = NodePath("Herb:skew")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -18,45 +54,30 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_tn6fw"]
-resource_name = "Sway"
-length = 1.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Corn:skew")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
-"transitions": PackedFloat32Array(0.784584, 1.46409, 0.68302, 1.23114, 1),
-"update": 0,
-"values": [0.0, 0.0872665, 0.0, -0.0872665, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0xnn2"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vyyvt"]
 _data = {
-"RESET": SubResource("Animation_jy4ig"),
-"Sway": SubResource("Animation_tn6fw")
+"RESET": SubResource("Animation_dxb3n"),
+"Sway": SubResource("Animation_bbma6")
 }
 
 [node name="Herb" type="Node2D"]
-position = Vector2(0, -27)
 
-[node name="Shadow" type="Sprite2D" parent="."]
-position = Vector2(0, 27)
+[node name="Herb" type="Node2D" parent="."]
+position = Vector2(1.00583e-07, 0)
+scale = Vector2(0.3, 0.3)
+
+[node name="Shadow" type="Sprite2D" parent="Herb"]
 texture = ExtResource("1_6vs11")
 offset = Vector2(0, -27)
 
-[node name="Corn" type="Sprite2D" parent="."]
-position = Vector2(0, 27)
-texture = ExtResource("2_2qa2d")
+[node name="Herb" type="AnimatedSprite2D" parent="Herb"]
+position = Vector2(0, -10)
+sprite_frames = SubResource("SpriteFrames_0m7ht")
 offset = Vector2(0, -27)
 
 [node name="Sway" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_0xnn2")
+"": SubResource("AnimationLibrary_vyyvt")
 }
 autoplay = "Sway"
-speed_scale = 0.4
+speed_scale = 0.6

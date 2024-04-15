@@ -8,7 +8,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Corn:skew")
+tracks/0/path = NodePath("CornStalk:skew")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +25,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Corn:skew")
+tracks/0/path = NodePath("CornStalk:skew")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -44,13 +44,16 @@ _data = {
 [node name="CornStalk" type="Node2D"]
 position = Vector2(0, -27)
 
-[node name="Shadow" type="Sprite2D" parent="."]
+[node name="CornStalk" type="Node2D" parent="."]
 position = Vector2(0, 27)
+
+[node name="Shadow" type="Sprite2D" parent="CornStalk"]
+position = Vector2(0, -1)
 texture = ExtResource("1_lbyfu")
 offset = Vector2(0, -27)
 
-[node name="Corn" type="Sprite2D" parent="."]
-position = Vector2(0, 27)
+[node name="Corn" type="Sprite2D" parent="CornStalk"]
+position = Vector2(0, -1)
 texture = ExtResource("2_ruwi4")
 offset = Vector2(0, -27)
 
