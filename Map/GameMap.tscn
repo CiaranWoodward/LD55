@@ -303,7 +303,7 @@ position = Vector2(-79, -126)
 position = Vector2(-548, 254)
 cat_slots = 2
 base_build_time = 5.0
-cat_time_multiplier = 0.9
+cat_time_multiplier = 0.75
 cost = 10
 
 [node name="FieldHospital" parent="NavigationRegion2D" instance=ExtResource("14_aa4xp")]

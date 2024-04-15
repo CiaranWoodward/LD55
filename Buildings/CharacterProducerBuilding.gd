@@ -2,6 +2,7 @@ class_name CharacterProducerBuilding
 extends ProductionBuilding
 
 @export var character_cost: int = 2
+@export var max_inventory: int = 10
 
 func _get_input_type():
 	pass
