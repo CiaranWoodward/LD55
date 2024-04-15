@@ -87,7 +87,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.6, 1.2),
 "transitions": PackedFloat32Array(1.41221, 0.591129, 1),
 "update": 0,
-"values": [Vector2(0, -8), Vector2(0, -10), Vector2(0, -8)]
+"values": [Vector2(0, 0), Vector2(0, -2), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jveit"]
@@ -120,41 +120,41 @@ scale = Vector2(0.216, 0.216)
 
 [node name="Hair" type="Sprite2D" parent="Graphic/Character"]
 self_modulate = Color(0.427451, 0.427451, 0.427451, 1)
-position = Vector2(10.933, -0.0869394)
+position = Vector2(10.933, -124.778)
 scale = Vector2(-1, 1)
 texture = ExtResource("2_g8wy2")
 offset = Vector2(-6.88299, -1.51863)
 
 [node name="Skirt" type="Sprite2D" parent="Graphic/Character"]
 self_modulate = Color(0.172549, 0.231373, 0.415686, 1)
-position = Vector2(10.933, -0.0869394)
+position = Vector2(10.933, -124.778)
 scale = Vector2(-1, 1)
 texture = ExtResource("3_m3qyf")
 offset = Vector2(-6.88299, -1.51863)
 
 [node name="Top" type="Sprite2D" parent="Graphic/Character"]
 self_modulate = Color(0.815686, 0.498039, 0.698039, 1)
-position = Vector2(10.933, -0.0869394)
+position = Vector2(10.933, -124.778)
 scale = Vector2(-1, 1)
 texture = ExtResource("4_kvmsp")
 offset = Vector2(-6.88299, -1.51863)
 
 [node name="Cardi" type="Sprite2D" parent="Graphic/Character"]
 self_modulate = Color(0.380392, 0.498039, 0.411765, 1)
-position = Vector2(10.933, -0.0869394)
+position = Vector2(10.933, -124.778)
 scale = Vector2(-1, 1)
 texture = ExtResource("5_e4r1q")
 offset = Vector2(-6.88299, -1.51863)
 
 [node name="Skin" type="Sprite2D" parent="Graphic/Character"]
 self_modulate = Color(0.854902, 0.72549, 0.541176, 1)
-position = Vector2(10.933, -0.0869394)
+position = Vector2(10.933, -124.778)
 scale = Vector2(-1, 1)
 texture = ExtResource("6_0pijv")
 offset = Vector2(-6.88299, -1.51863)
 
 [node name="Body" type="Sprite2D" parent="Graphic/Character"]
-position = Vector2(10.933, -0.0869394)
+position = Vector2(10.933, -124.778)
 scale = Vector2(-1, 1)
 texture = ExtResource("7_rgpvs")
 offset = Vector2(-6.88299, -1.51863)
@@ -176,7 +176,6 @@ autoplay = "Walk"
 [node name="Shadow" type="Sprite2D" parent="Shadow"]
 modulate = Color(0, 0, 0, 0.607843)
 z_index = -1
-position = Vector2(0, 19)
 scale = Vector2(0.654258, 0.327626)
 texture = ExtResource("8_q530g")
 

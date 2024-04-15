@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cte03v1oflcfv"]
+[gd_scene load_steps=22 format=3 uid="uid://cte03v1oflcfv"]
 
 [ext_resource type="Script" path="res://Buildings/HoldingPen.gd" id="1_iqrxb"]
 [ext_resource type="Texture2D" uid="uid://dhmamo50mb3n" path="res://Graphics/Buildings/HoldingPen/FenceBack0000.png" id="2_4yhu1"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="11_3btaf"]
 [ext_resource type="Texture2D" uid="uid://2te3ow0jx5ye" path="res://Graphics/Buildings/FieldHospital/Mound0000.png" id="12_8elud"]
 [ext_resource type="Texture2D" uid="uid://dkpni2usf1hlb" path="res://Graphics/Buildings/FieldHospital/MoundHighlight0000.png" id="13_teg3w"]
+[ext_resource type="Texture2D" uid="uid://brtjh835oy1ey" path="res://Graphics/Buildings/HoldingPen/Armchair0000.png" id="14_ml515"]
 [ext_resource type="Texture2D" uid="uid://cev15evgwkd7x" path="res://Graphics/Buildings/HoldingPen/Water0000.png" id="14_nufqd"]
 [ext_resource type="Texture2D" uid="uid://okdirbk3te4k" path="res://Graphics/Buildings/HoldingPen/TroughBack0000.png" id="15_7l21h"]
 [ext_resource type="Texture2D" uid="uid://cy7m7abpgrfkg" path="res://Graphics/Buildings/HoldingPen/TroughFront0000.png" id="16_yueaa"]
@@ -292,7 +293,7 @@ position = Vector2(2, 204)
 
 [node name="Cross" type="Sprite2D" parent="Graphic/LostSoulIndicator"]
 self_modulate = Color(0.556863, 0.556863, 0.556863, 1)
-position = Vector2(0, -34)
+position = Vector2(0.820511, -38)
 texture = ExtResource("10_b44ug")
 
 [node name="Shadow2" type="Sprite2D" parent="Graphic/LostSoulIndicator/Cross"]
@@ -303,6 +304,7 @@ texture = ExtResource("11_3btaf")
 
 [node name="Mound" type="Node2D" parent="Graphic/LostSoulIndicator"]
 modulate = Color(0.337255, 0.2, 0.027451, 1)
+position = Vector2(0.820511, -4)
 
 [node name="Mound" type="Sprite2D" parent="Graphic/LostSoulIndicator/Mound"]
 position = Vector2(0, -7)
@@ -315,7 +317,7 @@ texture = ExtResource("13_teg3w")
 
 [node name="CrossShadow" type="Sprite2D" parent="Graphic/LostSoulIndicator"]
 self_modulate = Color(0, 0, 0, 0.117647)
-position = Vector2(-8, 8)
+position = Vector2(-7.17949, 4)
 rotation = -2.71475
 scale = Vector2(1.02214, 0.900219)
 texture = ExtResource("10_b44ug")
@@ -323,16 +325,30 @@ texture = ExtResource("10_b44ug")
 [node name="Shadow" type="Sprite2D" parent="Graphic/LostSoulIndicator"]
 modulate = Color(0, 0, 0, 0.607843)
 z_index = -1
-position = Vector2(4, 1.98978)
+position = Vector2(4.82051, -2.01022)
 scale = Vector2(1.76, 0.319591)
 texture = ExtResource("11_3btaf")
 
 [node name="GrannyIndicator" type="Node2D" parent="Graphic"]
+position = Vector2(-216, -72)
+
+[node name="Armchair" type="Sprite2D" parent="Graphic/GrannyIndicator"]
+self_modulate = Color(0.513726, 0.129412, 0.129412, 1)
+position = Vector2(0, -32)
+texture = ExtResource("14_ml515")
+
+[node name="Shadow" type="Sprite2D" parent="Graphic/GrannyIndicator"]
+modulate = Color(0, 0, 0, 0.607843)
+z_index = -1
+position = Vector2(-2, -4)
+scale = Vector2(1.76, 0.319591)
+texture = ExtResource("11_3btaf")
 
 [node name="SheepIndicator" type="Node2D" parent="Graphic"]
+position = Vector2(0, -86)
 
 [node name="WaterTrough" type="Node2D" parent="Graphic/SheepIndicator"]
-position = Vector2(-46, -84)
+position = Vector2(-46, 0)
 
 [node name="Water" type="Sprite2D" parent="Graphic/SheepIndicator/WaterTrough"]
 self_modulate = Color(0.231373, 0.494118, 0.552941, 1)
@@ -366,7 +382,7 @@ scale = Vector2(1.84, 0.56)
 texture = ExtResource("11_3btaf")
 
 [node name="CornTrough" type="Node2D" parent="Graphic/SheepIndicator"]
-position = Vector2(48, -84)
+position = Vector2(48, 0)
 
 [node name="Inside" type="Sprite2D" parent="Graphic/SheepIndicator/CornTrough"]
 self_modulate = Color(0.137255, 0.137255, 0.137255, 1)
@@ -408,7 +424,6 @@ color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-141, -79, 140, -80, 139, 64, -141, 65)
 
 [node name="HoldingNavigationRegion" type="NavigationRegion2D" parent="."]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_5nm58")
 navigation_layers = 2
 
