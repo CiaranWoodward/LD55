@@ -1,5 +1,5 @@
 class_name Sheep
-extends BaseCharacter
+extends HoldableCharacter
 
 @export var skin_colors: Array[Color] = [Color.BISQUE]
 @export var wool_colors: Array[Color] = [Color.CORAL]

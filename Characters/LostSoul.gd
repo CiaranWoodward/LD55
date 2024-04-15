@@ -1,5 +1,5 @@
 class_name LostSoul
-extends BaseCharacter
+extends HoldableCharacter
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

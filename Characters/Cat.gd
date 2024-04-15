@@ -70,7 +70,7 @@ func _get_random_target_position() -> Vector2:
 	if is_employed():
 		return _building.get_random_point_in_building_ish()
 	else:
-		return global_position + Vector2(400,0).rotated(2*PI*randf())
+		return super._get_random_target_position()
 
 func is_employed() -> bool:
 	return is_instance_valid(_building)
