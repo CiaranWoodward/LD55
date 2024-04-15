@@ -18,3 +18,6 @@ func _restyle():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	super._physics_process(delta)
+
+func get_type():
+	return Global.ResourceType.DEMON

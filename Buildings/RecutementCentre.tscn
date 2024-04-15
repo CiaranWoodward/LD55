@@ -96,7 +96,7 @@ scale = Vector2(1.32814, 0.281879)
 texture = ExtResource("2_h7ptg")
 
 [node name="RecutementCentre" type="Node2D" parent="Graphic"]
-position = Vector2(-48, 70)
+position = Vector2(-55, 70)
 
 [node name="Shadow" type="Sprite2D" parent="Graphic/RecutementCentre"]
 self_modulate = Color(0, 0, 0, 0.607843)

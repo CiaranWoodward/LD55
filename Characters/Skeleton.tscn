@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdblts0t0oqy4"]
+
+[ext_resource type="Script" path="res://Characters/Skeleton.gd" id="1_dlfag"]
+[ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="2_awf70"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="5_y55dr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ik404"]
+
+[node name="Skeleton" type="CharacterBody2D"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_dlfag")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Graphic" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Graphic"]
+position = Vector2(0, -9.855)
+scale = Vector2(0.215, 0.385)
+texture = ExtResource("2_awf70")
+
+[node name="Shadow" type="Node2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="Shadow"]
+modulate = Color(0, 0, 0, 0.607843)
+z_index = -1
+position = Vector2(0, 19)
+scale = Vector2(1.12381, 0.453809)
+texture = ExtResource("5_y55dr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+scale = Vector2(1.4, 1.52)
+shape = SubResource("CapsuleShape2D_ik404")

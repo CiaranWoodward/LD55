@@ -5,6 +5,7 @@ extends Building
 @export var cost: int = 10
 @export var base_build_time: float = 5.0
 @export var cat_time_multiplier: float = 0.9
+@export var max_inventory: int = 10
 
 @onready var build_timer = Timer.new()
 var cat_count: int = 0 : set = set_cat_count
