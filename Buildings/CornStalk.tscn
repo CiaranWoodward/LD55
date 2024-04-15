@@ -49,6 +49,13 @@ script = ExtResource("1_f0r3l")
 [node name="CornStalk" type="Node2D" parent="."]
 position = Vector2(0, 27)
 
+[node name="Corn" type="Sprite2D" parent="CornStalk"]
+position = Vector2(0.0533979, -1.00142)
+scale = Vector2(1, 1.00285)
+skew = 0.0532714
+texture = ExtResource("2_ruwi4")
+offset = Vector2(0, -27)
+
 [node name="Sway" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_0xnn2")
@@ -59,9 +66,4 @@ speed_scale = 0.4
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 26)
 texture = ExtResource("1_lbyfu")
-offset = Vector2(0, -27)
-
-[node name="Corn" type="Sprite2D" parent="."]
-position = Vector2(0, 26)
-texture = ExtResource("2_ruwi4")
 offset = Vector2(0, -27)

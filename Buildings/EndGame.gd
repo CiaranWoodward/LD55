@@ -28,6 +28,115 @@ func change_requirement(type: Global.ResourceType, count: int):
 	change_queue_count(type, -count)
 	_requirements[type] += count
 
+var witch_names = [
+"Magic the not Gathering"
+,"Not Hogwarts Legacy"
+,"Wizards and Legends"
+,"Magic Enrollment"
+,"Magic Researcher"
+,"Magicians of Magic"
+,"The Little Sorcerer and her Magic Hat"
+,"Magic World"
+,"Magika"
+,"Mighty Magic"
+,"Fantasy Realm"
+,"Potion Crafter"
+,"Magic Summons"
+,"Which one?"
+,"Wizards of Waverly Place"
+,"Magic School"
+,"Magic Moon"
+,"Glenda needs a friend"
+,"Wicked the Musical the Game"
+,"Wizards of Eastwick"
+,"The Wizard of Oz"
+,"Cauldren looking for owner"
+,"Craft Academy"
+]
+
+var ghost_names = [
+"Who you gonna Call?",
+"Come to the BOO-tique",
+"The Boogie Man",
+"Poltergeist",
+"Patrick Swazey Movie",
+"The Uninvited",
+"There's Something Strange in your Neighborhood",
+"The Haunting of Hill House",
+"Lets Boogie",
+"Do BOOmers play games?",
+"Haunted House 3",
+"BOO-merangs Unite",
+"Boo Basket Maker",
+"BOOm BOOm BOOm, let me hear you say?",
+"Boo oclock",
+"Spooky Souls",
+"Spooktock",
+"The Dead Ones Inside",
+"I Haunt this House",
+"You Haunt this House",
+"BOOs Clues ",
+"Boo Chronicles",
+"Scary Spooky Snakes",
+"Scary Mary",
+"Moaning Mertle Strikes back",
+]
+
+var skeleton_names = [
+"Bones and all"
+,"Dead and Gone"
+,"Vertebrate Hunter"
+,"Invertebrate Hunter"
+,"Coraline Adventures"
+,"Under The Skin"
+,"What do men get when horny?"
+,"Find the Funny Bone?"
+,"Bone-jour"
+,"Dead To Me"
+,"Will You Marrow Me?"
+,"Lazy Bones"
+,"Chills Up My Spine"
+,"Came out of the Rain Bone Dry "
+,"Skull Sacrifice"
+,"Bones Homes"
+,"Skull finder "
+,"Med School Simulator"
+,"Coronary Simulator "
+,"Morgue Simulator"
+,"Bones and Hats"
+,"Bones Matter "
+]
+
+var demon_names = [
+"Lucifer I barely knew her",
+"Pentagram Pixels",
+"What the Hell",
+"Not Doom",
+"Escaping Hell",
+"Not Dantes Inferno",
+"Hells Bells",
+"The Devil in I",
+"Escape From Hell",
+"Journey to Hell",
+"Fallen from Grace",
+"Not Helldivers",
+"Hell Let Loose",
+"To Hell With You",
+"Lucifer dating sim",
+"The Devil will see you now",
+"Hellsfire",
+"Hell nooo",
+"Pentagrams are Cooler than Squares",
+"Angels And ...?",
+"HELLelujah",
+"To Hell and Back",
+"HELLo my Friend",
+"Fallen From Grace",
+"Hi Hey Hell",
+"Hell Galaxy",
+"Hell Adventurers",
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super._ready()
@@ -43,12 +152,16 @@ func _prepare_gametype():
 	match game_type:
 		GameType.WITCHY:
 			change_requirement(Global.ResourceType.WITCH, summon_count)
+			$Graphic/Shaker/Background/BottomBar/GameName.text = witch_names.pick_random()
 		GameType.SPOOKY:
 			change_requirement(Global.ResourceType.GHOST, summon_count)
+			$Graphic/Shaker/Background/BottomBar/GameName.text = ghost_names.pick_random()
 		GameType.HELLISH:
 			change_requirement(Global.ResourceType.DEMON, summon_count)
+			$Graphic/Shaker/Background/BottomBar/GameName.text = demon_names.pick_random()
 		GameType.CRYPTIC:
 			change_requirement(Global.ResourceType.SKELETON, summon_count)
+			$Graphic/Shaker/Background/BottomBar/GameName.text = skeleton_names.pick_random()
 
 func _is_complete() -> bool:
 	for key in _requirements.keys():

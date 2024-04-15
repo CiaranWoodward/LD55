@@ -300,6 +300,10 @@ position = Vector2(607, 690)
 
 [node name="HoldingPen" parent="NavigationRegion2D" instance=ExtResource("19_etw68")]
 position = Vector2(376, 39)
+character_slots = null
+holding_type = null
+cost = null
+max_inventory = null
 
 [node name="Skeleton" parent="NavigationRegion2D" instance=ExtResource("21_os3sb")]
 

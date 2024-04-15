@@ -22,6 +22,10 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="HoldingPen" type="Node2D"]
 script = ExtResource("1_iqrxb")
+character_slots = null
+holding_type = null
+cost = null
+max_inventory = null
 
 [node name="Graphic" type="Node2D" parent="."]
 y_sort_enabled = true

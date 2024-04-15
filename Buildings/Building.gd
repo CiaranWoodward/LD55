@@ -1,7 +1,12 @@
 class_name Building
 extends Node2D
 
-@export var cost: int = 10
+@export var cost: int = 0 :
+	set(val):
+		pass
+	get:
+		return Global.get_building_cost(_get_building_type())
+
 @export var max_inventory: int = 10
 
 var transport_count = 0
@@ -14,7 +19,7 @@ var _inventory: Dictionary = Global.ResourceType.values().reduce(func(accum, typ
 var _queue: Dictionary = Global.ResourceType.values().reduce(func(accum, type):
 	accum[type] = 0
 	return accum, {})
-	
+
 func get_inventory_count(type: Global.ResourceType) -> int:
 	return _inventory[type]
 	
@@ -32,6 +37,9 @@ func change_inventory_count(type: Global.ResourceType, delta: int):
 
 func _get_stockpile_graphic():
 	return get_node("Graphic/StockPile")
+
+func _get_building_type():
+	return Global.BuildingType.PORTAL
 
 func handle_character(character: BaseCharacter):
 	pass

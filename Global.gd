@@ -20,7 +20,12 @@ enum BuildingType {
 	SHEEP_FARM,
 	GRANARY,
 	NURSING_HOME,
-	FISH_POND
+	FISH_POND,
+	HOLDING_PEN_SHEEP,
+	HOLDING_PEN_GRAN,
+	HOLDING_PEN_LOST_SOUL,
+	FIELD_HOSPITAL,
+	HERB_GARDEN,
 }
 
 enum ResourceType {
@@ -59,16 +64,48 @@ func get_building_name(type: BuildingType) -> String:
 		BuildingType.GRANARY: return "Granary"
 		BuildingType.NURSING_HOME: return "Nursing Home"
 		BuildingType.FISH_POND: return "Fish Pond"
+		BuildingType.HOLDING_PEN_SHEEP: return "Sheep holding pen"
+		BuildingType.HOLDING_PEN_GRAN: return "Granny holding pen"
+		BuildingType.HOLDING_PEN_LOST_SOUL: return "Lost soul holding pen"
+		BuildingType.FIELD_HOSPITAL: return "Field hospital"
+		BuildingType.HERB_GARDEN: return "Herb Garden"
 	return ""
-func get_building_class(type: BuildingType) -> PackedScene:
+func get_building(type: BuildingType) -> Building:
 	match(type):
-		BuildingType.PORTAL: return load("res://Buildings/Portal.tscn")
-		BuildingType.RECUTEMENT_CENTRE: return load("res://Buildings/RecutementCentre.tscn")
-		BuildingType.SHEEP_FARM: return null
-		BuildingType.GRANARY: return null
-		BuildingType.NURSING_HOME: return null
-		BuildingType.FISH_POND: return null
+		BuildingType.PORTAL: return load("res://Buildings/Portal.tscn").instantiate()
+		BuildingType.RECUTEMENT_CENTRE: return load("res://Buildings/RecutementCentre.tscn").instantiate()
+		BuildingType.SHEEP_FARM: return load("res://Buildings/SheepBarn.tscn").instantiate()
+		BuildingType.GRANARY: return load("res://Buildings/CornField.tscn").instantiate()
+		BuildingType.NURSING_HOME: return load("res://Buildings/GrannyShack.tscn").instantiate()
+		BuildingType.FISH_POND: return load("res://Buildings/Fishery.tscn").instantiate()
+		BuildingType.HOLDING_PEN_SHEEP:
+			var pen = load("res://Buildings/HoldingPen.tscn").instantiate()
+			pen.holding_type = ResourceType.SHEEP
+			return pen
+		BuildingType.HOLDING_PEN_GRAN:
+			var pen = load("res://Buildings/HoldingPen.tscn").instantiate()
+			pen.holding_type = ResourceType.GRANNY
+			return pen
+		BuildingType.HOLDING_PEN_LOST_SOUL:
+			var pen = load("res://Buildings/HoldingPen.tscn").instantiate()
+			pen.holding_type = ResourceType.LOST_SOUL
+			return pen
+		BuildingType.FIELD_HOSPITAL: return load("res://Buildings/FieldHospital.tscn").instantiate()
+		BuildingType.HERB_GARDEN: return load("res://Buildings/HerbGarden.tscn").instantiate()
 	return null
+func get_building_cost(type: BuildingType) -> int:
+	match(type):
+		BuildingType.RECUTEMENT_CENTRE: return 10
+		BuildingType.SHEEP_FARM: return 30
+		BuildingType.GRANARY: return 10
+		BuildingType.NURSING_HOME: return 10
+		BuildingType.FISH_POND: return 10
+		BuildingType.HOLDING_PEN_SHEEP: return 15
+		BuildingType.HOLDING_PEN_GRAN: return 15
+		BuildingType.HOLDING_PEN_LOST_SOUL: return 40
+		BuildingType.FIELD_HOSPITAL: return 30
+		BuildingType.HERB_GARDEN: return 30
+	return INF
 
 # Functions for interacting with inventory
 func get_resource_count(type: ResourceType):

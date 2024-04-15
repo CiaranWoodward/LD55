@@ -6,7 +6,14 @@ extends Building
 
 func _get_character_count():
 	return _inventory[holding_type]
-	
+
+func _get_building_type():
+	if holding_type == Global.ResourceType.GRANNY:
+		return Global.BuildingType.HOLDING_PEN_GRAN
+	elif holding_type == Global.ResourceType.SHEEP:
+		return Global.BuildingType.HOLDING_PEN_SHEEP
+	return Global.BuildingType.HOLDING_PEN_LOST_SOUL
+
 func set_as_ui_part(newValue):
 	if newValue == as_ui_part:
 		return
