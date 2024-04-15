@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cseq0jcpd6rfc"]
+[gd_scene load_steps=28 format=3 uid="uid://cseq0jcpd6rfc"]
 
 [ext_resource type="Script" path="res://Map/GameMap.gd" id="1_667xj"]
 [ext_resource type="PackedScene" uid="uid://clufegtvym2pa" path="res://Buildings/RecutementCentre.tscn" id="1_p3gag"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://radowl65xsta" path="res://Buildings/FieldHospital.tscn" id="14_aa4xp"]
 [ext_resource type="PackedScene" uid="uid://iynercm4q834" path="res://Buildings/SheepBarn.tscn" id="15_bx6hf"]
 [ext_resource type="PackedScene" uid="uid://bhkrdyerxw3h8" path="res://Buildings/Fishery.tscn" id="16_cua2n"]
+[ext_resource type="PackedScene" uid="uid://cte03v1oflcfv" path="res://Buildings/HoldingPen.tscn" id="19_etw68"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ewas"]
 texture = ExtResource("3_puiem")
@@ -336,6 +337,9 @@ position = Vector2(128, 369)
 
 [node name="Fishery" parent="NavigationRegion2D" instance=ExtResource("16_cua2n")]
 position = Vector2(607, 690)
+
+[node name="HoldingPen" parent="NavigationRegion2D" instance=ExtResource("19_etw68")]
+position = Vector2(376, 39)
 
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 
