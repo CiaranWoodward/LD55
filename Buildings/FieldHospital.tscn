@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://radowl65xsta"]
+[gd_scene load_steps=12 format=3 uid="uid://radowl65xsta"]
 
 [ext_resource type="Script" path="res://Buildings/FieldHospital.gd" id="1_jjc0k"]
 [ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_k4ng1"]
@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cnofoyfnapnlu" path="res://Graphics/Buildings/FieldHospital/Fill0000.png" id="5_eghah"]
 [ext_resource type="Texture2D" uid="uid://bfoh7k3fj37j5" path="res://Graphics/Buildings/FieldHospital/FieldHospital0000.png" id="6_ifdpd"]
 [ext_resource type="Texture2D" uid="uid://ypr10migvsrd" path="res://Graphics/Buildings/FieldHospital/Cross0000.png" id="7_c6pry"]
-[ext_resource type="PackedScene" uid="uid://c2b5nymg5ho3n" path="res://Buildings/StockPile.tscn" id="8_swsq8"]
 [ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="8_ev118"]
+[ext_resource type="PackedScene" uid="uid://c2b5nymg5ho3n" path="res://Buildings/StockPile.tscn" id="8_swsq8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2y8g"]
 size = Vector2(382.375, 202)

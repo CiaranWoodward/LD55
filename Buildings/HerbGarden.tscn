@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://xwnmbnqormf4"]
+[gd_scene load_steps=14 format=3 uid="uid://xwnmbnqormf4"]
 
 [ext_resource type="Script" path="res://Buildings/HerbGarden.gd" id="1_51b6j"]
 [ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_wawuv"]
@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://b2o4gitrugfvl" path="res://Graphics/Buildings/HerbGarden/WindowSheen0000.png" id="6_rgyd3"]
 [ext_resource type="Texture2D" uid="uid://b8u0ebemymirr" path="res://Graphics/Buildings/HerbGarden/Greenhouse0000.png" id="7_ym2m5"]
 [ext_resource type="PackedScene" uid="uid://dsho6vngb1lk8" path="res://Buildings/Herb.tscn" id="8_mmhl0"]
-[ext_resource type="PackedScene" uid="uid://c2b5nymg5ho3n" path="res://Buildings/StockPile.tscn" id="10_b3pvd"]
 [ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="9_vcllj"]
+[ext_resource type="PackedScene" uid="uid://c2b5nymg5ho3n" path="res://Buildings/StockPile.tscn" id="10_b3pvd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5ibk"]
 size = Vector2(83.6989, 160.415)
