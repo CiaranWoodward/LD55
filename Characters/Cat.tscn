@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://Characters/Cat.gd" id="1_52cgv"]
 [ext_resource type="Texture2D" uid="uid://vo08pikknmhy" path="res://Graphics/Characters/Cat/Body0000.png" id="2_5t0ds"]
-[ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="2_8vqqb"]
 [ext_resource type="Script" path="res://Characters/HoldingTextDebug.gd" id="2_kiy1c"]
 [ext_resource type="Texture2D" uid="uid://dw1yq3vv7j3us" path="res://Graphics/Characters/Cat/Paws0000.png" id="3_wi1yw"]
 [ext_resource type="Texture2D" uid="uid://dpbqkvsisjcrv" path="res://Graphics/Characters/Cat/Head10000.png" id="4_7oeoo"]
@@ -26,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cs6bk4oatenfv" path="res://Graphics/Icons/Herb30000.png" id="22_md8gg"]
 [ext_resource type="Texture2D" uid="uid://bm307kcd2vk13" path="res://Graphics/Icons/Herb40000.png" id="23_2mtdt"]
 [ext_resource type="Texture2D" uid="uid://c8oxx7wuiopuu" path="res://Graphics/Icons/Herb50000.png" id="24_21gj6"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="25_f2gcx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0egkn"]
 animations = [{
@@ -351,9 +351,9 @@ autoplay = "EyeGlow"
 [node name="Shadow" type="Sprite2D" parent="Shadow"]
 modulate = Color(0, 0, 0, 0.364706)
 z_index = -1
-position = Vector2(0, 4)
-scale = Vector2(0.29381, -0.112979)
-texture = ExtResource("2_8vqqb")
+position = Vector2(2.38419e-07, 1.78814e-07)
+scale = Vector2(0.72, 0.32)
+texture = ExtResource("25_f2gcx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

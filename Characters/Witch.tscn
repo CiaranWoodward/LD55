@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cgxt77u0l7mly" path="res://Graphics/Characters/Witch/Dress0000.png" id="4_g68jk"]
 [ext_resource type="Texture2D" uid="uid://bf8wptcjisom" path="res://Graphics/Characters/Witch/Eyes0000.png" id="5_7c3nw"]
 [ext_resource type="Texture2D" uid="uid://d03cbkp7seqmi" path="res://Graphics/Characters/Witch/Skin0000.png" id="6_sq23u"]
-[ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="13_3waa8"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="8_7w5k8"]
 
 [sub_resource type="Animation" id="Animation_521pv"]
 length = 0.001
@@ -45,7 +45,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(-3, -36)]
 }
 
 [sub_resource type="Animation" id="Animation_fop5h"]
@@ -87,7 +87,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4),
 "transitions": PackedFloat32Array(0.554, 1.56, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
+"values": [Vector2(-3, -36), Vector2(-3, -41), Vector2(-3, -36)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jveit"]
@@ -96,8 +96,9 @@ _data = {
 "Walk": SubResource("Animation_fop5h")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6fh43"]
-radius = 20.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bnao6"]
+radius = 14.0
+height = 52.0
 
 [node name="Witch" type="CharacterBody2D"]
 motion_mode = 1
@@ -110,6 +111,7 @@ acceleration = 4.0
 [node name="Graphic" type="Node2D" parent="."]
 
 [node name="Character" type="Node2D" parent="Graphic"]
+position = Vector2(-3, -36)
 scale = Vector2(0.216, 0.216)
 
 [node name="Hair" type="Sprite2D" parent="Graphic/Character"]
@@ -159,9 +161,9 @@ speed_scale = 0.5
 [node name="Shadow" type="Sprite2D" parent="Shadow"]
 modulate = Color(0, 0, 0, 0.364706)
 z_index = -1
-position = Vector2(0, 19)
-scale = Vector2(0.29381, -0.112979)
-texture = ExtResource("13_3waa8")
+scale = Vector2(0.726408, -0.282926)
+texture = ExtResource("8_7w5k8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_6fh43")
+position = Vector2(0, -25)
+shape = SubResource("CapsuleShape2D_bnao6")
