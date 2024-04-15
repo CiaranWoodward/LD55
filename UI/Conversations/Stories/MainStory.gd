@@ -146,24 +146,24 @@ func _ready():
 			name = "Penelope",
 		},
 		{
-			text = "You need to create a Old Folks Home to create Grandmas",
+			text = "You need to create a Nursing Home to create Grandmas",
 			image = "Penelope",
 			name = "Penelope",
 		},
 		{
-			text = "But the Old Folks Home also needs to be worked by worker cats to operate",
+			text = "But the Nursing Home also needs to be worked by worker cats to operate",
 			image = "Penelope",
 			name = "Penelope",
 		},
 		{
-			text = "Build me 1 Old Folks Home",
+			text = "Build me 1 Nursing Home",
 			image = "Penelope",
 			name = "Penelope",
 		},
 	])
 	
 	level2Complete.is_triggered = func():
-		return Story.level == 2 and get_tree().get_nodes_in_group("buildings").filter(func(b): return b is GrannyShack).size() >= 1
+		return Story.level == 2 and get_tree().get_nodes_in_group("buildings").filter(func(b: Building): return b is GrannyShack and !b.as_ui_part).size() >= 1
 	level2Complete.script([
 		{
 			text = "Look at that, a paradise for all Grandmas!",
@@ -201,12 +201,12 @@ func _ready():
 			name = "Penelope",
 		},
 		{
-			text = "Quick build a Corn Farm and work it with cats",
+			text = "Quick build a Corn Field and work it with cats",
 			image = "Penelope",
 			name = "Penelope",
 		},
 		{
-			text = "Then lets the cats deliver the Corn to the Old Folks Home",
+			text = "Then lets the cats deliver the Corn to the Nursing Home",
 			image = "Penelope",
 			name = "Penelope",
 		},
