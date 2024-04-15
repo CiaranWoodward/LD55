@@ -1,15 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://clufegtvym2pa"]
+[gd_scene load_steps=14 format=3 uid="uid://clufegtvym2pa"]
 
 [ext_resource type="Script" path="res://Buildings/RecutementCentre.gd" id="1_b68fl"]
-[ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="2_w60tc"]
+[ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_h7ptg"]
+[ext_resource type="Texture2D" uid="uid://tyqbiq3emmtr" path="res://Graphics/Icons/WhiteSquare0000.png" id="3_hkxd5"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="4_4hgfq"]
+[ext_resource type="Texture2D" uid="uid://dybhiwlqqrp6v" path="res://Graphics/Buildings/RecutementCentre/SignBack0000.png" id="5_u178e"]
+[ext_resource type="Texture2D" uid="uid://c5jfxoxbb1ew" path="res://Graphics/Buildings/RecutementCentre/Recruitment0000.png" id="6_78tdc"]
+[ext_resource type="Texture2D" uid="uid://crtqjyu1li6fq" path="res://Graphics/Buildings/RecutementCentre/Spray0000.png" id="7_ljpow"]
+[ext_resource type="Texture2D" uid="uid://ctvio0wg2r5cb" path="res://Graphics/Buildings/RecutementCentre/Cute0000.png" id="8_5c0cu"]
+[ext_resource type="Texture2D" uid="uid://qae335h0xkn3" path="res://Graphics/Buildings/RecutementCentre/Windows0000.png" id="9_jfon1"]
+[ext_resource type="Texture2D" uid="uid://c4e3gpgeaq03i" path="res://Graphics/Buildings/RecutementCentre/RecutementCentre0000.png" id="10_0nsqc"]
+[ext_resource type="PackedScene" uid="uid://c2b5nymg5ho3n" path="res://Buildings/StockPile.tscn" id="11_x8jqd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5ibk"]
-size = Vector2(377, 131)
+size = Vector2(344, 182)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mpym4"]
-vertices = PackedVector2Array(-31, -51, -31, 56, -244, 55, -242, -52)
+vertices = PackedVector2Array(206, -23, 206, 78, -101, 78, -100, -24)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-22, -61, -252, -63, -255, 65, -21, 67)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(216, -33, -110, -35, -112, 89, 216, 88)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Recutement Centre" type="Node2D"]
@@ -17,26 +26,121 @@ script = ExtResource("1_b68fl")
 
 [node name="Graphic" type="Node2D" parent="."]
 
-[node name="Graphic" type="Sprite2D" parent="Graphic"]
-texture = ExtResource("2_w60tc")
+[node name="Ground" type="Node2D" parent="Graphic"]
+modulate = Color(0.745098, 0.745098, 0.745098, 1)
+z_index = -2
+position = Vector2(-93, 65)
+scale = Vector2(0.786812, 1.77381)
 
-[node name="Gravel" type="Sprite2D" parent="Graphic"]
-modulate = Color(0.388235, 0.388235, 0.388235, 1)
-z_index = -1
-position = Vector2(-190, 1)
-scale = Vector2(1.84, 1)
-texture = ExtResource("2_w60tc")
+[node name="Back" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.419608, 0.290196, 0.0392157, 1)
+position = Vector2(118.199, -36.9262)
+scale = Vector2(2.19875, 1.0655)
+texture = ExtResource("2_h7ptg")
+
+[node name="Concrete" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.745098, 0.745098, 0.745098, 1)
+position = Vector2(118.199, -23.9597)
+scale = Vector2(2.07165, 0.625772)
+texture = ExtResource("2_h7ptg")
+
+[node name="Line" type="Sprite2D" parent="Graphic/Ground/Concrete"]
+position = Vector2(-76.1572, -10.5344)
+scale = Vector2(0.0228679, 0.771294)
+texture = ExtResource("3_hkxd5")
+
+[node name="Line2" type="Sprite2D" parent="Graphic/Ground/Concrete"]
+position = Vector2(-41.8893, -10.5344)
+scale = Vector2(0.0228679, 0.771294)
+texture = ExtResource("3_hkxd5")
+
+[node name="Line3" type="Sprite2D" parent="Graphic/Ground/Concrete"]
+position = Vector2(-7.72415, -8.28214)
+scale = Vector2(0.0228679, 0.726249)
+texture = ExtResource("3_hkxd5")
+
+[node name="Line4" type="Sprite2D" parent="Graphic/Ground/Concrete"]
+position = Vector2(26.5437, -6.93079)
+scale = Vector2(0.0228679, 0.699222)
+texture = ExtResource("3_hkxd5")
+
+[node name="Line5" type="Sprite2D" parent="Graphic/Ground/Concrete"]
+position = Vector2(54.6012, -40.4553)
+rotation = 1.5708
+scale = Vector2(0.0335814, 0.568182)
+texture = ExtResource("3_hkxd5")
+
+[node name="Line6" type="Sprite2D" parent="Graphic/Ground/Concrete"]
+position = Vector2(54.6012, 3.15315)
+rotation = 1.5708
+scale = Vector2(0.0335814, 0.568182)
+texture = ExtResource("3_hkxd5")
+
+[node name="Path2" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.384314, 0.384314, 0.384314, 1)
+position = Vector2(48.2962, -51.8658)
+scale = Vector2(1.34721, 0.0676509)
+texture = ExtResource("2_h7ptg")
+
+[node name="Path3" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.384314, 0.384314, 0.384314, 1)
+position = Vector2(170.943, -63.4228)
+scale = Vector2(0.0826119, 0.287517)
+texture = ExtResource("2_h7ptg")
+
+[node name="Path" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.560784, 0.560784, 0.560784, 1)
+position = Vector2(46.3897, -65.396)
+scale = Vector2(1.32814, 0.281879)
+texture = ExtResource("2_h7ptg")
+
+[node name="RecutementCentre" type="Node2D" parent="Graphic"]
+position = Vector2(-48, 70)
+
+[node name="Shadow" type="Sprite2D" parent="Graphic/RecutementCentre"]
+self_modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(-0.5, -123)
+scale = Vector2(4.5, 1)
+texture = ExtResource("4_4hgfq")
+
+[node name="SignBack" type="Sprite2D" parent="Graphic/RecutementCentre"]
+self_modulate = Color(0.364706, 0.85098, 0.886275, 1)
+position = Vector2(-0.5, -171)
+texture = ExtResource("5_u178e")
+
+[node name="Recruitment" type="Sprite2D" parent="Graphic/RecutementCentre/SignBack"]
+texture = ExtResource("6_78tdc")
+
+[node name="Spray" type="Sprite2D" parent="Graphic/RecutementCentre/SignBack/Recruitment"]
+self_modulate = Color(0.239216, 0.239216, 0.239216, 1)
+texture = ExtResource("7_ljpow")
+
+[node name="Cute" type="Sprite2D" parent="Graphic/RecutementCentre/SignBack/Recruitment/Spray"]
+self_modulate = Color(0.964706, 0, 0, 0.933333)
+texture = ExtResource("8_5c0cu")
+
+[node name="Windows" type="Sprite2D" parent="Graphic/RecutementCentre"]
+self_modulate = Color(0.686275, 0.905882, 0.901961, 1)
+position = Vector2(-0.5, -171)
+texture = ExtResource("9_jfon1")
+
+[node name="RecutementCentre" type="Sprite2D" parent="Graphic/RecutementCentre"]
+position = Vector2(-0.5, -171)
+texture = ExtResource("10_0nsqc")
+
+[node name="StockPile" parent="Graphic" instance=ExtResource("11_x8jqd")]
+position = Vector2(106, -42)
 
 [node name="BuildPrevention" type="Area2D" parent="."]
+visible = false
 collision_layer = 3
 
 [node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
-position = Vector2(-121.5, -0.5)
 shape = SubResource("RectangleShape2D_o5ibk")
 
 [node name="NavVoid" type="Polygon2D" parent="." groups=["navigation_blocking_group"]]
 color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(-317, -69, 67, -67, 66, 67, 28, 68, 29, -16, -26, -16, -27, 68, -317, 71)
+polygon = PackedVector2Array(-162, -34, 164, -36, 164, 85, -164, 85)
 
 [node name="WorkingNavigationRegion" type="NavigationRegion2D" parent="."]
 position = Vector2(-52, -1)
