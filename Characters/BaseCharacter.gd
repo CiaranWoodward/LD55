@@ -69,7 +69,7 @@ func _find_new_target():
 		resource = resourceToQueue
 		potential_buildings.sort_custom(func(a: Building, b: Building): return a.pathing_desirability(self) > b.pathing_desirability(self))
 		current_target = potential_buildings.front()
-		target_position = current_target.global_position
+		target_position = current_target.get_destination_global_position()
 		current_target.change_queue_count(resource, 1)
 		current_target.on_nav_start(self)
 	

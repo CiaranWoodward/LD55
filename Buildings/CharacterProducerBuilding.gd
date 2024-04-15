@@ -24,8 +24,8 @@ func do_build():
 		var character: BaseCharacter = _create_character()
 		Global.game_map.add_character(character)
 		character.global_position = get_spawn_global_position()
-		var relay_point = get_relay_global_position()
-		if is_instance_valid(relay_point):
+		var relay_point: Vector2 = get_relay_global_position()
+		if relay_point.is_finite():
 			character.jump_to(relay_point)
 		change_inventory_count(_get_input_type(), -character_cost)
 		change_queue_count(_get_input_type(), -character_cost)

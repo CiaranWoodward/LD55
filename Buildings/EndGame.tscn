@@ -170,3 +170,6 @@ offset_right = 301.0
 offset_bottom = 346.0
 text = "poskpwiok"
 script = ExtResource("3_ojfyl")
+
+[node name="Destination" type="Marker2D" parent="."]
+position = Vector2(146, -77)

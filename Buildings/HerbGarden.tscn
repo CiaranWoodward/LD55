@@ -24,9 +24,9 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 [node name="HerbGarden" type="Node2D"]
 script = ExtResource("1_51b6j")
 cat_slots = null
-cost = null
 base_build_time = null
 cat_time_multiplier = null
+cost = null
 
 [node name="Graphic" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -184,3 +184,6 @@ offset_right = 207.0
 offset_bottom = 241.0
 text = "poskpwiok"
 script = ExtResource("9_vcllj")
+
+[node name="Destination" type="Marker2D" parent="."]
+position = Vector2(80, 82)

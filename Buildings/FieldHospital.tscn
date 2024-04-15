@@ -107,3 +107,12 @@ offset_right = 207.0
 offset_bottom = 241.0
 text = "poskpwiok"
 script = ExtResource("8_ev118")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(0, 63)
+
+[node name="RelayPoint" type="Marker2D" parent="."]
+position = Vector2(26, 122)
+
+[node name="Destination" type="Marker2D" parent="."]
+position = Vector2(-192, -103)
