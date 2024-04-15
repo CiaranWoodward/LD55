@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://iynercm4q834"]
+
+[ext_resource type="Script" path="res://Buildings/SheepBarn.gd" id="1_nhbl4"]
+[ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_s8ugd"]
+[ext_resource type="Texture2D" uid="uid://ewhg68vdj3ix" path="res://Graphics/Buildings/GroundFlecks0000.png" id="3_iijf8"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="4_t7fkl"]
+[ext_resource type="Texture2D" uid="uid://dayfqowek4tpm" path="res://Graphics/Buildings/SheepBarn/Colour0000.png" id="5_8qhux"]
+[ext_resource type="Texture2D" uid="uid://dalbrdtds7r7l" path="res://Graphics/Buildings/SheepBarn/Barn0000.png" id="6_t7vaq"]
+[ext_resource type="Texture2D" uid="uid://b8vnf37iqu7dc" path="res://Graphics/Buildings/SheepBarn/Frames0000.png" id="7_5wy3g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2y8g"]
+size = Vector2(249.188, 202)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_rd5b6"]
+vertices = PackedVector2Array(162, 84, -58, 84, -56, -83, 58, -2, 161, -2, 56, -83)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 0), PackedInt32Array(5, 3, 2)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(172, 94, 171, -12, 81, -11, 81, -95, -66, -94, -68, 94)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="SheepBarn" type="Node2D"]
+script = ExtResource("1_nhbl4")
+
+[node name="Graphic" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Ground" type="Node2D" parent="Graphic"]
+z_index = -1
+scale = Vector2(-1.56023, -1.70228)
+
+[node name="Back" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.419608, 0.290196, 0.0392157, 1)
+position = Vector2(-0.380506, -0.297506)
+scale = Vector2(0.810496, 1.23167)
+texture = ExtResource("2_s8ugd")
+
+[node name="Flecks" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.498039, 0.286275, 0.0392157, 1)
+position = Vector2(-0.380517, -0.297504)
+scale = Vector2(0.818106, 1.23167)
+texture = ExtResource("3_iijf8")
+
+[node name="Barn" type="Node2D" parent="Graphic"]
+position = Vector2(58, -42)
+scale = Vector2(0.4, 0.4)
+
+[node name="Shadow" type="Sprite2D" parent="Graphic/Barn"]
+self_modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(0, -5)
+scale = Vector2(4.45186, 0.937689)
+texture = ExtResource("4_t7fkl")
+
+[node name="Fill" type="Sprite2D" parent="Graphic/Barn"]
+self_modulate = Color(0.682353, 0, 0, 1)
+position = Vector2(0, -92.5)
+texture = ExtResource("5_8qhux")
+
+[node name="Frames" type="Sprite2D" parent="Graphic/Barn"]
+position = Vector2(0, -92.5)
+scale = Vector2(1, 1)
+texture = ExtResource("7_5wy3g")
+
+[node name="Barn" type="Sprite2D" parent="Graphic/Barn"]
+self_modulate = Color(0.431373, 0.231373, 0.0352941, 1)
+position = Vector2(0, -92.5)
+texture = ExtResource("6_t7vaq")
+
+[node name="BuildPrevention" type="Area2D" parent="."]
+visible = false
+collision_layer = 3
+
+[node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
+shape = SubResource("RectangleShape2D_p2y8g")
+
+[node name="Polygon2D" type="Polygon2D" parent="." groups=["navigation_blocking_group"]]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-116, -94, 123, -92, 123, -47, 45, -47, 45, -13, 122, -13, 121, 94, -114, 92)
+
+[node name="WorkingNavigationRegion" type="NavigationRegion2D" parent="."]
+position = Vector2(-52, -1)
+navigation_polygon = SubResource("NavigationPolygon_rd5b6")
+navigation_layers = 2

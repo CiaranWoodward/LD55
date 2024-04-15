@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cseq0jcpd6rfc"]
+[gd_scene load_steps=17 format=3 uid="uid://cseq0jcpd6rfc"]
 
 [ext_resource type="Script" path="res://Map/GameMap.gd" id="1_667xj"]
 [ext_resource type="PackedScene" uid="uid://clufegtvym2pa" path="res://Buildings/RecutementCentre.tscn" id="1_p3gag"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c52obgi0jrhc1" path="res://Buildings/CornField.tscn" id="10_3752r"]
 [ext_resource type="PackedScene" uid="uid://xwnmbnqormf4" path="res://Buildings/HerbGarden.tscn" id="13_fryhv"]
 [ext_resource type="PackedScene" uid="uid://radowl65xsta" path="res://Buildings/FieldHospital.tscn" id="14_aa4xp"]
+[ext_resource type="PackedScene" uid="uid://iynercm4q834" path="res://Buildings/SheepBarn.tscn" id="15_bx6hf"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_imvrd"]
 outlines = Array[PackedVector2Array]([PackedVector2Array(-571, -416, 1749, -422, 1799, 1434, -652, 1424)])
@@ -80,9 +81,13 @@ script = ExtResource("6_5o6ap")
 position = Vector2(735, 1112)
 
 [node name="CornField" parent="." instance=ExtResource("10_3752r")]
+position = Vector2(-447, 8)
 
 [node name="HerbGarden" parent="." instance=ExtResource("13_fryhv")]
-position = Vector2(287, 6)
+position = Vector2(-548, 254)
 
 [node name="FieldHospital" parent="." instance=ExtResource("14_aa4xp")]
-position = Vector2(-164, 197)
+position = Vector2(-81, -115)
+
+[node name="SheepBarn" parent="." instance=ExtResource("15_bx6hf")]
+position = Vector2(-193, 242)
