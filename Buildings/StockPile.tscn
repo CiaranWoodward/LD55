@@ -82,6 +82,7 @@ animations = [{
 
 [node name="Shadow" type="Sprite2D" parent="StockPile"]
 self_modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(0, -7)
 scale = Vector2(2.5, 0.74)
 texture = ExtResource("1_qyigv")
 
