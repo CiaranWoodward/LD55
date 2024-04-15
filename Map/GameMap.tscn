@@ -88,6 +88,10 @@ position = Vector2(-447, 8)
 
 [node name="HerbGarden" parent="NavigationRegion2D" instance=ExtResource("13_fryhv")]
 position = Vector2(-548, 254)
+cat_slots = 2
+cost = 10
+base_build_time = 5.0
+cat_time_multiplier = 0.9
 
 [node name="FieldHospital" parent="NavigationRegion2D" instance=ExtResource("14_aa4xp")]
 position = Vector2(-81, -115)
