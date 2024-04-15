@@ -108,6 +108,5 @@ script = ExtResource("6_5o6ap")
 [node name="GameFollowPoint" type="Marker2D" parent="."]
 position = Vector2(735, 1112)
 
-
 [node name="Fishery" parent="." instance=ExtResource("16_cua2n")]
 position = Vector2(-242, 724)

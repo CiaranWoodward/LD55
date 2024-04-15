@@ -27,6 +27,7 @@ func _ready():
 	Global.game_map.games_on_screen_changed.connect(_updated_onscreen)
 	_stick_to_screen()
 	_prepare_timeout()
+	_prepare_gametype()
 
 func _prepare_gametype():
 	match game_type:

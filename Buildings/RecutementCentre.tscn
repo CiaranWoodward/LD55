@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://clufegtvym2pa"]
+[gd_scene load_steps=15 format=3 uid="uid://clufegtvym2pa"]
 
 [ext_resource type="Script" path="res://Buildings/RecutementCentre.gd" id="1_b68fl"]
 [ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_h7ptg"]
-[ext_resource type="Texture2D" uid="uid://tyqbiq3emmtr" path="res://Graphics/Icons/WhiteSquare0000.png" id="3_hkxd5"]
 [ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="3_eqy48"]
+[ext_resource type="Texture2D" uid="uid://tyqbiq3emmtr" path="res://Graphics/Icons/WhiteSquare0000.png" id="3_hkxd5"]
 [ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="4_4hgfq"]
 [ext_resource type="Texture2D" uid="uid://dybhiwlqqrp6v" path="res://Graphics/Buildings/RecutementCentre/SignBack0000.png" id="5_u178e"]
 [ext_resource type="Texture2D" uid="uid://c5jfxoxbb1ew" path="res://Graphics/Buildings/RecutementCentre/Recruitment0000.png" id="6_78tdc"]
