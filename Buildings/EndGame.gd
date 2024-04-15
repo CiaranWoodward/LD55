@@ -37,7 +37,7 @@ func _stick_to_screen():
 		_lerp_tween.kill()
 	_lerp_tween = create_tween()
 	_lerp_tween.tween_property(self, "_sticky_lerpval", 1.0, 0.2)
-	z_index = 10
+	z_index = 9
 
 func _release_from_screen():
 	if _lerp_tween:

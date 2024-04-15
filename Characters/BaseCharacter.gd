@@ -173,7 +173,7 @@ func put_down():
 	assert(_picked_up)
 	_picked_up = false
 	collision_layer = _stashed_collision_layer
-	z_index = 10
+	z_index = 0
 	velocity = Vector2.ZERO
 	var building = Global.game_map.get_building_at_point(global_position)
 	_new_pickup_tween()

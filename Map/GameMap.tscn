@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cseq0jcpd6rfc"]
+[gd_scene load_steps=14 format=3 uid="uid://cseq0jcpd6rfc"]
 
 [ext_resource type="Script" path="res://Map/GameMap.gd" id="1_667xj"]
 [ext_resource type="PackedScene" uid="uid://clufegtvym2pa" path="res://Buildings/RecutementCentre.tscn" id="1_p3gag"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cqtw2u46g28co" path="res://Buildings/EndGame.tscn" id="6_5nybr"]
 [ext_resource type="Script" path="res://Map/PlayerCam.gd" id="6_5o6ap"]
 [ext_resource type="PackedScene" uid="uid://bl1l3pofspv41" path="res://Buildings/GrannyShack.tscn" id="7_vm5hl"]
+[ext_resource type="PackedScene" uid="uid://rana6ggydmfn" path="res://Characters/Granny.tscn" id="8_u3pgy"]
 [ext_resource type="PackedScene" uid="uid://c52obgi0jrhc1" path="res://Buildings/CornField.tscn" id="10_3752r"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_imvrd"]
@@ -62,6 +63,9 @@ position = Vector2(1106, 1064)
 
 [node name="GrannyShack" parent="NavigationRegion2D" instance=ExtResource("7_vm5hl")]
 position = Vector2(1064, 483)
+
+[node name="Granny" parent="NavigationRegion2D" instance=ExtResource("8_u3pgy")]
+position = Vector2(1159, 121)
 
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 

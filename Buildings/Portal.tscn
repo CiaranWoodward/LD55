@@ -718,6 +718,12 @@ color_ramp = SubResource("Gradient_g7iwl")
 [node name="OblivionPoint" type="Marker2D" parent="Graphic"]
 position = Vector2(4, -178)
 
+[node name="SpawnPoint" type="Marker2D" parent="Graphic"]
+position = Vector2(-2, -28)
+
+[node name="RelayPoint" type="Marker2D" parent="Graphic"]
+position = Vector2(2, 204)
+
 [node name="BuildPrevention" type="Area2D" parent="."]
 collision_layer = 3
 
