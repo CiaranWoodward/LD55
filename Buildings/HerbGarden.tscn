@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://xwnmbnqormf4"]
+[gd_scene load_steps=12 format=3 uid="uid://xwnmbnqormf4"]
 
 [ext_resource type="Script" path="res://Buildings/HerbGarden.gd" id="1_51b6j"]
 [ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_wawuv"]
 [ext_resource type="Texture2D" uid="uid://ewhg68vdj3ix" path="res://Graphics/Buildings/GroundFlecks0000.png" id="3_n3lwa"]
 [ext_resource type="Texture2D" uid="uid://mnptu41hifo4" path="res://Graphics/Buildings/HerbGarden/GreenhousePlants0000.png" id="4_i3scb"]
+[ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="4_jrkrh"]
 [ext_resource type="Texture2D" uid="uid://dqe474q0oyq3c" path="res://Graphics/Buildings/HerbGarden/Glass0000.png" id="5_g3w31"]
 [ext_resource type="Texture2D" uid="uid://b2o4gitrugfvl" path="res://Graphics/Buildings/HerbGarden/WindowSheen0000.png" id="6_rgyd3"]
 [ext_resource type="Texture2D" uid="uid://b8u0ebemymirr" path="res://Graphics/Buildings/HerbGarden/Greenhouse0000.png" id="7_ym2m5"]
@@ -57,26 +58,32 @@ scale = Vector2(1.01111, 0.51027)
 texture = ExtResource("3_n3lwa")
 
 [node name="Greenhouse" type="Node2D" parent="Graphic"]
-position = Vector2(4, -57)
+position = Vector2(4, -60)
 scale = Vector2(0.7, 0.7)
+
+[node name="Shadow" type="Sprite2D" parent="Graphic/Greenhouse"]
+self_modulate = Color(0, 0, 0, 0.607843)
+position = Vector2(-2.07681, 5.71429)
+scale = Vector2(4.71164, 0.937689)
+texture = ExtResource("4_jrkrh")
 
 [node name="Planter" type="Sprite2D" parent="Graphic/Greenhouse"]
 self_modulate = Color(0.8, 0.8, 0.8, 1)
-position = Vector2(0, -52)
+position = Vector2(0, -42.8572)
 texture = ExtResource("4_i3scb")
 
 [node name="Glass" type="Sprite2D" parent="Graphic/Greenhouse"]
 self_modulate = Color(0.25098, 0.427451, 0.447059, 0.823529)
-position = Vector2(0, -52)
+position = Vector2(0, -42.8572)
 texture = ExtResource("5_g3w31")
 
 [node name="Sheen" type="Sprite2D" parent="Graphic/Greenhouse"]
 self_modulate = Color(1, 1, 1, 0.490196)
-position = Vector2(0, -52)
+position = Vector2(0, -42.8572)
 texture = ExtResource("6_rgyd3")
 
 [node name="Greenhouse" type="Sprite2D" parent="Graphic/Greenhouse"]
-position = Vector2(0, -52)
+position = Vector2(0, -42.8572)
 texture = ExtResource("7_ym2m5")
 
 [node name="Herb" parent="Graphic" instance=ExtResource("8_mmhl0")]
@@ -158,6 +165,5 @@ color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-109, -70, 114, -68, 115, 68, -109, 63)
 
 [node name="WorkingNavigationRegion" type="NavigationRegion2D" parent="."]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_l2857")
 navigation_layers = 2

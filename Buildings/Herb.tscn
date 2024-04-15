@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsho6vngb1lk8"]
+[gd_scene load_steps=10 format=3 uid="uid://dsho6vngb1lk8"]
 
 [ext_resource type="Texture2D" uid="uid://chb6e5j7ffuo2" path="res://Graphics/Buildings/CornField/CornShadow0000.png" id="1_6vs11"]
+[ext_resource type="Script" path="res://Buildings/Herb.gd" id="1_vx3a0"]
 [ext_resource type="Texture2D" uid="uid://h6ncgxkiq002" path="res://Graphics/Buildings/HerbGarden/Herb10000.png" id="2_pxqim"]
 [ext_resource type="Texture2D" uid="uid://b26tj18oh1vg6" path="res://Graphics/Buildings/HerbGarden/Herb20000.png" id="3_0kvo0"]
 [ext_resource type="Texture2D" uid="uid://b2fiq0asv1s7o" path="res://Graphics/Buildings/HerbGarden/Herb30000.png" id="4_lwkha"]
@@ -22,6 +23,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_dxb3n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Herb:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_bbma6"]
 resource_name = "Sway"
 length = 1.2
@@ -39,21 +55,6 @@ tracks/0/keys = {
 "values": [0.0, 0.0872665, 0.0, -0.0872665, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_dxb3n"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Herb:skew")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyyvt"]
 _data = {
 "RESET": SubResource("Animation_dxb3n"),
@@ -61,10 +62,10 @@ _data = {
 }
 
 [node name="Herb" type="Node2D"]
+script = ExtResource("1_vx3a0")
 
 [node name="Herb" type="Node2D" parent="."]
 position = Vector2(1.00583e-07, 0)
-scale = Vector2(0.3, 0.3)
 
 [node name="Shadow" type="Sprite2D" parent="Herb"]
 texture = ExtResource("1_6vs11")
