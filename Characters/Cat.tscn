@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dr3k135c6aj68"]
+[gd_scene load_steps=26 format=3 uid="uid://dr3k135c6aj68"]
 
 [ext_resource type="Script" path="res://Characters/Cat.gd" id="1_52cgv"]
 [ext_resource type="Texture2D" uid="uid://vo08pikknmhy" path="res://Graphics/Characters/Cat/Body0000.png" id="2_5t0ds"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://llxwwg3bh65u" path="res://Graphics/Characters/Cat/Face20000.png" id="10_ohnrv"]
 [ext_resource type="Texture2D" uid="uid://besffbyq2c607" path="res://Graphics/Characters/Cat/Face30000.png" id="11_wmrdi"]
 [ext_resource type="Texture2D" uid="uid://03rlhkm0tg2e" path="res://Graphics/Characters/Cat/Shocc0000.png" id="12_aj51s"]
+[ext_resource type="Texture2D" uid="uid://drfykc5adics1" path="res://Graphics/Characters/Cat/ConstructionHat0000.png" id="13_xwixi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0egkn"]
 animations = [{
@@ -273,10 +274,8 @@ texture = ExtResource("12_aj51s")
 
 [node name="Hat" type="Sprite2D" parent="Graphic/Character"]
 visible = false
-position = Vector2(4.62963, -83.3333)
-rotation = -0.636247
-scale = Vector2(0.505007, 0.309864)
-texture = ExtResource("2_8vqqb")
+position = Vector2(-4.62963, 0)
+texture = ExtResource("13_xwixi")
 
 [node name="Walk" type="AnimationPlayer" parent="Graphic"]
 libraries = {
@@ -300,6 +299,7 @@ scale = Vector2(0.29381, -0.112979)
 texture = ExtResource("2_8vqqb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -19)
 shape = SubResource("CircleShape2D_6fh43")
 
