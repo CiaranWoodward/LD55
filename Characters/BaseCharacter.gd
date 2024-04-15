@@ -13,6 +13,8 @@ var current_target: Building
 var _picked_up: bool = false
 var _jumping: bool = false
 var _ghosted: bool = false
+var _angry_bastard: bool = false
+var _current_angry_target: BaseCharacter
 var _last_valid_location : Vector2
 var _pick_up_tween: Tween
 var _jump_tween: Tween
@@ -48,7 +50,18 @@ func get_resource_to_queue() -> Global.ResourceType:
 func _get_random_target_position() -> Vector2:
 	return global_position + Vector2(400,0).rotated(2*PI*randf())
 
+func _choose_random_target():
+	# random walk
+	current_target = null
+	var target_position = _get_random_target_position()
+	current_target = null
+	_current_angry_target = null
+	return target_position
+
 func _find_new_target():
+	if _angry_bastard:
+		_find_new_target_angry()
+		return
 	# find resources of this charecter
 	var resourceToQueue = get_resource_to_queue()
 	
@@ -60,10 +73,7 @@ func _find_new_target():
 		
 	var target_position: Vector2
 	if potential_buildings.is_empty():
-		# random walk
-		current_target = null
-		target_position = _get_random_target_position()
-		current_target = null
+		target_position = _choose_random_target()
 	else:
 		# target building and add self to queue
 		resource = resourceToQueue
@@ -76,14 +86,77 @@ func _find_new_target():
 	nav.target_position = target_position
 	nav.target_desired_distance = 50
 
+func _find_new_target_angry():
+	var potential_targets = []
+	current_target = null
+	for c: BaseCharacter in get_tree().get_nodes_in_group("characters"):
+		if c.is_targetable():
+			potential_targets.push_back(c)
+	# Randomly remove nodes from the list
+	if potential_targets.size() > 1:
+		potential_targets.shuffle()
+		var remove_count = randi_range(0, potential_targets.size()-1)
+		while remove_count > 0:
+			remove_count -= 1
+			potential_targets.pop_back()
+	# Sort it to find the closest remaining one
+	potential_targets.sort_custom(func(a: Node2D, b: Node2D): return a.global_position.distance_squared_to(global_position) > b.global_position.distance_squared_to(global_position))
+	
+	var target_position: Vector2
+	if potential_targets.is_empty():
+		target_position = _choose_random_target()
+	else:
+		_current_angry_target = potential_targets.front()
+		target_position = _current_angry_target.global_position
+
+	nav.target_position = target_position
+	nav.target_desired_distance = 90
+
+func _angry_process(delta):
+	if is_instance_valid(_current_angry_target):
+		if nav.target_position.distance_squared_to(_current_angry_target.global_position) > 20*20:
+			nav.target_position = _current_angry_target.global_position
+			nav.target_desired_distance = 90
+		if _current_angry_target.global_position.distance_squared_to(global_position) < 80*80:
+			_angry_explode()
+
+func is_targetable() -> bool:
+	return !_angry_bastard
+
+func make_angry():
+	if _angry_bastard:
+		return
+	_angry_pulse()
+	_dump_resource()
+	movement_speed *= 1.3
+	_angry_bastard = true
+
+func _angry_pulse():
+	var new_tween = create_tween()
+	new_tween.tween_property(self, "modulate", Color.RED, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	new_tween.tween_property(self, "modulate", Color.WHITE, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	new_tween.tween_callback(func(): _angry_pulse())
+
+func _angry_explode():
+	_current_angry_target.kill()
+	kill()
+
+func kill():
+	_dump_resource()
+	ghostify_to_oblivion(Global.game_map.get_portal()).tween_callback(func(): queue_free())
+
 func _physics_process(delta):
 	if _picked_up or _jumping or _ghosted:
 		return
+	if _angry_bastard:
+		_angry_process(delta)
 	if nav.is_navigation_finished():
 		if is_instance_valid(current_target):
 			current_target.handle_character(self)
 			current_target.on_nav_end(self)
 			current_target = null
+		elif is_instance_valid(_current_angry_target):
+			_angry_explode()
 		else:
 			_find_new_target()
 	
@@ -150,15 +223,18 @@ func jump_to(destination: Vector2, callback: Callable = func():pass):
 	assert(!_jumping)
 	_jump_tween_to(destination, callback)
 
-func pick_up() -> bool:
-	if _picked_up:
-		return false
-	_picked_up = true
-	_jumping = false
+func _dump_resource():
 	if (is_instance_valid(current_target) && resource != null):
 		current_target.change_queue_count(resource, -1)
 		current_target.on_nav_end(self)
 	resource = null
+
+func pick_up() -> bool:
+	if _picked_up or _angry_bastard:
+		return false
+	_picked_up = true
+	_jumping = false
+	_dump_resource()
 	current_target = null
 	_stashed_collision_layer = collision_layer
 	collision_layer = 0

@@ -34,6 +34,9 @@ func _process(delta):
 func _compute_nav_mesh():
 	nav_region.bake_navigation_polygon()
 
+func get_portal():
+	return $NavigationRegion2D/Portal
+
 func add_building_child(building: Building, position: Vector2):
 	nav_region.add_child(building)
 	building.global_position = position

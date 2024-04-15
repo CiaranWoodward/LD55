@@ -76,6 +76,9 @@ func _get_random_target_position() -> Vector2:
 func is_employed() -> bool:
 	return is_instance_valid(_building)
 
+func is_targetable() -> bool:
+	return super.is_targetable() && !is_employed()
+
 func is_job_blocked() -> bool:
 	return is_employed() && _building.is_job_blocked()
 

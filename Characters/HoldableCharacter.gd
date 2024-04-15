@@ -24,6 +24,9 @@ func _get_random_target_position() -> Vector2:
 func is_held() -> bool:
 	return is_instance_valid(_pen)
 
+func is_targetable() -> bool:
+	return super.is_targetable() && !is_held()
+
 func pick_up() -> bool:
 	if !super.pick_up():
 		return false
