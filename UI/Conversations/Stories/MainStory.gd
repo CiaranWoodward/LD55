@@ -1,12 +1,17 @@
 extends Node
 
 @onready var intro = Conversation.new()
-@onready var intro2 = Conversation.new()
+@onready var level1Intro = Conversation.new()
+@onready var level1Complete = Conversation.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	# 
+	# Intoduction
+	#
 	intro.is_triggered = func():
-		return true
+		return Story.level == 1
 	intro.script([
 		{
 			text = "Hello... Is anyone there?",
@@ -14,35 +19,48 @@ func _ready():
 			name = "Catherine",
 		},
 		{
-			text = "Great, another one...",
+			text = "wio qwodk qwdkp dkd kqkowd ?!!?...",
 			image = "Penelope",
 			name = "???",
 		},
 		{
-			text = "???",
+			text = "What? I don't understand?",
 			image = "Catherine",
 			name = "Catherine",
 		},
 		{
-			text = "Oh, right... turn on cat translator",
+			text = "Ah thats better just had to turn on the translator",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "I am Penelope the portal it seems you have stumbled upon my domain",
 			image = "Penelope",
 			name = "Penelope",
 		},
 		{
 			text = "You can't just stay here for free!",
+			image = "Penelope",
+			name = "Penelope",
 		},
 		{
 			text = "If you want to stay here, you need to earn your keep.",
+			image = "Penelope",
+			name = "Penelope",
 		},
 		{
-			text = "Create summons for these games, so that the players can actually summon them!. You'll earn gold for each game fulfilled.",
+			text = "Create summons for these LDJAM games below, so that the players of these games can actually summon them!. You'll earn gold for each game fulfilled.",
+			image = "Penelope",
+			name = "Penelope",
 		},
 		{
 			text = "Happy?",
+			image = "Penelope",
+			name = "Penelope",
 		},
 	])
-	intro.choice_text = "Happy?"
-	intro.next = intro2
+	intro.choice_text = "Happy?"	
+	intro.next = level1Intro
 	intro.yes_script([
 		{
 			image = "Penelope",
@@ -57,7 +75,11 @@ func _ready():
 			text = "Why are all of you cats so disagreeable?",
 		},
 	])
-	intro2.script([
+	
+	# 
+	# Level 1
+	#
+	level1Intro.script([
 		{
 			text = "Work the recruitment centre to hire some more worker cats.",
 			image = "Penelope",
@@ -65,19 +87,36 @@ func _ready():
 		},
 		{
 			text = "The recruitment centre consumes fish, which you can get by working the fishing pond.",
+			image = "Penelope",
+			name = "Penelope",
 		},
 		{
 			text = "You also need to leave some workers wandering around to haul resources.",
+			image = "Penelope",
+			name = "Penelope",
 		},
 		{
-			text = "And farm enough fish to feed all of your cats.",
+			text = "Recruit 5 cats",
+			image = "Penelope",
+			name = "Penelope",
 		},
 		{
 			text = "Good luck!",
+			image = "Penelope",
+			name = "Penelope",
 		}
 	])
+	level1Complete.is_triggered = func():
+		return Story.level == 1 and get_tree().get_nodes_in_group("characters").filter(func(c): return c is Cat).size() >= 5
+	level1Complete.script([
+		{
+			text = "Great work setting up the cat prodution line",
+			image = "Penelope",
+			name = "Penelope",
+		}
+	])
+	level1Complete.callback = func():
+		Story.level = 2
 	
 	Story.active_set.push_back(intro)
-
-func take_quota(convo : Conversation):
-	pass
+	Story.active_set.push_back(level1Complete)

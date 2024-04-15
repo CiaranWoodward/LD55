@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bhkrdyerxw3h8" path="res://Buildings/Fishery.tscn" id="16_cua2n"]
 [ext_resource type="PackedScene" uid="uid://b3qtnf3cihei4" path="res://UI/Conversations/Stories/Stories.tscn" id="17_gxtua"]
 [ext_resource type="PackedScene" uid="uid://cte03v1oflcfv" path="res://Buildings/HoldingPen.tscn" id="19_etw68"]
-[ext_resource type="PackedScene" uid="uid://f3i1ady31xh" path="res://Characters/Skeleton.tscn" id="21_os3sb"]
+[ext_resource type="PackedScene" uid="uid://cdblts0t0oqy4" path="res://Characters/Skeleton.tscn" id="21_os3sb"]
 [ext_resource type="PackedScene" uid="uid://ccuq4sb75hurn" path="res://Characters/Demon.tscn" id="22_cf3wk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ewas"]
@@ -296,7 +296,7 @@ position = Vector2(998, -88)
 position = Vector2(128, 369)
 
 [node name="Fishery" parent="NavigationRegion2D" instance=ExtResource("16_cua2n")]
-position = Vector2(607, 690)
+position = Vector2(809, 539)
 
 [node name="HoldingPen" parent="NavigationRegion2D" instance=ExtResource("19_etw68")]
 position = Vector2(376, 39)
