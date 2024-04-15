@@ -5,8 +5,8 @@
 [node name="Hud" type="CanvasLayer"]
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-anchors_preset = 11
-anchor_left = 1.0
+anchors_preset = -1
+anchor_left = 0.93125
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
@@ -17,5 +17,21 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 
 [node name="BuildButton" parent="PanelContainer/BuildButtons" instance=ExtResource("1_bbo6i")]
+layout_mode = 2
+building_type = 1
+
+[node name="BuildButton2" parent="PanelContainer/BuildButtons" instance=ExtResource("1_bbo6i")]
+layout_mode = 2
+building_type = 1
+
+[node name="BuildButton3" parent="PanelContainer/BuildButtons" instance=ExtResource("1_bbo6i")]
+layout_mode = 2
+building_type = 1
+
+[node name="BuildButton4" parent="PanelContainer/BuildButtons" instance=ExtResource("1_bbo6i")]
+layout_mode = 2
+building_type = 1
+
+[node name="BuildButton5" parent="PanelContainer/BuildButtons" instance=ExtResource("1_bbo6i")]
 layout_mode = 2
 building_type = 1
