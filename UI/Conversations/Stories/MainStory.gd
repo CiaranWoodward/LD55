@@ -1,10 +1,15 @@
 extends Node
 
 @onready var intro = Conversation.new()
-@onready var intro2 = Conversation.new()
+@onready var level1Intro = Conversation.new()
+@onready var level1Complete = Conversation.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	# 
+	# Intoduction
+	#
 	intro.is_triggered = func():
 		return Story.level == 1
 	intro.script([
@@ -54,8 +59,8 @@ func _ready():
 			name = "Penelope",
 		},
 	])
-	intro.choice_text = "Happy?"
-	intro.next = intro2
+	intro.choice_text = "Happy?"	
+	intro.next = level1Intro
 	intro.yes_script([
 		{
 			image = "Penelope",
@@ -70,7 +75,11 @@ func _ready():
 			text = "Why are all of you cats so disagreeable?",
 		},
 	])
-	intro2.script([
+	
+	# 
+	# Level 1
+	#
+	level1Intro.script([
 		{
 			text = "Work the recruitment centre to hire some more worker cats.",
 			image = "Penelope",
@@ -97,8 +106,17 @@ func _ready():
 			name = "Penelope",
 		}
 	])
+	level1Complete.is_triggered = func():
+		return Story.level == 1 and get_tree().get_nodes_in_group("characters").filter(func(c): return c is Cat).size() >= 5
+	level1Complete.script([
+		{
+			text = "Great work setting up the cat prodution line",
+			image = "Penelope",
+			name = "Penelope",
+		}
+	])
+	level1Complete.callback = func():
+		Story.level = 2
 	
 	Story.active_set.push_back(intro)
-
-func take_quota(convo : Conversation):
-	pass
+	Story.active_set.push_back(level1Complete)
