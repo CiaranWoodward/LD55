@@ -96,17 +96,17 @@ scale = Vector2(1.32814, 0.281879)
 texture = ExtResource("2_h7ptg")
 
 [node name="RecutementCentre" type="Node2D" parent="Graphic"]
-position = Vector2(-55, 70)
+position = Vector2(-55, -42)
 
 [node name="Shadow" type="Sprite2D" parent="Graphic/RecutementCentre"]
 self_modulate = Color(0, 0, 0, 0.607843)
-position = Vector2(-0.5, -123)
+position = Vector2(-0.5, -8)
 scale = Vector2(4.5, 1)
 texture = ExtResource("4_4hgfq")
 
 [node name="SignBack" type="Sprite2D" parent="Graphic/RecutementCentre"]
 self_modulate = Color(0.364706, 0.85098, 0.886275, 1)
-position = Vector2(-0.5, -171)
+position = Vector2(-0.5, -56)
 texture = ExtResource("5_u178e")
 
 [node name="Recruitment" type="Sprite2D" parent="Graphic/RecutementCentre/SignBack"]
@@ -122,11 +122,11 @@ texture = ExtResource("8_5c0cu")
 
 [node name="Windows" type="Sprite2D" parent="Graphic/RecutementCentre"]
 self_modulate = Color(0.686275, 0.905882, 0.901961, 1)
-position = Vector2(-0.5, -171)
+position = Vector2(-0.5, -56)
 texture = ExtResource("9_jfon1")
 
 [node name="RecutementCentre" type="Sprite2D" parent="Graphic/RecutementCentre"]
-position = Vector2(-0.5, -171)
+position = Vector2(-0.5, -56)
 texture = ExtResource("10_0nsqc")
 
 [node name="StockPile" parent="Graphic" instance=ExtResource("11_x8jqd")]
