@@ -46,7 +46,7 @@ func buy():
 	Global.change_resource_count(Global.ResourceType.GOLD, -cost)
 
 func can_build_here() -> bool:
-	return !$BuildPrevention.get_overlapping_areas().is_empty()
+	return $BuildPrevention.get_overlapping_areas().is_empty()
 	
 func take_me(character: BaseCharacter):
 	if (character is Cat):

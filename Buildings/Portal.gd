@@ -39,4 +39,4 @@ func _exchange(character: BaseCharacter):
 		return
 	Global.game_map.add_character(spawn)
 	spawn.global_position = $Graphic/SpawnPoint.global_position
-	spawn.jump_to($Graphic/RelayPoint.global_position, func():pass)
+	spawn.jump_to($Graphic/RelayPoint.global_position)

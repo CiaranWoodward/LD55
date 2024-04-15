@@ -146,7 +146,7 @@ func _jump_tween_to(destination: Vector2, callback: Callable):
 	_jump_tween.tween_property(self, "_jumping", false, 0)
 	_jump_tween.tween_callback(callback)
 
-func jump_to(destination: Vector2, callback: Callable):
+func jump_to(destination: Vector2, callback: Callable = func():pass):
 	assert(!_jumping)
 	_jump_tween_to(destination, callback)
 

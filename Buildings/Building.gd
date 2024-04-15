@@ -40,7 +40,16 @@ func _process(delta):
 func pathing_desirability(character: BaseCharacter) -> float:
 	if character.resource == null: return 0
 	return 1/((1+transport_count)*character.global_position.distance_squared_to(global_position))
-	
+
+func get_spawn_global_position() -> Vector2:
+	return global_position
+
+func get_destination_global_position() -> Vector2:
+	return global_position
+
+func get_relay_global_position():
+	return null
+
 func on_nav_start(character: BaseCharacter):
 	transport_count += 1
 	

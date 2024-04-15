@@ -22,8 +22,11 @@ func do_build():
 	super.do_build()
 	if (_inventory[_get_input_type()] >= character_cost):
 		var character: BaseCharacter = _create_character()
-		character.position = self.position
 		Global.game_map.add_character(character)
+		character.global_position = get_spawn_global_position()
+		var relay_point = get_relay_global_position()
+		if is_instance_valid(relay_point):
+			character.jump_to(relay_point)
 		change_inventory_count(_get_input_type(), -character_cost)
 		change_queue_count(_get_input_type(), -character_cost)
 

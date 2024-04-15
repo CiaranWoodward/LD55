@@ -42,7 +42,7 @@ func _physics_process(delta):
 	if _current_action == ActionType.BUILD:
 		if !_current_building.is_cost_affordable():
 			clear_action()
-		elif _current_building.can_build_here():
+		elif !_current_building.can_build_here():
 			$Building.modulate = invalid_color
 		else:
 			$Building.modulate = valid_color
@@ -71,6 +71,8 @@ func _apply_pressed_action():
 
 func _apply_released_action():
 	if _current_action == ActionType.BUILD:
+		if !_current_building.can_build_here():
+			return
 		var gcoords = _current_building.global_position
 		$Building.remove_child(_current_building)
 		Global.game_map.add_building_child(_current_building, gcoords)
