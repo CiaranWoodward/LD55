@@ -65,6 +65,9 @@ func get_random_point_in_building_ish() -> Vector2:
 	rect.position += $BuildPrevention/BuildPreventionShape.global_position
 	return Vector2(rect.position.x + randf_range(0, rect.size.x), rect.position.y + randf_range(0, rect.size.y))
 
+func is_job_blocked() -> bool:
+	return build_timer.is_stopped()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	super._process(delta)

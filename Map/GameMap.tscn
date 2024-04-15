@@ -39,12 +39,30 @@ position = Vector2(588, 16)
 
 [node name="Cat" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
 position = Vector2(163.83, 270.029)
+head_colors = Array[Color]([Color(1, 0.894118, 0.768627, 1)])
+pattern_colors = Array[Color]([Color(1, 0.498039, 0.313726, 1)])
+eye_colors = Array[Color]([Color(0.529412, 0.807843, 0.921569, 1)])
+movement_speed = 100.0
+pickup_height = 25.0
+head_height = 15.0
 
 [node name="Cat2" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
 position = Vector2(88, 266)
+head_colors = Array[Color]([Color(1, 0.894118, 0.768627, 1)])
+pattern_colors = Array[Color]([Color(1, 0.498039, 0.313726, 1)])
+eye_colors = Array[Color]([Color(0.529412, 0.807843, 0.921569, 1)])
+movement_speed = 100.0
+pickup_height = 25.0
+head_height = 15.0
 
 [node name="Cat3" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
 position = Vector2(188, 342)
+head_colors = Array[Color]([Color(1, 0.894118, 0.768627, 1)])
+pattern_colors = Array[Color]([Color(1, 0.498039, 0.313726, 1)])
+eye_colors = Array[Color]([Color(0.529412, 0.807843, 0.921569, 1)])
+movement_speed = 100.0
+pickup_height = 25.0
+head_height = 15.0
 
 [node name="Witch" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
 position = Vector2(250, 800)
@@ -63,6 +81,12 @@ position = Vector2(1106, 1064)
 
 [node name="GrannyShack" parent="NavigationRegion2D" instance=ExtResource("7_vm5hl")]
 position = Vector2(1064, 483)
+max_corn = null
+corn_per_granny = null
+cat_slots = null
+cost = null
+base_build_time = null
+cat_time_multiplier = null
 
 [node name="Granny" parent="NavigationRegion2D" instance=ExtResource("8_u3pgy")]
 position = Vector2(1159, 121)

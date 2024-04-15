@@ -99,7 +99,8 @@ func _physics_process(delta):
 		if velocity.length() > speed:
 			velocity = velocity.normalized() * speed
 	
-	move_and_slide()
+	if !(is_employed() && is_job_blocked()): # Stop moving if we're working but the building can't do anything
+		move_and_slide()
 
 func _process(delta):
 	if _ghosted:
@@ -196,6 +197,11 @@ func get_type():
 
 func is_employed() -> bool:
 	return false
+func is_job_blocked() -> bool:
+	return false
+
+func randomize_frame(animated_sprite: AnimatedSprite2D):
+	animated_sprite.frame = randi_range(0, animated_sprite.sprite_frames.get_frame_count(animated_sprite.animation))
 
 var _oblivion_start: Vector2
 var _oblivion_point: Node2D
