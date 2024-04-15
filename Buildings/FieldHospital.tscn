@@ -1,22 +1,25 @@
-[gd_scene load_steps=12 format=3 uid="uid://radowl65xsta"]
+[gd_scene load_steps=15 format=3 uid="uid://radowl65xsta"]
 
 [ext_resource type="Script" path="res://Buildings/FieldHospital.gd" id="1_jjc0k"]
 [ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_k4ng1"]
 [ext_resource type="Texture2D" uid="uid://ewhg68vdj3ix" path="res://Graphics/Buildings/GroundFlecks0000.png" id="3_bvfl0"]
 [ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="4_cywp8"]
+[ext_resource type="Texture2D" uid="uid://2te3ow0jx5ye" path="res://Graphics/Buildings/FieldHospital/Mound0000.png" id="4_swwxk"]
+[ext_resource type="Texture2D" uid="uid://dkpni2usf1hlb" path="res://Graphics/Buildings/FieldHospital/MoundHighlight0000.png" id="5_5s7te"]
 [ext_resource type="Texture2D" uid="uid://cnofoyfnapnlu" path="res://Graphics/Buildings/FieldHospital/Fill0000.png" id="5_eghah"]
 [ext_resource type="Texture2D" uid="uid://bfoh7k3fj37j5" path="res://Graphics/Buildings/FieldHospital/FieldHospital0000.png" id="6_ifdpd"]
 [ext_resource type="Texture2D" uid="uid://ypr10migvsrd" path="res://Graphics/Buildings/FieldHospital/Cross0000.png" id="7_c6pry"]
 [ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="8_ev118"]
 [ext_resource type="PackedScene" uid="uid://c2b5nymg5ho3n" path="res://Buildings/StockPile.tscn" id="8_swsq8"]
+[ext_resource type="PackedScene" uid="uid://dsho6vngb1lk8" path="res://Buildings/Herb.tscn" id="11_v704b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2y8g"]
 size = Vector2(382.375, 202)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rd5b6"]
-vertices = PackedVector2Array(-38, 82, -127, 84, -126, -47, -38, 22, -15, -46, 51, -37, -15, -77, 229, -79, 138, 18, 223, 82, 140, 81)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(4, 6, 7, 5), PackedInt32Array(8, 5, 7), PackedInt32Array(8, 7, 9, 10)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-28, 92, -28, 27, 51, -25, 128, 24, 131, 91, 233, 93, 240, -90, -26, -87, -25, -56, -136, -58, -138, 95)])
+vertices = PackedVector2Array(-38, 82, -127, 84, -126, -47, -38, 22, -15, -46, 51, -37, 230, -79, 230, 82, 140, 81, 138, 18, -15, -77)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(4, 10, 6, 5), PackedInt32Array(6, 9, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-28, 92, -28, 27, 51, -25, 128, 24, 131, 91, 241, 93, 240, -90, -26, -87, -25, -56, -136, -58, -138, 95)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="FieldHospital" type="Node2D"]
@@ -31,33 +34,213 @@ position = Vector2(87, 0)
 scale = Vector2(-1.314, -1.681)
 
 [node name="Back" type="Sprite2D" parent="Graphic/Ground"]
-self_modulate = Color(0.419608, 0.290196, 0.0392157, 1)
-position = Vector2(-0.380506, -0.297506)
-scale = Vector2(0.810496, 1.23167)
+self_modulate = Color(0.419608, 0.305882, 0.0980392, 1)
+position = Vector2(66.3399, -1.55802)
+scale = Vector2(1.4777, 1.20646)
+texture = ExtResource("2_k4ng1")
+
+[node name="Grass" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.0823529, 0.192157, 0.0117647, 0.364706)
+position = Vector2(68.1639, 0.572351)
+rotation = 3.14159
+scale = Vector2(1.42361, 1.10697)
 texture = ExtResource("2_k4ng1")
 
 [node name="Flecks" type="Sprite2D" parent="Graphic/Ground"]
-self_modulate = Color(0.498039, 0.286275, 0.0392157, 1)
-position = Vector2(-0.380517, -0.297504)
-scale = Vector2(0.818106, 1.23167)
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(-41.0959, -41.6419)
+scale = Vector2(0.32627, 0.320948)
 texture = ExtResource("3_bvfl0")
 
-[node name="Ground2" type="Node2D" parent="Graphic"]
-z_index = -1
-position = Vector2(-88, 0)
-scale = Vector2(1.31401, 1.68064)
-
-[node name="Back" type="Sprite2D" parent="Graphic/Ground2"]
-self_modulate = Color(0.419608, 0.290196, 0.0392157, 1)
-position = Vector2(-0.380506, -0.297506)
-scale = Vector2(0.810496, 1.23167)
-texture = ExtResource("2_k4ng1")
-
-[node name="Flecks" type="Sprite2D" parent="Graphic/Ground2"]
-self_modulate = Color(0.498039, 0.286275, 0.0392157, 1)
-position = Vector2(-0.380517, -0.297504)
-scale = Vector2(0.818106, 1.23167)
+[node name="Flecks2" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(-36.5297, -20.8209)
+scale = Vector2(0.32627, 0.320948)
 texture = ExtResource("3_bvfl0")
+
+[node name="Flecks3" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(-38.8128, 3.56931)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks4" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(-41.0959, 31.5289)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks5" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(19.0259, 37.4777)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks6" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(8.37138, 13.6823)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks7" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(24.3531, -13.6823)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks8" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(19.7869, -42.2368)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks9" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(76.8645, -41.6419)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks10" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(142.314, -40.4521)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks11" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(171.233, -41.047)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks12" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(108.067, -12.4926)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks13" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(171.233, -13.0874)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks14" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(168.95, 15.467)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks15" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(105.784, 11.3028)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks16" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(57.8387, 10.7079)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks17" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(98.9345, 37.4777)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks18" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(54.0335, 35.693)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Flecks19" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.262745, 0.160784, 0.0431373, 0.498039)
+position = Vector2(156.773, 38.0726)
+scale = Vector2(0.32627, 0.320948)
+texture = ExtResource("3_bvfl0")
+
+[node name="Mound" type="Node2D" parent="Graphic"]
+modulate = Color(0.337255, 0.2, 0.027451, 1)
+position = Vector2(138, -51)
+
+[node name="Mound" type="Sprite2D" parent="Graphic/Mound"]
+position = Vector2(0, -7)
+texture = ExtResource("4_swwxk")
+
+[node name="MoundHighlight" type="Sprite2D" parent="Graphic/Mound"]
+self_modulate = Color(0.792157, 0.792157, 0.792157, 1)
+position = Vector2(0, -7)
+texture = ExtResource("5_5s7te")
+
+[node name="Mound2" type="Node2D" parent="Graphic"]
+modulate = Color(0.317647, 0.180392, 0.0235294, 1)
+position = Vector2(87, -60)
+scale = Vector2(-1, 1)
+
+[node name="Mound" type="Sprite2D" parent="Graphic/Mound2"]
+position = Vector2(0, -7)
+texture = ExtResource("4_swwxk")
+
+[node name="MoundHighlight" type="Sprite2D" parent="Graphic/Mound2"]
+self_modulate = Color(0.847059, 0.847059, 0.847059, 1)
+position = Vector2(0, -7)
+texture = ExtResource("5_5s7te")
+
+[node name="Mound3" type="Node2D" parent="Graphic"]
+modulate = Color(0.341176, 0.223529, 0.0823529, 1)
+position = Vector2(142, -75)
+
+[node name="Mound" type="Sprite2D" parent="Graphic/Mound3"]
+position = Vector2(0, -7)
+texture = ExtResource("4_swwxk")
+
+[node name="MoundHighlight" type="Sprite2D" parent="Graphic/Mound3"]
+self_modulate = Color(0.721569, 0.662745, 0.662745, 1)
+position = Vector2(0, -7)
+texture = ExtResource("5_5s7te")
+
+[node name="Mound4" type="Node2D" parent="Graphic"]
+modulate = Color(0.337255, 0.2, 0.027451, 1)
+position = Vector2(-105, 30)
+scale = Vector2(-1, 1)
+
+[node name="Mound" type="Sprite2D" parent="Graphic/Mound4"]
+position = Vector2(0, -7)
+texture = ExtResource("4_swwxk")
+
+[node name="MoundHighlight" type="Sprite2D" parent="Graphic/Mound4"]
+self_modulate = Color(0.792157, 0.792157, 0.792157, 1)
+position = Vector2(0, -7)
+texture = ExtResource("5_5s7te")
+
+[node name="Mound5" type="Node2D" parent="Graphic"]
+modulate = Color(0.317647, 0.180392, 0.0235294, 1)
+position = Vector2(-132, 43)
+scale = Vector2(-1, 1)
+
+[node name="Mound" type="Sprite2D" parent="Graphic/Mound5"]
+position = Vector2(0, -7)
+texture = ExtResource("4_swwxk")
+
+[node name="MoundHighlight" type="Sprite2D" parent="Graphic/Mound5"]
+self_modulate = Color(0.847059, 0.847059, 0.847059, 1)
+position = Vector2(0, -7)
+texture = ExtResource("5_5s7te")
+
+[node name="Mound6" type="Node2D" parent="Graphic"]
+modulate = Color(0.341176, 0.223529, 0.0823529, 1)
+position = Vector2(-92, 52)
+scale = Vector2(-1, 1)
+
+[node name="Mound" type="Sprite2D" parent="Graphic/Mound6"]
+position = Vector2(0, -7)
+texture = ExtResource("4_swwxk")
+
+[node name="MoundHighlight" type="Sprite2D" parent="Graphic/Mound6"]
+self_modulate = Color(0.721569, 0.662745, 0.662745, 1)
+position = Vector2(0, -7)
+texture = ExtResource("5_5s7te")
 
 [node name="Tent" type="Node2D" parent="Graphic"]
 position = Vector2(0, 73)
@@ -86,6 +269,38 @@ texture = ExtResource("7_c6pry")
 position = Vector2(-129, -65)
 type = 6
 
+[node name="Herb" parent="Graphic" instance=ExtResource("11_v704b")]
+position = Vector2(69, 80)
+scale = Vector2(0.75, 0.75)
+
+[node name="Herb2" parent="Graphic" instance=ExtResource("11_v704b")]
+position = Vector2(79, 71)
+scale = Vector2(0.75, 0.75)
+
+[node name="Herb3" parent="Graphic" instance=ExtResource("11_v704b")]
+position = Vector2(75, 81)
+scale = Vector2(0.75, 0.75)
+
+[node name="Herb4" parent="Graphic" instance=ExtResource("11_v704b")]
+position = Vector2(60, 75)
+scale = Vector2(0.75, 0.75)
+
+[node name="Herb5" parent="Graphic" instance=ExtResource("11_v704b")]
+position = Vector2(-161, -59)
+scale = Vector2(0.75, 0.75)
+
+[node name="Herb6" parent="Graphic" instance=ExtResource("11_v704b")]
+position = Vector2(114, -59)
+scale = Vector2(0.75, 0.75)
+
+[node name="Herb7" parent="Graphic" instance=ExtResource("11_v704b")]
+position = Vector2(-127, 47)
+scale = Vector2(0.75, 0.75)
+
+[node name="Herb8" parent="Graphic" instance=ExtResource("11_v704b")]
+position = Vector2(-82, 39)
+scale = Vector2(0.75, 0.75)
+
 [node name="BuildPrevention" type="Area2D" parent="."]
 visible = false
 collision_layer = 3
@@ -95,9 +310,10 @@ shape = SubResource("RectangleShape2D_p2y8g")
 
 [node name="Polygon2D" type="Polygon2D" parent="." groups=["navigation_blocking_group"]]
 color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(-184, -92, 188, -92, 182, 92, 22, 89, 21, 30, -21, 30, -25, 89, -186, 94)
+polygon = PackedVector2Array(-184, -92, 188, -92, 187, 90, 22, 89, 21, 30, -21, 30, -25, 89, -186, 94)
 
 [node name="WorkingNavigationRegion" type="NavigationRegion2D" parent="."]
+visible = false
 position = Vector2(-52, -1)
 navigation_polygon = SubResource("NavigationPolygon_rd5b6")
 navigation_layers = 2

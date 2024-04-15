@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmn8nh71folta"]
+[gd_scene load_steps=16 format=3 uid="uid://cmn8nh71folta"]
 
 [ext_resource type="Script" path="res://Characters/LostSoul.gd" id="1_rs1pb"]
 [ext_resource type="Texture2D" uid="uid://c36tarn25rexo" path="res://Graphics/Characters/LostSoul/LostSoul0000.png" id="2_r0ibk"]
@@ -57,6 +57,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Character:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_t84ql"]
 resource_name = "Walk"
@@ -86,11 +98,60 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0, -0.0698132, 0.0, 0.0698132, 0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Character:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1.68179, 1.86607, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fgi5x"]
 _data = {
 "RESET": SubResource("Animation_tssxt"),
 "Walk": SubResource("Animation_t84ql")
+}
+
+[sub_resource type="Animation" id="Animation_kjtii"]
+resource_name = "Glow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(0.574349, 1.6245, 0.574349, 1.41421, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.592157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.701961), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wyxje"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7r034"]
+_data = {
+"Glow": SubResource("Animation_kjtii"),
+"RESET": SubResource("Animation_wyxje")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6fh43"]
@@ -100,13 +161,14 @@ radius = 20.0
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_rs1pb")
+body_colors = Array[Color]([Color(0.952941, 0.54902, 0.690196, 0.882353), Color(0.282353, 1, 0.627451, 0.890196), Color(0.282353, 0.8, 1, 0.913725), Color(0.878431, 0.494118, 0.984314, 0.862745), Color(0.435294, 1, 0.466667, 0.929412), Color(0.505882, 0.894118, 0.984314, 0.878431)])
+movement_speed = 30.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="Graphic" type="Node2D" parent="."]
 
 [node name="Character" type="Node2D" parent="Graphic"]
-position = Vector2(0, 16)
 scale = Vector2(0.216, 0.216)
 
 [node name="Body" type="AnimatedSprite2D" parent="Graphic/Character"]
@@ -126,13 +188,20 @@ scale = Vector2(1.09433, 1)
 libraries = {
 "": SubResource("AnimationLibrary_fgi5x")
 }
+autoplay = "Walk"
+
+[node name="Glow" type="AnimationPlayer" parent="Graphic"]
+libraries = {
+"": SubResource("AnimationLibrary_7r034")
+}
+autoplay = "Glow"
+speed_scale = 0.5
 
 [node name="Shadow" type="Node2D" parent="."]
 
 [node name="Shadow" type="Sprite2D" parent="Shadow"]
 modulate = Color(0, 0, 0, 0.607843)
 z_index = -1
-position = Vector2(0, 19)
 scale = Vector2(0.87822, -0.277214)
 texture = ExtResource("7_2nyw1")
 

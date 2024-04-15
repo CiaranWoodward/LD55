@@ -74,6 +74,7 @@ _data = {
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_iq3m1")
+movement_speed = 70.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

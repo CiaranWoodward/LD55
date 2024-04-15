@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cseq0jcpd6rfc"]
+[gd_scene load_steps=34 format=3 uid="uid://cseq0jcpd6rfc"]
 
 [ext_resource type="Script" path="res://Map/GameMap.gd" id="1_667xj"]
 [ext_resource type="PackedScene" uid="uid://clufegtvym2pa" path="res://Buildings/RecutementCentre.tscn" id="1_p3gag"]
@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://cte03v1oflcfv" path="res://Buildings/HoldingPen.tscn" id="19_etw68"]
 [ext_resource type="PackedScene" uid="uid://cdblts0t0oqy4" path="res://Characters/Skeleton.tscn" id="21_os3sb"]
 [ext_resource type="PackedScene" uid="uid://ccuq4sb75hurn" path="res://Characters/Demon.tscn" id="22_cf3wk"]
+[ext_resource type="PackedScene" uid="uid://cmn8nh71folta" path="res://Characters/LostSoul.tscn" id="23_vfqn3"]
+[ext_resource type="PackedScene" uid="uid://d3aj8xwu4yahc" path="res://Characters/Sheep.tscn" id="24_p5a1u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ewas"]
 texture = ExtResource("3_puiem")
@@ -256,6 +258,39 @@ position = Vector2(725, 230)
 [node name="Cat" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
 position = Vector2(888.83, 500.029)
 
+[node name="Cat2" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
+position = Vector2(888.83, 500.029)
+
+[node name="Cat3" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
+position = Vector2(888.83, 500.029)
+
+[node name="Cat4" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
+position = Vector2(888.83, 500.029)
+
+[node name="Cat5" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
+position = Vector2(888.83, 500.029)
+
+[node name="Cat6" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
+position = Vector2(888.83, 500.029)
+
+[node name="Cat7" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
+position = Vector2(888.83, 500.029)
+
+[node name="Cat8" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
+position = Vector2(888.83, 500.029)
+
+[node name="Cat9" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
+position = Vector2(888.83, 500.029)
+
+[node name="Cat10" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
+position = Vector2(888.83, 500.029)
+
+[node name="Cat11" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
+position = Vector2(888.83, 500.029)
+
+[node name="Cat12" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
+position = Vector2(888.83, 500.029)
+
 [node name="Witch" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
 position = Vector2(975, 1030)
 
@@ -263,7 +298,28 @@ position = Vector2(975, 1030)
 position = Vector2(911, 718)
 
 [node name="Witch3" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(477, 281)
+position = Vector2(815, 343)
+
+[node name="Witch4" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
+position = Vector2(815, 343)
+
+[node name="Witch5" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
+position = Vector2(815, 343)
+
+[node name="Witch6" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
+position = Vector2(815, 343)
+
+[node name="Witch7" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
+position = Vector2(815, 343)
+
+[node name="Witch8" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
+position = Vector2(815, 343)
+
+[node name="Witch9" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
+position = Vector2(815, 343)
+
+[node name="Witch10" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
+position = Vector2(815, 343)
 
 [node name="EndGame" parent="NavigationRegion2D" instance=ExtResource("6_5nybr")]
 position = Vector2(56, 1064)
@@ -281,13 +337,22 @@ position = Vector2(1106, 1064)
 position = Vector2(1532, 619)
 
 [node name="Granny" parent="NavigationRegion2D" instance=ExtResource("8_u3pgy")]
-position = Vector2(1628, 257)
+position = Vector2(339, 5)
+
+[node name="Granny2" parent="NavigationRegion2D" instance=ExtResource("8_u3pgy")]
+position = Vector2(339, 5)
+
+[node name="Granny3" parent="NavigationRegion2D" instance=ExtResource("8_u3pgy")]
+position = Vector2(339, 5)
+
+[node name="Granny4" parent="NavigationRegion2D" instance=ExtResource("8_u3pgy")]
+position = Vector2(403, 3)
 
 [node name="CornField" parent="NavigationRegion2D" instance=ExtResource("10_3752r")]
 position = Vector2(-79, -126)
 
 [node name="HerbGarden" parent="NavigationRegion2D" instance=ExtResource("13_fryhv")]
-position = Vector2(-548, 254)
+position = Vector2(425, 370)
 
 [node name="FieldHospital" parent="NavigationRegion2D" instance=ExtResource("14_aa4xp")]
 position = Vector2(998, -88)
@@ -314,14 +379,35 @@ max_inventory = null
 [node name="Demon" parent="NavigationRegion2D" instance=ExtResource("22_cf3wk")]
 position = Vector2(646, 451)
 
-[node name="Demon2" parent="NavigationRegion2D" instance=ExtResource("22_cf3wk")]
-position = Vector2(646, 451)
+[node name="LostSoul" parent="NavigationRegion2D" instance=ExtResource("23_vfqn3")]
 
-[node name="Demon3" parent="NavigationRegion2D" instance=ExtResource("22_cf3wk")]
-position = Vector2(646, 451)
+[node name="LostSoul2" parent="NavigationRegion2D" instance=ExtResource("23_vfqn3")]
 
-[node name="Demon4" parent="NavigationRegion2D" instance=ExtResource("22_cf3wk")]
-position = Vector2(646, 451)
+[node name="LostSoul3" parent="NavigationRegion2D" instance=ExtResource("23_vfqn3")]
+
+[node name="LostSoul4" parent="NavigationRegion2D" instance=ExtResource("23_vfqn3")]
+
+[node name="LostSoul5" parent="NavigationRegion2D" instance=ExtResource("23_vfqn3")]
+
+[node name="LostSoul6" parent="NavigationRegion2D" instance=ExtResource("23_vfqn3")]
+
+[node name="Sheep" parent="NavigationRegion2D" instance=ExtResource("24_p5a1u")]
+position = Vector2(722, 277)
+
+[node name="Sheep2" parent="NavigationRegion2D" instance=ExtResource("24_p5a1u")]
+position = Vector2(722, 277)
+
+[node name="Sheep3" parent="NavigationRegion2D" instance=ExtResource("24_p5a1u")]
+position = Vector2(722, 277)
+
+[node name="Sheep4" parent="NavigationRegion2D" instance=ExtResource("24_p5a1u")]
+position = Vector2(722, 277)
+
+[node name="Sheep5" parent="NavigationRegion2D" instance=ExtResource("24_p5a1u")]
+position = Vector2(722, 277)
+
+[node name="Sheep6" parent="NavigationRegion2D" instance=ExtResource("24_p5a1u")]
+position = Vector2(722, 277)
 
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 
