@@ -11,6 +11,7 @@ func _ready():
 	Global.game_map.games_on_screen_changed.connect(_updated_onscreen)
 	_stick_to_screen()
 	change_queue_count(Global.ResourceType.WITCH, -5)
+	$Graphic/Shaker.childhood_trauma = 0.5
 
 func _updated_onscreen(onscreen: bool):
 	if onscreen:
@@ -57,6 +58,7 @@ func _spin_to_oblivion(character: BaseCharacter):
 	character.jump_to($JumpTo.global_position, func():
 		var tween: Tween = character.ghostify_to_oblivion($Graphic/OblivionPoint)
 		tween.tween_callback(func():
+			$Graphic/Shaker.add_trauma(0.5)
 			character.queue_free()
 			)
 		)

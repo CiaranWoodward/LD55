@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqtw2u46g28co"]
+[gd_scene load_steps=5 format=3 uid="uid://cqtw2u46g28co"]
 
 [ext_resource type="Script" path="res://Buildings/EndGame.gd" id="1_qkj20"]
 [ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="2_jgvgp"]
+[ext_resource type="PackedScene" uid="uid://d7bt5crkrnm3" path="res://Utils/shaker.tscn" id="2_v3fpe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0j5u"]
 size = Vector2(302, 203)
@@ -13,42 +14,46 @@ script = ExtResource("1_qkj20")
 
 [node name="Graphic" type="Node2D" parent="."]
 
-[node name="Background" type="Polygon2D" parent="Graphic"]
+[node name="Shaker" parent="Graphic" instance=ExtResource("2_v3fpe")]
+position = Vector2(150, 100)
+
+[node name="Background" type="Polygon2D" parent="Graphic/Shaker"]
+position = Vector2(-150, -100)
 color = Color(0.407843, 0.407843, 0.407843, 1)
 polygon = PackedVector2Array(0, 0, 300, 0, 300, 200, 0, 200)
 
-[node name="Sprite2D" type="Sprite2D" parent="Graphic/Background"]
+[node name="Sprite2D" type="Sprite2D" parent="Graphic/Shaker/Background"]
 position = Vector2(148, 100)
 texture = ExtResource("2_jgvgp")
 
-[node name="TopBar" type="Polygon2D" parent="Graphic/Background"]
+[node name="TopBar" type="Polygon2D" parent="Graphic/Shaker/Background"]
 color = Color(0.156863, 0.156863, 0.156863, 0.733333)
 polygon = PackedVector2Array(0, 0, 300, 0, 300, 40, 0, 40)
 
-[node name="Label" type="Label" parent="Graphic/Background/TopBar"]
+[node name="Label" type="Label" parent="Graphic/Shaker/Background/TopBar"]
 offset_left = 6.0
 offset_top = 5.0
 offset_right = 124.0
 offset_bottom = 28.0
 text = "Ludum Dare 55"
 
-[node name="Compo" type="Polygon2D" parent="Graphic/Background"]
+[node name="Compo" type="Polygon2D" parent="Graphic/Shaker/Background"]
 color = Color(0.894118, 0.490196, 0.262745, 1)
 polygon = PackedVector2Array(200, 0, 300, 0, 300, 40, 200, 40)
 
-[node name="CompoLabel" type="Label" parent="Graphic/Background/Compo"]
+[node name="CompoLabel" type="Label" parent="Graphic/Shaker/Background/Compo"]
 offset_left = 219.0
 offset_top = 8.0
 offset_right = 279.0
 offset_bottom = 31.0
 text = "COMPO"
 
-[node name="BottomBar" type="Polygon2D" parent="Graphic/Background"]
+[node name="BottomBar" type="Polygon2D" parent="Graphic/Shaker/Background"]
 position = Vector2(0, 160)
 color = Color(0.156863, 0.156863, 0.156863, 0.733333)
 polygon = PackedVector2Array(0, 0, 300, 0, 300, 40, 0, 40)
 
-[node name="GameName" type="Label" parent="Graphic/Background/BottomBar"]
+[node name="GameName" type="Label" parent="Graphic/Shaker/Background/BottomBar"]
 offset_left = 8.0
 offset_top = 7.0
 offset_right = 131.0
