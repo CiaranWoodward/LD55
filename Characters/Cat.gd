@@ -65,6 +65,7 @@ func change_job(building = null):
 		nav.navigation_layers = 2
 	else:
 		nav.navigation_layers = 1
+		Global.game_map.add_character(self)
 
 func _get_random_target_position() -> Vector2:
 	if is_employed():

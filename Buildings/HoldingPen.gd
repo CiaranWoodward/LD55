@@ -39,6 +39,7 @@ func handle_character(character: BaseCharacter):
 func hold(character: HoldableCharacter):
 	character.change_held_by(self)
 	character.nav.set_navigation_map($HoldingNavigationRegion.get_navigation_map())
+	character.reparent($Graphic)
 	
 func get_random_point_in_building_ish() -> Vector2:
 	var rect: Rect2 = $BuildPrevention/BuildPreventionShape.shape.get_rect()
