@@ -6,6 +6,14 @@ var cursor : Cursor
 var game_map: GameMap
 var camera: PlayerCam
 
+# Game state
+enum GameState {
+	IN_PROGRESS,
+	GAME_OVER,
+	GAME_WIN
+}
+var game_state = GameState.IN_PROGRESS
+
 enum BuildingType {
 	PORTAL,
 	RECUTEMENT_CENTRE,

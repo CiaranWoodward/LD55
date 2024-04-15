@@ -11,10 +11,14 @@ var _games_on_screen = false
 func _enter_tree():
 	Global.game_map = self
 
+func _tick_story():
+	await Story.tick_story($Hud/Dialogue)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.game_map = self
 	_compute_nav_mesh()
+	#await _tick_story()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

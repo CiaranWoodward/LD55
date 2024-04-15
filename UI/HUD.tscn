@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx4vxmlqmobql"]
+[gd_scene load_steps=4 format=3 uid="uid://cx4vxmlqmobql"]
 
 [ext_resource type="PackedScene" uid="uid://ecrxxvvrint6" path="res://UI/BuildButton.tscn" id="1_bbo6i"]
+[ext_resource type="Script" path="res://UI/HUD.gd" id="1_ddcuq"]
+[ext_resource type="PackedScene" uid="uid://bljefgflbomjq" path="res://UI/Conversations/Dialogue.tscn" id="2_2sqex"]
 
 [node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_ddcuq")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 11
@@ -19,3 +22,7 @@ layout_mode = 2
 [node name="BuildButton" parent="PanelContainer/BuildButtons" instance=ExtResource("1_bbo6i")]
 layout_mode = 2
 building_type = 1
+
+[node name="Dialogue" parent="." instance=ExtResource("2_2sqex")]
+process_mode = 3
+visible = false

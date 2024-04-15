@@ -1,0 +1,147 @@
+[gd_scene load_steps=7 format=3 uid="uid://bljefgflbomjq"]
+
+[ext_resource type="Script" path="res://UI/Conversations/Dialogue.gd" id="1_kgon7"]
+[ext_resource type="Texture2D" uid="uid://3wsclwp32ydn" path="res://Graphics/Background/Frame0000.png" id="2_ogijw"]
+[ext_resource type="FontFile" uid="uid://biop3j758m626" path="res://UI/Fonts/Ubuntu-Light.ttf" id="4_pm31x"]
+[ext_resource type="Texture2D" uid="uid://4gal8xigd2tt" path="res://Graphics/Buildings/Portal/Gem0006.png" id="5_brmwv"]
+[ext_resource type="Texture2D" uid="uid://be4m813soo61v" path="res://Graphics/People/Frame0000.png" id="5_obxux"]
+[ext_resource type="Texture2D" uid="uid://dpbqkvsisjcrv" path="res://Graphics/Characters/Cat/Head10000.png" id="6_iqshg"]
+
+[node name="Dialogue" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kgon7")
+
+[node name="Name" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 671.0
+offset_right = 729.0
+offset_bottom = 751.0
+texture = ExtResource("2_ogijw")
+region_rect = Rect2(182, 54, 314, 394)
+patch_margin_left = 20
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 19
+
+[node name="Name" type="Label" parent="Name"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -69.5
+offset_top = 11.0
+offset_right = 69.5
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_pm31x")
+theme_override_font_sizes/font_size = 30
+text = "Nigel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Speech" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -289.0
+offset_top = -169.0
+offset_right = 446.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_ogijw")
+region_rect = Rect2(181.818, 54.0294, 314.545, 394.703)
+patch_margin_left = 290
+patch_margin_top = 28
+patch_margin_right = 290
+patch_margin_bottom = 25
+
+[node name="Text" type="RichTextLabel" parent="Speech"]
+custom_minimum_size = Vector2(523, 109)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 17.0
+offset_right = -193.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_pm31x")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+bbcode_enabled = true
+text = "The quick brown fox jumped over the lazy dog
+That damn
+lazy dog"
+scroll_active = false
+visible_characters_behavior = 1
+
+[node name="Pictures" type="Control" parent="Speech"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_right = -79.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Shadow" type="Sprite2D" parent="Speech/Pictures"]
+self_modulate = Color(0, 0, 0, 0.262745)
+show_behind_parent = true
+position = Vector2(-16, -23)
+scale = Vector2(0.4575, 0.4575)
+texture = ExtResource("5_obxux")
+
+[node name="Frame" type="Sprite2D" parent="Speech/Pictures"]
+self_modulate = Color(0.859375, 0.84375, 0.808594, 1)
+position = Vector2(-19, -26)
+scale = Vector2(0.4575, 0.4575)
+texture = ExtResource("5_obxux")
+
+[node name="Penelope" type="Sprite2D" parent="Speech/Pictures/Frame"]
+visible = false
+texture = ExtResource("5_brmwv")
+
+[node name="Catherine" type="Sprite2D" parent="Speech/Pictures/Frame"]
+visible = false
+texture = ExtResource("6_iqshg")
+
+[node name="QuestionDialog" type="ConfirmationDialog" parent="."]
+gui_embed_subwindows = true
+title = ""
+initial_position = 2
+size = Vector2i(300, 100)
+exclusive = false
+unresizable = true
+borderless = true
+always_on_top = true
+popup_window = true
+ok_button_text = "Yes"
+dialog_text = "Give Paul 3 mushrooms?"
+dialog_hide_on_ok = false
+dialog_close_on_escape = false
+dialog_autowrap = true
+cancel_button_text = "No"
+
+[connection signal="canceled" from="QuestionDialog" to="." method="_on_question_dialog_cancelled"]
+[connection signal="confirmed" from="QuestionDialog" to="." method="_on_question_dialog_yessed"]

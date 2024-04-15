@@ -97,7 +97,7 @@ position = Vector2(-81, -115)
 position = Vector2(-193, 242)
 
 [node name="GrannyShack2" parent="NavigationRegion2D" instance=ExtResource("7_vm5hl")]
-position = Vector2(231, 84)
+position = Vector2(272, 124)
 
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 

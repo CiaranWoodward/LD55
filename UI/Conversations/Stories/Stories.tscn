@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3qtnf3cihei4"]
+
+[ext_resource type="Script" path="res://UI/Conversations/Stories/MainStory.gd" id="1_cc6ok"]
+[ext_resource type="Script" path="res://UI/Conversations/Stories/GameOver.gd" id="2_k43qr"]
+
+[node name="Stories" type="Node2D"]
+
+[node name="MainStory" type="Node" parent="."]
+script = ExtResource("1_cc6ok")
+
+[node name="GameOver" type="Node" parent="."]
+script = ExtResource("2_k43qr")
