@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://clufegtvym2pa"]
+[gd_scene load_steps=6 format=3 uid="uid://clufegtvym2pa"]
 
 [ext_resource type="Script" path="res://Buildings/RecutementCentre.gd" id="1_b68fl"]
 [ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="2_w60tc"]
+[ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="3_eqy48"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5ibk"]
 size = Vector2(377, 131)
@@ -42,3 +43,11 @@ polygon = PackedVector2Array(-317, -69, 67, -67, 66, 67, 28, 68, 29, -16, -26, -
 position = Vector2(-52, -1)
 navigation_polygon = SubResource("NavigationPolygon_mpym4")
 navigation_layers = 2
+
+[node name="DebugInventory" type="RichTextLabel" parent="."]
+offset_left = -109.0
+offset_top = 72.0
+offset_right = 207.0
+offset_bottom = 241.0
+text = "poskpwiok"
+script = ExtResource("3_eqy48")

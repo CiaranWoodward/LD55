@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://iynercm4q834"]
+[gd_scene load_steps=11 format=3 uid="uid://iynercm4q834"]
 
 [ext_resource type="Script" path="res://Buildings/SheepBarn.gd" id="1_nhbl4"]
 [ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_s8ugd"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dayfqowek4tpm" path="res://Graphics/Buildings/SheepBarn/Colour0000.png" id="5_8qhux"]
 [ext_resource type="Texture2D" uid="uid://dalbrdtds7r7l" path="res://Graphics/Buildings/SheepBarn/Barn0000.png" id="6_t7vaq"]
 [ext_resource type="Texture2D" uid="uid://b8vnf37iqu7dc" path="res://Graphics/Buildings/SheepBarn/Frames0000.png" id="7_5wy3g"]
+[ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="8_nt6eu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2y8g"]
 size = Vector2(249.188, 202)
@@ -56,7 +57,6 @@ texture = ExtResource("5_8qhux")
 
 [node name="Frames" type="Sprite2D" parent="Graphic/Barn"]
 position = Vector2(0, -92.5)
-scale = Vector2(1, 1)
 texture = ExtResource("7_5wy3g")
 
 [node name="Barn" type="Sprite2D" parent="Graphic/Barn"]
@@ -79,3 +79,10 @@ polygon = PackedVector2Array(-116, -94, 123, -92, 123, -47, 45, -47, 45, -13, 12
 position = Vector2(-52, -1)
 navigation_polygon = SubResource("NavigationPolygon_rd5b6")
 navigation_layers = 2
+
+[node name="DebugInventory" type="RichTextLabel" parent="."]
+offset_top = 95.0
+offset_right = 207.0
+offset_bottom = 242.0
+text = "poskpwiok"
+script = ExtResource("8_nt6eu")

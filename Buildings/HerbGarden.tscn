@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://xwnmbnqormf4"]
+[gd_scene load_steps=12 format=3 uid="uid://xwnmbnqormf4"]
 
 [ext_resource type="Script" path="res://Buildings/HerbGarden.gd" id="1_51b6j"]
 [ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_wawuv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b2o4gitrugfvl" path="res://Graphics/Buildings/HerbGarden/WindowSheen0000.png" id="6_rgyd3"]
 [ext_resource type="Texture2D" uid="uid://b8u0ebemymirr" path="res://Graphics/Buildings/HerbGarden/Greenhouse0000.png" id="7_ym2m5"]
 [ext_resource type="PackedScene" uid="uid://dsho6vngb1lk8" path="res://Buildings/Herb.tscn" id="8_mmhl0"]
+[ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="9_vcllj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5ibk"]
 size = Vector2(83.6989, 160.415)
@@ -161,3 +162,10 @@ polygon = PackedVector2Array(-109, -70, 114, -68, 115, 68, -109, 63)
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_l2857")
 navigation_layers = 2
+
+[node name="DebugInventory" type="RichTextLabel" parent="."]
+offset_top = 83.0
+offset_right = 207.0
+offset_bottom = 241.0
+text = "poskpwiok"
+script = ExtResource("9_vcllj")
