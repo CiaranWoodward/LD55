@@ -1,0 +1,284 @@
+[gd_scene load_steps=12 format=3 uid="uid://cte03v1oflcfv"]
+
+[ext_resource type="Script" path="res://Buildings/Portal.gd" id="1_7n28g"]
+[ext_resource type="Texture2D" uid="uid://dhmamo50mb3n" path="res://Graphics/Buildings/HoldingPen/FenceBack0000.png" id="2_4yhu1"]
+[ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_jq21h"]
+[ext_resource type="Texture2D" uid="uid://bkb0exa1xub42" path="res://Graphics/Buildings/HoldingPen/FenceFront0000.png" id="3_1h2y1"]
+[ext_resource type="Texture2D" uid="uid://d13uwbg8f102j" path="res://Graphics/Buildings/HoldingPen/FenceSide0000.png" id="4_kpxlj"]
+[ext_resource type="Texture2D" uid="uid://bpn0alhvbb1n6" path="res://Graphics/Environment/GrassLight20000.png" id="6_n3jrs"]
+[ext_resource type="Texture2D" uid="uid://ctpkifovx45fd" path="res://Graphics/Environment/GrassLight10000.png" id="7_r35vt"]
+[ext_resource type="Texture2D" uid="uid://bke8wxv4r8ouv" path="res://Graphics/Environment/GrassDark20000.png" id="8_s4c3x"]
+[ext_resource type="Texture2D" uid="uid://dv1hx6xlcw53p" path="res://Graphics/Environment/GrassDark10000.png" id="9_8h1ut"]
+[ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="68_8epbf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgowq"]
+size = Vector2(272, 119)
+
+[node name="HoldingPen" type="Node2D"]
+script = ExtResource("1_7n28g")
+
+[node name="Graphic" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Fence" type="Node2D" parent="Graphic"]
+modulate = Color(0.933333, 0.698039, 0.396078, 1)
+
+[node name="BackFence" type="TextureRect" parent="Graphic/Fence"]
+offset_left = -270.0
+offset_top = -146.0
+offset_right = 266.0
+offset_bottom = -99.0
+texture = ExtResource("2_4yhu1")
+stretch_mode = 1
+
+[node name="LeftFence" type="TextureRect" parent="Graphic/Fence"]
+offset_left = -270.0
+offset_top = -132.0
+offset_right = -263.0
+offset_bottom = 80.0
+texture = ExtResource("4_kpxlj")
+stretch_mode = 1
+
+[node name="RightFence" type="TextureRect" parent="Graphic/Fence"]
+offset_left = 260.0
+offset_top = -132.0
+offset_right = 267.0
+offset_bottom = 80.0
+texture = ExtResource("4_kpxlj")
+stretch_mode = 1
+
+[node name="FrontFence" type="TextureRect" parent="Graphic/Fence"]
+offset_left = -270.0
+offset_top = 68.0
+offset_right = 266.0
+offset_bottom = 115.0
+texture = ExtResource("3_1h2y1")
+stretch_mode = 1
+
+[node name="Ground" type="Node2D" parent="Graphic"]
+modulate = Color(0.745098, 0.745098, 0.745098, 1)
+z_index = -2
+position = Vector2(-93, -5)
+scale = Vector2(0.786812, 1.77381)
+
+[node name="Back" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.419608, 0.290196, 0.0392157, 1)
+position = Vector2(111.844, 3.38255)
+scale = Vector2(3.62221, 1.4545)
+texture = ExtResource("2_jq21h")
+
+[node name="Grass" type="Sprite2D" parent="Graphic/Ground"]
+self_modulate = Color(0.603922, 1, 0.352941, 0.647059)
+position = Vector2(109.302, 1.12751)
+scale = Vector2(3.39344, 1.13879)
+texture = ExtResource("2_jq21h")
+
+[node name="GrassSprouts" type="Node2D" parent="Graphic/Ground"]
+
+[node name="GrassLight20000" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(-148.869, -23.1842)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("6_n3jrs")
+
+[node name="GrassLight10000" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(-57.3604, 1.62121)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("7_r35vt")
+
+[node name="GrassDark20000" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(-29.3995, -20.9291)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("8_s4c3x")
+
+[node name="GrassDark10000" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(-98.0309, -35.5868)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("9_8h1ut")
+
+[node name="GrassLight20001" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(138.366, -4.01638)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("6_n3jrs")
+
+[node name="GrassLight10001" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(229.875, 20.789)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("7_r35vt")
+
+[node name="GrassDark20001" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(64.8185, 36.6443)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("8_s4c3x")
+
+[node name="GrassDark10001" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(189.204, -16.4191)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("9_8h1ut")
+
+[node name="GrassLight20002" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(-138.701, 1.62121)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("6_n3jrs")
+
+[node name="GrassLight10002" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(-47.1928, 26.4266)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("7_r35vt")
+
+[node name="GrassDark20002" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(-19.2319, 3.87624)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("8_s4c3x")
+
+[node name="GrassDark10002" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(-87.8633, -10.7815)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("9_8h1ut")
+
+[node name="GrassLight20003" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(290.88, -24.3117)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("6_n3jrs")
+
+[node name="GrassLight10003" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(382.389, 0.493696)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("7_r35vt")
+
+[node name="GrassDark20003" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(410.35, -22.0566)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("8_s4c3x")
+
+[node name="GrassDark10003" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(341.718, -36.7143)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("9_8h1ut")
+
+[node name="GrassLight20004" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(168.869, 20.789)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("6_n3jrs")
+
+[node name="GrassLight10004" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(352.054, 28.7517)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("7_r35vt")
+
+[node name="GrassDark20004" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(288.338, 23.044)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("8_s4c3x")
+
+[node name="GrassDark10004" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(219.707, 8.3863)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("9_8h1ut")
+
+[node name="GrassLight20005" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(21.4386, -18.6741)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("6_n3jrs")
+
+[node name="GrassLight10005" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(112.947, 6.13128)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("7_r35vt")
+
+[node name="GrassDark20005" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(140.908, -16.4191)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("8_s4c3x")
+
+[node name="GrassDark10005" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(72.2767, -31.0768)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("9_8h1ut")
+
+[node name="GrassLight20006" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(16.3548, 21.9165)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("6_n3jrs")
+
+[node name="GrassLight10006" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(107.863, 46.7219)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("7_r35vt")
+
+[node name="GrassDark20006" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(135.824, 24.1715)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("8_s4c3x")
+
+[node name="GrassDark10006" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(67.1928, 9.51382)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("9_8h1ut")
+
+[node name="GrassLight20007" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(1.27094, -42.2819)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("6_n3jrs")
+
+[node name="GrassLight10007" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(191.914, 40.0268)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("7_r35vt")
+
+[node name="GrassDark20007" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(-125.992, 24.1715)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("8_s4c3x")
+
+[node name="GrassDark10007" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(-194.623, 9.51382)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("9_8h1ut")
+
+[node name="GrassLight20008" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(166.327, -26.5667)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("6_n3jrs")
+
+[node name="GrassLight10008" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(257.836, -1.76134)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("7_r35vt")
+
+[node name="GrassDark20008" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(336.802, 10.7114)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("8_s4c3x")
+
+[node name="GrassDark10008" type="Sprite2D" parent="Graphic/Ground/GrassSprouts"]
+position = Vector2(217.165, -38.9694)
+scale = Vector2(0.5, 0.222)
+texture = ExtResource("9_8h1ut")
+
+[node name="OblivionPoint" type="Marker2D" parent="Graphic"]
+position = Vector2(4, -178)
+
+[node name="SpawnPoint" type="Marker2D" parent="Graphic"]
+position = Vector2(-2, -28)
+
+[node name="RelayPoint" type="Marker2D" parent="Graphic"]
+position = Vector2(2, 204)
+
+[node name="BuildPrevention" type="Area2D" parent="."]
+collision_layer = 3
+
+[node name="BuildPreventionShape" type="CollisionShape2D" parent="BuildPrevention"]
+visible = false
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_tgowq")
+
+[node name="Polygon2D" type="Polygon2D" parent="." groups=["navigation_blocking_group"]]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-105, -5, 94, -3, 128, 84, -133, 87)
+
+[node name="DebugInventory" type="RichTextLabel" parent="."]
+offset_top = 101.0
+offset_right = 207.0
+offset_bottom = 255.0
+text = "poskpwiok"
+script = ExtResource("68_8epbf")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://iynercm4q834"]
+[gd_scene load_steps=12 format=3 uid="uid://iynercm4q834"]
 
 [ext_resource type="Script" path="res://Buildings/SheepBarn.gd" id="1_nhbl4"]
 [ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_s8ugd"]
@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dayfqowek4tpm" path="res://Graphics/Buildings/SheepBarn/Colour0000.png" id="5_8qhux"]
 [ext_resource type="Texture2D" uid="uid://dalbrdtds7r7l" path="res://Graphics/Buildings/SheepBarn/Barn0000.png" id="6_t7vaq"]
 [ext_resource type="Texture2D" uid="uid://b8vnf37iqu7dc" path="res://Graphics/Buildings/SheepBarn/Frames0000.png" id="7_5wy3g"]
-[ext_resource type="PackedScene" uid="uid://c2b5nymg5ho3n" path="res://Buildings/StockPile.tscn" id="8_nyewt"]
 [ext_resource type="Script" path="res://Buildings/DebugInventory.gd" id="8_nt6eu"]
+[ext_resource type="PackedScene" uid="uid://c2b5nymg5ho3n" path="res://Buildings/StockPile.tscn" id="8_nyewt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2y8g"]
 size = Vector2(249.188, 202)

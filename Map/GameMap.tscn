@@ -1,14 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://cseq0jcpd6rfc"]
+[gd_scene load_steps=28 format=3 uid="uid://cseq0jcpd6rfc"]
 
 [ext_resource type="Script" path="res://Map/GameMap.gd" id="1_667xj"]
 [ext_resource type="PackedScene" uid="uid://clufegtvym2pa" path="res://Buildings/RecutementCentre.tscn" id="1_p3gag"]
 [ext_resource type="PackedScene" uid="uid://bntc8r0gvpd8m" path="res://Buildings/Portal.tscn" id="2_4o8v8"]
+[ext_resource type="Texture2D" uid="uid://dp4ghly3jtsek" path="res://Graphics/Buildings/Ground0000.png" id="2_cbnbl"]
+[ext_resource type="Texture2D" uid="uid://2t2qc8hqqpwr" path="res://Graphics/Environment/GroundTileSheet0000.png" id="3_nhagh"]
 [ext_resource type="PackedScene" uid="uid://cx4vxmlqmobql" path="res://UI/HUD.tscn" id="3_o1tnc"]
+[ext_resource type="Texture2D" uid="uid://ewhg68vdj3ix" path="res://Graphics/Buildings/GroundFlecks0000.png" id="3_puiem"]
 [ext_resource type="PackedScene" uid="uid://ckplrxq1lxetw" path="res://UI/Cursor.tscn" id="4_0ycld"]
 [ext_resource type="PackedScene" uid="uid://dr3k135c6aj68" path="res://Characters/Cat.tscn" id="4_1crc1"]
 [ext_resource type="PackedScene" uid="uid://dol2yvdyffyc5" path="res://Characters/Witch.tscn" id="5_g2ini"]
+[ext_resource type="Texture2D" uid="uid://bqrlf1ou31xpm" path="res://icon.svg" id="5_xclf1"]
 [ext_resource type="PackedScene" uid="uid://cqtw2u46g28co" path="res://Buildings/EndGame.tscn" id="6_5nybr"]
 [ext_resource type="Script" path="res://Map/PlayerCam.gd" id="6_5o6ap"]
+[ext_resource type="Texture2D" uid="uid://tyqbiq3emmtr" path="res://Graphics/Icons/WhiteSquare0000.png" id="6_p556y"]
 [ext_resource type="PackedScene" uid="uid://bl1l3pofspv41" path="res://Buildings/GrannyShack.tscn" id="7_vm5hl"]
 [ext_resource type="PackedScene" uid="uid://rana6ggydmfn" path="res://Characters/Granny.tscn" id="8_u3pgy"]
 [ext_resource type="PackedScene" uid="uid://c52obgi0jrhc1" path="res://Buildings/CornField.tscn" id="10_3752r"]
@@ -16,54 +21,289 @@
 [ext_resource type="PackedScene" uid="uid://radowl65xsta" path="res://Buildings/FieldHospital.tscn" id="14_aa4xp"]
 [ext_resource type="PackedScene" uid="uid://iynercm4q834" path="res://Buildings/SheepBarn.tscn" id="15_bx6hf"]
 [ext_resource type="PackedScene" uid="uid://bhkrdyerxw3h8" path="res://Buildings/Fishery.tscn" id="16_cua2n"]
+[ext_resource type="PackedScene" uid="uid://cte03v1oflcfv" path="res://Buildings/HoldingPen.tscn" id="19_etw68"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ewas"]
+texture = ExtResource("3_puiem")
+texture_region_size = Vector2i(100, 100)
+5:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+1:4/0 = 0
+3:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+9:5/0 = 0
+11:5/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_v6uko"]
+tile_size = Vector2i(100, 100)
+sources/0 = SubResource("TileSetAtlasSource_7ewas")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b72nx"]
+resource_name = "Flower"
+texture = ExtResource("3_nhagh")
+texture_region_size = Vector2i(200, 200)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+1:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+0:17/0 = 0
+1:17/0 = 0
+0:18/0 = 0
+1:18/0 = 0
+0:19/0 = 0
+1:19/0 = 0
+0:20/0 = 0
+1:20/0 = 0
+0:21/0 = 0
+1:21/0 = 0
+0:22/0 = 0
+1:22/0 = 0
+0:23/0 = 0
+1:23/0 = 0
+0:24/0 = 0
+1:24/0 = 0
+0:12/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yammq"]
+tile_size = Vector2i(200, 200)
+uv_clipping = true
+sources/1 = SubResource("TileSetAtlasSource_b72nx")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_imvrd"]
-outlines = Array[PackedVector2Array]([PackedVector2Array(-571, -416, 1749, -422, 1799, 1434, -652, 1424)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-353, -375, 1811, -383, 1784, 1346, -364, 1339)])
 source_geometry_mode = 2
 source_geometry_group_name = &"navigation_blocking_group"
 
 [node name="GameMap" type="Node2D"]
 script = ExtResource("1_667xj")
 
+[node name="Environment" type="Node2D" parent="."]
+z_index = -100
+position = Vector2(725, 107)
+
+[node name="Background" type="Node2D" parent="Environment"]
+
+[node name="Sky" type="Node2D" parent="Environment/Background"]
+
+[node name="Blue" type="Sprite2D" parent="Environment/Background/Sky"]
+self_modulate = Color(0.6, 0.854902, 0.941176, 1)
+scale = Vector2(26.93, 37.1)
+texture = ExtResource("2_cbnbl")
+
+[node name="Island" type="Node2D" parent="Environment"]
+
+[node name="FrontSide" type="Sprite2D" parent="Environment/Island"]
+self_modulate = Color(0.239216, 0.180392, 0.054902, 1)
+position = Vector2(-35, 1252.5)
+scale = Vector2(11.52, 16.87)
+texture = ExtResource("2_cbnbl")
+
+[node name="TileMap" type="TileMap" parent="Environment/Island"]
+modulate = Color(0.286275, 0.223529, 0.2, 1)
+position = Vector2(-136, 1252.5)
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_v6uko")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65539, 0, 0, 65538, 0, 0, -1, 0, 0, 131069, 0, 0, -131072, 65536, 0, 65536, 65536, 0, -131069, 65536, 0, 65533, 65536, 0, 1, 65536, 0, -2, 65536, 0, -131070, 65536, 0, 3, 65536, 0, 131071, 0, 0, 131073, 0, 0, 196606, 0, 0, -65535, 0, 0)
+
+[node name="Ground" type="Node2D" parent="Environment/Island"]
+
+[node name="Dirt" type="Sprite2D" parent="Environment/Island/Ground"]
+self_modulate = Color(0.486275, 0.368627, 0.117647, 1)
+position = Vector2(0, 15.125)
+scale = Vector2(11.64, 14.4175)
+texture = ExtResource("2_cbnbl")
+
+[node name="Grass" type="Sprite2D" parent="Environment/Island/Ground"]
+self_modulate = Color(0.254902, 0.494118, 0.215686, 1)
+position = Vector2(-6.50006, 20)
+scale = Vector2(11.465, 13.84)
+texture = ExtResource("2_cbnbl")
+
+[node name="TileMap" type="TileMap" parent="Environment/Island/Ground"]
+position = Vector2(-87, 27)
+tile_set = SubResource("TileSet_yammq")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65540, 1, 1, -4, 1, 1, -65539, 65537, 0, -3, 65537, 1, 65534, 65537, 1, 131070, 1, 1, 65535, 65537, 0, 131071, 65537, 1, 0, 1, 0, 65536, 1, 1, 1, 65537, 1, 65537, 1, 1, -131072, 1, 1, -65536, 1, 1, -131071, 65537, 0, -65535, 1, 0, -65538, 65537, 1, -2, 1, 1, -65537, 65537, 0, -1, 65537, 1, 65532, 65537, 1, 131068, 1, 1, 65533, 65537, 0, 131069, 65537, 1, 2, 1, 0, 65538, 1, 1, 3, 65537, 0, 65539, 65537, 1, -131070, 1, 1, -65534, 1, 1, -131069, 1, 0, -65533, 65537, 1, -131077, 1, 0, 65531, 1, 0, 196607, 1, 0, 196604, 1, 0, 131075, 1, 0, -196608, 1, 1, -196604, 1, 0, -65531, 1, 0, 4, 1, 0, -131067, 1, 0, -131075, 1, 0, 65541, 1, 0, 131076, 1, 0, 196603, 1, 0, 131067, 65537, 0, 196606, 65537, 0, -131073, 65537, 0, -196606, 1, 1, -196607, 65537, 0, 131073, 65537, 0, -65532, 65537, 0, 65540, 65537, 0, -5, 1, 1, -131068, 1, 1, -196603, 1, 1, 5, 1, 1, -131074, 65537, 1, -196605, 65537, 1, -131076, 65537, 1, -65541, 65537, 1, 196605, 65537, 1, 131072, 65537, 1, 131074, 65537, 1)
+
+[node name="Bridges" type="Node2D" parent="Environment"]
+
+[node name="Bridge" type="Sprite2D" parent="Environment/Bridges"]
+position = Vector2(-519, 735)
+scale = Vector2(1.23438, 1.26563)
+texture = ExtResource("5_xclf1")
+
+[node name="Bridge2" type="Sprite2D" parent="Environment/Bridges"]
+position = Vector2(-186, 735)
+scale = Vector2(1.23438, 1.26563)
+texture = ExtResource("5_xclf1")
+
+[node name="Bridge3" type="Sprite2D" parent="Environment/Bridges"]
+position = Vector2(163, 735)
+scale = Vector2(1.23438, 1.26563)
+texture = ExtResource("5_xclf1")
+
+[node name="Bridge4" type="Sprite2D" parent="Environment/Bridges"]
+position = Vector2(530, 735)
+scale = Vector2(1.23438, 1.26563)
+texture = ExtResource("5_xclf1")
+
+[node name="ldjam" type="Node2D" parent="Environment"]
+
+[node name="Backing" type="Sprite2D" parent="Environment/ldjam"]
+self_modulate = Color(0.435294, 0.47451, 0.517647, 1)
+position = Vector2(7.00003, 1181)
+scale = Vector2(13.52, 6.56)
+texture = ExtResource("6_p556y")
+
+[node name="LD55" type="Sprite2D" parent="Environment/ldjam"]
+self_modulate = Color(0.933333, 0.333333, 0.2, 1)
+position = Vector2(139, 901)
+scale = Vector2(10.88, 0.64)
+texture = ExtResource("6_p556y")
+
+[node name="Triangle" type="Sprite2D" parent="Environment/ldjam"]
+self_modulate = Color(0.968627, 0.568627, 0.133333, 1)
+position = Vector2(-405, 900.893)
+rotation = 0.785398
+scale = Vector2(0.452635, 0.452635)
+texture = ExtResource("6_p556y")
+
+[node name="Event" type="Sprite2D" parent="Environment/ldjam"]
+self_modulate = Color(0.968627, 0.568627, 0.133333, 1)
+position = Vector2(-537, 901)
+scale = Vector2(2.64, 0.64)
+texture = ExtResource("6_p556y")
+
+[node name="LD55Label" type="Label" parent="Environment/ldjam"]
+offset_left = -349.0
+offset_top = 888.0
+offset_right = -231.0
+offset_bottom = 911.0
+text = "Ludum Dare 55"
+
+[node name="EventLabel" type="Label" parent="Environment/ldjam"]
+offset_left = -541.0
+offset_top = 888.0
+offset_right = -491.0
+offset_bottom = 911.0
+text = "EVENT"
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 y_sort_enabled = true
 navigation_polygon = SubResource("NavigationPolygon_imvrd")
 
 [node name="Recutement Centre" parent="NavigationRegion2D" instance=ExtResource("1_p3gag")]
-position = Vector2(429, 264)
+position = Vector2(2287, 98)
 
 [node name="Recutement Centre2" parent="NavigationRegion2D" instance=ExtResource("1_p3gag")]
-position = Vector2(357, 602)
+position = Vector2(1242, 265)
 
 [node name="Portal" parent="NavigationRegion2D" instance=ExtResource("2_4o8v8")]
-position = Vector2(588, 16)
+position = Vector2(725, 230)
 
 [node name="Cat" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
-position = Vector2(163.83, 270.029)
+position = Vector2(888.83, 500.029)
 head_colors = Array[Color]([Color(1, 0.894118, 0.768627, 1)])
 pattern_colors = Array[Color]([Color(1, 0.498039, 0.313726, 1)])
 eye_colors = Array[Color]([Color(0.529412, 0.807843, 0.921569, 1)])
 
 [node name="Cat2" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
-position = Vector2(88, 266)
+position = Vector2(813, 496)
 head_colors = Array[Color]([Color(1, 0.894118, 0.768627, 1)])
 pattern_colors = Array[Color]([Color(1, 0.498039, 0.313726, 1)])
 eye_colors = Array[Color]([Color(0.529412, 0.807843, 0.921569, 1)])
 
 [node name="Cat3" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
-position = Vector2(188, 342)
+position = Vector2(913, 572)
 head_colors = Array[Color]([Color(1, 0.894118, 0.768627, 1)])
 pattern_colors = Array[Color]([Color(1, 0.498039, 0.313726, 1)])
 eye_colors = Array[Color]([Color(0.529412, 0.807843, 0.921569, 1)])
 
 [node name="Witch" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(250, 800)
+position = Vector2(975, 1030)
 
 [node name="Witch2" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(250, 800)
+position = Vector2(975, 1030)
 
 [node name="Witch3" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(250, 800)
+position = Vector2(975, 1030)
 
 [node name="EndGame" parent="NavigationRegion2D" instance=ExtResource("6_5nybr")]
 position = Vector2(56, 1064)
@@ -78,13 +318,13 @@ position = Vector2(756, 1064)
 position = Vector2(1106, 1064)
 
 [node name="GrannyShack" parent="NavigationRegion2D" instance=ExtResource("7_vm5hl")]
-position = Vector2(1064, 483)
+position = Vector2(1532, 619)
 
 [node name="Granny" parent="NavigationRegion2D" instance=ExtResource("8_u3pgy")]
-position = Vector2(1159, 121)
+position = Vector2(1628, 257)
 
 [node name="CornField" parent="NavigationRegion2D" instance=ExtResource("10_3752r")]
-position = Vector2(-447, 8)
+position = Vector2(-79, -126)
 
 [node name="HerbGarden" parent="NavigationRegion2D" instance=ExtResource("13_fryhv")]
 position = Vector2(-548, 254)
@@ -94,13 +334,16 @@ base_build_time = 5.0
 cat_time_multiplier = 0.9
 
 [node name="FieldHospital" parent="NavigationRegion2D" instance=ExtResource("14_aa4xp")]
-position = Vector2(-81, -115)
+position = Vector2(998, -88)
 
 [node name="SheepBarn" parent="NavigationRegion2D" instance=ExtResource("15_bx6hf")]
-position = Vector2(-193, 242)
+position = Vector2(128, 369)
 
-[node name="GrannyShack2" parent="NavigationRegion2D" instance=ExtResource("7_vm5hl")]
-position = Vector2(272, 124)
+[node name="Fishery" parent="NavigationRegion2D" instance=ExtResource("16_cua2n")]
+position = Vector2(607, 690)
+
+[node name="HoldingPen" parent="NavigationRegion2D" instance=ExtResource("19_etw68")]
+position = Vector2(376, 39)
 
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 
@@ -111,6 +354,3 @@ script = ExtResource("6_5o6ap")
 
 [node name="GameFollowPoint" type="Marker2D" parent="."]
 position = Vector2(735, 1112)
-
-[node name="Fishery" parent="." instance=ExtResource("16_cua2n")]
-position = Vector2(-242, 724)
