@@ -2,14 +2,12 @@ class_name ProductionBuilding
 extends Building
 
 @export var cat_slots: int = 2
-@export var cost: int = 10
 @export var base_build_time: float = 5.0
 @export var cat_time_multiplier: float = 0.9
 @export var max_inventory: int = 10
 
 @onready var build_timer = Timer.new()
 var cat_count: int = 0 : set = set_cat_count
-var as_ui_part: bool = false : set = set_as_ui_part
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,15 +36,6 @@ func set_as_ui_part(newValue):
 	else:
 		$WorkingNavigationRegion.enabled = true
 		set_cat_count(cat_count)
-
-func is_cost_affordable() -> bool:
-	return Global.get_resource_count(Global.ResourceType.GOLD) >= cost
-
-func buy():
-	Global.change_resource_count(Global.ResourceType.GOLD, -cost)
-
-func can_build_here() -> bool:
-	return !$BuildPrevention.get_overlapping_areas().is_empty()
 	
 func take_me(character: BaseCharacter):
 	if (character is Cat):
