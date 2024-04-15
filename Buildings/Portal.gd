@@ -28,6 +28,13 @@ func _exchange(character: BaseCharacter):
 		spawn = load("res://Characters/Demon.tscn").instantiate()
 		spawn.horn_colors.clear()
 		spawn.horn_colors.push_back(character.get_node("Graphic/Character/Horns").self_modulate)
+	elif character is LostSoul:
+		if randi_range(0, 1) < 1:
+			spawn = load("res://Characters/Ghost.tscn").instantiate()
+			# TODO modulate
+		else:
+			spawn = load("res://Characters/Skeleton.tscn").instantiate()
+			# TODO modulate
 	else:
 		return
 	Global.game_map.add_character(spawn)

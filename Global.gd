@@ -22,6 +22,7 @@ enum ResourceType {
 	GOLD,
 	CORN,
 	FISH,
+	HERB,
 	GHOST,
 	SKELETON,
 	DEMON,
