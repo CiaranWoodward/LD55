@@ -18,7 +18,7 @@ func _tick_story():
 func _ready():
 	Global.game_map = self
 	_compute_nav_mesh()
-	#await _tick_story()
+	await _tick_story()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
