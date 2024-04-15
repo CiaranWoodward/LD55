@@ -33,7 +33,6 @@ scale = Vector2(0.8, 0.8)
 [node name="Side" type="Sprite2D" parent="Graphic/Pond"]
 self_modulate = Color(0.298039, 0.188235, 0.129412, 1)
 position = Vector2(0, -60)
-scale = Vector2(1, 1)
 texture = ExtResource("3_0q3qn")
 
 [node name="Shadow" type="Sprite2D" parent="Graphic/Pond"]
@@ -45,7 +44,6 @@ texture = ExtResource("3_ifoo6")
 [node name="Water" type="Sprite2D" parent="Graphic/Pond"]
 self_modulate = Color(0.588235, 0.705882, 0.843137, 1)
 position = Vector2(0, -60)
-scale = Vector2(1, 1)
 texture = ExtResource("2_frju3")
 
 [node name="Edge" type="Sprite2D" parent="Graphic/Pond"]
@@ -142,6 +140,7 @@ texture = ExtResource("7_rcbgu")
 
 [node name="StockPile" parent="Graphic" instance=ExtResource("8_yf38p")]
 position = Vector2(164, 128)
+type = 5
 
 [node name="BuildPrevention" type="Area2D" parent="."]
 collision_layer = 3

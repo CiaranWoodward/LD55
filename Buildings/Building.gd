@@ -2,6 +2,7 @@ class_name Building
 extends Node2D
 
 @export var cost: int = 10
+@export var max_inventory: int = 10
 
 var transport_count = 0
 var as_ui_part: bool = false : set = set_as_ui_part
@@ -25,7 +26,13 @@ func change_queue_count(type: Global.ResourceType, delta: int):
 	
 func change_inventory_count(type: Global.ResourceType, delta: int):
 	_inventory[type] = _inventory[type] + delta;
-	
+	var stockpile = _get_stockpile_graphic()
+	if is_instance_valid(stockpile):
+		stockpile.set_fullness(_inventory[stockpile.type], max_inventory)
+
+func _get_stockpile_graphic():
+	return get_node("Graphic/StockPile")
+
 func handle_character(character: BaseCharacter):
 	pass
 	

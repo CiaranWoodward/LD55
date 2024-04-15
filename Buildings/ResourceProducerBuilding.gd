@@ -1,8 +1,6 @@
 class_name ResourceProducerBuilding
 extends ProductionBuilding
 
-@export var max_inventory: int = 10
-
 func _get_output_type():
 	pass
 	
@@ -19,6 +17,6 @@ func handle_character(character: BaseCharacter):
 			character.give_resource(_get_output_type())
 			change_inventory_count(_get_output_type(), -1)
 			change_queue_count(_get_output_type(), -1)
-			
+
 func is_job_blocked() -> bool:
 	return super.is_job_blocked() or get_inventory_count(_get_output_type()) >= max_inventory

@@ -131,6 +131,7 @@ texture = ExtResource("10_0nsqc")
 
 [node name="StockPile" parent="Graphic" instance=ExtResource("11_x8jqd")]
 position = Vector2(106, -42)
+type = 5
 
 [node name="BuildPrevention" type="Area2D" parent="."]
 visible = false

@@ -2,7 +2,6 @@ class_name CharacterProducerBuilding
 extends ProductionBuilding
 
 @export var character_cost: int = 2
-@export var max_inventory: int = 10
 
 func _get_input_type():
 	pass
@@ -12,8 +11,9 @@ func _create_character() -> BaseCharacter:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_queue[_get_input_type()] = _inventory[_get_input_type()] - max_inventory
+	_queue[_get_input_type()] = _inventory[_get_input_type()] - self.max_inventory
 	super._ready()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

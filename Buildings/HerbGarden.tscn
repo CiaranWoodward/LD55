@@ -23,10 +23,6 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="HerbGarden" type="Node2D"]
 script = ExtResource("1_51b6j")
-cat_slots = null
-base_build_time = null
-cat_time_multiplier = null
-cost = null
 
 [node name="Graphic" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -155,6 +151,7 @@ position = Vector2(18, 16)
 [node name="StockPile" parent="Graphic" instance=ExtResource("10_b3pvd")]
 position = Vector2(32, 68)
 scale = Vector2(0.8, 0.8)
+type = 6
 
 [node name="CollectionNode" type="Marker2D" parent="."]
 position = Vector2(-88, -88)
