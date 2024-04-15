@@ -40,5 +40,4 @@ layout_mode = 2
 building_type = 1
 
 [node name="Dialogue" parent="." instance=ExtResource("2_2sqex")]
-process_mode = 3
 visible = false

@@ -14,31 +14,44 @@ func _ready():
 			name = "Catherine",
 		},
 		{
-			text = "Great, another one...",
+			text = "wio qwodk qwdkp dkd kqkowd ?!!?...",
 			image = "Penelope",
 			name = "???",
 		},
 		{
-			text = "???",
+			text = "What? I don't understand?",
 			image = "Catherine",
 			name = "Catherine",
 		},
 		{
-			text = "Oh, right... turn on cat translator",
+			text = "Ah thats better just had to turn on the translator",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "I am Penelope the portal it seems you have stumbled upon my domain",
 			image = "Penelope",
 			name = "Penelope",
 		},
 		{
 			text = "You can't just stay here for free!",
+			image = "Penelope",
+			name = "Penelope",
 		},
 		{
 			text = "If you want to stay here, you need to earn your keep.",
+			image = "Penelope",
+			name = "Penelope",
 		},
 		{
-			text = "Create summons for these games, so that the players can actually summon them!. You'll earn gold for each game fulfilled.",
+			text = "Create summons for these LDJAM games below, so that the players of these games can actually summon them!. You'll earn gold for each game fulfilled.",
+			image = "Penelope",
+			name = "Penelope",
 		},
 		{
 			text = "Happy?",
+			image = "Penelope",
+			name = "Penelope",
 		},
 	])
 	intro.choice_text = "Happy?"
@@ -65,15 +78,23 @@ func _ready():
 		},
 		{
 			text = "The recruitment centre consumes fish, which you can get by working the fishing pond.",
+			image = "Penelope",
+			name = "Penelope",
 		},
 		{
 			text = "You also need to leave some workers wandering around to haul resources.",
+			image = "Penelope",
+			name = "Penelope",
 		},
 		{
-			text = "And farm enough fish to feed all of your cats.",
+			text = "Recruit 5 cats",
+			image = "Penelope",
+			name = "Penelope",
 		},
 		{
 			text = "Good luck!",
+			image = "Penelope",
+			name = "Penelope",
 		}
 	])
 	
