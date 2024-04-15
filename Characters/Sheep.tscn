@@ -128,6 +128,7 @@ script = ExtResource("1_dmlsn")
 skin_colors = Array[Color]([Color(0.788235, 0.678431, 0.490196, 1), Color(0.6, 0.537255, 0.490196, 1), Color(0.231373, 0.231373, 0.231373, 1)])
 wool_colors = Array[Color]([Color(0.913725, 0.913725, 0.913725, 1), Color(1, 0.901961, 0.811765, 1), Color(0.184314, 0.184314, 0.184314, 1), Color(1, 1, 1, 1), Color(0.937255, 0.937255, 0.937255, 1)])
 eye_colors = Array[Color]([Color(0.529412, 0.807843, 0.921569, 1), Color(0.223529, 0.870588, 0.717647, 1), Color(0.890196, 0.709804, 0.396078, 1)])
+movement_speed = 90.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

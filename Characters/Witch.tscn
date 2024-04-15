@@ -108,6 +108,7 @@ skin_colors = Array[Color]([Color(0.121569, 0.447059, 0.0941176, 1), Color(0.266
 hair_colors = Array[Color]([Color(0.341176, 0.341176, 0.341176, 1)])
 clothes_colors = Array[Color]([Color(0.141176, 0.141176, 0.392157, 1), Color(0.133333, 0.282353, 0.14902, 1), Color(0.0901961, 0.129412, 0.27451, 1), Color(0.0588235, 0.0941176, 0.243137, 1), Color(0.141176, 0.054902, 0.168627, 1), Color(0.168627, 0.0509804, 0.129412, 1)])
 eye_colors = Array[Color]([Color(0.819608, 0.254902, 0.101961, 1), Color(0.345098, 0.694118, 0.0823529, 1), Color(0.92549, 0.745098, 0.0352941, 1), Color(0.941176, 0.909804, 0.145098, 1), Color(0.913725, 0.0980392, 0.0980392, 1)])
+movement_speed = 110.0
 acceleration = 4.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
