@@ -64,6 +64,7 @@ func _run_conversation_meat(convo : Conversation):
 		$QuestionDialog.dialog_text = convo.choice_text
 		$QuestionDialog.visible = true
 		var answer = await _choice_confirmed
+		$QuestionDialog.visible = false
 		if is_instance_valid(convo.choice):
 			convo.choice.call(answer)
 		if answer: await _run_dialogue_pages(convo.dialogue_pages_choice_yes)

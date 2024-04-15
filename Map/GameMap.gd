@@ -6,6 +6,8 @@ signal games_on_screen_changed(visible: bool)
 @onready var nav_region : NavigationRegion2D = $NavigationRegion2D
 @onready var cursor : Cursor = $Cursor
 
+@export var enable_story = true
+
 var _games_on_screen = false
 
 func _enter_tree():
@@ -18,7 +20,6 @@ func _tick_story():
 func _ready():
 	Global.game_map = self
 	_compute_nav_mesh()
-	await _tick_story()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -30,6 +31,8 @@ func _process(delta):
 		if _games_on_screen:
 			_games_on_screen = false
 			games_on_screen_changed.emit(_games_on_screen)
+	
+	if(enable_story): await _tick_story()
 	
 func _compute_nav_mesh():
 	nav_region.bake_navigation_polygon()

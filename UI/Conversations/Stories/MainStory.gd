@@ -6,7 +6,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	intro.is_triggered = func():
-		return true
+		return Story.level == 1
 	intro.script([
 		{
 			text = "Hello... Is anyone there?",
