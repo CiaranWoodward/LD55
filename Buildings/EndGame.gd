@@ -150,7 +150,16 @@ func do_summon():
 	self.visible = true
 	clear_inventory()
 	clear_queue()
-	game_type = Global._unlocked_summons.pick_random()
+	var summon_type = Global._unlocked_summons.pick_random()
+	match summon_type:
+		Global.ResourceType.WITCH:
+			game_type = GameType.WITCHY
+		Global.ResourceType.DEMON:
+			game_type = GameType.HELLISH
+		Global.ResourceType.SKELETON:
+			game_type = GameType.CRYPTIC
+		Global.ResourceType.GHOST:
+			game_type = GameType.SPOOKY
 	_current_timeout = timeout
 	$Graphic/Shaker/Background/Compo/CompoLabel.text = ["JAM", "COMPO", "EXTRA"].pick_random()
 	Global.game_map.games_on_screen_changed.connect(_updated_onscreen)
