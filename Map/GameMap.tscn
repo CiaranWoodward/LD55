@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cseq0jcpd6rfc"]
+[gd_scene load_steps=22 format=3 uid="uid://cseq0jcpd6rfc"]
 
 [ext_resource type="Script" path="res://Map/GameMap.gd" id="1_667xj"]
 [ext_resource type="PackedScene" uid="uid://clufegtvym2pa" path="res://Buildings/RecutementCentre.tscn" id="1_p3gag"]
@@ -10,24 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://ckplrxq1lxetw" path="res://UI/Cursor.tscn" id="4_0ycld"]
 [ext_resource type="PackedScene" uid="uid://dr3k135c6aj68" path="res://Characters/Cat.tscn" id="4_1crc1"]
 [ext_resource type="Texture2D" uid="uid://0el1k285e4s2" path="res://Graphics/Buildings/PortalParticle0000.png" id="5_fjtgj"]
-[ext_resource type="PackedScene" uid="uid://dol2yvdyffyc5" path="res://Characters/Witch.tscn" id="5_g2ini"]
 [ext_resource type="Texture2D" uid="uid://jsck1cnllkau" path="res://Graphics/Environment/Steps0000.png" id="6_4bvxb"]
 [ext_resource type="PackedScene" uid="uid://cqtw2u46g28co" path="res://Buildings/EndGame.tscn" id="6_5nybr"]
 [ext_resource type="Script" path="res://Map/PlayerCam.gd" id="6_5o6ap"]
 [ext_resource type="Texture2D" uid="uid://tyqbiq3emmtr" path="res://Graphics/Icons/WhiteSquare0000.png" id="6_p556y"]
-[ext_resource type="PackedScene" uid="uid://bl1l3pofspv41" path="res://Buildings/GrannyShack.tscn" id="7_vm5hl"]
-[ext_resource type="PackedScene" uid="uid://rana6ggydmfn" path="res://Characters/Granny.tscn" id="8_u3pgy"]
-[ext_resource type="PackedScene" uid="uid://c52obgi0jrhc1" path="res://Buildings/CornField.tscn" id="10_3752r"]
-[ext_resource type="PackedScene" uid="uid://xwnmbnqormf4" path="res://Buildings/HerbGarden.tscn" id="13_fryhv"]
-[ext_resource type="PackedScene" uid="uid://radowl65xsta" path="res://Buildings/FieldHospital.tscn" id="14_aa4xp"]
-[ext_resource type="PackedScene" uid="uid://iynercm4q834" path="res://Buildings/SheepBarn.tscn" id="15_bx6hf"]
 [ext_resource type="PackedScene" uid="uid://bhkrdyerxw3h8" path="res://Buildings/Fishery.tscn" id="16_cua2n"]
 [ext_resource type="PackedScene" uid="uid://b3qtnf3cihei4" path="res://UI/Conversations/Stories/Stories.tscn" id="17_gxtua"]
-[ext_resource type="PackedScene" uid="uid://cte03v1oflcfv" path="res://Buildings/HoldingPen.tscn" id="19_etw68"]
-[ext_resource type="PackedScene" uid="uid://f3i1ady31xh" path="res://Characters/Skeleton.tscn" id="21_os3sb"]
-[ext_resource type="PackedScene" uid="uid://ccuq4sb75hurn" path="res://Characters/Demon.tscn" id="22_cf3wk"]
-[ext_resource type="PackedScene" uid="uid://cmn8nh71folta" path="res://Characters/LostSoul.tscn" id="23_vfqn3"]
-[ext_resource type="PackedScene" uid="uid://d3aj8xwu4yahc" path="res://Characters/Sheep.tscn" id="24_p5a1u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ewas"]
 texture = ExtResource("3_puiem")
@@ -246,80 +234,20 @@ y_sort_enabled = true
 position = Vector2(4, -8)
 navigation_polygon = SubResource("NavigationPolygon_imvrd")
 
-[node name="Recutement Centre" parent="NavigationRegion2D" instance=ExtResource("1_p3gag")]
-position = Vector2(2287, 98)
-
 [node name="Recutement Centre2" parent="NavigationRegion2D" instance=ExtResource("1_p3gag")]
-position = Vector2(1242, 265)
+position = Vector2(156, 420)
 
 [node name="Portal" parent="NavigationRegion2D" instance=ExtResource("2_4o8v8")]
 position = Vector2(725, 230)
 
 [node name="Cat" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
-position = Vector2(888.83, 500.029)
+position = Vector2(857, 434)
 
 [node name="Cat2" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
-position = Vector2(888.83, 500.029)
+position = Vector2(598, 436)
 
 [node name="Cat3" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
-position = Vector2(888.83, 500.029)
-
-[node name="Cat4" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
-position = Vector2(888.83, 500.029)
-
-[node name="Cat5" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
-position = Vector2(888.83, 500.029)
-
-[node name="Cat6" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
-position = Vector2(888.83, 500.029)
-
-[node name="Cat7" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
-position = Vector2(888.83, 500.029)
-
-[node name="Cat8" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
-position = Vector2(888.83, 500.029)
-
-[node name="Cat9" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
-position = Vector2(888.83, 500.029)
-
-[node name="Cat10" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
-position = Vector2(888.83, 500.029)
-
-[node name="Cat11" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
-position = Vector2(888.83, 500.029)
-
-[node name="Cat12" parent="NavigationRegion2D" instance=ExtResource("4_1crc1")]
-position = Vector2(888.83, 500.029)
-
-[node name="Witch" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(975, 1030)
-
-[node name="Witch2" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(911, 718)
-
-[node name="Witch3" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(815, 343)
-
-[node name="Witch4" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(815, 343)
-
-[node name="Witch5" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(815, 343)
-
-[node name="Witch6" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(815, 343)
-
-[node name="Witch7" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(815, 343)
-
-[node name="Witch8" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(815, 343)
-
-[node name="Witch9" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(815, 343)
-
-[node name="Witch10" parent="NavigationRegion2D" instance=ExtResource("5_g2ini")]
-position = Vector2(815, 343)
+position = Vector2(753, 415)
 
 [node name="EndGame" parent="NavigationRegion2D" instance=ExtResource("6_5nybr")]
 position = Vector2(56, 1064)
@@ -333,77 +261,8 @@ position = Vector2(756, 1064)
 [node name="EndGame4" parent="NavigationRegion2D" instance=ExtResource("6_5nybr")]
 position = Vector2(1106, 1064)
 
-[node name="GrannyShack" parent="NavigationRegion2D" instance=ExtResource("7_vm5hl")]
-position = Vector2(1532, 619)
-
-[node name="Granny" parent="NavigationRegion2D" instance=ExtResource("8_u3pgy")]
-position = Vector2(339, 5)
-
-[node name="Granny2" parent="NavigationRegion2D" instance=ExtResource("8_u3pgy")]
-position = Vector2(339, 5)
-
-[node name="Granny3" parent="NavigationRegion2D" instance=ExtResource("8_u3pgy")]
-position = Vector2(339, 5)
-
-[node name="Granny4" parent="NavigationRegion2D" instance=ExtResource("8_u3pgy")]
-position = Vector2(403, 3)
-
-[node name="CornField" parent="NavigationRegion2D" instance=ExtResource("10_3752r")]
-position = Vector2(-79, -126)
-
-[node name="HerbGarden" parent="NavigationRegion2D" instance=ExtResource("13_fryhv")]
-position = Vector2(425, 370)
-
-[node name="FieldHospital" parent="NavigationRegion2D" instance=ExtResource("14_aa4xp")]
-position = Vector2(998, -88)
-
-[node name="SheepBarn" parent="NavigationRegion2D" instance=ExtResource("15_bx6hf")]
-position = Vector2(128, 369)
-
 [node name="Fishery" parent="NavigationRegion2D" instance=ExtResource("16_cua2n")]
-position = Vector2(809, 539)
-
-[node name="HoldingPen" parent="NavigationRegion2D" instance=ExtResource("19_etw68")]
-position = Vector2(376, 39)
-
-[node name="Skeleton" parent="NavigationRegion2D" instance=ExtResource("21_os3sb")]
-
-[node name="Skeleton2" parent="NavigationRegion2D" instance=ExtResource("21_os3sb")]
-
-[node name="Skeleton3" parent="NavigationRegion2D" instance=ExtResource("21_os3sb")]
-
-[node name="Demon" parent="NavigationRegion2D" instance=ExtResource("22_cf3wk")]
-position = Vector2(646, 451)
-
-[node name="LostSoul" parent="NavigationRegion2D" instance=ExtResource("23_vfqn3")]
-
-[node name="LostSoul2" parent="NavigationRegion2D" instance=ExtResource("23_vfqn3")]
-
-[node name="LostSoul3" parent="NavigationRegion2D" instance=ExtResource("23_vfqn3")]
-
-[node name="LostSoul4" parent="NavigationRegion2D" instance=ExtResource("23_vfqn3")]
-
-[node name="LostSoul5" parent="NavigationRegion2D" instance=ExtResource("23_vfqn3")]
-
-[node name="LostSoul6" parent="NavigationRegion2D" instance=ExtResource("23_vfqn3")]
-
-[node name="Sheep" parent="NavigationRegion2D" instance=ExtResource("24_p5a1u")]
-position = Vector2(722, 277)
-
-[node name="Sheep2" parent="NavigationRegion2D" instance=ExtResource("24_p5a1u")]
-position = Vector2(722, 277)
-
-[node name="Sheep3" parent="NavigationRegion2D" instance=ExtResource("24_p5a1u")]
-position = Vector2(722, 277)
-
-[node name="Sheep4" parent="NavigationRegion2D" instance=ExtResource("24_p5a1u")]
-position = Vector2(722, 277)
-
-[node name="Sheep5" parent="NavigationRegion2D" instance=ExtResource("24_p5a1u")]
-position = Vector2(722, 277)
-
-[node name="Sheep6" parent="NavigationRegion2D" instance=ExtResource("24_p5a1u")]
-position = Vector2(722, 277)
+position = Vector2(82, 68)
 
 [node name="Hud" parent="." instance=ExtResource("3_o1tnc")]
 

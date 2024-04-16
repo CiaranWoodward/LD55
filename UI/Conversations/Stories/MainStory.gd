@@ -3,6 +3,12 @@ extends Node
 @onready var intro = Conversation.new()
 @onready var level1Intro = Conversation.new()
 @onready var level1Complete = Conversation.new()
+@onready var level2Intro = Conversation.new()
+@onready var level2Complete = Conversation.new()
+@onready var level3Intro = Conversation.new()
+@onready var level3Complete = Conversation.new()
+@onready var level4Intro = Conversation.new()
+@onready var level4Complete = Conversation.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -86,6 +92,11 @@ func _ready():
 			name = "Penelope",
 		},
 		{
+			text = "To assign a worker cat just drop it on the building",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
 			text = "The recruitment centre consumes fish, which you can get by working the fishing pond.",
 			image = "Penelope",
 			name = "Penelope",
@@ -118,5 +129,153 @@ func _ready():
 	level1Complete.callback = func():
 		Story.level = 2
 	
+	# 
+	# Level 2
+	#
+	level2Intro.is_triggered = func():
+		return Story.level == 2
+	level2Intro.script([
+		{
+			text = "I require a sacrifice!",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "I want to eat grandmas now!",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "You need to create a Nursing Home to create Grandmas",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "But the Nursing Home also needs to be worked by worker cats to operate",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "Build me 1 Nursing Home",
+			image = "Penelope",
+			name = "Penelope",
+		},
+	])
+	
+	level2Complete.is_triggered = func():
+		return Story.level == 2 and get_tree().get_nodes_in_group("buildings").filter(func(b: Building): return b is GrannyShack and !b.as_ui_part).size() >= 1
+	level2Complete.script([
+		{
+			text = "Look at that, a paradise for all Grandmas!",
+			image = "Penelope",
+			name = "Penelope",
+		}
+	])
+	level2Complete.callback = func():
+		Story.level = 3
+	
+	# 
+	# Level 3
+	#
+	level3Intro.is_triggered = func():
+		return Story.level == 3
+	level3Intro.script([
+		{
+			text = "What do gradmas need?",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "Thats right they need Corn obviously",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "Don't they?",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "Well... they are too old for variety",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "Quick build a Corn Field and work it with cats",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "Then lets the cats deliver the Corn to the Nursing Home",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "Produce a Grandma for me wont you?",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "Im starving!",
+			image = "Penelope",
+			name = "Penelope",
+		},
+	])
+	
+	level3Complete.is_triggered = func():
+		return Story.level == 3 and get_tree().get_nodes_in_group("characters").filter(func(c): return c is Granny).size() >= 1
+	level3Complete.script([
+		{
+			text = "Juicy Grandma!",
+			image = "Penelope",
+			name = "Penelope",
+		}
+		
+	])
+	level3Complete.callback = func():
+		Story.level = 4
+	
+	# 
+	# Level 4
+	#
+	level4Intro.is_triggered = func():
+		return Story.level == 4
+	level4Intro.script([
+		{
+			text = "Pick her up and feed her to me!",
+			image = "Penelope",
+			name = "Penelope",
+		},
+	])
+	
+	level4Complete.is_triggered = func():
+		return Story.level == 4 and get_tree().get_nodes_in_group("characters").filter(func(c): return c is Witch).size() >= 1
+	level4Complete.script([
+		{
+			text = "Delicious!",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "It seems that my potent magical powers have been inbued into that old hag!",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "That happens from time to time...",
+			image = "Penelope",
+			name = "Penelope",
+		}
+		
+	])
+	level4Complete.callback = func():
+		Story.level = 5
+	
 	Story.active_set.push_back(intro)
 	Story.active_set.push_back(level1Complete)
+	Story.active_set.push_back(level2Intro)
+	Story.active_set.push_back(level2Complete)
+	Story.active_set.push_back(level3Intro)
+	Story.active_set.push_back(level3Complete)
+	Story.active_set.push_back(level4Intro)
+	Story.active_set.push_back(level4Complete)

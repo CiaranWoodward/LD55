@@ -81,7 +81,7 @@ func get_building_name(type: BuildingType) -> String:
 		BuildingType.PORTAL: return "Portal"
 		BuildingType.RECUTEMENT_CENTRE: return "Recutement Centre"
 		BuildingType.SHEEP_FARM: return "Sheep Farm"
-		BuildingType.GRANARY: return "Granary"
+		BuildingType.GRANARY: return "Corn Field"
 		BuildingType.NURSING_HOME: return "Nursing Home"
 		BuildingType.FISH_POND: return "Fish Pond"
 		BuildingType.HOLDING_PEN_SHEEP: return "Sheep holding pen"
