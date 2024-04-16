@@ -9,6 +9,11 @@ extends Node
 @onready var level3Complete = Conversation.new()
 @onready var level4Intro = Conversation.new()
 @onready var level4Complete = Conversation.new()
+@onready var level5Intro = Conversation.new()
+@onready var level5Complete = Conversation.new()
+@onready var level6Intro = Conversation.new()
+@onready var level6Complete = Conversation.new()
+@onready var storyEnd = Conversation.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -270,6 +275,115 @@ func _ready():
 	])
 	level4Complete.callback = func():
 		Story.level = 5
+		
+	# 
+	# Level 5
+	#
+	level5Intro.is_triggered = func():
+		return Story.level == 5
+	level5Intro.script([
+		{
+			text = "Now that we have a witch it's about time we deliver the witches to the Ludum Dare games below",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "We wouldn't want the games to produce bugs now do we?",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "When you meet the games requirments it will be fully implemented",
+			image = "Penelope",
+			name = "Penelope",
+		},
+	])
+	
+	level5Complete.is_triggered = func():
+		return Story.level == 5 and "TODO function which returns true when game requirements are met"
+	level5Complete.script([
+		{
+			text = "Look you completed a game!",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "That deserves some gold",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "You can use it to buy more buildings",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "Hey look! you've unlocked the Sheep Farm!",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		
+	])
+	level5Complete.callback = func():
+		# TODO unlock sheep farms
+		Story.level = 6
+		
+	# 
+	# Level 6
+	#
+	level6Intro.is_triggered = func():
+		return Story.level == 6
+	level6Intro.script([
+		{
+			text = "Sheep always leave a Demon flavoured aftertaste...",
+			image = "Penelope",
+			name = "Penelope",
+		}
+	])
+	level6Complete.callback = func():
+		# TODO allow demon games to spawn
+		pass
+	
+	level6Complete.is_triggered = func():
+		return Story.level == 6 and get_tree().get_nodes_in_group("characters").filter(func(c): return c is Demon).size() >= 1
+	level6Complete.script([
+		{
+			text = "Yukcy!",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		
+	])
+	level6Complete.callback = func():
+		Story.level = 7
+		
+	#
+	# Story End
+	#
+	storyEnd.is_triggered = func():
+		return Story.level == 7
+	storyEnd.script([
+		{
+			text = "Well I think you are ready now",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "Some games may require Skeletons or Ghosts",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "I think the hospital tends to have an abundance of those...",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "Dont forget to give the patence herbal medicine too...",
+			image = "Penelope",
+			name = "Penelope",
+		}
+	])
 	
 	Story.active_set.push_back(intro)
 	Story.active_set.push_back(level1Complete)
@@ -279,3 +393,8 @@ func _ready():
 	Story.active_set.push_back(level3Complete)
 	Story.active_set.push_back(level4Intro)
 	Story.active_set.push_back(level4Complete)
+	Story.active_set.push_back(level5Intro)
+	Story.active_set.push_back(level5Complete)
+	Story.active_set.push_back(level6Intro)
+	Story.active_set.push_back(level6Complete)
+	Story.active_set.push_back(storyEnd)
