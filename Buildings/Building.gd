@@ -35,6 +35,14 @@ func change_inventory_count(type: Global.ResourceType, delta: int):
 	if is_instance_valid(stockpile):
 		stockpile.set_fullness(_inventory[stockpile.type], max_inventory)
 
+func clear_inventory():
+	for key in _inventory.keys():
+		_inventory[key] = 0
+
+func clear_queue():
+	for key in _queue.keys():
+		_queue[key] = 0
+
 func _get_stockpile_graphic():
 	return get_node("Graphic/StockPile")
 

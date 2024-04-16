@@ -49,12 +49,23 @@ func has_resource(type: Global.ResourceType) -> bool:
 func remove_resource():
 	_inventory = null
 	resource = null
+	$Graphic/Character/Holding.visible = false
 
 func give_resource(type: Global.ResourceType):
 	assert(!is_instance_valid(_inventory))
 	#assert(resource == type)
 	resource = type
 	_inventory = type
+	$Graphic/Character/Holding.visible = true
+	var frame = 0
+	match _inventory:
+		Global.ResourceType.CORN:
+			frame = randi_range(0, 2)
+		Global.ResourceType.FISH:
+			frame = randi_range(3, 5)
+		Global.ResourceType.HERB:
+			frame = randi_range(6, 10)
+	$Graphic/Character/Holding.frame = frame
 
 func change_job(building = null):
 	if is_employed():

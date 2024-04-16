@@ -148,6 +148,9 @@ func _ready():
 	
 func do_summon():
 	self.visible = true
+	clear_inventory()
+	clear_queue()
+	game_type = Global._unlocked_summons.pick_random()
 	_current_timeout = timeout
 	$Graphic/Shaker/Background/Compo/CompoLabel.text = ["JAM", "COMPO", "EXTRA"].pick_random()
 	Global.game_map.games_on_screen_changed.connect(_updated_onscreen)

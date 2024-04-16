@@ -8,7 +8,7 @@ enum ActionType {NONE, BUILD, DRAG}
 @export var valid_color : Color = Color.WHITE
 
 var _current_character: BaseCharacter
-var _current_building: ProductionBuilding
+var _current_building: Building
 var _current_action : ActionType = ActionType.NONE
 var _mouse_pressed = false
 
@@ -87,7 +87,7 @@ func clear_action():
 func is_free():
 	return _current_action == ActionType.NONE
 
-func set_building(newBuilding: ProductionBuilding):
+func set_building(newBuilding: Building):
 	_remove_building()
 	_change_action(ActionType.BUILD)
 	_current_building = newBuilding

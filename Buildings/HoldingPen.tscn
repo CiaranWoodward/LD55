@@ -31,10 +31,6 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="HoldingPen" type="Node2D"]
 script = ExtResource("1_iqrxb")
-character_slots = null
-holding_type = null
-cost = null
-max_inventory = null
 
 [node name="Graphic" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -294,6 +290,7 @@ position = Vector2(-2, -28)
 position = Vector2(2, 204)
 
 [node name="LostSoulIndicator" type="Node2D" parent="Graphic"]
+visible = false
 
 [node name="Cross" type="Sprite2D" parent="Graphic/LostSoulIndicator"]
 self_modulate = Color(0.556863, 0.556863, 0.556863, 1)
@@ -334,6 +331,7 @@ scale = Vector2(1.76, 0.319591)
 texture = ExtResource("11_3btaf")
 
 [node name="GrannyIndicator" type="Node2D" parent="Graphic"]
+visible = false
 position = Vector2(-216, -72)
 
 [node name="Armchair" type="Sprite2D" parent="Graphic/GrannyIndicator"]
@@ -349,6 +347,7 @@ scale = Vector2(1.76, 0.319591)
 texture = ExtResource("11_3btaf")
 
 [node name="SheepIndicator" type="Node2D" parent="Graphic"]
+visible = false
 position = Vector2(0, -86)
 
 [node name="WaterTrough" type="Node2D" parent="Graphic/SheepIndicator"]

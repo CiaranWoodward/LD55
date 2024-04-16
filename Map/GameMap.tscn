@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cseq0jcpd6rfc"]
+[gd_scene load_steps=28 format=3 uid="uid://cseq0jcpd6rfc"]
 
 [ext_resource type="Script" path="res://Map/GameMap.gd" id="1_667xj"]
 [ext_resource type="PackedScene" uid="uid://clufegtvym2pa" path="res://Buildings/RecutementCentre.tscn" id="1_p3gag"]
@@ -49,6 +49,12 @@ sources/1 = SubResource("TileSetAtlasSource_b72nx")
 outlines = Array[PackedVector2Array]([PackedVector2Array(-354, -450, 1819, -454, 1772, 784, 1320, 782, 1320, 963, 1156, 969, 1167, 773, 969, 778, 973, 962, 820, 965, 822.495, 781.514, 626, 781, 628, 969, 468, 970, 470.379, 775.333, 275.617, 774.036, 274, 968, 117, 970, 120, 773, -370, 767)])
 source_geometry_mode = 2
 source_geometry_group_name = &"navigation_blocking_group"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nilrl"]
+size = Vector2(1080, 2829)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_422wt"]
+size = Vector2(2991, 1264.5)
 
 [node name="GameMap" type="Node2D"]
 script = ExtResource("1_667xj")
@@ -287,9 +293,30 @@ position = Vector2(735, 1112)
 [node name="MainStory" parent="Stories" instance=ExtResource("17_gxtua")]
 
 [node name="HappyMusic" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("17_8jh1q")
 script = ExtResource("18_ik40u")
 
 [node name="CrazyMusic" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("18_pxe5x")
 script = ExtResource("20_bbflt")
+
+[node name="BuildPrevention" type="Area2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildPrevention"]
+position = Vector2(-925, 141)
+shape = SubResource("RectangleShape2D_nilrl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BuildPrevention"]
+position = Vector2(2390, 256)
+shape = SubResource("RectangleShape2D_nilrl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BuildPrevention"]
+position = Vector2(781, 1425)
+shape = SubResource("RectangleShape2D_422wt")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="BuildPrevention"]
+position = Vector2(697, -1145)
+shape = SubResource("RectangleShape2D_422wt")

@@ -305,7 +305,7 @@ func _ready():
 	])
 	
 	level5Complete.is_triggered = func():
-		return Story.level == 5 and Global.levels_completed > 1
+		return Story.level == 5 and Global.levels_completed >= 1
 	level5Complete.script([
 		{
 			text = "Look you completed a game!",

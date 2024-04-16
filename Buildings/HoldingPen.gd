@@ -27,6 +27,12 @@ func set_as_ui_part(newValue):
 func _ready():
 	_queue[holding_type] = _get_character_count() - character_slots
 	super._ready()
+	if holding_type == Global.ResourceType.GRANNY:
+		$Graphic/GrannyIndicator.visible = true
+	elif holding_type == Global.ResourceType.SHEEP:
+		$Graphic/SheepIndicator.visible = true
+	else:
+		$Graphic/LostSoulIndicator.visible = true
 	
 func take_me(character: BaseCharacter):
 	if (character is HoldableCharacter && character.get_type() == holding_type):

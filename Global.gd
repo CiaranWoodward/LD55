@@ -126,13 +126,13 @@ func get_building(type: BuildingType) -> Building:
 func get_building_cost(type: BuildingType) -> int:
 	match(type):
 		BuildingType.RECUTEMENT_CENTRE: return 10
-		BuildingType.SHEEP_FARM: return 30
+		BuildingType.SHEEP_FARM: return 20
 		BuildingType.GRANARY: return 10
 		BuildingType.NURSING_HOME: return 10
 		BuildingType.FISH_POND: return 10
 		BuildingType.HOLDING_PEN_SHEEP: return 15
 		BuildingType.HOLDING_PEN_GRAN: return 15
-		BuildingType.HOLDING_PEN_LOST_SOUL: return 40
+		BuildingType.HOLDING_PEN_LOST_SOUL: return 30
 		BuildingType.FIELD_HOSPITAL: return 30
 		BuildingType.HERB_GARDEN: return 30
 	return INF

@@ -98,6 +98,15 @@ size = Vector2(302, 203)
 process_priority = 1
 z_index = 2
 script = ExtResource("1_qkj20")
+cool_off_period = null
+timeout = null
+summon_heal = null
+summon_count = null
+game_type = null
+dead_modulate = null
+noimage_chance = null
+cost = null
+max_inventory = null
 
 [node name="Graphic" type="Node2D" parent="."]
 
