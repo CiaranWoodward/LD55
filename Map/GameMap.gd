@@ -68,4 +68,6 @@ func get_building_at_point(gcoords: Vector2):
 			var p = shape["collider"].get_parent()
 			if p is Building:
 				return p
+			if p is GameMap:
+				return p
 	return null

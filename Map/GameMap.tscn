@@ -261,51 +261,15 @@ position = Vector2(753, 415)
 
 [node name="EndGame" parent="NavigationRegion2D" instance=ExtResource("6_5nybr")]
 position = Vector2(56, 1064)
-cool_off_period = 30.0
-timeout = 60.0
-summon_heal = 10.0
-summon_count = 5
-game_type = 0
-dead_modulate = Color(0.2, 0.2, 0.2, 1)
-noimage_chance = 0.2
-cost = 0
-max_inventory = 10
 
 [node name="EndGame2" parent="NavigationRegion2D" instance=ExtResource("6_5nybr")]
 position = Vector2(406, 1064)
-cool_off_period = 30.0
-timeout = 60.0
-summon_heal = 10.0
-summon_count = 5
-game_type = 0
-dead_modulate = Color(0.2, 0.2, 0.2, 1)
-noimage_chance = 0.2
-cost = 0
-max_inventory = 10
 
 [node name="EndGame3" parent="NavigationRegion2D" instance=ExtResource("6_5nybr")]
 position = Vector2(756, 1064)
-cool_off_period = 30.0
-timeout = 60.0
-summon_heal = 10.0
-summon_count = 5
-game_type = 0
-dead_modulate = Color(0.2, 0.2, 0.2, 1)
-noimage_chance = 0.2
-cost = 0
-max_inventory = 10
 
 [node name="EndGame4" parent="NavigationRegion2D" instance=ExtResource("6_5nybr")]
 position = Vector2(1106, 1064)
-cool_off_period = 30.0
-timeout = 60.0
-summon_heal = 10.0
-summon_count = 5
-game_type = 0
-dead_modulate = Color(0.2, 0.2, 0.2, 1)
-noimage_chance = 0.2
-cost = 0
-max_inventory = 10
 
 [node name="Fishery" parent="NavigationRegion2D" instance=ExtResource("16_cua2n")]
 position = Vector2(82, 68)

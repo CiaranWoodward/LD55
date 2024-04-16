@@ -69,7 +69,7 @@ func _find_new_target():
 	var potential_buildings = []
 	if !is_employed() && !is_held():
 		for building: Building in get_tree().get_nodes_in_group("buildings"):
-			if (building.get_queue_count(resourceToQueue) < 0): potential_buildings.append(building)
+			if (!building.as_ui_part) && (building.get_queue_count(resourceToQueue) < 0): potential_buildings.append(building)
 		
 	var target_position: Vector2
 	if potential_buildings.is_empty():
@@ -263,7 +263,7 @@ func put_down():
 	_new_pickup_tween()
 	_pickup_tween_down()
 	if is_instance_valid(building):
-		if building.take_me(self):
+		if !(building is GameMap) && building.take_me(self):
 			return
 		else:
 			_pick_up_tween.parallel().tween_property(self, "global_position", _last_valid_location, 0.2)

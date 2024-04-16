@@ -27,7 +27,8 @@ func do_build():
 		character.global_position = get_spawn_global_position()
 		var relay_point: Vector2 = get_relay_global_position()
 		if relay_point.is_finite():
-			character.jump_to(relay_point)
+			character.z_index = 2
+			character.jump_to(relay_point, func(): character.z_index = 0)
 		change_inventory_count(_get_input_type(), -character_cost)
 		change_queue_count(_get_input_type(), -character_cost)
 

@@ -10,6 +10,8 @@ func _process(delta):
 	pass
 
 func take_me(character: BaseCharacter, dropped=false) -> bool:
+	if character is Cat:
+		return false
 	var tween = character.ghostify_to_oblivion($Graphic/OblivionPoint)
 	tween.tween_callback(func():
 		_exchange(character)

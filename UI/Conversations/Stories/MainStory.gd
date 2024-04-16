@@ -331,7 +331,11 @@ func _ready():
 			image = "Penelope",
 			name = "Penelope",
 		},
-		
+		{
+			text = "And then maybe feed me some sheep...",
+			image = "Penelope",
+			name = "Penelope",
+		},
 	])
 	level5Complete.callback = func():
 		Global.unlock_building(Global.BuildingType.SHEEP_FARM)

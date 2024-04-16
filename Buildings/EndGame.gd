@@ -29,6 +29,9 @@ var _requirements: Dictionary = Global.ResourceType.values().reduce(func(accum, 
 func change_requirement(type: Global.ResourceType, count: int):
 	change_queue_count(type, -count)
 	_requirements[type] += count
+func clear_requirements():
+	for key in _requirements.keys():
+		_requirements[key] = 0
 
 var witch_names = [
 "Magic the not Gathering"
@@ -89,7 +92,6 @@ var skeleton_names = [
 ,"Dead and Gone"
 ,"Vertebrate Hunter"
 ,"Invertebrate Hunter"
-,"Coraline Adventures"
 ,"Under The Skin"
 ,"What do men get when horny?"
 ,"Find the Funny Bone?"
@@ -150,6 +152,7 @@ func do_summon():
 	self.visible = true
 	clear_inventory()
 	clear_queue()
+	clear_requirements()
 	var summon_type = Global._unlocked_summons.pick_random()
 	match summon_type:
 		Global.ResourceType.WITCH:
