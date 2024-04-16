@@ -12,7 +12,7 @@ var bug_count: int = 0
 var levels_completed = 0
 
 var _unlocked_summons = [ResourceType.WITCH]
-var _unlocked_buildings = [BuildingType.RECUTEMENT_CENTRE, BuildingType.FISH_POND, BuildingType.GRANARY, BuildingType.NURSING_HOME]
+var _unlocked_buildings = []
 
 func unlock_building(b: BuildingType):
 	if _unlocked_buildings.count(b) == 0:

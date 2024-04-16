@@ -32,7 +32,12 @@ func _ready():
 			$ARContainer/Button/SizeRef/HerbGarden.visible = true
 
 func _resources_updated():
-	visible = target_building.is_cost_affordable() && Global.is_building_unlocked(building_type)
+	visible = Global.is_building_unlocked(building_type)
+	$ARContainer/Button.disabled = !target_building.is_cost_affordable()
+	if $ARContainer/Button.disabled:
+		$ARContainer/Button.modulate = Color.DARK_SLATE_GRAY
+	else:
+		$ARContainer/Button.modulate = Color.WHITE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

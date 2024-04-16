@@ -195,6 +195,11 @@ height = 54.0
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_jyseg")
+eye_colors = null
+movement_speed = null
+acceleration = null
+pickup_height = null
+head_height = null
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

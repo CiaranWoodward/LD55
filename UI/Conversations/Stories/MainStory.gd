@@ -136,6 +136,7 @@ func _ready():
 	])
 	level1Complete.callback = func():
 		Story.level = 2
+		Global.unlock_building(Global.BuildingType.NURSING_HOME)
 	
 	# 
 	# Level 2
@@ -181,6 +182,7 @@ func _ready():
 	])
 	level2Complete.callback = func():
 		Story.level = 3
+		Global.unlock_building(Global.BuildingType.GRANARY)
 	
 	# 
 	# Level 3
@@ -278,6 +280,8 @@ func _ready():
 	])
 	level4Complete.callback = func():
 		Story.level = 5
+		Global.unlock_building(Global.BuildingType.RECUTEMENT_CENTRE)
+		Global.unlock_building(Global.BuildingType.FISH_POND)
 		Global.unlock_summon(Global.ResourceType.WITCH)
 		Global.start_summons()
 
