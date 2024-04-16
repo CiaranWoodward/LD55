@@ -14,6 +14,9 @@ extends Node
 @onready var level6Intro = Conversation.new()
 @onready var level6Complete = Conversation.new()
 @onready var storyEnd = Conversation.new()
+@onready var onBug = Conversation.new()
+@onready var gameOver = Conversation.new()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -385,6 +388,77 @@ func _ready():
 		}
 	])
 	
+	#
+	# On Bug
+	#
+	onBug.is_triggered = func():
+		return "TODO if a bug spawns"
+	onBug.script([
+		{
+			text = "Oh dear!",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "You were not giving the games what they needed",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "Poorly implemented games result in bugs",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "I think they might harm your creatures",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "you can keep them safe by building holding pens",
+			image = "Penelope",
+			name = "Penelope",
+		}
+	])
+	onBug.callback = func():
+		# TODO unlock all pens
+		pass
+	
+	#
+	# On Game Over
+	#
+	gameOver.is_triggered = func():
+		return Global.game_state == Global.GameState.GAME_OVER
+	gameOver.script([
+		{
+			when = func(): return Story.level < 7,
+			text = "I am very dissapointed in you...",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			when = func(): return Story.level > 7,
+			text = "You had a good run...",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "You let the bug investation overrun us all!",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "I guess this is another game jam plagued by bugs...",
+			image = "Penelope",
+			name = "Penelope",
+		},
+		{
+			text = "Thanks for playing our game!",
+			image = "Developers",
+			name = "Developers",
+		}
+	])
+	
 	Story.active_set.push_back(intro)
 	Story.active_set.push_back(level1Complete)
 	Story.active_set.push_back(level2Intro)
@@ -398,3 +472,5 @@ func _ready():
 	Story.active_set.push_back(level6Intro)
 	Story.active_set.push_back(level6Complete)
 	Story.active_set.push_back(storyEnd)
+	Story.active_set.push_back(onBug)
+	Story.active_set.push_back(gameOver)
