@@ -278,7 +278,9 @@ func _ready():
 	])
 	level4Complete.callback = func():
 		Story.level = 5
-		
+		Global.unlock_summon(Global.ResourceType.WITCH)
+		Global.start_summons()
+
 	# 
 	# Level 5
 	#
@@ -387,12 +389,28 @@ func _ready():
 			name = "Penelope",
 		}
 	])
+	storyEnd.callback = func():
+		Global.unlock_summon(Global.ResourceType.DEMON)
+		Global.unlock_summon(Global.ResourceType.GHOST)
+		Global.unlock_summon(Global.ResourceType.WITCH)
+		Global.unlock_summon(Global.ResourceType.SKELETON)
+		Global.unlock_building(Global.BuildingType.RECUTEMENT_CENTRE)
+		Global.unlock_building(Global.BuildingType.SHEEP_FARM)
+		Global.unlock_building(Global.BuildingType.GRANARY)
+		Global.unlock_building(Global.BuildingType.NURSING_HOME)
+		Global.unlock_building(Global.BuildingType.FISH_POND)
+		Global.unlock_building(Global.BuildingType.HOLDING_PEN_SHEEP)
+		Global.unlock_building(Global.BuildingType.HOLDING_PEN_GRAN)
+		Global.unlock_building(Global.BuildingType.HOLDING_PEN_LOST_SOUL)
+		Global.unlock_building(Global.BuildingType.FIELD_HOSPITAL)
+		Global.unlock_building(Global.BuildingType.HERB_GARDEN)
+		
 	
 	#
 	# On Bug
 	#
 	onBug.is_triggered = func():
-		return "TODO if a bug spawns"
+		return Global.bug_count >= 1
 	onBug.script([
 		{
 			text = "Oh dear!",
@@ -421,14 +439,15 @@ func _ready():
 		}
 	])
 	onBug.callback = func():
-		# TODO unlock all pens
-		pass
+		Global.unlock_building(Global.BuildingType.HOLDING_PEN_GRAN)
+		Global.unlock_building(Global.BuildingType.HOLDING_PEN_LOST_SOUL)
+		Global.unlock_building(Global.BuildingType.HOLDING_PEN_SHEEP)
 	
 	#
 	# On Game Over
 	#
 	gameOver.is_triggered = func():
-		return Global.game_state == Global.GameState.GAME_OVER
+		return get_tree().get_nodes_in_group("characters").filter(func(c): return c is Bug).size() >= 15
 	gameOver.script([
 		{
 			when = func(): return Story.level < 7,
@@ -437,7 +456,7 @@ func _ready():
 			name = "Penelope",
 		},
 		{
-			when = func(): return Story.level > 7,
+			when = func(): return Story.level >= 7,
 			text = "You had a good run...",
 			image = "Penelope",
 			name = "Penelope",

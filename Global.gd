@@ -76,6 +76,10 @@ var _resourceInventory: Dictionary = ResourceType.values().reduce(func(accum, ty
 	accum[type] = 0
 	return accum, {})
 
+func start_summons():
+	for eg in get_tree().get_nodes_in_group("endgames"):
+		eg.do_summon()
+
 # Meta-functions
 func get_building_name(type: BuildingType) -> String:
 	match(type):

@@ -140,8 +140,13 @@ var demon_names = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_to_group("endgames")
 	super._ready()
 	_start_gp = $Graphic.global_position
+	self.visible = false
+	
+func do_summon():
+	self.visible = true
 	$Graphic/Shaker/Background/Compo/CompoLabel.text = ["JAM", "COMPO", "EXTRA"].pick_random()
 	Global.game_map.games_on_screen_changed.connect(_updated_onscreen)
 	_stick_to_screen()
