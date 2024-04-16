@@ -1,7 +1,7 @@
 class_name ProductionBuilding
 extends Building
 
-@export var cat_slots: int = 2
+@export var cat_slots: int = 3
 @export var base_build_time: float = 5.0
 @export var cat_time_multiplier: float = 0.75
 

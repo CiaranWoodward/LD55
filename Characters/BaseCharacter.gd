@@ -121,7 +121,7 @@ func _angry_process(delta):
 			_angry_explode()
 
 func is_targetable() -> bool:
-	return !_angry_bastard
+	return !_angry_bastard && !_picked_up
 
 func make_angry():
 	if _angry_bastard:
@@ -138,6 +138,10 @@ func _angry_pulse():
 	new_tween.tween_callback(func(): _angry_pulse())
 
 func _angry_explode():
+	if !_current_angry_target.is_targetable():
+		_current_angry_target = null
+		_find_new_target_angry()
+		return
 	_current_angry_target.kill()
 	kill()
 

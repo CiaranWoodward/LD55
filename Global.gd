@@ -77,8 +77,13 @@ var _resourceInventory: Dictionary = ResourceType.values().reduce(func(accum, ty
 	return accum, {})
 
 func start_summons():
+	var delay = 0.0
 	for eg in get_tree().get_nodes_in_group("endgames"):
-		eg.do_summon()
+		if delay == 0:
+			eg.do_summon()
+		else:
+			eg.summon_later(delay)
+		delay += 10.0
 
 # Meta-functions
 func get_building_name(type: BuildingType) -> String:

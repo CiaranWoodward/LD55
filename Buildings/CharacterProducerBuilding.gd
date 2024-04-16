@@ -1,7 +1,7 @@
 class_name CharacterProducerBuilding
 extends ProductionBuilding
 
-@export var character_cost: int = 2
+@export var character_cost: int = 1
 
 func _get_input_type():
 	pass

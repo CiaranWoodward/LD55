@@ -7,7 +7,8 @@ enum GameType {
 	CRYPTIC,
 }
 
-@export var timeout: float = 40.0
+@export var cool_off_period: float = 30.0
+@export var timeout: float = 60.0
 @export var summon_heal: float = 10.0
 @export var summon_count: int = 5
 @export var game_type: GameType = GameType.WITCHY
@@ -147,6 +148,7 @@ func _ready():
 	
 func do_summon():
 	self.visible = true
+	_current_timeout = timeout
 	$Graphic/Shaker/Background/Compo/CompoLabel.text = ["JAM", "COMPO", "EXTRA"].pick_random()
 	Global.game_map.games_on_screen_changed.connect(_updated_onscreen)
 	_stick_to_screen()
@@ -184,6 +186,11 @@ func _is_complete() -> bool:
 func _is_failed() -> bool:
 	return _current_timeout <= 0
 
+func summon_later(delay: float):
+	var repeater = create_tween()
+	repeater.tween_interval(delay * randf_range(0.9, 1.1))
+	repeater.tween_callback(do_summon)
+
 func _check_completion():
 	if _is_complete():
 		self.visible = false
@@ -192,6 +199,11 @@ func _check_completion():
 			var star = preload("res://UI/GoldStar.tscn").instantiate()
 			Global.game_map.add_child(star)
 			star.global_position = $Graphic/OblivionPoint.global_position
+		summon_later(cool_off_period)
+		cool_off_period = max(1.0, cool_off_period - 1)
+		summon_heal = max (4, summon_heal - randf_range(0.1, 0.4))
+		summon_count += randi_range(-1, 2)
+		timeout = max(10, timeout - 2)
 	elif _is_failed():
 		var bug: BaseCharacter = load("res://Characters/Bug.tscn").instantiate()
 		Global.game_map.add_character(bug)
