@@ -182,6 +182,7 @@ func _is_failed() -> bool:
 func _check_completion():
 	if _is_complete():
 		self.visible = false
+		Global.levels_completed += 1
 		for i in range(randi_range(7, 12)):
 			Global.game_map.add_child(preload("res://UI/GoldStar.tscn").instantiate())
 	elif _is_failed():

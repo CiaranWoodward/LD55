@@ -300,7 +300,7 @@ func _ready():
 	])
 	
 	level5Complete.is_triggered = func():
-		return Story.level == 5 and "TODO function which returns true when game requirements are met"
+		return Story.level == 5 and Global.levels_completed > 1
 	level5Complete.script([
 		{
 			text = "Look you completed a game!",
@@ -325,7 +325,7 @@ func _ready():
 		
 	])
 	level5Complete.callback = func():
-		# TODO unlock sheep farms
+		Global.unlock_building(Global.BuildingType.SHEEP_FARM)
 		Story.level = 6
 		
 	# 
@@ -341,7 +341,7 @@ func _ready():
 		}
 	])
 	level6Complete.callback = func():
-		# TODO allow demon games to spawn
+		Global.unlock_summon(Global.ResourceType.DEMON)
 		pass
 	
 	level6Complete.is_triggered = func():

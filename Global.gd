@@ -9,6 +9,7 @@ var camera: PlayerCam
 
 #Count of bugs that have been released into the world
 var bug_count: int = 0
+var levels_completed = 0
 
 var _unlocked_summons = [ResourceType.WITCH]
 var _unlocked_buildings = [BuildingType.RECUTEMENT_CENTRE, BuildingType.FISH_POND, BuildingType.GRANARY, BuildingType.NURSING_HOME]
