@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cseq0jcpd6rfc"]
+[gd_scene load_steps=24 format=3 uid="uid://cseq0jcpd6rfc"]
 
 [ext_resource type="Script" path="res://Map/GameMap.gd" id="1_667xj"]
 [ext_resource type="PackedScene" uid="uid://clufegtvym2pa" path="res://Buildings/RecutementCentre.tscn" id="1_p3gag"]
@@ -15,7 +15,9 @@
 [ext_resource type="Script" path="res://Map/PlayerCam.gd" id="6_5o6ap"]
 [ext_resource type="Texture2D" uid="uid://tyqbiq3emmtr" path="res://Graphics/Icons/WhiteSquare0000.png" id="6_p556y"]
 [ext_resource type="PackedScene" uid="uid://bhkrdyerxw3h8" path="res://Buildings/Fishery.tscn" id="16_cua2n"]
+[ext_resource type="AudioStream" uid="uid://iyvwwgmgpyb5" path="res://Happy fine music.wav" id="17_8jh1q"]
 [ext_resource type="PackedScene" uid="uid://b3qtnf3cihei4" path="res://UI/Conversations/Stories/Stories.tscn" id="17_gxtua"]
+[ext_resource type="AudioStream" uid="uid://8n12sq167j63" path="res://shit hit the fan.wav" id="18_pxe5x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ewas"]
 texture = ExtResource("3_puiem")
@@ -281,3 +283,9 @@ position = Vector2(735, 1112)
 [node name="Stories" type="Node2D" parent="."]
 
 [node name="MainStory" parent="Stories" instance=ExtResource("17_gxtua")]
+
+[node name="HappyMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_8jh1q")
+
+[node name="CrazyMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_pxe5x")

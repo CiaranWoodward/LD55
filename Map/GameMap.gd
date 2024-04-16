@@ -20,6 +20,7 @@ func _tick_story():
 func _ready():
 	Global.game_map = self
 	_compute_nav_mesh()
+	$HappyMusic.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -39,6 +40,9 @@ func _compute_nav_mesh():
 
 func get_portal():
 	return $NavigationRegion2D/Portal
+
+func get_starbox():
+	return $Hud/Starbox
 
 func add_building_child(building: Building, position: Vector2):
 	nav_region.add_child(building)

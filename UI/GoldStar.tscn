@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch7ywp7yly6gx"]
+
+[ext_resource type="Texture2D" uid="uid://d2wm3f8kmc84x" path="res://Graphics/Icons/Star0000.png" id="1_0j74a"]
+[ext_resource type="Script" path="res://UI/GoldStar.gd" id="2_ebxyl"]
+
+[node name="GoldStar" type="Sprite2D"]
+modulate = Color(1, 0.490196, 0.254902, 1)
+texture = ExtResource("1_0j74a")
+script = ExtResource("2_ebxyl")
