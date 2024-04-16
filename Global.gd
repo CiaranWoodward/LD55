@@ -62,6 +62,7 @@ enum ResourceType {
 	SKELETON,
 	DEMON,
 	LOST_SOUL,
+	BUG,
 }
 
 enum PhysicsLayer {

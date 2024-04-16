@@ -18,4 +18,4 @@ func _physics_process(delta):
 	super._physics_process(delta)
 
 func get_type():
-	return Global.ResourceType.DEMON
+	return Global.ResourceType.BUG
