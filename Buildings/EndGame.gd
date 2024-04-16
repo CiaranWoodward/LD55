@@ -184,7 +184,9 @@ func _check_completion():
 		self.visible = false
 		Global.levels_completed += 1
 		for i in range(randi_range(7, 12)):
-			Global.game_map.add_child(preload("res://UI/GoldStar.tscn").instantiate())
+			var star = preload("res://UI/GoldStar.tscn").instantiate()
+			Global.game_map.add_child(star)
+			star.global_position = $Graphic/OblivionPoint.global_position
 	elif _is_failed():
 		var bug: BaseCharacter = load("res://Characters/Bug.tscn").instantiate()
 		Global.game_map.add_character(bug)
