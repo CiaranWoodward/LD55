@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cqtw2u46g28co"]
+[gd_scene load_steps=19 format=3 uid="uid://cqtw2u46g28co"]
 
 [ext_resource type="Script" path="res://Buildings/EndGame.gd" id="1_qkj20"]
 [ext_resource type="PackedScene" uid="uid://d7bt5crkrnm3" path="res://Utils/shaker.tscn" id="2_v3fpe"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c7k2uiobrv5er" path="res://Graphics/Games/Hat0000.png" id="9_frnh0"]
 [ext_resource type="Texture2D" uid="uid://rjhmqxdcxi0t" path="res://Graphics/Games/Bones0000.png" id="11_gaklq"]
 [ext_resource type="Texture2D" uid="uid://uof3iyneomr4" path="res://Graphics/Games/Boo0000.png" id="13_7vbvl"]
+[ext_resource type="Texture2D" uid="uid://c80yen6gmj6cw" path="res://Graphics/Games/Ghosts0000.png" id="13_83868"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uyban"]
 animations = [{
@@ -65,10 +66,10 @@ animations = [{
 "texture": ExtResource("7_a8fh0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_a8fh0")
+"texture": ExtResource("13_83868")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_a8fh0")
+"texture": ExtResource("13_83868")
 }, {
 "duration": 1.0,
 "texture": ExtResource("13_7vbvl")
@@ -109,6 +110,7 @@ color = Color(0.407843, 0.407843, 0.407843, 1)
 polygon = PackedVector2Array(0, 0, 300, 0, 300, 200, 0, 200)
 
 [node name="BackingColour" type="Sprite2D" parent="Graphic/Shaker/Background"]
+self_modulate = Color(0.105882, 0.121569, 0.207843, 1)
 position = Vector2(150, 100)
 scale = Vector2(2, 2)
 texture = ExtResource("3_c4v4s")
