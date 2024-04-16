@@ -12,6 +12,7 @@ enum GameType {
 @export var summon_count: int = 5
 @export var game_type: GameType = GameType.WITCHY
 @export var dead_modulate: Color = Color(0.2, 0.2, 0.2)
+@export var noimage_chance: float = 0.2
 
 @onready var _current_timeout = timeout
 var _timeout_tween: Tween 
@@ -153,15 +154,21 @@ func _prepare_gametype():
 		GameType.WITCHY:
 			change_requirement(Global.ResourceType.WITCH, summon_count)
 			$Graphic/Shaker/Background/BottomBar/GameName.text = witch_names.pick_random()
+			$Graphic/Shaker/Background/GameGraphic.frame = randi_range(6, 10)
 		GameType.SPOOKY:
 			change_requirement(Global.ResourceType.GHOST, summon_count)
 			$Graphic/Shaker/Background/BottomBar/GameName.text = ghost_names.pick_random()
+			$Graphic/Shaker/Background/GameGraphic.frame = randi_range(16, 20)
 		GameType.HELLISH:
 			change_requirement(Global.ResourceType.DEMON, summon_count)
 			$Graphic/Shaker/Background/BottomBar/GameName.text = demon_names.pick_random()
+			$Graphic/Shaker/Background/GameGraphic.frame = randi_range(1, 5)
 		GameType.CRYPTIC:
 			change_requirement(Global.ResourceType.SKELETON, summon_count)
 			$Graphic/Shaker/Background/BottomBar/GameName.text = skeleton_names.pick_random()
+			$Graphic/Shaker/Background/GameGraphic.frame = randi_range(11, 15)
+	if randf() < noimage_chance:
+		$Graphic/Shaker/Background/GameGraphic.frame = 0
 
 func _is_complete() -> bool:
 	for key in _requirements.keys():
@@ -176,13 +183,24 @@ func _check_completion():
 	if _is_complete():
 		self.visible = false
 	elif _is_failed():
-		pass
+		var bug: BaseCharacter = load("res://Characters/Bug.tscn").instantiate()
+		Global.game_map.add_character(bug)
+		bug.global_position = $Graphic/OblivionPoint.global_position
+		bug.jump_to($Destination.global_position)
+		_current_timeout += summon_heal * 2
+		_refresh()
+		_prepare_timeout()
 
 func _update_label():
 	var sum = func(accum, number): return accum + number
 	var req_count = _requirements.values().reduce(sum, 0)
 	var item_count = _inventory.values().reduce(sum, 0)
 	$Graphic/Shaker/Background/TopBar/Counter.text = "(%d/%d)" % [item_count, req_count]
+
+func _refresh():
+	modulate = Color.WHITE
+	$Graphic/Shaker.childhood_trauma = 0.0
+	var diff = _current_timeout - timeout
 
 func _prepare_timeout():
 	_check_completion()
@@ -191,8 +209,7 @@ func _prepare_timeout():
 	_timeout_tween = create_tween()
 	var t = _timeout_tween
 	if _current_timeout > timeout:
-		modulate = Color.WHITE
-		$Graphic/Shaker.childhood_trauma = 0.0
+		_refresh()
 		var diff = _current_timeout - timeout
 		t.tween_property(self, "_current_timeout", timeout, diff)
 		t.tween_interval(0.0)
@@ -250,6 +267,7 @@ func _spin_to_oblivion(character: BaseCharacter):
 		change_inventory_count(character.get_type(), 1)
 		_update_label()
 		_current_timeout += summon_heal
+		_refresh()
 		_prepare_timeout()
 		tween.tween_callback(func():
 			character.queue_free()

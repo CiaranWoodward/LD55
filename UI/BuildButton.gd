@@ -10,6 +10,7 @@ func _ready():
 	$ARContainer/Button/Star/Cost.text = "%d" % target_building.cost
 	print("%s: %d" % [Global.get_building_name(building_type), target_building.cost])
 	Global.resource_updated.connect(_resources_updated)
+	Global.unlocked.connect(_resources_updated)
 	_resources_updated()
 	
 	match building_type:
@@ -31,7 +32,7 @@ func _ready():
 			$ARContainer/Button/SizeRef/HerbGarden.visible = true
 
 func _resources_updated():
-	visible = target_building.is_cost_affordable()
+	visible = target_building.is_cost_affordable() && Global.is_building_unlocked(building_type)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

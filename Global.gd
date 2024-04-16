@@ -1,10 +1,30 @@
 extends Node
 
 signal resource_updated
+signal unlocked
 
 var cursor : Cursor
 var game_map: GameMap
 var camera: PlayerCam
+
+#Count of bugs that have been released into the world
+var bug_count: int = 0
+
+var _unlocked_summons = [ResourceType.WITCH]
+var _unlocked_buildings = [BuildingType.RECUTEMENT_CENTRE, BuildingType.FISH_POND, BuildingType.GRANARY, BuildingType.NURSING_HOME]
+
+func unlock_building(b: BuildingType):
+	if _unlocked_buildings.count(b) == 0:
+		_unlocked_buildings.append(b)
+		unlocked.emit()
+func unlock_summon(s: ResourceType):
+	if _unlocked_summons.count(s) == 0:
+		_unlocked_summons.append(s) 
+		unlocked.emit()
+func is_building_unlocked(b: BuildingType):
+	return _unlocked_buildings.count(b) > 0
+func is_summon_unlocked(s: ResourceType):
+	return _unlocked_summons.count(s) > 0
 
 # Game state
 enum GameState {
